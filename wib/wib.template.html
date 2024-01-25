@@ -1,0 +1,213 @@
+<link rel="stylesheet" href="css/wib.css">
+<div class="wib_container">
+    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
+    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
+    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
+    <div class="wibs">
+        <table id="femb1">
+            <th colspan="2">FEMB 1</th>
+            <tr>
+                <td colspan="2">Power</td>
+            </tr>
+            <tr>
+                <td colspan="2">1.5V</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB1.1V5.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB1_1V5_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB1.1V5.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB1_1V5_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">2.5V</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB1.2V5.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB1_2V5_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB1.2V5.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB1_2V5_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">2.8V</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB1.2V8.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB1_2V8_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB1.2V8.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB1_2V8_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">3.6V</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB1.3V6.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB1_3V6_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB1.3V6.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB1_3V6_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">Bias</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB1.BIAS.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB1_BIAS_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB1.BIAS.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB1_BIAS_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">Temperature</td>
+            </tr>
+            <tr>
+                <td colspan="2"><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB1.TEMP"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB1_TEMP | number: 2 }} &#8451;</span></a></td>
+            </tr>
+        </table>
+
+        <table id="femb2">
+            <th colspan="2">FEMB 2</th>
+            <tr>
+                <td colspan="2">Power</td>
+            </tr>
+            <tr>
+                <td colspan="2">1.5V</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB2.1V5.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB2_1V5_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB2.1V5.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB2_1V5_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">2.5V</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB2.2V5.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB2_2V5_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB2.2V5.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB2_2V5_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">2.8V</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB2.2V8.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB2_2V8_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB2.2V8.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB2_2V8_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">3.6V</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB2.3V6.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB2_3V6_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB2.3V6.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB2_3V6_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">Bias</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB2.BIAS.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB2_BIAS_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB2.BIAS.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB2_BIAS_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">Temperature</td>
+            </tr>
+            <tr>
+                <td colspan="2"><a target="_blank" ng-href="#!/histogram/NP04_DCS_01:WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB2.TEMP"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB2_TEMP | number: 2 }} &#8451;</span></a></td>
+            </tr>
+        </table>
+
+        <table id="femb3">
+            <th colspan="2">FEMB 3</a></th>
+            <tr>
+                <td colspan="2">Power</td>
+            </tr>
+            <tr>
+                <td colspan="2">1.5V</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB3.1V5.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB3_1V5_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB3.1V5.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB3_1V5_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">2.5V</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB3.2V5.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB3_2V5_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB3.2V5.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB3_2V5_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">2.8V</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB3.2V8.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB3_2V8_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB3.2V8.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB3_2V8_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">3.6V</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB3.3V6.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB3_3V6_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB3.3V6.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB3_3V6_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">Bias</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB3.BIAS.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB3_BIAS_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB3.BIAS.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB3_BIAS_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">Temperature</td>
+            </tr>
+            <tr>
+                <td colspan="2"><a target="_blank" ng-href="#!/histogram/NP04_DCS_01:WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB3.TEMP"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB3_TEMP | number: 2 }} &#8451;</span></a></td>
+            </tr>
+        </table>
+
+        <table id="femb4">
+            <th colspan="2">FEMB 4</th>
+            <tr>
+                <td colspan="2">Power</td>
+            </tr>
+            <tr>
+                <td colspan="2">1.5V</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB4.1V5.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB4_1V5_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB4.1V5.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB4_1V5_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">2.5V</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB4.2V5.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB4_2V5_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB4.2V5.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB4_2V5_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">2.8V</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB4.2V8.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB4_2V8_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB4.2V8.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB4_2V8_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">3.6V</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB4.3V6.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB4_3V6_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB4.3V6.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB4_3V6_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">Bias</td>
+            </tr>
+            <tr>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB4.BIAS.V"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB4_BIAS_V | number: 2 }} V</span></a></td>
+                <td><a target="_blank" ng-href="#!/histogram/NP04_DCS_01_WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB4.BIAS.I"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB4_BIAS_I | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2">Temperature</td>
+            </tr>
+            <tr>
+                <td colspan="2"><a target="_blank" ng-href="#!/histogram/NP04_DCS_01:WIB_crate{{$ctrl.crateId}}_slot{{$ctrl.wibId}}.POWER.FEMB4.TEMP"><span class="value">{{ $ctrl.NP04_DCS_01_WIB_crate0_slot1_POWER_FEMB4_TEMP | number: 2 }} &#8451;</span></a></td>
+            </tr>
+        </table>
+
+
+    </div>
+
+    <div class="selection">
+        <table>
+            <tr>
+                <td><a ng-href="#!/wib/{{$ctrl.crateId}}/1">wib 1</a></td>
+                <td><a ng-href="#!/wib/{{$ctrl.crateId}}/2">wib 2</a></td>
+                <td><a ng-href="#!/wib/{{$ctrl.crateId}}/3">wib 3</a></td>
+                <td><a ng-href="#!/wib/{{$ctrl.crateId}}/4">wib 4</a></td>
+                <td><a ng-href="#!/wib/{{$ctrl.crateId}}/5">wib 5</a></td>
+            </tr>
+        </table>
+    </div>
+</div>

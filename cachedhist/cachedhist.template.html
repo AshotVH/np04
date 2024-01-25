@@ -1,0 +1,20 @@
+<style type="text/css">
+    #container {
+        width: 90vw;
+        height: 90vh;
+    }
+</style>
+
+<div id="container">Placeholder for chart</div>
+
+
+<button class="btn" title="Click to show/hide data" type="button" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}">Show/hide data</button>
+<span id="spoiler" style="display: none;"><table style="font-family: 'Arial Black', Gadget, sans-serif">
+    <th>Timestamp</th>
+    <th>Exact value</th>
+    <tr ng-repeat="i in $ctrl.respdata">
+        <td>{{i[0]}}</td>
+        <td align="right" style="color: lime; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;">{{i[1] | number: 2}}</td>
+    </tr>
+</table></span>
+

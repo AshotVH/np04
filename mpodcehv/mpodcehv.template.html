@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="css/mpodpd.css">
+<div class="mpodpd_container">
+    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
+
+
+    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
+    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
+
+    <div class="detector">
+        <img src="img/mpodpd_detector.png" alt="" usemap="#Map" style="display: block; position: fixed;
+                                                                    top: 40vh;
+                                                                    left: 30vw;
+                                                                    width: 35vw;"/>
+        <table id="ras">
+            <tr>
+                <td><a ng-href="#!/mpodcehvras">RaS (Rack Side)</a></td>
+            </tr>
+        </table>
+
+        <table id="das">
+            <tr>
+                <td><a ng-href="#!/mpodcehvdas">DaS (DAQ Side)</a></td>
+            </tr>
+        </table>
+    </div>
+
+
+</div>

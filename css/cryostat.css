@@ -1,0 +1,715 @@
+@media screen and (max-height: 1080px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 30vh;
+        left: 20vw;
+        width: 60vmin;
+    }
+
+    #cryostat_pressure {
+        position: fixed;
+        left: 5vw;
+        top: 80vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #CV4100 {
+        position: fixed;
+        left: 5vw;
+        top: 55vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #CV4101 {
+        position: fixed;
+        left: 5vw;
+        top: 58vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #gas {
+        position: fixed;
+        right: 20vw;
+        bottom: 10vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #outer_pressure {
+        position: fixed;
+        left: 52vw;
+        top: 25vh;
+        text-align: left;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #inner_pressure {
+        position: fixed;
+        left: 12vw;
+        top: 20vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #inner_pressure_2 {
+        position: fixed;
+        left: 52vw;
+        top: 36vh;
+        text-align: left;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #ambient_diff {
+        position: fixed;
+        left: 5.0vw;
+        top: 75vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #ambient {
+        position: fixed;
+        right: 5vw;
+        top: 80vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe {
+        position: fixed;
+        left: 6vw;
+        top: 35vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe1 {
+        position: fixed;
+        left: 33vw;
+        top: 13vh;
+        text-align: center;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe2 {
+        position: fixed;
+        left: 52vw;
+        top: 47vh;
+        text-align: center;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe3 {
+        position: fixed;
+        left: 44vw;
+        top: 75vh;
+        text-align: center;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe4 {
+        position: fixed;
+        left: 5vw;
+        top: 35vh;
+        text-align: center;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #beam_plug {
+        position: fixed;
+        left: 52vw;
+        top: 60vh;
+        text-align: left;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #lesker_vacuum_gauge {
+        position: fixed;
+        left: 52vw;
+        top: 64vh;
+        text-align: left;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+}
+
+@media screen and (min-height: 1080px) and (max-height: 2000px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 30vh;
+        left: 20vw;
+        width: 60vmin;
+    }
+
+    #cryostat_pressure {
+        position: fixed;
+        left: 5vw;
+        top: 80vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #CV4100 {
+        position: fixed;
+        left: 5vw;
+        top: 55vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #CV4101 {
+        position: fixed;
+        left: 5vw;
+        top: 58vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #gas {
+        position: fixed;
+        right: 20vw;
+        bottom: 10vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #outer_pressure {
+        position: fixed;
+        left: 55vw;
+        top: 25vh;
+        text-align: left;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #inner_pressure {
+        position: fixed;
+        left: 10vw;
+        top: 20vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #inner_pressure_2 {
+        position: fixed;
+        left: 55vw;
+        top: 37vh;
+        text-align: left;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #ambient_diff {
+        position: fixed;
+        left: 5.0vw;
+        top: 75vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #ambient {
+        position: fixed;
+        right: 5vw;
+        top: 80vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe {
+        position: fixed;
+        left: 6vw;
+        top: 35vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe1 {
+        position: fixed;
+        left: 33vw;
+        top: 13vh;
+        text-align: center;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe2 {
+        position: fixed;
+        left: 55vw;
+        top: 48vh;
+        text-align: center;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe3 {
+        position: fixed;
+        left: 46vw;
+        top: 75vh;
+        text-align: center;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe4 {
+        position: fixed;
+        left: 7vw;
+        top: 35vh;
+        text-align: center;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #beam_plug {
+        position: fixed;
+        left: 55vw;
+        top: 61vh;
+        text-align: left;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #lesker_vacuum_gauge {
+        position: fixed;
+        left: 55vw;
+        top: 65vh;
+        text-align: left;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+}
+
+@media screen and (min-height: 1100px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 30vh;
+        left: 20vw;
+        width: 50vmin;
+    }
+
+    #cryostat_pressure {
+        position: fixed;
+        left: 5vw;
+        top: 80vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #CV4100 {
+        position: fixed;
+        left: 5vw;
+        top: 55vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #CV4101 {
+        position: fixed;
+        left: 5vw;
+        top: 58vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #gas {
+        position: fixed;
+        left: 40vw;
+        bottom: 10vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #outer_pressure {
+        position: fixed;
+        left: 69vw;
+        top: 25vh;
+        text-align: left;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #inner_pressure {
+        position: fixed;
+        left: 5vw;
+        top: 20vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #inner_pressure_2 {
+        position: fixed;
+        left: 69vw;
+        top: 35vh;
+        text-align: left;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #ambient_diff {
+        position: fixed;
+        left: 5.0vw;
+        top: 75vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #ambient {
+        position: fixed;
+        right: 10vw;
+        top: 85vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe {
+        position: fixed;
+        left: 6vw;
+        top: 35vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe1 {
+        position: fixed;
+        left: 42vw;
+        top: 15vh;
+        text-align: center;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe2 {
+        position: fixed;
+        right: 7vw;
+        top: 45vh;
+        text-align: center;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe3 {
+        position: fixed;
+        left: 65vw;
+        top: 70vh;
+        text-align: center;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe4 {
+        position: fixed;
+        left: 1vw;
+        top: 35vh;
+        text-align: center;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #beam_plug {
+        position: fixed;
+        left: 68vw;
+        top: 57vh;
+        text-align: left;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #lesker_vacuum_gauge {
+        position: fixed;
+        left: 68vw;
+        top: 62vh;
+        text-align: left;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+}
+
+@media screen and (min-height: 1100px) and (min-width: 3000px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 30vh;
+        left: 28vw;
+        width: 60vmin;
+    }
+
+    #cryostat_pressure {
+        position: fixed;
+        left: 5vw;
+        top: 80vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #outer_pressure {
+        position: fixed;
+        left: 60vw;
+        top: 25vh;
+        text-align: left;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #CV4100 {
+        position: fixed;
+        left: 5vw;
+        top: 55vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #CV4101 {
+        position: fixed;
+        left: 5vw;
+        top: 58vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #gas {
+        position: fixed;
+        right: 20vw;
+        bottom: 10vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #inner_pressure {
+        position:fixed;
+        left: 20vw;
+        top: 21vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #inner_pressure_2 {
+        position:fixed;
+        left: 60vw;
+        top: 35vh;
+        text-align: left;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #ambient_diff {
+        position: fixed;
+        left: 5.0vw;
+        top: 75vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #ambient {
+        position: fixed;
+        right: 5vw;
+        top: 20vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe {
+        position: fixed;
+        left: 6vw;
+        top: 35vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe1 {
+        position: fixed;
+        left: 43vw;
+        top: 14vh;
+        text-align: center;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe2 {
+        position: fixed;
+        left: 61vw;
+        top: 45vh;
+        text-align: center;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe3 {
+        position: fixed;
+        left: 56vw;
+        top: 77vh;
+        text-align: center;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #penetration_pipe4 {
+        position: fixed;
+        left: 14vw;
+        top: 35vh;
+        text-align: center;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #beam_plug {
+        position: fixed;
+        left: 60vw;
+        top: 57vh;
+        text-align: left;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+    #lesker_vacuum_gauge {
+        position: fixed;
+        left: 60vw;
+        top: 62vh;
+        text-align: left;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+}

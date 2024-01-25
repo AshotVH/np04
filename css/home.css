@@ -1,0 +1,15 @@
+#main_menu {
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+}
+
+table, th, td {
+    border: none;
+}
+
+th {
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: white;
+    font-size: 3.7vmin;
+}

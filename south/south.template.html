@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="css/south.css">
+<div class="container">
+    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
+    <img id="detector" src="img/south.PNG" alt="TSS 001 AB/BB"/>
+    <img id="old" src="img/south.png" alt="South old"/>
+
+    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
+    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
+
+    <div id="NP04_7TT0212AIR"><a target="_blank" href="#!/histogram/47892475674906"><span class="value">{{ $ctrl.NP04_DCS_01_TE0133 | number: 2 }} &#8490;</span></a></div>
+</div>

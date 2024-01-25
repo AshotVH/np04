@@ -1,0 +1,163 @@
+@media screen and (max-height: 1080px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 30vh;
+        left: 20vw;
+        width: 60vmin;
+    }
+
+    #cryostat_pressure {
+        position: fixed;
+        left: 5vw;
+        top: 40vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #ambient {
+        position: fixed;
+        right: 5vw;
+        top: 80vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+}
+
+@media screen and (min-height: 1080px) and (max-height: 2000px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 30vh;
+        left: 20vw;
+        width: 60vmin;
+    }
+
+    #cryostat_pressure {
+        position: fixed;
+        left: 5vw;
+        top: 40vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+   #ambient {
+        position: fixed;
+        right: 5vw;
+        top: 80vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+}
+
+@media screen and (min-height: 1100px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 30vh;
+        left: 20vw;
+        width: 50vmin;
+    }
+
+    #cryostat_pressure {
+        position: fixed;
+        left: 5vw;
+        top: 40vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #ambient {
+        position: fixed;
+        right: 10vw;
+        top: 85vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+}
+
+@media screen and (min-height: 1100px) and (min-width: 3000px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 30vh;
+        left: 28vw;
+        width: 60vmin;
+    }
+
+    td {
+        font-size: 2.5vmin;
+    }
+
+    #cryostat_pressure {
+        position: fixed;
+        left: 5vw;
+        top: 40vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #ambient {
+        position: fixed;
+        right: 5vw;
+        top: 20vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.7vmin;
+    }
+
+}

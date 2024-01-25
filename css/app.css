@@ -1,0 +1,108 @@
+/* app css stylesheet */
+body {
+  background-color: #333333;
+}
+
+a {
+  color: lime;
+  text-decoration: none;
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #222; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 1.7vmin;
+  color: #818181;
+  font-family: "Arial Black", Gadget, sans-serif;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 3.0vmin;
+  margin-left: 50px;
+}
+
+#submenu {
+  display: none;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+#pageTitle {
+  position:fixed;
+  margin-left: 3%;
+  margin-top: 1%;
+  color: white;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 3.3vmin;
+}
+
+th, td {
+  padding: 1vmin;
+  border: 1px solid white;
+  color: gray;
+  font-family: "Arial Black", Gadget, sans-serif
+}
+
+th {
+  font-size: 2.0vmin;
+}
+
+td {
+  font-size: 1.8vmin;
+}
+
+#timestamp_label {
+  position: fixed;
+  right: 5vw;
+  top: 10%;
+  text-align: right;
+  color: gray;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 2.5vmin;
+}
+
+#timestamp {
+  text-align: right;
+  color: white;
+  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-size: 2.5vmin;
+}
+
+.value {
+  background-color: #333333;
+  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  color: lime;
+  font-size: 2.0vmin;
+  font-weight: bold;
+}

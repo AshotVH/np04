@@ -1,0 +1,521 @@
+@media screen and (max-height: 1080px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #pageTitle {
+        top: 7vh;
+        left: 35vw;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 15vh;
+        left: 17vw;
+        height: 75%;
+    }
+
+    #spwall {
+        position: fixed;
+        top: 33vh;
+        left: 32vw;
+    }
+
+    #floor {
+        position: fixed;
+        top: 72vh;
+        left: 40vw;
+    }
+
+    #spgradient {
+        position: fixed;
+        top: 20vh;
+        left: 40vw;
+    }
+
+    #spbottom {
+        position: fixed;
+        top: 83vh;
+        left: 20vw;
+    }
+
+    #splevel2 {
+        position: fixed;
+        top: 30vh;
+        left: 32vw;
+    }
+
+    #pipes {
+        position: fixed;
+        top: 72vh;
+        left: 45vw;
+    }
+
+    #hawaii {
+        position: fixed;
+        top: 45vh;
+        left: 27vw;
+    }
+
+    #hawaiival {
+        display: none;
+        position: fixed;
+        top: 8vh;
+        left: 7vw;
+        background-color: #333333;
+    }
+
+    #ific1btn {
+        position: fixed;
+        top: 32vh;
+        left: 57vw;
+    }
+
+    #ific2btn {
+        position: fixed;
+        top: 42vh;
+        left: 57vw;
+    }
+
+    #ific3btn {
+        position: fixed;
+        top: 62vh;
+        left: 57vw;
+    }
+
+    #ific1val {
+        display: none;
+        position: fixed;
+        top: 15vh;
+        left: 65vw;
+        background-color: #333333;
+    }
+
+    #ific2val {
+        display: none;
+        position: fixed;
+        top: 15vh;
+        left: 65vw;
+        background-color: #333333;
+    }
+
+    #ific3val {
+        display: none;
+        position: fixed;
+        top: 15vh;
+        left: 65vw;
+        background-color: #333333;
+    }
+
+    td {
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.8vmin;
+        padding: 0.3vmin;
+    }
+
+
+    #ambient {
+        position: fixed;
+        right: 10vw;
+        top: 20vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+}
+
+@media screen and (min-height: 1081px) and (min-width: 2000px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #pageTitle {
+        top: 2vh;
+        left: 35vw;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 15vh;
+        left: 10vw;
+        height: 75vw;
+    }
+
+    #spwall {
+        position: fixed;
+        top: 33vh;
+        left: 32vw;
+    }
+
+    #floor {
+        position: fixed;
+        top: 72vh;
+        left: 40vw;
+    }
+
+    #spgradient {
+        position: fixed;
+        top: 20vh;
+        left: 40vw;
+    }
+
+    #spbottom {
+        position: fixed;
+        top: 83vh;
+        left: 20vw;
+    }
+
+    #splevel2 {
+        position: fixed;
+        top: 30vh;
+        left: 32vw;
+    }
+
+    #pipes {
+        position: fixed;
+        top: 72vh;
+        left: 45vw;
+    }
+
+    #hawaii {
+        position: fixed;
+        top: 45vh;
+        left: 27vw;
+    }
+
+    #hawaiival {
+        display: none;
+        position: fixed;
+        top: 5vh;
+        left: 7vw;
+        background-color: #333333;
+    }
+
+    #ific1btn {
+        position: fixed;
+        top: 32vh;
+        left: 57vw;
+    }
+
+    #ific2btn {
+        position: fixed;
+        top: 42vh;
+        left: 57vw;
+    }
+
+    #ific3btn {
+        position: fixed;
+        top: 62vh;
+        left: 57vw;
+    }
+
+    #ific1val {
+        display: none;
+        position: fixed;
+        top: 15vh;
+        left: 65vw;
+        background-color: #333333;
+    }
+
+    #ific2val {
+        display: none;
+        position: fixed;
+        top: 15vh;
+        left: 65vw;
+        background-color: #333333;
+    }
+
+    #ific3val {
+        display: none;
+        position: fixed;
+        top: 15vh;
+        left: 65vw;
+        background-color: #333333;
+    }
+
+    td {
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.8vmin;
+        padding: 0.3vmin;
+    }
+
+
+    #ambient {
+        position: fixed;
+        right: 10vw;
+        top: 20vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+}
+
+@media screen and (min-height: 1100px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 15vh;
+        left: 17vw;
+        height: 75%;
+    }
+
+    #spwall {
+        position: fixed;
+        top: 33vh;
+        left: 32vw;
+    }
+
+    #floor {
+        position: fixed;
+        top: 72vh;
+        left: 40vw;
+    }
+
+    #spgradient {
+        position: fixed;
+        top: 20vh;
+        left: 40vw;
+    }
+
+    #spbottom {
+        position: fixed;
+        top: 83vh;
+        left: 20vw;
+    }
+
+    #splevel2 {
+        position: fixed;
+        top: 30vh;
+        left: 32vw;
+    }
+
+    #pipes {
+        position: fixed;
+        top: 72vh;
+        left: 45vw;
+    }
+
+    #hawaii {
+        position: fixed;
+        top: 45vh;
+        left: 27vw;
+    }
+
+    #hawaiival {
+        display: none;
+        position: fixed;
+        top: 15vh;
+        left: 7vw;
+        background-color: #333333;
+    }
+
+    #ific1btn {
+        position: fixed;
+        top: 32vh;
+        left: 57vw;
+    }
+
+    #ific2btn {
+        position: fixed;
+        top: 42vh;
+        left: 57vw;
+    }
+
+    #ific3btn {
+        position: fixed;
+        top: 62vh;
+        left: 57vw;
+    }
+
+    #ific1val {
+        display: none;
+        position: fixed;
+        top: 15vh;
+        left: 70vw;
+        background-color: #333333;
+    }
+
+    #ific2val {
+        display: none;
+        position: fixed;
+        top: 15vh;
+        left: 70vw;
+        background-color: #333333;
+    }
+
+    #ific3val {
+        display: none;
+        position: fixed;
+        top: 15vh;
+        left: 70vw;
+        background-color: #333333;
+    }
+
+    td {
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.8vmin;
+        padding: 0.3vmin;
+    }
+
+
+    #ambient {
+        position: fixed;
+        right: 10vw;
+        bottom: 5vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+}
+
+@media screen and (min-height: 1100px) and (min-width: 3000px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 15vh;
+        left: 17vw;
+        height: 75%;
+    }
+
+    #spwall {
+        position: fixed;
+        top: 33vh;
+        left: 32vw;
+    }
+
+    #floor {
+        position: fixed;
+        top: 72vh;
+        left: 40vw;
+    }
+
+    #spgradient {
+        position: fixed;
+        top: 20vh;
+        left: 40vw;
+    }
+
+    #spbottom {
+        position: fixed;
+        top: 83vh;
+        left: 20vw;
+    }
+
+    #splevel2 {
+        position: fixed;
+        top: 30vh;
+        left: 32vw;
+    }
+
+    #pipes {
+        position: fixed;
+        top: 72vh;
+        left: 45vw;
+    }
+
+    #hawaii {
+        position: fixed;
+        top: 45vh;
+        left: 27vw;
+    }
+
+    #hawaiival {
+        display: none;
+        position: fixed;
+        top: 15vh;
+        left: 7vw;
+        background-color: #333333;
+    }
+
+    #ific1btn {
+        position: fixed;
+        top: 32vh;
+        left: 57vw;
+    }
+
+    #ific2btn {
+        position: fixed;
+        top: 42vh;
+        left: 57vw;
+    }
+
+    #ific3btn {
+        position: fixed;
+        top: 62vh;
+        left: 57vw;
+    }
+
+    #ific1val {
+        display: none;
+        position: fixed;
+        top: 15vh;
+        left: 70vw;
+        background-color: #333333;
+    }
+
+    #ific2val {
+        display: none;
+        position: fixed;
+        top: 15vh;
+        left: 70vw;
+        background-color: #333333;
+    }
+
+    #ific3val {
+        display: none;
+        position: fixed;
+        top: 15vh;
+        left: 70vw;
+        background-color: #333333;
+    }
+
+    td {
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.8vmin;
+        padding: 0.3vmin;
+    }
+
+
+    #ambient {
+        position: fixed;
+        right: 2vw;
+        bottom: 10vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+}

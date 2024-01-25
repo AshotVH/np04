@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="css/multiplexer.css">
+<div class="container">
+    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
+    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
+    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
+
+    <table id="main">
+        <tr>
+            <td class="tdleft"><span ng-repeat="i in $ctrl.NP04_DCS_01_TE_card1.Name"><a target="_blank" ng-href='#!/histogram/NP04_DCS_01_{{ i }}'>{{ i }}</a><br/></span></td>
+            <td class="tdright"><span class="value" ng-repeat="i in $ctrl.NP04_DCS_01_TE_card1.Value track by $index">{{ i | number: 1 }} &#8490;<br/></span></td>
+            <td class="tdleft"><span ng-repeat="i in $ctrl.NP04_DCS_01_TE_card2.Name"><a target="_blank" ng-href='#!/histogram/NP04_DCS_01_{{ i }}'>{{ i }}</a><br/></span></td>
+            <td class="tdright"><span class="value" ng-repeat="i in $ctrl.NP04_DCS_01_TE_card2.Value track by $index">{{ i | number: 1 }} &#8490;<br/></span></td>
+            <td class="tdleft"><span ng-repeat="i in $ctrl.NP04_DCS_01_TE_card3.Name"><a target="_blank" ng-href='#!/histogram/NP04_DCS_01_{{ i }}'>{{ i }}</a><br/></span></td>
+            <td class="tdright"><span class="value" ng-repeat="i in $ctrl.NP04_DCS_01_TE_card3.Value track by $index">{{ i | number: 1 }} &#8490;<br/></span></td>
+            <td class="tdleft"><span ng-repeat="i in $ctrl.NP04_DCS_01_TE_card4.Name"><a target="_blank" ng-href='#!/histogram/NP04_DCS_01_{{ i }}'>{{ i }}</a><br/></span></td>
+            <td class="tdright"><span class="value" ng-repeat="i in $ctrl.NP04_DCS_01_TE_card4.Value track by $index">{{ i | number: 1 }} &#8490;<br/></span></td>
+            <td class="tdleft"><span ng-repeat="i in $ctrl.NP04_DCS_01_TE_card5.Name"><a target="_blank" ng-href='#!/histogram/NP04_DCS_01_{{ i }}'>{{ i }}</a><br/></span></td>
+            <td class="tdright"><span class="value" ng-repeat="i in $ctrl.NP04_DCS_01_TE_card5.Value track by $index">{{ i | number: 1 }} &#8490;<br/></span></td>
+            <td class="tdleft"><span ng-repeat="i in $ctrl.NP04_DCS_01_TE_card6.Name"><a target="_blank" ng-href='#!/histogram/NP04_DCS_01_{{ i }}'>{{ i }}</a><br/></span></td>
+            <td class="tdright"><span class="value" ng-repeat="i in $ctrl.NP04_DCS_01_TE_card6.Value track by $index">{{ i | number: 1 }} &#8490;<br/></span></td>
+            <td class="tdleft"><span ng-repeat="i in $ctrl.NP04_DCS_01_TE_card7.Name"><a target="_blank" ng-href='#!/histogram/NP04_DCS_01_{{ i }}'>{{ i }}</a><br/></span></td>
+            <td class="tdright"><span class="value" ng-repeat="i in $ctrl.NP04_DCS_01_TE_card7.Value track by $index">{{ i | number: 1 }} &#8490;<br/></span></td>
+            <td class="tdleft"><span ng-repeat="i in $ctrl.NP04_DCS_01_TE_card8.Name"><a target="_blank" ng-href='#!/histogram/NP04_DCS_01_{{ i }}'>{{ i }}</a><br/></span></td>
+            <td class="tdright"><span class="value" ng-repeat="i in $ctrl.NP04_DCS_01_TE_card8.Value track by $index">{{ i | number: 1 }} &#8490;<br/></span></td>
+            <td class="tdleft"><span ng-repeat="i in $ctrl.NP04_DCS_01_TE_card9.Name"><a target="_blank" ng-href='#!/histogram/NP04_DCS_01_{{ i }}'>{{ i }}</a><br/></span></td>
+            <td class="tdright"><span class="value" ng-repeat="i in $ctrl.NP04_DCS_01_TE_card9.Value track by $index">{{ i | number: 1 }} &#8490;<br/></span></td>
+        </tr>
+    </table>
+
+</div>

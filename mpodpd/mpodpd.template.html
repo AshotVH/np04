@@ -1,0 +1,454 @@
+<link rel="stylesheet" href="css/mpodpd.css">
+<div class="mpodpd_container">
+    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
+
+
+    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
+    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
+
+    <div class="detector">
+        <img src="img/mpodpd_detector.png" alt="" usemap="#Map" style="display: block; position: fixed;
+                                                                    top: 40vh;
+                                                                    left: 30vw;
+                                                                    width: 35vw;"/>
+        <table id="ras">
+            <th>RaS (RackSide)</th>
+            <tr>
+                <td><a href="javascript:void(0)" onclick="if (document.getElementById('dsras').style.display=='none') {
+                                                              document.getElementById('dsras').style.display='block'
+                                                          } else {
+                                                              document.getElementById('dsras').style.display='none'
+                                                          }">DS (DownStream)</a></td>
+            </tr>
+            <tr>
+                <td><a href="javascript:void(0)" onclick="if (document.getElementById('msras').style.display=='none') {
+                                                              document.getElementById('msras').style.display='block'
+                                                          } else {
+                                                              document.getElementById('msras').style.display='none'
+                                                          }">MS (MidStream)</a></td>
+            </tr>
+            <tr>
+                <td><a href="javascript:void(0)" onclick="if (document.getElementById('usras').style.display=='none') {
+                                                              document.getElementById('usras').style.display='block'
+                                                          } else {
+                                                              document.getElementById('usras').style.display='none'
+                                                          }">US (UpStream)</a></td>
+            </tr>
+        </table>
+
+
+
+        <table id="das">
+            <tr>
+                <td><a href="javascript:void(0)" onclick="if (document.getElementById('dsdas').style.display=='none') {
+                                                              document.getElementById('dsdas').style.display='block'
+                                                          } else {
+                                                              document.getElementById('dsdas').style.display='none'
+                                                          }">DS (DownStream)</a></td>
+            </tr>
+            <tr>
+                <td><a href="javascript:void(0)" onclick="if (document.getElementById('msdas').style.display=='none') {
+                                                              document.getElementById('msdas').style.display='block'
+                                                          } else {
+                                                              document.getElementById('msdas').style.display='none'
+                                                          }">MS (MidStream)</a></td>
+            </tr>
+            <tr>
+                <td><a href="javascript:void(0)" onclick="if (document.getElementById('usdas').style.display=='none') {
+                                                              document.getElementById('usdas').style.display='block'
+                                                          } else {
+                                                              document.getElementById('usdas').style.display='none'
+                                                          }">US (UpStream)</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="contain">
+
+        <table class="params" id="usras">
+            <th colspan="3">US RaS (Upstream RackSide)</th>
+            <tr>
+                <td colspan="6">Slot A</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873534198810"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][0][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873534219290"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][0][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873534219546"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][0][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873836188698"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][0][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873836209178"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][0][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873836209434"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][0][2] | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="6">Slot B</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873550976026"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][1][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873550996506"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][1][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873550996762"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][1][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873852965914"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][1][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873852986394"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][1][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873852986650"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][1][2] | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="6">Slot C</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873567753242"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][2][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873567773722"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][2][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873567773978"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][2][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873869743130"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][2][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873869763610"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][2][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873869763866"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][2][2] | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="6">Slot D</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873584530458"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][3][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873584550938"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][3][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873584551194"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][3][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873886520346"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][3][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873886540826"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][3][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873886541082"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][3][2] | number: 2 }} A</span></a></td>
+            </tr>
+        </table>
+
+        <table class="params" id="msras">
+            <th colspan="3">MS RaS (Midstream RackSide)</th>
+            <tr>
+                <td colspan="6">Slot A</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873601307674"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][4][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873601328154"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][4][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873601328410"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][4][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873903297562"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][4][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873903318042"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][4][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873903318298"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][4][2] | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="6">Slot B</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873618084890"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][5][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873618105370"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][5][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873618105626"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][5][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873920074778"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][5][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873920095258"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][5][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873920095514"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][5][2] | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="6">Slot C</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873634862106"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][6][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873634882586"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][6][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873634882842"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][6][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873936851994"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][6][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873936872474"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][6][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873936872730"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][6][2] | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="6">Slot D</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873651639322"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][7][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873651659802"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][7][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873651660058"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[0][7][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873953629210"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][7][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873953649690"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][7][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873953649946"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[2][7][2] | number: 2 }} A</span></a></td>
+            </tr>
+        </table>
+
+        <table class="params" id="dsras">
+            <th colspan="3">DS RaS (Downstream RackSide)</th>
+            <tr>
+                <td colspan="6">Slot A</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873685193754"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[1][0][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873685214234"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[1][0][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873685214490"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[1][0][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873987183642"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[3][0][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873987204122"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[3][0][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873987204378"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[3][0][2] | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="6">Slot B</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873701970970"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[1][1][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873701991450"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[1][1][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873701991706"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[1][1][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47874003960858"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[3][1][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47874003981338"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[3][1][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47874003981594"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[3][1][2] | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="6">Slot C</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873718748186"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[1][2][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873718768666"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[1][2][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873718768922"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[1][2][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47874020738074"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[3][2][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47874020758554"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[3][2][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47874020758810"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[3][2][2] | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="6">Slot D</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47873735525402"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[1][3][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47873735545882"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[1][3][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47873735546138"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[1][3][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47874037515290"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[3][3][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47874037535770"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[3][3][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47874037536026"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack4[3][3][2] | number: 2 }} A</span></a></td>
+            </tr>
+        </table>
+
+        <table class="params" id="usdas">
+            <th colspan="3">US DaS (Upstream DAQSide)</th>
+            <tr>
+                <td colspan="6">Slot A</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875547464730"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][0][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875547485210"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][0][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875547485466"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][0][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875849454618"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][0][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875849475098"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][0][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875849475354"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][0][2] | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="6">Slot B</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875564241946"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][1][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875564262426"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][1][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875564262682"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][1][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875866231834"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][1][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875866252314"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][1][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875866252570"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][1][2] | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="6">Slot C</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875581019162"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][2][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875581039642"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][2][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875581039898"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][2][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875883009050"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][2][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875883029530"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][2][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875883029786"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][2][2] | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="6">Slot D</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875597796378"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][3][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875597816858"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][3][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875597817114"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][3][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875899786266"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][3][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875899806746"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][3][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875899807002"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][3][2] | number: 2 }} A</span></a></td>
+            </tr>
+        </table>
+
+        <table class="params" id="msdas">
+            <th colspan="3">MS DaS (Midstream DAQSide)</th>
+            <tr>
+                <td colspan="6">Slot A</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875614573594"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][4][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875614594074"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][4][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875614594330"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][4][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875916563482"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][4][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875916583962"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][4][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875916584218"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][4][2] | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="6">Slot B</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875631350810"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][5][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875631371290"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][5][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875631371546"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][5][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875933340698"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][5][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875933361178"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][5][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875933361434"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][5][2] | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="6">Slot C</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875648128026"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][6][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875648148506"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][6][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875648148762"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][6][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875950117914"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][6][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875950138394"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][6][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875950138650"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][6][2] | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="6">Slot D</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875664905242"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][7][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875664925722"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][7][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875664925978"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[0][7][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875966895130"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][7][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875966915610"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][7][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875966915866"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[2][7][2] | number: 2 }} A</span></a></td>
+            </tr>
+        </table>
+
+        <table class="params" id="dsdas">
+            <th colspan="3">DS DaS (Downstream DAQSide)</th>
+            <tr>
+                <td colspan="6">Slot A</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875698459674"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[1][0][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875698480154"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[1][0][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875698480410"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[1][0][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47876000449562"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[3][0][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47876000470042"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[3][0][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47876000470298"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[3][0][2] | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="6">Slot B</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875715236890"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[1][1][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875715257370"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[1][1][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875715257626"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[1][1][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47876017226778"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[3][1][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47876017247258"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[3][1][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47876017247514"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[3][1][2] | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="6">Slot C</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875732014106"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[1][2][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875732034586"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[1][2][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875732034842"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[1][2][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47876034003994"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[3][2][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47876034024474"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[3][2][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47876034024730"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[3][2][2] | number: 2 }} A</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="6">Slot D</td>
+            </tr>
+            <tr>
+                <td colspan="3">Power</td>
+                <td colspan="3">Bias</td>
+            </tr>
+            <tr>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47875748791322"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[1][3][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47875748811802"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[1][3][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47875748812058"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[1][3][2] | number: 2 }} A</span></a></td>
+                <td>Power: <a target="_blank" ng-href="#!/histogram/47876050781210"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[3][3][0] == 1 ? "On" : "Off" }}</span></a></td>
+                <td>Voltage: <a target="_blank" ng-href="#!/histogram/47876050801690"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[3][3][1] | number: 2 }} V</span></a></td>
+                <td>Current: <a target="_blank" ng-href="#!/histogram/47876050801946"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODPD_Rack6[3][3][2] | number: 2 }} A</span></a></td>
+            </tr>
+        </table>
+    </div>
+
+
+</div>

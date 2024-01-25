@@ -1,0 +1,142 @@
+<link rel="stylesheet" href="css/pl506.css">
+<div class="pl506_container">
+    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
+
+
+    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
+    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
+
+    <div class="detector">
+        <img src="img/mpodpd_detector.png" alt="" usemap="#Map" style="display: block; position: fixed;
+                                                                    top: 40vh;
+                                                                    left: 30vw;
+                                                                    width: 35vw;"/>
+        <table id="ras">
+            <th>RaS (RackSide)</th>
+            <tr>
+                <td><a href="javascript:void(0)" onclick="if (document.getElementById('dsras').style.display=='none') {
+                                                              document.getElementById('dsras').style.display='block'
+                                                          } else {
+                                                              document.getElementById('dsras').style.display='none'
+                                                          }">DS (DownStream)</a></td>
+            </tr>
+            <tr>
+                <td><a href="javascript:void(0)" onclick="if (document.getElementById('msras').style.display=='none') {
+                                                              document.getElementById('msras').style.display='block'
+                                                          } else {
+                                                              document.getElementById('msras').style.display='none'
+                                                          }">MS (MidStream)</a></td>
+            </tr>
+            <tr>
+                <td><a href="javascript:void(0)" onclick="if (document.getElementById('usras').style.display=='none') {
+                                                              document.getElementById('usras').style.display='block'
+                                                          } else {
+                                                              document.getElementById('usras').style.display='none'
+                                                          }">US (UpStream)</a></td>
+            </tr>
+        </table>
+
+        <table id="das">
+            <th>DaS (DAQSide)</th>
+            <tr>
+                <td><a href="javascript:void(0)" onclick="if (document.getElementById('dsdas').style.display=='none') {
+                                                              document.getElementById('dsdas').style.display='block'
+                                                          } else {
+                                                              document.getElementById('dsdas').style.display='none'
+                                                          }">DS (DownStream)</a></td>
+            </tr>
+            <tr>
+                <td><a href="javascript:void(0)" onclick="if (document.getElementById('msdas').style.display=='none') {
+                                                              document.getElementById('msdas').style.display='block'
+                                                          } else {
+                                                              document.getElementById('msdas').style.display='none'
+                                                          }">MS (MidStream)</a></td>
+            </tr>
+            <tr>
+                <td><a href="javascript:void(0)" onclick="if (document.getElementById('usdas').style.display=='none') {
+                                                              document.getElementById('usdas').style.display='block'
+                                                          } else {
+                                                              document.getElementById('usdas').style.display='none'
+                                                          }">US (UpStream)</a></td>
+            </tr>
+        </table>
+
+        <div id="contain">
+
+            <table class="params" id="usras">
+                <th colspan="2">US RaS (Upstream RackSide)</th>
+                <tr>
+                    <td colspan="2">Low voltage</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/47873534198810"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel0_Status_On == "1" ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/47873534219290"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel0_MeasurementSenseVoltage | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/47873534219546"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel0_MeasurementCurrent | number: 2 }} V</span></a></td>
+                </tr>
+            </table>
+
+            <table class="params" id="msras">
+                <th colspan="2">MS RaS (Midstream RackSide)</th>
+                <tr>
+                    <td colspan="2">Low voltage</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/47873601307674"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel1_Status_On == "1" ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/47873601328154"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel1_MeasurementSenseVoltage | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/47873601328410"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel1_MeasurementCurrent | number: 2 }} V</span></a></td>
+                </tr>
+            </table>
+
+            <table class="params" id="dsras">
+                <th colspan="2">DS RaS (Downstream RackSide)</th>
+                <tr>
+                    <td colspan="2">Low voltage</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/47873685193754"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel2_Status_On == "1" ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/47873685214234"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel2_MeasurementSenseVoltage | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/47873685214490"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel2_MeasurementCurrent | number: 2 }} V</span></a></td>
+                </tr>
+            </table>
+
+            <table class="params" id="usdas">
+                <th colspan="2">US RaS (Upstream RackSide)</th>
+                <tr>
+                    <td colspan="2">Low voltage</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/47875547464730"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel0_Status_On == "1" ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/47875547485210"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel0_MeasurementSenseVoltage | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/47875547485466"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel0_MeasurementCurrent | number: 2 }} V</span></a></td>
+                </tr>
+            </table>
+
+            <table class="params" id="msdas">
+                <th colspan="2">MS RaS (Midstream RackSide)</th>
+                <tr>
+                    <td colspan="2">Low voltage</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/47875614573594"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel1_Status_On == "1" ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/47875614594074"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel1_MeasurementSenseVoltage | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/47875614594330"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel1_MeasurementCurrent | number: 2 }} V</span></a></td>
+                </tr>
+            </table>
+
+            <table class="params" id="dsdas">
+                <th colspan="2">DS RaS (Downstream RackSide)</th>
+                <tr>
+                    <td colspan="2">Low voltage</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/47875698459674"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel2_Status_On == "1" ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/47875698480154"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel2_MeasurementSenseVoltage | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/47875698480410"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel2_MeasurementCurrent | number: 2 }} V</span></a></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="css/bottom.css">
+<div class="container">
+    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
+    <img id="tss001AABA" src="img/tss-001-aaba.PNG" alt="Bottom1"/>
+    <img id="tss002ABBB" src="img/tss-002-abbb.PNG" alt=""/>
+    <img id="tss002ACBC" src="img/tss-002-acbc.PNG" alt=""/>
+    <img id="tss002AEBE" src="img/tss-002-aebe.PNG" alt=""/>
+
+    <img id="old" src="img/bottom.png" alt="Bottom old"/>
+
+    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
+    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
+
+    <div id="NP04_7TT0200AIR"><a target="_blank" href="#!/histogram/47892274348314"><span class="value">{{ $ctrl.NP04_DCS_01_TE0121 | number: 2 }} &#8490;</span></a></div>
+    <div id="NP04_7TT0202AIR"><a target="_blank" href="#!/histogram/47892307902746"><span class="value">{{ $ctrl.NP04_DCS_01_TE0123 | number: 2 }} &#8490;</span></a></div>
+    <div id="NP04_7TT0214AIR"><a target="_blank" href="#!/histogram/47892509229338"><span class="value">{{ $ctrl.NP04_DCS_01_TE0135 | number: 2 }} &#8490;</span></a></div>
+    <div id="NP04_7TT0219AIR"><a target="_blank" href="#!/histogram/47892593115418"><span class="value">{{ $ctrl.NP04_DCS_01_TE0140 | number: 2 }} &#8490;</span></a></div>
+</div>

@@ -1,0 +1,149 @@
+@media screen and (max-height: 1080px) {
+    .container_container {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 25vh;
+        left: 12vw;
+        width: 50vw;
+    }
+
+    #ambient {
+        position: absolute;
+        right: 10%;
+        top: 17%;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.7vmin;
+    }
+
+    #tss001ACBC {
+        position: absolute;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.7vmin;
+        top: 42vw;
+        left: 45vw;
+    }
+
+    #NP04_7TT0212AIR {
+        position: fixed;
+        top: 42vw;
+        left: 61vw;
+    }
+
+    #old {
+        position: absolute;
+        top: 30vw;
+        right: 15vw;
+    }
+}
+
+@media screen and (min-height: 1100px) {
+    .container_container {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 25vh;
+        left: 12vw;
+        width: 50vw;
+    }
+
+    #ambient {
+        position: absolute;
+        right: 10%;
+        top: 17%;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.7vmin;
+    }
+
+    #tss001ACBC {
+        position: absolute;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.7vmin;
+        top: 57vh;
+        left: 45vw;
+    }
+
+    #NP04_7TT0212AIR {
+        position: fixed;
+        top: 57vh;
+        left: 66vw;
+    }
+
+    #old {
+        position: absolute;
+        top: 30vw;
+        right: 15vw;
+    }
+}
+
+@media screen and (min-height: 1100px) and (min-width: 3000px) {
+    .container_container {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 25vh;
+        left: 12vw;
+        width: 50vw;
+    }
+
+    #ambient {
+        position: absolute;
+        right: 10%;
+        top: 17%;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.7vmin;
+    }
+
+    #tss001ACBC {
+        position: absolute;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.7vmin;
+        top: 80vh;
+        left: 53vw;
+    }
+
+    #NP04_7TT0212AIR {
+        position: fixed;
+        top: 80.3vh;
+        left: 66vw;
+    }
+
+    #old {
+        position: absolute;
+        top: 30vw;
+        right: 15vw;
+    }
+}

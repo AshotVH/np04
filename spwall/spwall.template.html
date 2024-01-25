@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="css/spwall.css">
+<div class="container">
+    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
+    <img id="detector" src="img/spwall.png" alt="spwall"/>
+    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
+    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
+
+    <div id="TE0115">TE0115 (6.325 m): <a target="_blank" ng-href="#!/histogram/47892173685018"><span class="value">{{ $ctrl.NP04_DCS_01_TE0115_ | number: 1 }} &#8490;</span></a></div>
+    <div id="TE0116">TE0116 (4.965 m): <a target="_blank" ng-href="#!/histogram/47892190462234"><span class="value">{{ $ctrl.NP04_DCS_01_TE0116_ | number: 1 }} &#8490;</span></a></div>
+    <div id="TE0117">TE0117 (3.605 m): <a target="_blank" ng-href="#!/histogram/47892207239450"><span class="value">{{ $ctrl.NP04_DCS_01_TE0117_ | number: 1 }} &#8490;</span></a></div>
+    <div id="TE0118">TE0118 (2.245 m): <a target="_blank" ng-href="#!/histogram/47892224016666"><span class="value">{{ $ctrl.NP04_DCS_01_TE0118_ | number: 1 }} &#8490;</span></a></div>
+    <div id="TE0119">TE0119 (0.885 m): <a target="_blank" ng-href="#!/histogram/47892240793882"><span class="value">{{ $ctrl.NP04_DCS_01_TE0119_ | number: 1 }} &#8490;</span></a></div>
+
+</div>

@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "title": "WA105IR00"
+  },
+  "streams": [
+    {
+      "sources": {
+        "hls": [
+          {
+            "src": "https://wowza.cern.ch/np04detector/np04-wa105ir00.stream/playlist.m3u8",
+            "mimetype": "video/mp4",
+            "isLiveStream": true
+          }
+        ]
+      },
+      "preview": "",
+      "content":"presenter"
+    }
+  ],
+  "frameList": [
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "title": "NP04-CAM-104"
+  },
+  "streams": [
+    {
+      "sources": {
+        "hls": [
+          {
+            "src": "https://wowza.cern.ch/np04detector/np04-cam-104.stream/playlist.m3u8",
+            "mimetype": "video/mp4",
+            "isLiveStream": true
+          }
+        ]
+      },
+      "preview": "",
+      "content":"presenter"
+    }
+  ],
+  "frameList": [
+  ]
+}

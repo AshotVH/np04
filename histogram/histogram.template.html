@@ -1,0 +1,46 @@
+<style type="text/css">
+    #container {
+        width: 90vw;
+        height: 90vh;
+    }
+
+    .label {
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 1.5vmin;
+    }
+</style>
+
+<div id="timespan" style="position: absolute; left: 10%; top: 1%;">
+    <span id="historyLabel" style="font-family: 'Arial Black', Gadget, sans-serif; font-size: 18px; color: white">History for:</span>
+    <br/>
+    <button id="1hour" type="button" ng-click="$ctrl.dayChanger(0.125)">1 hour</button>
+    <button id="6hours" type="button" ng-click="$ctrl.dayChanger(0.33)">6 hours</button>
+    <button id="12hours" type="button" ng-click="$ctrl.dayChanger(0.58)">12 hours</button>
+    <button id="1day" type="button" ng-click="$ctrl.dayChanger(1.08)">1 day</button>
+    <button id="3days" type="button" ng-click="$ctrl.dayChanger(3.08)">3 days</button>
+    <button id="7days" type="button" ng-click="$ctrl.dayChanger(7.08)">7 days</button>
+    <button id="10days" type="button" ng-click="$ctrl.dayChanger(10.08)">10 days</button>
+    <input id="num" type="number" ng-model="$ctrl.dd" label="Input days">
+    <button id="days" type="button" ng-click="$ctrl.dayChanger($ctrl.dd)">GO</button>
+    <label class="label">Start date</label>
+    <input id="start" type="text" ng-model="$ctrl.start">
+    <label class="label">End date</label>
+    <input id="end" type="text" ng-model="$ctrl.end">
+    <button id="range" type="button" ng-click="$ctrl.range($ctrl.start, $ctrl.end)">GO</button>
+    <!--button id="reset-zoom" type="button" ng-click="$ctrl.chart.resetZoom()">Reset zoom</button-->
+
+</div>
+
+<div id="container">Placeholder for chart</div>
+<button id="average" type="button" ng-click="$ctrl.average()">Average</button>
+<button class="btn" title="Click to show/hide data" type="button" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}">Show/hide data</button>
+<span id="spoiler" style="display: none;"><table style="font-family: 'Arial Black', Gadget, sans-serif">
+    <th>Timestamp</th>
+    <th>Exact value</th>
+    <tr ng-repeat="i in $ctrl.respdata">
+        <td>{{i[0]}}</td>
+        <td align="right" style="color: lime; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;">{{i[1] | number: 2}}</td>
+    </tr>
+</table></span>
+

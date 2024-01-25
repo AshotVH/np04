@@ -1,0 +1,593 @@
+@media screen and (max-height: 1080px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 15vh;
+        left: 17vw;
+        width: 45vw;
+    }
+
+    #ambient {
+        position: fixed;
+        right: 10vw;
+        top: 20vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0145 {
+        position: fixed;
+        top: 75vh;
+        left: 28vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0146 {
+        position: fixed;
+        top: 75vh;
+        left: 40vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0147 {
+        position: fixed;
+        top: 75vh;
+        left: 50vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0148 {
+        position: fixed;
+        top: 36vh;
+        left: 28vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0149 {
+        position: fixed;
+        top: 36vh;
+        left: 40vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0150 {
+        position: fixed;
+        top: 36vh;
+        left: 50vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0151 {
+        position: fixed;
+        top: 49vh;
+        left: 28vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0152 {
+        position: fixed;
+        top: 54vh;
+        left: 40vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0153 {
+        position: fixed;
+        top: 54vh;
+        left: 50vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0154 {
+        position: fixed;
+        top: 67vh;
+        left: 15vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0155 {
+        position: fixed;
+        top: 69vh;
+        left: 15vw;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0156 {
+        position: fixed;
+        top: 71vh;
+        left: 15vw;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+}
+
+@media screen and (min-height: 1100px) and (max-height: 2000px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 15vh;
+        left: 17vw;
+        width: 45vw;
+    }
+
+    #ambient {
+        position: fixed;
+        right: 10vw;
+        top: 20vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0145 {
+        position: fixed;
+        top: 75vh;
+        left: 28vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0146 {
+        position: fixed;
+        top: 73vh;
+        left: 40vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0147 {
+        position: fixed;
+        top: 73vh;
+        left: 50vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0148 {
+        position: fixed;
+        top: 36vh;
+        left: 28vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0149 {
+        position: fixed;
+        top: 36vh;
+        left: 40vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0150 {
+        position: fixed;
+        top: 36vh;
+        left: 50vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0151 {
+        position: fixed;
+        top: 50vh;
+        left: 28vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0152 {
+        position: fixed;
+        top: 54vh;
+        left: 40vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0153 {
+        position: fixed;
+        top: 54vh;
+        left: 50vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0154 {
+        position: fixed;
+        top: 67vh;
+        left: 15vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0155 {
+        position: fixed;
+        top: 69vh;
+        left: 15vw;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0156 {
+        position: fixed;
+        top: 71vh;
+        left: 15vw;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+}
+
+@media screen and (min-height: 1100px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 15vh;
+        left: 3vw;
+        width: 75vw;
+    }
+
+    #ambient {
+        position: fixed;
+        right: 10vw;
+        bottom: 10vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0145 {
+        position: fixed;
+        top: 60vh;
+        left: 20vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0146 {
+        position: fixed;
+        top: 60vh;
+        left: 41vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0147 {
+        position: fixed;
+        top: 60vh;
+        left: 60vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0148 {
+        position: fixed;
+        top: 23vh;
+        left: 20vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0149 {
+        position: fixed;
+        top: 23vh;
+        left: 41vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0150 {
+        position: fixed;
+        top: 23vh;
+        left: 60vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0151 {
+        position: fixed;
+        top: 38vh;
+        left: 20vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0152 {
+        position: fixed;
+        top: 38vh;
+        left: 41vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0153 {
+        position: fixed;
+        top: 38vh;
+        left: 60vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0154 {
+        position: fixed;
+        top: 57vh;
+        left: 1vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0155 {
+        position: fixed;
+        top: 59vh;
+        left: 1vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0156 {
+        position: fixed;
+        top: 61vh;
+        left: 1vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+}
+
+@media screen and (min-height: 1100px) and (min-width: 3000px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 15vh;
+        left: 17vw;
+        width: 50vw;
+    }
+
+    #ambient {
+        position: fixed;
+        right: 10vw;
+        top: 20vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0145 {
+        position: fixed;
+        top: 73vh;
+        left: 30vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0146 {
+        position: fixed;
+        top: 73vh;
+        left: 42vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0147 {
+        position: fixed;
+        top: 73vh;
+        left: 55vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0148 {
+        position: fixed;
+        top: 36vh;
+        left: 30vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0149 {
+        position: fixed;
+        top: 36vh;
+        left: 42vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0150 {
+        position: fixed;
+        top: 36vh;
+        left: 55vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0151 {
+        position: fixed;
+        top: 54vh;
+        left: 30vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0152 {
+        position: fixed;
+        top: 54vh;
+        left: 42vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0153 {
+        position: fixed;
+        top: 54vh;
+        left: 55vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0154 {
+        position: fixed;
+        top: 63vh;
+        left: 13vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0155 {
+        position: fixed;
+        top: 66vh;
+        left: 13vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TE0156 {
+        position: fixed;
+        top: 69vh;
+        left: 13vw;
+        color: gray;
+        background-color: #333333;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+}

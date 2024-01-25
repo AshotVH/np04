@@ -1,0 +1,255 @@
+<link rel="stylesheet" href="css/mpodpd.css">
+<div class="mpodpd_container">
+    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
+
+
+    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
+    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
+
+    <div class="detector">
+        <img src="img/mpodpd_detector.png" alt="" usemap="#Map" style="display: block; position: fixed;
+                                                                    top: 40vh;
+                                                                    left: 30vw;
+                                                                    width: 35vw;"/>
+        <table id="ras">
+            <tr>
+                <td><a ng-href="#!/mpodcehvras">RaS (RACK Side)</a></td>
+            </tr>
+        </table>
+
+        <table id="das">
+            <th>DaS (DAQSide)</th>
+            <tr>
+                <td><a href="javascript:void(0)" onclick="if (document.getElementById('dsdas').style.display=='none') {
+                                                              document.getElementById('dsdas').style.display='block'
+                                                          } else {
+                                                              document.getElementById('dsdas').style.display='none'
+                                                          }">DS (DownStream)</a></td>
+            </tr>
+            <tr>
+                <td><a href="javascript:void(0)" onclick="if (document.getElementById('msdas').style.display=='none') {
+                                                              document.getElementById('msdas').style.display='block'
+                                                          } else {
+                                                              document.getElementById('msdas').style.display='none'
+                                                          }">MS (MidStream)</a></td>
+            </tr>
+            <tr>
+                <td><a href="javascript:void(0)" onclick="if (document.getElementById('usdas').style.display=='none') {
+                                                              document.getElementById('usdas').style.display='block'
+                                                          } else {
+                                                              document.getElementById('usdas').style.display='none'
+                                                          }">US (UpStream)</a></td>
+            </tr>
+        </table>
+
+        <div id="contain">
+
+            <table class="params" id="usdas">
+                <th colspan="3">US DaS (Upstream DAQSide)</th>
+                <tr>
+                    <td colspan="3">X bias</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][0][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][0][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][0][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">Spare</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel01_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][1][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel01_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][1][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel01_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][1][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">G bias</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel02_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][2][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel02_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][2][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel02_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][2][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">U bias</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel03_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][3][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel03_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][3][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel03_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][3][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">FC Top</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][4][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel04_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][4][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel04_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][4][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">FC Bottom</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][5][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel05_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][5][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel05_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][5][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">FC Endwall</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][6][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel06_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][6][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel06_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][6][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">Spare</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][7][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel07_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][7][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel07_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[3][7][2] | number: 2 }} A</span></a></td>
+                </tr>
+            </table>
+
+            <table class="params" id="msdas">
+                <th colspan="3">MS DaS (Midstream DAQSide)</th>
+                <tr>
+                    <td colspan="3">X bias</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][0][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel00_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][0][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel00_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][0][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">Spare</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][1][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel01_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][1][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel01_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][1][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">G bias</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][2][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel02_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][2][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel02_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][2][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">U bias</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][3][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel03_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][3][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel03_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][3][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">FC Top</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][4][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel04_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][4][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel04_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][4][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">FC Bottom</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][5][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel05_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][5][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel05_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][5][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">FC Endwall</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][6][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel06_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][6][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel06_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][6][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">Spare</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][7][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel07_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][7][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel07_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[2][7][2] | number: 2 }} A</span></a></td>
+                </tr>
+            </table>
+
+            <table class="params" id="dsdas">
+                <th colspan="3">DS DaS (Downstream DAQSide)</th>
+                <tr>
+                    <td colspan="3">X bias</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][0][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board1_Channel00_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][0][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board1_Channel00_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][0][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">Spare</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][1][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board1_Channel01_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][1][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board1_Channel01_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][1][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">G bias</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][2][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board1_Channel02_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][2][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board1_Channel02_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][2][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">U bias</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][3][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board1_Channel03_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][3][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board1_Channel03_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][3][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">FC Top</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][4][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board1_Channel04_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][4][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board1_Channel04_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][4][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">FC Bottom</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][5][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board1_Channel05_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][5][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board1_Channel05_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][5][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">FC Endwall</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][6][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board1_Channel06_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][6][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board1_Channel06_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][6][2] | number: 2 }} A</span></a></td>
+                </tr>
+                <tr>
+                    <td colspan="3">Spare</td>
+                </tr>
+                <tr>
+                    <td>Power: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board3_Channel00_Status_On"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][7][0] == 1 ? "On" : "Off" }}</span></a></td>
+                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board1_Channel07_MeasurementSenseVoltage"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][7][1] | number: 2 }} V</span></a></td>
+                    <td>Current: <a target="_blank" ng-href="#!/histogram/NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board1_Channel07_MeasurementCurrent"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPODCE[1][7][2] | number: 2 }} A</span></a></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+
+</div>

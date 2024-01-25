@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="css/cryogenics.css">
+<div class="container">
+    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
+    <!--img id="detector" src="img/cryogenics_main.png" alt="Cryostat"/-->
+
+    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp[0].Mnish }}</span></div>
+    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47358725348123"><span class="value">{{ $ctrl.NP02_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47358742125339"><span class="value">{{ $ctrl.NP02_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/NP02_DCS_V21-CPC_AnalogInput-00009.ProcessInput.PosSt"><span class="value">{{ $ctrl.NP02_PT0106AI | number: 1 }} mbar</span></a></div>
+    <div id="cryostat_pressure">
+        <table>
+            <tr>
+                <td>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+
+</div>

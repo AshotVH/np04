@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="css/lausanne.css">
+<div class="container">
+    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
+    <img id="detector" src="img/lausanne.png" alt="lausanne"/>
+    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
+    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
+
+    <div id="DS_LS_01"><a ng-href="#!/histogram/47884355525402"><span class="value">{{ $ctrl.DS_LS_01 | number: 2 }} &#956;m/m</span></a></div>
+    <div id="TC_LS_02"><a ng-href="#!/histogram/47884238084890"><span class="value">{{ $ctrl.TC_LS_02 | number: 2 }} &#956;m/m</span></a></div>
+    <div id="B3_LS_01"><a ng-href="#!/histogram/47884305193754"><span class="value">{{ $ctrl.B3_LS_01 | number: 2 }} &#956;m/m</span></a></div>
+    <div id="BC_LS_03"><a ng-href="#!/histogram/47884271639322"><span class="value">{{ $ctrl.BC_LS_03 | number: 2 }} &#956;m/m</span></a></div>
+    <div id="MEM_LS_03"><a ng-href="#!/histogram/47884321970970"><span class="value">{{ $ctrl.MEM_LS_03 | number: 2 }} &#956;m/m</span></a></div>
+    <div id="MEM_LS_02"><a ng-href="#!/histogram/47884338748186"><span class="value">{{ $ctrl.MEM_LS_02 | number: 2 }} &#956;m/m</span></a></div>
+    <div id="MC_LJS_03"><a ng-href="#!/histogram/47884187753242"><span class="value">{{ $ctrl.MC_LJS_03 | number: 2 }} &#956;m/m</span></a></div>
+    <div id="MC_LJS_02"><a ng-href="#!/histogram/47884221307674"><span class="value">{{ $ctrl.MC_LJS_02 | number: 2 }} &#956;m/m</span></a></div>
+
+</div>

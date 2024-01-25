@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="css/xenon.css">
+<div class="xenon_container">
+    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
+
+    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
+    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
+
+    <div id="xenon">Xenon fractional flow: <a target="_blank" href="#!/histogram/47879389469466"><span class="value">{{ $ctrl.NP04_DCS_01_xenon | number: 2 }} %</span></a> of 16 l STP / h</div>
+    <div id="xenonconv">Xenon mass flow: <span class="value">{{ $ctrl.NP04_DCS_01_xenon / 30 * 7.75 | number: 2 }} mg/s</span></div>
+    <div id="xenonweight">Xenon weight: <a target="_blank" href="#!/histogram/48021878342170"><span class="value">{{ $ctrl.NP04_DCS_01_xenon_weight | number: 2 }} kg</span></a></div>
+    <div id="NP04_4PT4150">4PT4150: <a target="_blank" href="#!/histogram/48021643460890"><span class="value">{{ $ctrl.NP04_4PT4150 | number: 2 }} bar</span></a></div>
+    <div id="NP04_4PT4910">Cryostat pressure: <a target="_blank" href="#!/histogram/47931835023642"><span class="value">{{ $ctrl.NP04_4PT4910 | number: 3 }} mbar</span></a> </div>
+
+</div>

@@ -1,0 +1,626 @@
+@media screen and (max-height: 1080px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 15vh;
+        left: 17vw;
+        width: 75%;
+    }
+
+    #ambient {
+        position: fixed;
+        right: 10vw;
+        top: 20vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #B4_SS_01 {
+        position: fixed;
+        left: 15vw;
+        top: 46vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #DS_SS_01 {
+        position: fixed;
+        left: 15vw;
+        top: 51vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TC_SS_01 {
+        position: fixed;
+        left: 70vw;
+        top: 23vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TC_SS_02 {
+        position: fixed;
+        left: 70vw;
+        top: 35vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TC_SS_03 {
+        position: fixed;
+        left: 65vw;
+        top: 45vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #B3_SS_01 {
+        position: fixed;
+        left: 15vw;
+        top: 55vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #B2_SS_01 {
+        position: fixed;
+        left: 15vw;
+        top: 64vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #BC_SS_01 {
+        position: fixed;
+        left: 70vw;
+        bottom: 10vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #BC_SS_02 {
+        position: fixed;
+        left: 70vw;
+        bottom: 7vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #BC_SS_03 {
+        position: fixed;
+        left: 70vw;
+        bottom: 4vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #BC_SS_04 {
+        position: fixed;
+        left: 51vw;
+        bottom: 5vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MEM_SS_01 {
+        position: fixed;
+        left: 33vw;
+        bottom: 9vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MEM_SS_02 {
+        position: fixed;
+        left: 41vw;
+        bottom: 5vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MEM_SS_03 {
+        position: fixed;
+        left: 25vw;
+        bottom: 5vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MC_LSS_01 {
+        position: fixed;
+        right: 15vw;
+        top: 79vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MC_LSS_02 {
+        position: fixed;
+        right: 15vw;
+        top: 76vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MC_LSS_03 {
+        position: fixed;
+        right: 15vw;
+        top: 72vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MC_LSS_04 {
+        position: fixed;
+        right: 15vw;
+        top: 65vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+}
+
+@media screen and (min-height: 1100px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 35vh;
+        left: 7vw;
+        width: 95%;
+    }
+
+    #ambient {
+        position: fixed;
+        right: 10vw;
+        top: 20vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #B4_SS_01 {
+        position: fixed;
+        left: 15vw;
+        top: 46vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #DS_SS_01 {
+        position: fixed;
+        left: 15vw;
+        top: 51vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TC_SS_01 {
+        position: fixed;
+        left: 70vw;
+        top: 23vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TC_SS_02 {
+        position: fixed;
+        left: 70vw;
+        top: 35vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TC_SS_03 {
+        position: fixed;
+        left: 65vw;
+        top: 45vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #B3_SS_01 {
+        position: fixed;
+        left: 15vw;
+        top: 55vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #B2_SS_01 {
+        position: fixed;
+        left: 15vw;
+        top: 64vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #BC_SS_01 {
+        position: fixed;
+        left: 70vw;
+        bottom: 10vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #BC_SS_02 {
+        position: fixed;
+        left: 70vw;
+        bottom: 7vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #BC_SS_03 {
+        position: fixed;
+        left: 70vw;
+        bottom: 4vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #BC_SS_04 {
+        position: fixed;
+        left: 51vw;
+        bottom: 5vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MEM_SS_01 {
+        position: fixed;
+        left: 33vw;
+        bottom: 9vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MEM_SS_02 {
+        position: fixed;
+        left: 41vw;
+        bottom: 5vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MEM_SS_03 {
+        position: fixed;
+        left: 25vw;
+        bottom: 5vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MC_LSS_01 {
+        position: fixed;
+        right: 15vw;
+        top: 79vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MC_LSS_02 {
+        position: fixed;
+        right: 15vw;
+        top: 76vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MC_LSS_03 {
+        position: fixed;
+        right: 15vw;
+        top: 72vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MC_LSS_04 {
+        position: fixed;
+        right: 15vw;
+        top: 65vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+}
+
+@media screen and (min-height: 1100px) and (min-width: 3000px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    #detector {
+        display: block;
+        position: fixed;
+        top: 15vh;
+        left: 17vw;
+        width: 75%;
+    }
+
+    #ambient {
+        position: fixed;
+        right: 10vw;
+        top: 20vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #B4_SS_01 {
+        position: fixed;
+        left: 15vw;
+        top: 46vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #DS_SS_01 {
+        position: fixed;
+        left: 15vw;
+        top: 51vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TC_SS_01 {
+        position: fixed;
+        left: 70vw;
+        top: 23vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TC_SS_02 {
+        position: fixed;
+        left: 70vw;
+        top: 35vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #TC_SS_03 {
+        position: fixed;
+        left: 65vw;
+        top: 45vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #B3_SS_01 {
+        position: fixed;
+        left: 15vw;
+        top: 55vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #B2_SS_01 {
+        position: fixed;
+        left: 15vw;
+        top: 64vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #BC_SS_01 {
+        position: fixed;
+        left: 70vw;
+        bottom: 10vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #BC_SS_02 {
+        position: fixed;
+        left: 70vw;
+        bottom: 7vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #BC_SS_03 {
+        position: fixed;
+        left: 70vw;
+        bottom: 4vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #BC_SS_04 {
+        position: fixed;
+        left: 51vw;
+        bottom: 5vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MEM_SS_01 {
+        position: fixed;
+        left: 33vw;
+        bottom: 9vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MEM_SS_02 {
+        position: fixed;
+        left: 41vw;
+        bottom: 5vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MEM_SS_03 {
+        position: fixed;
+        left: 25vw;
+        bottom: 5vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MC_LSS_01 {
+        position: fixed;
+        right: 15vw;
+        top: 79vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MC_LSS_02 {
+        position: fixed;
+        right: 15vw;
+        top: 76vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MC_LSS_03 {
+        position: fixed;
+        right: 15vw;
+        top: 72vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+
+    #MC_LSS_04 {
+        position: fixed;
+        right: 15vw;
+        top: 65vh;
+        text-align: right;
+        color: gray;
+        font-family: "Arial Black", Gadget, sans-serif;
+        font-size: 2.0vmin;
+    }
+}

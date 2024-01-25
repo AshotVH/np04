@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="css/bellegarde.css">
+<div class="container">
+    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
+    <img id="detector" src="img/bellegarde.png" alt="bellegarde"/>
+    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
+    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
+
+    <div id="B4_BS_01"><a ng-href="#!/histogram/47883902540570"><span class="value">{{ $ctrl.B4_BS_01 | number: 2 }} &#956;m/m</span></a></div>
+    <div id="DS_BS_01"><a ng-href="#!/histogram/47883969649434"><span class="value">{{ $ctrl.DS_BS_01 | number: 2 }} &#956;m/m</span></a></div>
+    <div id="TCO_BS_01"><a ng-href="#!/histogram/47883952872218"><span class="value">{{ $ctrl.TCO_BS_01 | number: 2 }} &#956;m/m</span></a></div>
+    <div id="B3_BS_01"><a ng-href="#!/histogram/47883919317786"><span class="value">{{ $ctrl.B3_BS_01 | number: 2 }} &#956;m/m</span></a></div>
+    <div id="B2_BS_01"><a ng-href="#!/histogram/47883936095002"><span class="value">{{ $ctrl.B2_BS_01 | number: 2 }} &#956;m/m</span></a></div>
+    <div id="MEM_BS_03"><a ng-href="#!/histogram/47883868986138"><span class="value">{{ $ctrl.MEM_BS_03 | number: 2 }} &#956;m/m</span></a></div>
+    <div id="MEM_BS_02"><a ng-href="#!/histogram/47883885763354"><span class="value">{{ $ctrl.MEM_BS_02 | number: 2 }} &#956;m/m</span></a></div>
+    <div id="BCS_BS_03"><a ng-href="#!/histogram/47883835431706"><span class="value">{{ $ctrl.BC_BS_03 | number: 2 }} &#956;m/m</span></a><br/><span>{{ $ctrl.BC_BS_03 - 36.8985082873 | number: 2}}</span></div>
+    <div id="MC_BSS_03"><a ng-href="#!/histogram/47883986426650"><span class="value">{{ $ctrl.MC_BSS_03 | number: 2 }} &#956;m/m</span></a><br/><span>{{ $ctrl.MC_BSS_03 - 134.065303867 | number: 2}}</span></div>
+    <div id="MC_BSS_02"><a ng-href="#!/histogram/47884019981082"><span class="value">{{ $ctrl.MC_BSS_02 | number: 2 }} &#956;m/m</span></a><br/><span>{{ $ctrl.MC_BSS_02 - 40.7843646409 | number: 2}}</span></div>
+</div>
