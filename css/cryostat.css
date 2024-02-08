@@ -36,7 +36,7 @@
 
 .cryostat_inner_pressure_2 {
     left: 253px;
-    top: 95px;
+    top: 83px;
 }
 
 .cryostat_outer_pressure {
@@ -46,7 +46,7 @@
 
 .cryostat_beam_plug_lesker_vacuum_gauge {
     left: 225px;
-    top: 200px;
+    top: 215px;
 }
 
 .cryostat_pressure {
@@ -54,7 +54,7 @@
 }
 
 .cryostat_penetration_pipe1 {
-    top: 8px;
+    top: -42px;
     left: 130px;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .cryostat_penetration_pipe3 {
-    top: 255px;
+    top: 280px;
     left: 225px;
 }
 
