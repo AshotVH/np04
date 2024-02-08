@@ -16,6 +16,8 @@ angular.module('floor', []).component('floor', {
                     self.NP04_MHT0100AI = res["47878785489690"][0];
                     self.NP04_TT0100AI = res["47878802266906"][0];
                     self.NP04_PT0106AI = res["47878819044122"][0];
+                    console.log(res["47891972358426"]);
+                    console.log(res["47891972358426"][0]);
                     self.NP04_DCS_01_TE0103_ = res["47891972358426"][0];
                     self.NP04_DCS_01_TE0104_ = res["47891989135642"][0];
                     self.NP04_DCS_01_TE0105_ = res["47892005912858"][0];
