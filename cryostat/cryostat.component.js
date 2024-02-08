@@ -5,7 +5,9 @@ angular.module('cryostat', []).component('cryostat', {
         this.pageTitle = "NP04 Cryostat";
         this.natalie = 1;
         const self = this;
-
+        $scope.isNumber = function(value) {
+            return !isNaN(parseFloat(value)) && isFinite(value);
+        };
         this.reload = function () {
             self.timestamp = new Date();
             $http
@@ -17,7 +19,7 @@ angular.module('cryostat', []).component('cryostat', {
                     self.NP04_PT0101AI = res["47878701603610"][0];
                     self.NP04_PT0104AI = res["47878751935258"][0];
                     self.NP04_PT0105AI = res["47878768712474"][0];
-                    self.NP04_2PT0100AIR = res["47883114011418"]?res["47883114011418"][0]:"";
+                    self.NP04_2PT0100AIR = res["47883114011418"]?res["47883114011418"][0]:"N/A";
                     self.NP04_2PT0100AI = res["47878902930202"][0];
                     self.NP04_PT0102AI = res["47882929462042"][0];
                     self.NP04_PT0103AI = res["47878735158042"][0];

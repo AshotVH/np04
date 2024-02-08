@@ -92,9 +92,14 @@
                 <th>
                     Beam plug:<br/>
                     <a target="_blank" href="#!/histogram/47883114011418">
-            <span class="value"
-            >{{ $ctrl.NP04_2PT0100AIR | number: 2 }} mbar</span
+
+            <span ng-show="isNumber($ctrl.NP04_2PT0100AIR)" class="value"
+            >{{ $ctrl.NP04_2PT0100AIR  | number: 2 }} mbar</span
             >
+           <span ng-show="!isNumber($ctrl.NP04_2PT0100AIR)" class="value"
+                        >"N/A"</span
+                        >
+
                     </a>
                 </th>
             </tr>
