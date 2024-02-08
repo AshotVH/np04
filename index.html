@@ -1,139 +1,143 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="ng04SlowControlApp" xmlns:style="http://www.w3.org/1999/xhtml">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>NP04 Slow Control Web Interface</title>
-    <meta name="description" content="">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
-    <script src="dependencies/angular-moment.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-sanitize.min.js"></script>
-    <script src="dependencies/hammer.js"></script>
-    <script src="https://code.highcharts.com/stock/highstock.js"></script>
-    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
-    <script src="https://code.highcharts.com/modules/boost.js"></script>
-    <script src="https://highcharts.github.io/export-csv/export-csv.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-    <script src="dependencies/highcharts-export-clientside.js"></script>
-    <script src="app.module.js"></script>
-    <script src="app.config.js"></script>
-    <script src="home/home.module.js"></script>
-    <script src="home/home.component.js"></script>
-    <script src="cryostat/cryostat.module.js"></script>
-    <script src="cryostat/cryostat.component.js"></script>
-    <script src="gauges/gauges.module.js"></script>
-    <script src="gauges/gauges.component.js"></script>
-    <script src="inside/inside.module.js"></script>
-    <script src="inside/inside.component.js"></script>
-    <script src="histogram/histogram.module.js"></script>
-    <script src="histogram/histogram.component.js"></script>
-    <script src="zmonitor/zmonitor.module.js"></script>
-    <script src="zmonitor/zmonitor.component.js"></script>
-    <script src="crate/crate.module.js"></script>
-    <script src="crate/crate.component.js"></script>
-    <script src="wib/wib.module.js"></script>
-    <script src="wib/wib.component.js"></script>
-    <script src="mpodpd/mpodpd.module.js"></script>
-    <script src="mpodpd/mpodpd.component.js"></script>
-    <script src="bellegarde/bellegarde.module.js"></script>
-    <script src="bellegarde/bellegarde.component.js"></script>
-    <script src="jura/jura.module.js"></script>
-    <script src="jura/jura.component.js"></script>
-    <script src="lausanne/lausanne.module.js"></script>
-    <script src="lausanne/lausanne.component.js"></script>
-    <script src="saleve/saleve.module.js"></script>
-    <script src="saleve/saleve.component.js"></script>
-    <script src="top/top.module.js"></script>
-    <script src="top/top.component.js"></script>
-    <script src="tinternal/tinternal.module.js"></script>
-    <script src="tinternal/tinternal.component.js"></script>
-    <script src="purity/purity.module.js"></script>
-    <script src="purity/purity.component.js"></script>
-    <script src="pl506/pl506.module.js"></script>
-    <script src="pl506/pl506.component.js"></script>
-    <script src="north/north.module.js"></script>
-    <script src="north/north.component.js"></script>
-    <script src="east/east.module.js"></script>
-    <script src="east/east.component.js"></script>
-    <script src="south/south.module.js"></script>
-    <script src="south/south.component.js"></script>
-    <script src="west/west.module.js"></script>
-    <script src="west/west.component.js"></script>
-    <script src="bottom/bottom.module.js"></script>
-    <script src="bottom/bottom.component.js"></script>
-    <script src="floor/floor.module.js"></script>
-    <script src="floor/floor.component.js"></script>
-    <script src="comissioning/comissioning.module.js"></script>
-    <script src="comissioning/comissioning.component.js"></script>
-    <script src="spbottom/spbottom.module.js"></script>
-    <script src="spbottom/spbottom.component.js"></script>
-    <script src="multiplexer/multiplexer.module.js"></script>
-    <script src="multiplexer/multiplexer.component.js"></script>
-    <script src="spgradient/spgradient.module.js"></script>
-    <script src="spgradient/spgradient.component.js"></script>
-    <script src="splevel2/splevel2.module.js"></script>
-    <script src="splevel2/splevel2.component.js"></script>
-    <script src="spwall/spwall.module.js"></script>
-    <script src="spwall/spwall.component.js"></script>
-    <script src="mpodpdras/mpodpdras.module.js"></script>
-    <script src="mpodpdras/mpodpdras.component.js"></script>
-    <script src="mpodpddas/mpodpddas.module.js"></script>
-    <script src="mpodpddas/mpodpddas.component.js"></script>
-    <script src="mpodcehv/mpodcehv.module.js"></script>
-    <script src="mpodcehv/mpodcehv.component.js"></script>
-    <script src="mpodcehvras/mpodcehvras.module.js"></script>
-    <script src="mpodcehvras/mpodcehvras.component.js"></script>
-    <script src="mpodcehvdas/mpodcehvdas.module.js"></script>
-    <script src="mpodcehvdas/mpodcehvdas.component.js"></script>
-    <script src="pipes/pipes.module.js"></script>
-    <script src="pipes/pipes.component.js"></script>
-    <script src="beamplug/beamplug.module.js"></script>
-    <script src="beamplug/beamplug.component.js"></script>
-    <script src="gaugehist/gaugehist.module.js"></script>
-    <script src="gaugehist/gaugehist.component.js"></script>
-    <script src="groundplanes/groundplanes.module.js"></script>
-    <script src="groundplanes/groundplanes.component.js"></script>
-    <script src="cachedhist/cachedhist.module.js"></script>
-    <script src="cachedhist/cachedhist.component.js"></script>
-    <script src="cryogenics/cryogenics.module.js"></script>
-    <script src="cryogenics/cryogenics.component.js"></script>
-    <script src="histogramaverage/histogramaverage.module.js"></script>
-    <script src="histogramaverage/histogramaverage.component.js"></script>
-    <script src="histogramrange/histogramrange.module.js"></script>
-    <script src="histogramrange/histogramrange.component.js"></script>
-    <script src="xenon/xenon.module.js"></script>
-    <script src="xenon/xenon.component.js"></script>
-    <script src="coldbox/coldbox.module.js"></script>
-    <script src="coldbox/coldbox.component.js"></script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta
+        name="viewport"
+        content="width=device-width,height=device-height, initial-scale=1"
+/>
+<title>NP04 Slow Control Web Interface</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="css/app.css">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+<script src="dependencies/angular-moment.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-sanitize.min.js"></script>
+<script src="dependencies/hammer.js"></script>
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/boost.js"></script>
+<script src="https://highcharts.github.io/export-csv/export-csv.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script src="dependencies/highcharts-export-clientside.js"></script>
+<script src="app.module.js"></script>
+<script src="app.config.js"></script>
+<script src="home/home.module.js"></script>
+<script src="home/home.component.js"></script>
+<script src="cryostat/cryostat.module.js"></script>
+<script src="cryostat/cryostat.component.js"></script>
+<script src="gauges/gauges.module.js"></script>
+<script src="gauges/gauges.component.js"></script>
+<script src="inside/inside.module.js"></script>
+<script src="inside/inside.component.js"></script>
+<script src="histogram/histogram.module.js"></script>
+<script src="histogram/histogram.component.js"></script>
+<script src="zmonitor/zmonitor.module.js"></script>
+<script src="zmonitor/zmonitor.component.js"></script>
+<script src="crate/crate.module.js"></script>
+<script src="crate/crate.component.js"></script>
+<script src="wib/wib.module.js"></script>
+<script src="wib/wib.component.js"></script>
+<script src="mpodpd/mpodpd.module.js"></script>
+<script src="mpodpd/mpodpd.component.js"></script>
+<script src="bellegarde/bellegarde.module.js"></script>
+<script src="bellegarde/bellegarde.component.js"></script>
+<script src="jura/jura.module.js"></script>
+<script src="jura/jura.component.js"></script>
+<script src="lausanne/lausanne.module.js"></script>
+<script src="lausanne/lausanne.component.js"></script>
+<script src="saleve/saleve.module.js"></script>
+<script src="saleve/saleve.component.js"></script>
+<script src="top/top.module.js"></script>
+<script src="top/top.component.js"></script>
+<script src="tinternal/tinternal.module.js"></script>
+<script src="tinternal/tinternal.component.js"></script>
+<script src="purity/purity.module.js"></script>
+<script src="purity/purity.component.js"></script>
+<script src="pl506/pl506.module.js"></script>
+<script src="pl506/pl506.component.js"></script>
+<script src="north/north.module.js"></script>
+<script src="north/north.component.js"></script>
+<script src="east/east.module.js"></script>
+<script src="east/east.component.js"></script>
+<script src="south/south.module.js"></script>
+<script src="south/south.component.js"></script>
+<script src="west/west.module.js"></script>
+<script src="west/west.component.js"></script>
+<script src="bottom/bottom.module.js"></script>
+<script src="bottom/bottom.component.js"></script>
+<script src="floor/floor.module.js"></script>
+<script src="floor/floor.component.js"></script>
+<script src="comissioning/comissioning.module.js"></script>
+<script src="comissioning/comissioning.component.js"></script>
+<script src="spbottom/spbottom.module.js"></script>
+<script src="spbottom/spbottom.component.js"></script>
+<script src="multiplexer/multiplexer.module.js"></script>
+<script src="multiplexer/multiplexer.component.js"></script>
+<script src="spgradient/spgradient.module.js"></script>
+<script src="spgradient/spgradient.component.js"></script>
+<script src="splevel2/splevel2.module.js"></script>
+<script src="splevel2/splevel2.component.js"></script>
+<script src="spwall/spwall.module.js"></script>
+<script src="spwall/spwall.component.js"></script>
+<script src="mpodpdras/mpodpdras.module.js"></script>
+<script src="mpodpdras/mpodpdras.component.js"></script>
+<script src="mpodpddas/mpodpddas.module.js"></script>
+<script src="mpodpddas/mpodpddas.component.js"></script>
+<script src="mpodcehv/mpodcehv.module.js"></script>
+<script src="mpodcehv/mpodcehv.component.js"></script>
+<script src="mpodcehvras/mpodcehvras.module.js"></script>
+<script src="mpodcehvras/mpodcehvras.component.js"></script>
+<script src="mpodcehvdas/mpodcehvdas.module.js"></script>
+<script src="mpodcehvdas/mpodcehvdas.component.js"></script>
+<script src="pipes/pipes.module.js"></script>
+<script src="pipes/pipes.component.js"></script>
+<script src="beamplug/beamplug.module.js"></script>
+<script src="beamplug/beamplug.component.js"></script>
+<script src="gaugehist/gaugehist.module.js"></script>
+<script src="gaugehist/gaugehist.component.js"></script>
+<script src="groundplanes/groundplanes.module.js"></script>
+<script src="groundplanes/groundplanes.component.js"></script>
+<script src="cachedhist/cachedhist.module.js"></script>
+<script src="cachedhist/cachedhist.component.js"></script>
+<script src="cryogenics/cryogenics.module.js"></script>
+<script src="cryogenics/cryogenics.component.js"></script>
+<script src="histogramaverage/histogramaverage.module.js"></script>
+<script src="histogramaverage/histogramaverage.component.js"></script>
+<script src="histogramrange/histogramrange.module.js"></script>
+<script src="histogramrange/histogramrange.component.js"></script>
+<script src="xenon/xenon.module.js"></script>
+<script src="xenon/xenon.component.js"></script>
+<script src="coldbox/coldbox.module.js"></script>
+<script src="coldbox/coldbox.component.js"></script>
 
-    <script>
-        function closeNav(event) {
-            event.stopPropagation();
-            document.getElementById("menu").classList.remove("sidenav--opened");
-        }
+<script>
+    function closeNav(event) {
+        event.stopPropagation();
+        document.getElementById("menu").classList.remove("sidenav--opened");
+    }
 
-        function toggleNav() {
-            document.getElementById("menu").classList.toggle("sidenav--opened");
-        }
-    </script>
+    function toggleNav() {
+        document.getElementById("menu").classList.toggle("sidenav--opened");
+    }
+</script>
 </head>
 <body>
-    <img
-    class="openbtn"
-    onclick="toggleNav()"
-    id="knopka"
-    src="img/menu_icon.png"
+<img
+        class="openbtn"
+        onclick="toggleNav()"
+        id="knopka"
+        src="img/menu_icon.png"
 />
 
 <div id="menu" class="sidenav" onclick="toggleNav()">
