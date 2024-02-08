@@ -8,31 +8,25 @@ angular.module('spgradient', []).component('spgradient', {
 
         this.reload = function () {
 
-            $http.get("php-db-conn/cachedVals.conn.php?elemId=spgradient").then(function (resultArr) {
+            self.timestamp = new Date();
+            $http
+                .get("php-db-conn/np04cachedvals.php?elemName=spgradient")
+                .then(function (result) {
+                    const res = result.data;
+                    console.log(res);
+                    self.NP04_MHT0100AI = res["47878785489690"][0];
+                    self.NP04_TT0100AI = res["47878802266906"][0];
+                    self.NP04_PT0106AI = res["47878819044122"][0];
+                    self.NP04_DCS_01_TE0073_ = res["47891469041946"][0];
+                    self.NP04_DCS_01_TE0074_ = res["47891485819162"][0];
+                    self.NP04_DCS_01_TE0075_ = res["47891502596378"][0];
+                    self.NP04_DCS_01_TE0076_ = res["47891519373594"][0];
+                    self.NP04_DCS_01_TE0077_ = res["47891536150810"][0];
+                    self.NP04_DCS_01_TE0078_ = res["47891552928026"][0];
+                    self.NP04_DCS_01_TE0079_ = res["47891569705242"][0];
+                    self.NP04_DCS_01_TE0080_ = res["47891586482458"][0];
 
-                let rArr = [];
-                let resjson = angular.toJson(resultArr.data);
-                let res = JSON.parse(resjson);
-                for (let i = 0; i < res.length; i++) {
-                    rArr.push(JSON.parse(res[i]));
-                }
-
-                self.NP04_MHT0100AI = rArr[0];
-                self.NP04_TT0100AI = rArr[1];
-                self.NP04_PT0106AI = rArr[2];
-
-                self.NP04_DCS_01_TE0073_ = rArr[3];
-                self.NP04_DCS_01_TE0074_ = rArr[4];
-                self.NP04_DCS_01_TE0075_ = rArr[5];
-                self.NP04_DCS_01_TE0076_ = rArr[6];
-                self.NP04_DCS_01_TE0077_ = rArr[7];
-                self.NP04_DCS_01_TE0078_ = rArr[8];
-                self.NP04_DCS_01_TE0079_ = rArr[9];
-                self.NP04_DCS_01_TE0080_ = rArr[10];
-
-                console.log("interval occured");
-                self.timestamp = rArr[rArr.length-1] * 1000;
-            });
+                });
 
         };
 
