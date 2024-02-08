@@ -184,14 +184,14 @@
 
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
     .data_table th {
         font-size: 12px;
         padding: 5px;
     }
     .cryostat_container {
         position: relative;
-        width: 550px;
+        width: 1000px;
         height: 75vh;
     }
 
