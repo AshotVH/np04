@@ -201,7 +201,7 @@
 
 @media screen and (min-width: 1024px) {
     .data_table th {
-        font-size: 12px;
+        font-size: 16px;
         padding: 5px;
     }
 
@@ -213,7 +213,7 @@
 
     .cryostat_img_container {
         position: absolute;
-        top: 45%;
+        top: 52%;
         left: 50%;
         transform: translate(-50%, -50%);
         display: flex;
@@ -221,69 +221,70 @@
     }
 
     .cryostat_img {
-        width: 300px;
+        width: 450px;
     }
 
     .data_table {
-        min-width: 110px;
+        min-width: 150px;
     }
 
     .cryostat_inner_pressure {
-        left: -3px;
+        left: 0;
         top: 120px;
     }
 
     .cryostat_inner_pressure_2 {
-        left: 408px;
-        top: 123px;
+        left: 0;
+        top: 260px;
 
     }
 
     .cryostat_outer_pressure {
-        left: 365px;
-        top: 25px;
+        left: 440px;
+        top: -20px;
     }
 
     .cryostat_beam_plug_lesker_vacuum_gauge {
         left: auto;
-        top: 314px;
-        right: 2px;
+        top: 250px;
+        right: 100px;
     }
 
     .cryostat_pressure {
-        top: 550px;
+        top: 600px;
+        left: 200px;
 
     }
 
     .cryostat_penetration_pipe1 {
-        top: 46px;
-        left: 218px;
+        top: -20px;
+        left: 250px;
     }
 
     .cryostat_penetration_pipe2 {
         left: auto;
-        top: 250px;
-        right: 13px;
+        top: 100px;
+        right: 137px;
     }
 
     .cryostat_penetration_pipe3 {
-        top: 399px;
+        top: 390px;
         left: auto;
-        right: 73px;
+        right: 170px;
     }
 
     .cryostat_penetration_pipe4 {
-        top: 221px;
-        left: 15px;
+        top: 400px;
+        left: 0;
     }
 
     .cryostat_cv {
         left: 0;
-        top: 450px;
+        top: 600px;
     }
 
     .cryostat_gas {
-        top: 550px;
+        top: 565px;
         left: auto;
         right: 200px;
     }
