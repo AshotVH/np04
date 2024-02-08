@@ -40,7 +40,7 @@
 }
 
 .cryostat_outer_pressure {
-    left: 235px;
+    left: 210px;
     top: 25px;
 }
 
@@ -50,12 +50,12 @@
 }
 
 .cryostat_pressure {
-    top: 250px;
+    top: 475px;
 }
 
 .cryostat_penetration_pipe1 {
-    top: 10px;
-    left: 140px;
+    top: 8px;
+    left: 130px;
 }
 
 .cryostat_penetration_pipe2 {
@@ -69,18 +69,18 @@
 }
 
 .cryostat_penetration_pipe4 {
-    top: 100px;
-    left: 25px;
+    top: 85px;
+    left: 28px;
 }
 
 .cryostat_cv {
     left: 0;
-    top: 200px;
+    top: 380px;
 }
 
 .cryostat_gas {
-    top: 320px;
-    left: 225px;
+    top: 456px;
+    left: 125px;
 }
 
 .cryostat_ambient {
@@ -89,6 +89,102 @@
 }
 
 @media screen and (min-width: 600px) {
+    .data_table th {
+        font-size: 12px;
+        padding: 5px;
+    }
+    .cryostat_container {
+        position: relative;
+        width: 550px;
+        height: 75vh;
+    }
+
+    .cryostat_img_container {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+    }
+
+    .cryostat_img {
+        width: 300px;
+    }
+
+    .data_table {
+        min-width: 110px;
+    }
+
+    .cryostat_inner_pressure {
+        left: -3px;
+        top: 120px;
+    }
+
+    .cryostat_inner_pressure_2 {
+        left: 408px;
+        top: 123px;
+
+    }
+
+    .cryostat_outer_pressure {
+        left: 365px;
+        top: 25px;
+    }
+
+    .cryostat_beam_plug_lesker_vacuum_gauge {
+        left: auto;
+        top: 314px;
+        right: 2px;
+    }
+
+    .cryostat_pressure {
+        top: 550px;
+
+    }
+
+    .cryostat_penetration_pipe1 {
+        top: 46px;
+        left: 218px;
+    }
+
+    .cryostat_penetration_pipe2 {
+        left: auto;
+        top: 250px;
+        right: 13px;
+    }
+
+    .cryostat_penetration_pipe3 {
+        top: 399px;
+        left: auto;
+        right: 73px;
+    }
+
+    .cryostat_penetration_pipe4 {
+        top: 221px;
+        left: 15px;
+    }
+
+    .cryostat_cv {
+        left: 0;
+        top: 450px;
+    }
+
+    .cryostat_gas {
+        top: 550px;
+        left: auto;
+        right: 200px;
+    }
+
+    .cryostat_ambient {
+        top: 550px;
+        left: auto;
+        right: 0;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
     .data_table th {
         font-size: 12px;
         padding: 5px;
