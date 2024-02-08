@@ -11,7 +11,7 @@ angular.module('cryostat', []).component('cryostat', {
         this.reload = function () {
             self.timestamp = new Date();
             $http
-                .get("php-db-conn/np04cachedvals.php?elemName=cryostat")
+                .get("php-db-conn/req.php?elemName=cryostat")
                 .then(function (result) {
                     const res = result.data;
                     console.log(res);
