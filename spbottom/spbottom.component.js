@@ -7,36 +7,29 @@ angular.module('spbottom', []).component('spbottom', {
         let self = this;
 
         this.reload = function () {
+            self.timestamp = new Date();
+            $http
+                .get("php-db-conn/np04cachedvals.php?elemName=spbottom")
+                .then(function (result) {
+                    const res = result.data;
+                    console.log(res);
+                    self.NP04_MHT0100AI = res["47878785489690"][0];
+                    self.NP04_TT0100AI = res["47878802266906"][0];
+                    self.NP04_PT0106AI = res["47878819044122"][0];
+                    self.NP04_DCS_01_TE0145_ = res["47892677001498"][0];
+                    self.NP04_DCS_01_TE0146_ = res["47892693778714"][0];
+                    self.NP04_DCS_01_TE0147_ = res["47892710555930"][0];
+                    self.NP04_DCS_01_TE0148_ = res["47892727333146"][0];
+                    self.NP04_DCS_01_TE0149_ = res["47892744110362"][0];
+                    self.NP04_DCS_01_TE0150_ = res["47892760887578"][0];
+                    self.NP04_DCS_01_TE0151_ = res["47892777664794"][0];
+                    self.NP04_DCS_01_TE0152_ = res["47892794442010"][0];
+                    self.NP04_DCS_01_TE0153_ = res["47892811219226"][0];
+                    self.NP04_DCS_01_TE0154_ = res["47892827996442"][0];
+                    self.NP04_DCS_01_TE0155_ = res["47892844773658"][0];
+                    self.NP04_DCS_01_TE0156_ = res["47892861550874"][0];
 
-            $http.get("php-db-conn/cachedVals.conn.php?elemId=spbottom").then(function (resultArr) {
-
-                let rArr = [];
-                let resjson = angular.toJson(resultArr.data);
-                let res = JSON.parse(resjson);
-                for (let i = 0; i < res.length; i++) {
-                    rArr.push(JSON.parse(res[i]));
-                }
-
-                self.NP04_MHT0100AI = rArr[0];
-                self.NP04_TT0100AI = rArr[1];
-                self.NP04_PT0106AI = rArr[2];
-
-                self.NP04_DCS_01_TE0145_ = rArr[3];
-                self.NP04_DCS_01_TE0146_ = rArr[4];
-                self.NP04_DCS_01_TE0147_ = rArr[5];
-                self.NP04_DCS_01_TE0148_ = rArr[6];
-                self.NP04_DCS_01_TE0149_ = rArr[7];
-                self.NP04_DCS_01_TE0150_ = rArr[8];
-                self.NP04_DCS_01_TE0151_ = rArr[9];
-                self.NP04_DCS_01_TE0152_ = rArr[10];
-                self.NP04_DCS_01_TE0153_ = rArr[11];
-                self.NP04_DCS_01_TE0154_ = rArr[12];
-                self.NP04_DCS_01_TE0155_ = rArr[13];
-                self.NP04_DCS_01_TE0156_ = rArr[14];
-
-                console.log("interval occured");
-                self.timestamp = rArr[rArr.length-1] * 1000;
-            });
+                });
 
         };
 
