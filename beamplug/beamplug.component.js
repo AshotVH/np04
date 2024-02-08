@@ -18,9 +18,9 @@ angular.module('beamplug', []).component('beamplug', {
                     self.NP04_TT0100AI = res["47878802266906"][0];
                     self.NP04_PT0106AI = res["47878819044122"][0];
                     self.NP04_2PT0100AI = res["47878902930202"][0];
-                    self.NP04_2PT0100AIR = res["47883114011418"][0];
+                    // self.NP04_2PT0100AIR = res["47883114011418"][0];
                     self.NP04_2PT0101AI = res["47878919707418"][0];
-                    self.NP04_2PT0101AIR = res["47883130788634"][0];
+                    // self.NP04_2PT0101AIR = res["47883130788634"][0];
                     self.NP04_2TT0100AI = res["47878953261850"][0];
                     self.NP04_2TT0101AI = res["47878970039066"][0];
                     self.NP04_2IT0100AI = res["47895881449754"][0];
