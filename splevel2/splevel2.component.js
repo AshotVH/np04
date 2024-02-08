@@ -7,30 +7,23 @@ angular.module('splevel2', []).component('splevel2', {
         let self = this;
 
         this.reload = function () {
+            self.timestamp = new Date();
+            $http
+                .get("php-db-conn/np04cachedvals.php?elemName=splevel2")
+                .then(function (result) {
+                    const res = result.data;
+                    console.log(res);
+                    self.NP04_MHT0100AI = res["47878785489690"][0];
+                    self.NP04_TT0100AI = res["47878802266906"][0];
+                    self.NP04_PT0106AI = res["47878819044122"][0];
+                    self.NP04_DCS_01_TE0097_ = res["47891871695130"][0];
+                    self.NP04_DCS_01_TE0098_ = res["47891888472346"][0];
+                    self.NP04_DCS_01_TE0099_ = res["47891905249562"][0];
+                    self.NP04_DCS_01_TE0100_ = res["47891922026778"][0];
+                    self.NP04_DCS_01_TE0101_ = res["47891938803994"][0];
+                    self.NP04_DCS_01_TE0102_ = res["47891955581210"][0];
 
-            $http.get("php-db-conn/cachedVals.conn.php?elemId=splevel2").then(function (resultArr) {
-
-                let rArr = [];
-                let resjson = angular.toJson(resultArr.data);
-                let res = JSON.parse(resjson);
-                for (let i = 0; i < res.length; i++) {
-                    rArr.push(JSON.parse(res[i]));
-                }
-
-                self.NP04_MHT0100AI = rArr[0];
-                self.NP04_TT0100AI = rArr[1];
-                self.NP04_PT0106AI = rArr[2];
-
-                self.NP04_DCS_01_TE0097_ = rArr[3];
-                self.NP04_DCS_01_TE0098_ = rArr[4];
-                self.NP04_DCS_01_TE0099_ = rArr[5];
-                self.NP04_DCS_01_TE0100_ = rArr[6];
-                self.NP04_DCS_01_TE0101_ = rArr[7];
-                self.NP04_DCS_01_TE0102_ = rArr[8];
-
-                console.log("interval occured");
-                self.timestamp = rArr[rArr.length-1] * 1000;
-            });
+                });
 
         };
 
