@@ -24,6 +24,20 @@
 .data_table {
     min-width: 70px;
 }
+.data_table__circle_wrapper {
+    display: flex;
+    justify-content: center;
+}
+.data_table__circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 .data_table th {
     font-size: 8px;
@@ -31,17 +45,17 @@
 
 .cryostat_inner_pressure {
     left: 5px;
-    top: 20px;
+    top: 220px;
 }
 
 .cryostat_inner_pressure_2 {
-    left: 253px;
-    top: 83px;
+    left: 193px;
+    top: 300px;
 }
 
 .cryostat_outer_pressure {
-    left: 210px;
-    top: 25px;
+    left: 103px;
+    top: -45px;
 }
 
 .cryostat_beam_plug_lesker_vacuum_gauge {
@@ -54,28 +68,28 @@
 }
 
 .cryostat_penetration_pipe1 {
-    top: -42px;
-    left: 130px;
+    top: -45px;
+    left: 15px;
 }
 
 .cryostat_penetration_pipe2 {
     left: 245px;
-    top: 165px;
+    top: -45px;
 }
 
 .cryostat_penetration_pipe3 {
-    top: 280px;
-    left: 225px;
+    top: 80px;
+    left: 245px;
 }
 
 .cryostat_penetration_pipe4 {
-    top: 85px;
-    left: 28px;
+    top: 80px;
+    left: 15px;
 }
 
 .cryostat_cv {
-    left: 0;
-    top: 380px;
+    left: 5px;
+    top: 340px;
 }
 
 .cryostat_gas {
@@ -85,7 +99,7 @@
 
 .cryostat_ambient {
     top: 450px;
-    left: 250px;
+    left: 230px;
 }
 
 @media screen and (min-width: 600px) {
@@ -93,9 +107,10 @@
         font-size: 12px;
         padding: 5px;
     }
+
     .cryostat_container {
         position: relative;
-        width: 550px;
+        width: 595px;
         height: 75vh;
     }
 
@@ -128,7 +143,7 @@
     }
 
     .cryostat_outer_pressure {
-        left: 365px;
+        left: 400px;
         top: 25px;
     }
 
@@ -151,7 +166,7 @@
     .cryostat_penetration_pipe2 {
         left: auto;
         top: 250px;
-        right: 13px;
+        right: 1px;
     }
 
     .cryostat_penetration_pipe3 {
@@ -189,6 +204,7 @@
         font-size: 12px;
         padding: 5px;
     }
+
     .cryostat_container {
         position: relative;
         width: 1000px;
