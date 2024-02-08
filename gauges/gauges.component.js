@@ -34,4 +34,5 @@ angular.module('gauges', []).component('gauges', {
                 $scope.stop();
             });
         }
-    });
+    }
+});
