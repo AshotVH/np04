@@ -21,8 +21,6 @@ angular.module('cryogenics', []).component('cryogenics', {
                 self.NP04_MHT0100AI = rArr[0];
                 self.NP04_TT0100AI = rArr[1];
                 self.NP04_PT0106AI = rArr[2];
-
-
                 self.NP04_DCS_01_4LT3100 = rArr[2];
                 self.NP04_DCS_01_2LT3160 = rArr[3];
                 self.NP04_DCS_01_2LT4300 = rArr[4];

@@ -1,3 +1,5 @@
 .idea
 .vscode
 php-db-conn/
+!app/php-db-conn/np02cachedvals.php
+!app/php-db-conn/np02histogram.php
