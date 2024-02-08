@@ -5,52 +5,46 @@ angular.module('inside', []).component('inside', {
         this.pageTitle = "NP04 T-Insulation";
         this.natalie = 1;
         this.TT0101 = "";
-        let self = this;
+        const self = this;
 
         this.reload = function () {
+            self.timestamp = new Date();
+            $http
+                .get("php-db-conn/np04cachedvals.php?elemName=inside")
+                .then(function (result) {
+                    const res = result.data;
+                    console.log(res);
+                    self.NP04_MHT0100AI = res["47878785489690"][0];
+                    self.NP04_TT0100AI = res["47878802266906"][0];
+                    self.NP04_PT0106AI = res["47878819044122"][0];
+                    self.NP04_DCS_01_TE0121 = res["47892274348314"][0];
+                    self.NP04_DCS_01_TE0122 = res["47892291125530"][0];
+                    self.NP04_DCS_01_TE0123 = res["47892307902746"][0];
+                    self.NP04_DCS_01_TE0127 = res["47892375011610"][0];
+                    self.NP04_DCS_01_TE0133 = res["47892475674906"][0];
+                    self.NP04_DCS_01_TE0135 = res["47892509229338"][0];
+                    self.NP04_DCS_01_TE0139 = res["47892576338202"][0];
+                    self.NP04_DCS_01_TE0140 = res["47892593115418"][0];
+                });
 
-            $http.get("php-db-conn/cachedVals.conn.php?elemId=inside").then(function (resultArr) {
-
-                let rArr = [];
-                let resjson = angular.toJson(resultArr.data);
-                let res = JSON.parse(resjson);
-                for (let i = 0; i < res.length; i++) {
-                    rArr.push(JSON.parse(res[i]));
-                }
-                self.NP04_MHT0100AI = rArr[0];
-                self.NP04_TT0100AI = rArr[1];
-                self.NP04_PT0106AI = rArr[2];
-
-                self.NP04_DCS_01_TE0121 = rArr[3];
-                self.NP04_DCS_01_TE0122 = rArr[4];
-                self.NP04_DCS_01_TE0123 = rArr[5];
-                self.NP04_DCS_01_TE0127 = rArr[6];
-                self.NP04_DCS_01_TE0133 = rArr[7];
-                self.NP04_DCS_01_TE0135 = rArr[8];
-                self.NP04_DCS_01_TE0139 = rArr[9];
-                self.NP04_DCS_01_TE0140 = rArr[10];
-
-                console.log("interval occured");
-                self.timestamp = rArr[rArr.length-1] * 1000;
-            });
         };
 
         this.promise;
 
         this.reload();
 
-        $scope.start = function() {
+        $scope.start = function () {
             $scope.stop();
 
             self.promise = $interval(self.reload, 60000);
         };
 
-        $scope.stop = function() {
+        $scope.stop = function () {
             $interval.cancel(self.promise);
         };
         $scope.start();
 
-        $scope.$on('$destroy', function() {
+        $scope.$on('$destroy', function () {
             $scope.stop();
         });
     }
