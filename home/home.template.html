@@ -1,11 +1,14 @@
-<link rel="stylesheet" href="css/home.css">
-<div class="container">
-    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
-    <table id="main_menu">
-        <th>Cryostat</th>
-        <tr>
-            <td><a href="#!/cryostat"><img src="img/cryostat_thumb.png" width="320px"/></a></td>
-        </tr>
-    </table>
-
+<link rel="stylesheet" href="css/home.css" />
+<div class="home_container">
+  <div class="page_title_and_timestamps">
+    <div id="pageTitle" class="page-title">{{$ctrl.pageTitle}}</div>
+  </div>
+  <div class="main_container">
+    <h1 class="header">Cryostat</h1>
+    <div class="img_container">
+      <a href="#!/cryostat"
+        ><img src="img/cryostat_thumb.png" width="320px"/>
+    </a>
+    </div>
+  </div>
 </div>

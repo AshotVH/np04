@@ -1,108 +1,177 @@
 /* app css stylesheet */
 body {
-  background-color: #333333;
+  background-color: #004c93;
 }
-
 a {
-  color: lime;
   text-decoration: none;
 }
-
+.openbtn {
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 5px 0 0 5px;
+  background-color: floralwhite;
+  width: 50px;
+  height: 50px;
+}
 /* The side navigation menu */
 .sidenav {
-  height: 100%; /* 100% Full-height */
+  height: calc(100vh - 40px); /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: #222; /* Black*/
+  background-color: rgb(15, 15, 15); /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  padding-top: 40px; /* Place content 60px from the top */
+  transition: 0.3s; /* 0.5 second transition effect to slide in the sidenav */
+  padding-bottom: 100px;
 }
 
 /* The navigation menu links */
-.sidenav a {
+.sidenav a,
+.sidenav div {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 1.7vmin;
-  color: #818181;
+  font-size: 18px;
+  color: rgba(212, 209, 209, 0.918);
   font-family: "Arial Black", Gadget, sans-serif;
   display: block;
   transition: 0.3s;
 }
-
+.sidenav div {
+  cursor: pointer;
+}
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #fffafa;
 }
 
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
   position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 3.0vmin;
+  top: 20px;
+  right: 20px;
+  font-size: 3vmin;
   margin-left: 50px;
 }
 
-#submenu {
-  display: none;
+.page_title_and_timestamps {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  padding-top: 20px;
+  padding-bottom: 50px;
 }
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-
-#pageTitle {
-  position:fixed;
-  margin-left: 3%;
-  margin-top: 1%;
+.page-title {
+  position: absolute;
+  left: 4vw;
   color: white;
   font-family: "Arial Black", Gadget, sans-serif;
-  font-size: 3.3vmin;
+  font-size: 18px;
 }
-
-th, td {
-  padding: 1vmin;
+.data_table {
+  position: absolute;
+  border-collapse: collapse;
+}
+.data_table tr,
+.data_table th, .data_table td {
+  border-color: white;
   border: 1px solid white;
-  color: gray;
-  font-family: "Arial Black", Gadget, sans-serif
 }
-
-th {
-  font-size: 2.0vmin;
-}
-
-td {
-  font-size: 1.8vmin;
-}
-
-#timestamp_label {
-  position: fixed;
-  right: 5vw;
-  top: 10%;
-  text-align: right;
-  color: gray;
+.data_table th {
   font-family: "Arial Black", Gadget, sans-serif;
-  font-size: 2.5vmin;
+  padding: 2px 1px;
+  font-size: 10px;
+  color: white;
 }
 
-#timestamp {
+.timestamp_label {
+  position: absolute;
+  right: 4vw;
   text-align: right;
   color: white;
-  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-  font-size: 2.5vmin;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 11px;
+}
+.timestamp {
+  text-align: right;
+  color: white;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 11px;
+}
+.value,
+a .value {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  color: rgba(0, 255, 0, 0.651);
+  font-weight: bold;
 }
 
-.value {
-  background-color: #333333;
-  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-  color: lime;
-  font-size: 2.0vmin;
-  font-weight: bold;
+.sidenav--opened {
+  width: 310px;
+  height: 100vh;
+}
+@media screen and (max-width: 479px) {
+  .closebtn_img {
+    width: 30px;
+    height: 30px;
+  }
+  .timestamp_label,
+  .timestamp {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .closebtn_img {
+    width: 40px;
+    height: 40px;
+  }
+  .page-title {
+    font-size: 20px;
+  }
+  .timestamp_label,
+  .timestamp {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .closebtn_img {
+    width: 40px;
+    height: 40px;
+  }
+  .page-title {
+    font-size: 22px;
+  }
+  .timestamp_label,
+  .timestamp {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+  .closebtn_img {
+    width: 40px;
+    height: 40px;
+  }
+  .page-title {
+    font-size: 22px;
+  }
+  .timestamp_label,
+  .timestamp {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .closebtn_img {
+    width: 40px;
+    height: 40px;
+  }
+  .page-title {
+    font-size: 22px;
+  }
+  .timestamp_label,
+  .timestamp {
+    font-size: 18px;
+  }
 }

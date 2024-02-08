@@ -118,22 +118,28 @@
     <script src="coldbox/coldbox.component.js"></script>
 
     <script>
-        /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
-        function openNav() {
-            document.getElementById("menu").style.width = "20vw";
+        function closeNav(event) {
+            event.stopPropagation();
+            document.getElementById("menu").classList.remove("sidenav--opened");
         }
 
-        /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-        function closeNav() {
-            document.getElementById("menu").style.width = "0";
+        function toggleNav() {
+            document.getElementById("menu").classList.toggle("sidenav--opened");
         }
     </script>
 </head>
 <body>
+    <img
+    class="openbtn"
+    onclick="toggleNav()"
+    id="knopka"
+    src="img/menu_icon.png"
+/>
 
-<img src="img/menu_icon.png" onclick="openNav()" style="background-color: floralwhite; width: 50px;"/>
-<div id="menu" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<div id="menu" class="sidenav" onclick="toggleNav()">
+    <div class="closebtn" onclick="closeNav()">
+        <img class="closebtn_img" src="img/menu_exit.png" alt="close menu"/>
+    </div>
     <a href="#!/">Home</a>
     <a href="#!/cryostat">NP04 Cryostat</a>
     <a href="#!/gauges">NP04 Gauges</a>
