@@ -4,39 +4,28 @@ angular.module('beamplug', []).component('beamplug', {
     controller: function beamplugController($http, $scope, $q, $interval) {
         this.pageTitle = "NP04 Beamplug";
         this.natalie = 1;
-        let self = this;
-
-
+        const self = this;
 
         this.reload = function () {
 
-            $http.get("php-db-conn/cachedVals.conn.php?elemId=beamplug").then(function (resultArr) {
-                let rArr = [];
-                let resjson = angular.toJson(resultArr.data);
-                let res = JSON.parse(resjson);
-                console.log(res);
-                for (let i = 0; i < res.length; i++) {
-                    rArr.push(JSON.parse(res[i]));
-                }
-
-
-                self.NP04_MHT0100AI = rArr[0];
-                self.NP04_TT0100AI = rArr[1];
-                self.NP04_PT0106AI = rArr[2];
-
-                self.NP04_2PT0100AI = rArr[3];
-                self.NP04_2PT0101AI = rArr[4];
-                self.NP04_2TT0100AI = rArr[5];
-                self.NP04_2TT0101AI = rArr[6];
-                self.NP04_2PT0100AIR = rArr[7];
-                self.NP04_2PT0101AIR = rArr[8];
-                self.NP04_2IT0100AI = rArr[9];
-
-                self.timestamp = rArr[rArr.length-1] * 1000;
-            });
-
+            self.timestamp = new Date();
+            $http
+                .get("php-db-conn/np04cachedvals.php?elemName=beamplug")
+                .then(function (result) {
+                    const res = result.data;
+                    console.log(res);
+                    self.NP04_MHT0100AI = res["47878785489690"][0];
+                    self.NP04_TT0100AI = res["47878802266906"][0];
+                    self.NP04_PT0106AI = res["47878819044122"][0];
+                    self.NP04_2PT0100AI = res["47878902930202"][0];
+                    self.NP04_2PT0100AIR = res["47883114011418"][0];
+                    self.NP04_2PT0101AI = res["47878919707418"][0];
+                    self.NP04_2PT0101AIR = res["47883130788634"][0];
+                    self.NP04_2TT0100AI = res["47878953261850"][0];
+                    self.NP04_2TT0101AI = res["47878970039066"][0];
+                    self.NP04_2IT0100AI = res["47895881449754"][0];
+                });
             console.log("interval occured");
-
         };
 
         this.promise;
