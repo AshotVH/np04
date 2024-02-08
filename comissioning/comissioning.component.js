@@ -25,8 +25,8 @@ angular.module('comissioning', []).component('comissioning', {
                     self.NP04_DCS_01_NP04_4QT4711 = res["47897626280218"][0];
                     self.NP04_DCS_01_NP04_4QT4720 = res["47897643057434"][0];
                     self.NP04_DCS_01_NP04_4QT4730 = res["47897676611866"][0];
-                    self.NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel07_MeasurementSenseVoltage = res["47890059777050"][0];
-                    self.NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel07_MeasurementCurrent = res["47890059777306"][0];
+                    // self.NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel07_MeasurementSenseVoltage = res["47890059777050"][0];
+                    // self.NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel07_MeasurementCurrent = res["47890059777306"][0];
                     self.NP04_DCS_01_LT0100 = res["47897777275162"][0];
                     self.NP04_4CV4202 = res["47917859602714"][0];
                     self.NP04_DCS_01_NP04_4PDT4500 = res["47931801469210"][0];
