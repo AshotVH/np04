@@ -8,36 +8,31 @@ angular.module('comissioning', []).component('comissioning', {
 
         this.reload = function () {
 
-            $http.get("php-db-conn/cachedVals.conn.php?elemId=comissioning").then(function (resultArr) {
-                let rArr = [];
-                let resjson = angular.toJson(resultArr.data);
-                let res = JSON.parse(resjson);
-                for (let i = 0; i < res.length; i++) {
-                    rArr.push(JSON.parse(res[i]));
-                }
+            self.timestamp = new Date();
+            $http
+                .get("php-db-conn/np04cachedvals.php?elemName=comissioning")
+                .then(function (result) {
+                    const res = result.data;
+                    console.log(res);
 
+                    self.NP04_MHT0100AI = res["47878785489690"][0];
+                    self.NP04_TT0100AI = res["47878802266906"][0];
+                    self.NP04_PT0106AI = res["47878819044122"][0];
+                    self.NP04_DCS_01_NP04_4PT4920 = res["47931851800858"][0];
+                    self.NP04_PT0110AI = res["47879272028954"][0];
+                    self.NP04_PT0111AI = res["47879288806170"][0];
+                    self.NP04_DCS_01_NP04_4QT4710 = res["47897609503002"][0];
+                    self.NP04_DCS_01_NP04_4QT4711 = res["47897626280218"][0];
+                    self.NP04_DCS_01_NP04_4QT4720 = res["47897643057434"][0];
+                    self.NP04_DCS_01_NP04_4QT4730 = res["47897676611866"][0];
+                    self.NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel07_MeasurementSenseVoltage = res["47890059777050"][0];
+                    self.NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel07_MeasurementCurrent = res["47890059777306"][0];
+                    self.NP04_DCS_01_LT0100 = res["47897777275162"][0];
+                    self.NP04_4CV4202 = res["47917859602714"][0];
+                    self.NP04_DCS_01_NP04_4PDT4500 = res["47931801469210"][0];
+                    self.NP04_DCS_01_NP04_4FT4592 = res["48019361759514"][0];
 
-                self.NP04_MHT0100AI = rArr[0];
-                self.NP04_TT0100AI = rArr[1];
-                self.NP04_PT0106AI = rArr[2];
-
-                self.NP04_PT0110AI = rArr[3];
-                self.NP04_PT0111AI = rArr[4];
-                self.NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel07_MeasurementSenseVoltage = rArr[5];
-                self.NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel07_MeasurementCurrent = rArr[6];
-                self.NP04_DCS_01_NP04_4QT4710 = rArr[7];
-                self.NP04_DCS_01_NP04_4QT4711 = rArr[8];
-                self.NP04_DCS_01_NP04_4QT4720 = rArr[9];
-                self.NP04_DCS_01_NP04_4QT4730 = rArr[10];
-
-                self.NP04_DCS_01_LT0100 = rArr[11];
-                self.NP04_4CV4202 = rArr[12];
-                self.NP04_DCS_01_NP04_4PDT4500 = rArr[13];
-                self.NP04_DCS_01_NP04_4PT4920 = rArr[14];
-                self.NP04_DCS_01_NP04_4FT4592 = rArr[15];
-
-                self.timestamp = rArr[rArr.length-1] * 1000;
-            });
+                });
 
             console.log("interval occured");
 
