@@ -4,32 +4,24 @@ angular.module('spwall', []).component('spwall', {
     controller: function spwallController($scope, $http, $interval) {
         this.pageTitle = "NP04 Single Phase wall temperatures";
         this.natalie = 1;
-        let self = this;
+        const self = this;
 
         this.reload = function () {
-
-            $http.get("php-db-conn/cachedVals.conn.php?elemId=spwall").then(function (resultArr) {
-
-                let rArr = [];
-                let resjson = angular.toJson(resultArr.data);
-                let res = JSON.parse(resjson);
-                for (let i = 0; i < res.length; i++) {
-                    rArr.push(JSON.parse(res[i]));
-                }
-
-                self.NP04_MHT0100AI = rArr[0];
-                self.NP04_TT0100AI = rArr[1];
-                self.NP04_PT0106AI = rArr[2];
-
-                self.NP04_DCS_01_TE0115_ = rArr[4];
-                self.NP04_DCS_01_TE0116_ = rArr[3];
-                self.NP04_DCS_01_TE0117_ = rArr[5];
-                self.NP04_DCS_01_TE0118_ = rArr[6];
-                self.NP04_DCS_01_TE0119_ = rArr[7];
-
-                console.log("interval occured");
-                self.timestamp = rArr[rArr.length-1] * 1000;
-            });
+            self.timestamp = new Date();
+            $http
+                .get("php-db-conn/np04cachedvals.php?elemName=spwall")
+                .then(function (result) {
+                    const res = result.data;
+                    console.log(res);
+                    self.NP04_MHT0100AI = res["47878785489690"][0];
+                    self.NP04_TT0100AI = res["47878802266906"][0];
+                    self.NP04_PT0106AI = res["47878819044122"][0];
+                    self.NP04_DCS_01_TE0115_ = res["47892173685018"][0];
+                    self.NP04_DCS_01_TE0116_ = res["47892190462234"][0];
+                    self.NP04_DCS_01_TE0117_ = res["47892207239450"][0];
+                    self.NP04_DCS_01_TE0118_ = res["47892224016666"][0];
+                    self.NP04_DCS_01_TE0119_ = res["47892240793882"][0];
+                });
 
         };
 
