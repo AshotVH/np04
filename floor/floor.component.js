@@ -4,39 +4,33 @@ angular.module('floor', []).component('floor', {
     controller: function floorController($scope, $http, $interval) {
         this.pageTitle = "NP04 Floor temperatures";
         this.natalie = 1;
-        let self = this;
+        const self = this;
 
         this.reload = function () {
+            self.timestamp = new Date();
+            $http
+                .get("php-db-conn/np04cachedvals.php?elemName=cryostat")
+                .then(function (result) {
+                    const res = result.data;
+                    console.log(res);
+                    self.NP04_MHT0100AI = res["47878785489690"][0];
+                    self.NP04_TT0100AI = res["47878802266906"][0];
+                    self.NP04_PT0106AI = res["47878819044122"][0];
+                    self.NP04_DCS_01_TE0103_ = res["47891972358426"][0];
+                    self.NP04_DCS_01_TE0104_ = res["47891989135642"][0];
+                    self.NP04_DCS_01_TE0105_ = res["47892005912858"][0];
+                    self.NP04_DCS_01_TE0106_ = res["47892022690074"][0];
+                    self.NP04_DCS_01_TE0107_ = res["47892039467290"][0];
+                    self.NP04_DCS_01_TE0108_ = res["47892056244506"][0];
+                    self.NP04_DCS_01_TE0109_ = res["47892073021722"][0];
+                    self.NP04_DCS_01_TE0110_ = res["47892089798938"][0];
+                    self.NP04_DCS_01_TE0111_ = res["47892106576154"][0];
+                    self.NP04_DCS_01_TE0112_ = res["47892123353370"][0];
+                    self.NP04_DCS_01_TE0113_ = res["47892140130586"][0];
+                    self.NP04_DCS_01_TE0114_ = res["47892156907802"][0];
 
-            $http.get("php-db-conn/cachedVals.conn.php?elemId=floor").then(function (resultArr) {
+                });
 
-                let rArr = [];
-                let resjson = angular.toJson(resultArr.data);
-                let res = JSON.parse(resjson);
-                for (let i = 0; i < res.length; i++) {
-                    rArr.push(JSON.parse(res[i]));
-                }
-
-                self.NP04_MHT0100AI = rArr[0];
-                self.NP04_TT0100AI = rArr[1];
-                self.NP04_PT0106AI = rArr[2];
-
-                self.NP04_DCS_01_TE0103_ = rArr[3];
-                self.NP04_DCS_01_TE0104_ = rArr[4];
-                self.NP04_DCS_01_TE0105_ = rArr[5];
-                self.NP04_DCS_01_TE0106_ = rArr[6];
-                self.NP04_DCS_01_TE0107_ = rArr[7];
-                self.NP04_DCS_01_TE0108_ = rArr[8];
-                self.NP04_DCS_01_TE0109_ = rArr[9];
-                self.NP04_DCS_01_TE0110_ = rArr[10];
-                self.NP04_DCS_01_TE0111_ = rArr[11];
-                self.NP04_DCS_01_TE0112_ = rArr[12];
-                self.NP04_DCS_01_TE0113_ = rArr[13];
-                self.NP04_DCS_01_TE0114_ = rArr[14];
-
-                console.log("interval occured");
-            self.timestamp = rArr[rArr.length-1] * 1000;
-            });
 
         };
 
@@ -44,18 +38,18 @@ angular.module('floor', []).component('floor', {
 
         this.reload();
 
-        $scope.start = function() {
+        $scope.start = function () {
             $scope.stop();
 
             self.promise = $interval(self.reload, 60000);
         };
 
-        $scope.stop = function() {
+        $scope.stop = function () {
             $interval.cancel(self.promise);
         };
         $scope.start();
 
-        $scope.$on('$destroy', function() {
+        $scope.$on('$destroy', function () {
             $scope.stop();
         });
     }
