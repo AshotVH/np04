@@ -117,7 +117,7 @@
     .cryostat_img_container {
         position: absolute;
         top: 45%;
-        left: 50%;
+        left: 45%;
         transform: translate(-50%, -50%);
         display: flex;
         justify-content: center;
@@ -133,24 +133,24 @@
 
     .cryostat_inner_pressure {
         left: -3px;
-        top: 120px;
+        top: 0;
     }
 
     .cryostat_inner_pressure_2 {
         left: 408px;
-        top: 123px;
+        top: 250px;
 
     }
 
     .cryostat_outer_pressure {
         left: 400px;
-        top: 25px;
+        top: 0;
     }
 
     .cryostat_beam_plug_lesker_vacuum_gauge {
         left: auto;
-        top: 314px;
-        right: 2px;
+        top: 403px;
+        right: 1px;
     }
 
     .cryostat_pressure {
@@ -159,25 +159,25 @@
     }
 
     .cryostat_penetration_pipe1 {
-        top: 46px;
-        left: 218px;
+        top: 0;
+        left: 210px;
     }
 
     .cryostat_penetration_pipe2 {
         left: auto;
-        top: 250px;
+        top: 155px;
         right: 1px;
     }
 
     .cryostat_penetration_pipe3 {
         top: 399px;
         left: auto;
-        right: 73px;
+        right: 150px;
     }
 
     .cryostat_penetration_pipe4 {
-        top: 221px;
-        left: 15px;
+        top: 160px;
+        left: 0;
     }
 
     .cryostat_cv {
