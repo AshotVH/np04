@@ -9,26 +9,21 @@ angular.module('xenon', []).component('xenon', {
 
         this.reload = function () {
 
-            $http.get("php-db-conn/cachedVals.conn.php?elemId=xenon").then(function (resultArr) {
+            self.timestamp = new Date();
+            $http
+                .get("php-db-conn/np04cachedvals.php?elemName=xenon")
+                .then(function (result) {
+                    const res = result.data;
+                    console.log(res);
+                    self.NP04_MHT0100AI = res["47878785489690"][0];
+                    self.NP04_TT0100AI = res["47878802266906"][0];
+                    self.NP04_PT0106AI = res["47878819044122"][0];
+                    self.NP04_DCS_01_xenon = res["47879389469466"][0];
+                    self.NP04_DCS_01_xenon_weight = res["48021878342170"][0];
+                    self.NP04_4PT4150 = res["48021643460890"][0];
+                    self.NP04_4PT4910 = res["47931835023642"][0];
 
-                let rArr = [];
-                let resjson = angular.toJson(resultArr.data);
-                let res = JSON.parse(resjson);
-                for (let i = 0; i < res.length; i++) {
-                    rArr.push(JSON.parse(res[i]));
-                }
-
-                self.NP04_MHT0100AI = rArr[0];
-                self.NP04_TT0100AI = rArr[1];
-                self.NP04_PT0106AI = rArr[2];
-                self.NP04_DCS_01_xenon = rArr[3];
-                self.NP04_4PT4910 = rArr[4];
-                self.NP04_4PT4150 = rArr[5];
-                self.NP04_DCS_01_xenon_weight = rArr[6];
-
-                console.log("interval occured");
-                self.timestamp = rArr[rArr.length-1] * 1000;
-            });
+                });
         };
 
         this.promise;
