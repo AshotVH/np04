@@ -8,40 +8,33 @@ angular.module('coldbox', []).component('coldbox', {
         let self = this;
 
             this.reload = function () {
+                self.timestamp = new Date();
+                $http
+                    .get("php-db-conn/np04cachedvals.php?elemName=coldbox")
+                    .then(function (result) {
+                        const res = result.data;
+                        console.log(res);
+                        self.NP04_MHT0100AI = res["47878785489690"][0];
+                        self.NP04_TT0100AI = res["47878802266906"][0];
+                        self.NP04_PT0106AI = res["47878819044122"][0];
+                        self.NP04_DCS_01_TE0205 = res["47893683634458"][0];
+                        self.NP04_DCS_01_TE0206 = res["47893700411674"][0];
+                        self.NP04_DCS_01_TE0207 = res["47893717188890"][0];
+                        self.NP04_DCS_01_TE0208 = res["47893733966106"][0];
+                        self.NP04_DCS_01_TE0209 = res["47893750743322"][0];
+                        self.NP04_DCS_01_TE0210 = res["47893767520538"][0];
+                        self.NP04_DCS_01_TE0211 = res["47893784297754"][0];
+                        self.NP04_DCS_01_4CV3160 = res["48020200620570"][0];
+                        self.NP04_DCS_01_4CV3170 = res["48020217397786"][0];
+                        self.NP04_DCS_01_4CV3500 = res["48020234175002"][0];
+                        self.NP04_DCS_01_4CV3510 = res["48020250952218"][0];
+                        self.NP04_DCS_01_4PT3170 = res["48020267729434"][0];
+                        self.NP04_DCS_01_4PT3500 = res["48020284506650"][0];
+                        self.NP04_DCS_01_4PT3510 = res["48020301283866"][0];
+                        self.NP04_DCS_01_4TT3500 = res["48020334838298"][0];
+                        self.NP04_DCS_01_4TT3510 = res["48020351615514"][0];
 
-                $http.get("php-db-conn/cachedVals.conn.php?elemId=coldbox").then(function (resultArr) {
-                    let rArr = [];
-                    let resjson = angular.toJson(resultArr.data);
-                    let res = JSON.parse(resjson);
-                    for (let i = 0; i < res.length; i++) {
-                        rArr.push(JSON.parse(res[i]));
-                    }
-
-                    self.NP04_MHT0100AI = rArr[0];
-                    self.NP04_TT0100AI = rArr[1];
-                    self.NP04_PT0106AI = rArr[2];
-                    self.NP04_DCS_01_TE0205 = rArr[3];
-                    self.NP04_DCS_01_TE0206 = rArr[4];
-                    self.NP04_DCS_01_TE0207 = rArr[5];
-                    self.NP04_DCS_01_TE0208 = rArr[6];
-                    self.NP04_DCS_01_TE0209 = rArr[7];
-                    self.NP04_DCS_01_TE0210 = rArr[8];
-                    self.NP04_DCS_01_TE0211 = rArr[9];
-                    self.NP04_DCS_01_4CV3160 = rArr[10];
-                    self.NP04_DCS_01_4CV3170 = rArr[11];
-                    self.NP04_DCS_01_4CV3500 = rArr[12];
-                    self.NP04_DCS_01_4CV3510 = rArr[13];
-                    self.NP04_DCS_01_4PT3170 = rArr[14];
-                    self.NP04_DCS_01_4PT3500 = rArr[15];
-                    self.NP04_DCS_01_4PT3510 = rArr[16];
-                    self.NP04_DCS_01_4TT3500 = rArr[17];
-                    self.NP04_DCS_01_4TT3510 = rArr[18];
-                    self.NP04_DCS_01_CB_DeltaT = rArr[19];
-                    self.NP04_DCS_01_CB_Tmax = rArr[20];
-
-
-                    self.timestamp = rArr[rArr.length-1] * 1000;
-                });
+                    });
 
             };
 
