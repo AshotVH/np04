@@ -144,7 +144,7 @@ angular.module('multiplexer', []).component('multiplexer', {
             $scope.start = function() {
                 $scope.stop();
 
-                self.promise = $interval(self.reload, 600000);
+                self.promise = $interval(self.reload, 30000);
             };
 
             $scope.stop = function() {

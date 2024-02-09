@@ -66,6 +66,6 @@ angular.module('mpodcehvras', []).component('mpodcehvras', {
             };
 
             this.reload();
-            $interval(this.reload, 60000);
+            $interval(this.reload, 30000);
         }]
 });

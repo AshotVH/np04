@@ -116,7 +116,7 @@ angular.module('tinternal', []).component('tinternal', {
         $scope.start = function() {
             $scope.stop();
 
-            self.promise = $interval(self.reload, 150000);
+            self.promise = $interval(self.reload, 30000);
         };
 
         $scope.stop = function() {

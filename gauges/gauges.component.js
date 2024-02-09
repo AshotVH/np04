@@ -24,7 +24,7 @@ angular.module('gauges', []).component('gauges', {
         $scope.start = function () {
             $scope.stop();
 
-            self.promise = $interval(self.reload, 60000);
+            self.promise = $interval(self.reload, 30000);
         };
         $scope.stop = function () {
             $interval.cancel(self.promise);
