@@ -25,47 +25,38 @@ angular.module('groundplanes', []).component('groundplanes', {
             [[48002299330842,'NP04_DCS_01:Heinz_V_Cathode.']]];
 
         this.reload = function () {
+            self.timestamp = new Date();
+            $http
+                .get("php-db-conn/np04cachedvals.php?elemName=groundplanes")
+                .then(function (result) {
+                    const res = result.data;
+                    console.log(res);
 
-            $http.get("php-db-conn/cachedVals.conn.php?elemId=groundplanes").then(function (resultArr) {
-                let rArr = [];
-                let resjson = angular.toJson(resultArr.data);
-                let res = JSON.parse(resjson);
-                for (let i = 0; i < res.length; i++) {
-                    rArr.push(JSON.parse(res[i]));
-                }
+                    self.NP04_MHT0100AI = res["47878785489690"][0];
+                    self.NP04_TT0100AI = res["47878802266906"][0];
+                    self.NP04_PT0106AI = res["47878819044122"][0];
+                    self.NP04_DCS_01_GroundPlanes_Ch01 = res["47895663345946"][0];
+                    self.NP04_DCS_01_GroundPlanes_Ch02 = res["47895680123162"][0];
+                    self.NP04_DCS_01_Heinz_I = res["47894757376282"][0];
+                    self.NP04_DCS_01_GroundPlanes_Ch03 = res["47895696900378"][0];
+                    self.NP04_DCS_01_GroundPlanes_Ch04 = res["47895713677594"][0];
+                    self.NP04_DCS_01_Heinz_Limit = res["48000437059866"][0];
+                    self.NP04_DCS_01_GroundPlanes_Ch05 = res["47895730454810"][0];
+                    self.NP04_DCS_01_GroundPlanes_Ch06 = res["47895747232026"][0];
+                    self.NP04_DCS_01_Heinz_V_Cathode = res["48002299330842"][0];
+                    self.NP04_DCS_01_GroundPlanes_Ch07 = res["47895764009242"][0];
+                    self.NP04_DCS_01_GroundPlanes_Ch08 = res["47895780786458"][0];
+                    self.NP04_DCS_01_Heinz_V_Raw = res["48001913454874"][0];
+                    self.NP04_DCS_01_GroundPlanes_Ch09 = res["47895797563674"][0];
+                    self.NP04_DCS_01_GroundPlanes_Ch10 = res["47895814340890"][0];
+                    self.NP04_DCS_01_Heinz_V_Cathode_97MOhms = res["48002852978970"][0];
+                    self.NP04_DCS_01_GroundPlanes_Ch11 = res["47895831118106"][0];
+                    self.NP04_DCS_01_GroundPlanes_Ch12 = res["47895864672538"][0];
+                    self.NP04_DCS_01_GroundPlanes_Ch14 = res["47895881449754"][0];
+                    self.NP04_DCS_01_Heinz_OnOff_Sts = res["48001980563738"][0];
 
+                });
 
-                self.NP04_MHT0100AI = rArr[0];
-                self.NP04_TT0100AI = rArr[1];
-                self.NP04_PT0106AI = rArr[2];
-
-
-                self.NP04_DCS_01_Heinz_I = rArr[3];
-                self.NP04_DCS_01_GroundPlanes_Ch01 = rArr[4];
-                self.NP04_DCS_01_GroundPlanes_Ch02 = rArr[5];
-                self.NP04_DCS_01_GroundPlanes_Ch03 = rArr[6];
-                self.NP04_DCS_01_GroundPlanes_Ch04 = rArr[7];
-                self.NP04_DCS_01_GroundPlanes_Ch05 = rArr[8];
-                self.NP04_DCS_01_GroundPlanes_Ch06 = rArr[9];
-                self.NP04_DCS_01_GroundPlanes_Ch07 = rArr[10];
-                self.NP04_DCS_01_GroundPlanes_Ch08 = rArr[11];
-                self.NP04_DCS_01_GroundPlanes_Ch09 = rArr[12];
-                self.NP04_DCS_01_GroundPlanes_Ch10 = rArr[13];
-                self.NP04_DCS_01_GroundPlanes_Ch11 = rArr[14];
-                self.NP04_DCS_01_GroundPlanes_Ch12 = rArr[15];
-                self.NP04_DCS_01_GroundPlanes_Ch14 = rArr[16];
-                self.NP04_DCS_01_Heinz_Limit = rArr[17];
-                self.NP04_DCS_01_Heinz_V_Raw = rArr[18];
-                self.NP04_DCS_01_Heinz_OnOff_Sts = rArr[19];
-                self.NP04_DCS_01_Heinz_V_Cathode = rArr[20];
-                self.NP04_DCS_01_Heinz_V_Cathode_97MOhms = rArr[21];
-                self.NP04_DCS_01_Emergency_Stop = 'NaN';
-                self.NP04_DCS_01_Op_Mode = 'NaN';
-                self.NP04_DCS_01_V_SetPoint = rArr[23];
-
-
-                self.timestamp = rArr[rArr.length-1] * 1000;
-            });
 
             console.log("interval occured");
 
