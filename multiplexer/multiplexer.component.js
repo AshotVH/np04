@@ -132,6 +132,7 @@ angular.module('multiplexer', []).component('multiplexer', {
                 }
 
                 console.log("interval occured");
+                
                 self.timestamp = rArr[rArr.length-1] * 1000;
             });
 
