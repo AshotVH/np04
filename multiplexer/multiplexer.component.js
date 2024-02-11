@@ -22,7 +22,7 @@ angular.module('multiplexer', []).component('multiplexer', {
 
                 let rArr = [];
                 for (const key in res){
-                    console.log(key + "---" + key[0]);
+                    console.log(key + "---" + res.key[0]);
                 }
                 for (let i = 0; i < res.length; i++) {
                     rArr.push(JSON.parse(res[i]));
