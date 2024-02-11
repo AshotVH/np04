@@ -15,7 +15,7 @@ angular.module('purity', []).component('purity', {
                     const res = result.data;
                     console.log(res);
 
-                    // self.NP04_DCS_01_PrM0_PrM_V_A_Set = res["47928748018458"][0];
+                    self.NP04_DCS_01_PrM0_PrM_V_A_Set = res["47928748018458"][0];
                     self.NP04_DCS_01_PrM0_PrM_V_A = res["47928748018970"][0];
                     self.NP04_DCS_01_PrM0_PrM_I_A = res["47928748019738"][0];
                     self.NP04_DCS_01_PrM0_PrM_V_C_Set = res["47928748018714"][0];

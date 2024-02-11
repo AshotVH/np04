@@ -15,11 +15,12 @@ angular.module('multiplexer', []).component('multiplexer', {
 
         this.reload = function () {
 
-            $http.get("php-db-conn/cachedVals.conn.php?elemId=multiplexer").then(function (resultArr) {
+            $http.get("php-db-conn/np04cachedvals.php?elemName=multiplexer").then(function (resultArr) {
 
                 let rArr = [];
                 let resjson = angular.toJson(resultArr.data);
                 let res = JSON.parse(resjson);
+                console.log(res);
                 for (let i = 0; i < res.length; i++) {
                     rArr.push(JSON.parse(res[i]));
                 }
