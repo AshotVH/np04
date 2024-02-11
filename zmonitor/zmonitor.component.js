@@ -16,7 +16,7 @@ angular.module('zmonitor', []).component('zmonitor', {
                     const res = result.data;
                     console.log(res);
                     self.NP04_MHT0100AI = res["47878785489690"][0];
-                    self.NP04_TT0100AI = res["47878802266906"][0];
+                    // self.NP04_TT0100AI = res["47878802266906"][0];
                     self.NP04_PT0106AI = res["47878819044122"][0];
                     self.NP04_DCS_01_gizmo_RES = res["47861572043290"][0];
                     self.NP04_DCS_01_gizmo_TH = res["47861572043546"][0];
