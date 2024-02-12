@@ -63,7 +63,7 @@
   <div id="MC_LJS_02">
     <a ng-href="#!/histogram/47884221307674"
       ><span ng-if="$ctrl.MC_LJS_02!=='N/A'" class="value">{{ $ctrl.MC_LJS_02 | number: 2 }} &#956;m/m</span>
-      <span ng-else-if="$ctrl.MC_LJS_02=='N/A'" class="value">N/A</span>
+      <span ng-if="$ctrl.MC_LJS_02=='N/A'" class="value">N/A</span>
       </a
     >
   </div>
