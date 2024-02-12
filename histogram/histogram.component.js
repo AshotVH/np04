@@ -120,7 +120,7 @@ angular.module("histogram", []).component("histogram", {
               self.chartData = Object.entries(response.data).map(([key, value]) => {
                 return [parseInt(key), value];
               });
-              self.drawChart("container", chartData);
+              self.drawChart("container", self.chartData);
             });
 
 
