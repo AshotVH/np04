@@ -25,7 +25,7 @@ angular.module('lausanne', []).component('lausanne', {
                     self.MEM_LS_03 = res["47884321970970"]?res["47884321970970"][0]:"N/A";
                     self.MEM_LS_02 = res["47884338748186"]?res["47884338748186"][0]:"N/A";
                     self.MC_LJS_03 = res["47884187753242"]?res["47884187753242"][0]:"N/A";
-                    self.MC_LJS_02 = res["47884221307674"]?res["47884221307674"][0]:"N/A";
+                    self.MC_LJS_02 = res["47884221307674"]?res["47884221307674"][0].toFixed(2) + " &#956; m/m":"N/A";
                     console.log(self.MC_LJS_02);
                     console.log(typeof self.MC_LJS_02);
                 });
