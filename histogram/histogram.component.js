@@ -152,6 +152,7 @@ angular.module("histogram", []).component("histogram", {
                 .then(function onSuccess(response) {
                   console.log(response.data);
                   self.sensorName = response.data.replace("NP04_DCS_01:", "");
+                  self.sensorName.replace("\"","");
                   self.drawChart("container", self.chartData, self.sensorName);
                 });
             }
