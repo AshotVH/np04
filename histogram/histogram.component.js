@@ -156,6 +156,9 @@ angular.module("histogram", []).component("histogram", {
                   console.log(self.sensorName);
                   self.drawChart("container", self.chartData, self.sensorName);
                 });
+            } else {
+              self.drawChart("container", self.chartData, self.sensorName);
+
             }
           });
       };
