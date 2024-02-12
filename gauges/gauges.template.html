@@ -1,17 +1,58 @@
-<link rel="stylesheet" href="css/gauges.css">
-<div class="container">
-    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
-    <img id="detector" src="img/cryostat.png" alt="gauges"/>
-
-    <div id="timestamp_label">Timestamp:<br/><span
-            id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
-    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient
-        temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient
-        pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a>
+<link rel="stylesheet" href="css/gauges.css" />
+<header>
+  <div class="page_title_and_timestamps">
+    <div id="pageTitle" class="page-title">{{$ctrl.pageTitle}}</div>
+    <div id="timestamp_label" class="timestamp_label">
+      Timestamp:<br />
+      <span id="timestamp" class="timestamp"
+        >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
+      >
     </div>
+  </div>
+</header>
+<main class="gauge_container">
+    <img id="detector" src="img/cryostat.png" alt="gauges" />
+
     <div id="bellegarde"><a href="#!/bellegarde">Bellegarde side</a></div>
     <div id="jura"><a href="#!/jura">Jura side</a></div>
     <div id="lausanne"><a href="#!/lausanne">Lausanne side</a></div>
     <div id="saleve"><a href="#!/saleve">Saleve side</a></div>
     <div id="topSide"><a href="#!/top">Top side</a></div>
-</div>
+</main>
+
+<footer>
+    <table class="data_table cryostat_ambient">
+      <tbody>
+        <tr>
+          <th>
+            Humidity:<br />
+            <a target="_blank" href="#!/histogram/47878785489690">
+              <span class="value"
+                >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
+              >
+            </a>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            Ambient temperature:<br />
+            <a target="_blank" href="#!/histogram/47878802266906">
+              <span class="value"
+                >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
+              >
+            </a>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            Ambient pressure:<br />
+            <a target="_blank" href="#!/histogram/47878819044122">
+              <span class="value"
+                >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
+              >
+            </a>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </footer>

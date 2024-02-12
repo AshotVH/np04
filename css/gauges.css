@@ -1,12 +1,11 @@
+.gauge_container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
 @media screen and (max-height: 1080px) {
-    .container {
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        display: inline-block;
-        overflow: hidden;
-        margin: 0;
-    }
+  
 
     #detector {
         display: block;
@@ -83,14 +82,7 @@
 }
 
 @media screen and (min-height: 1100px) {
-    .container {
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        display: inline-block;
-        overflow: hidden;
-        margin: 0;
-    }
+ 
 
     #detector {
         display: block;
@@ -167,15 +159,7 @@
 }
 
 @media screen and (min-height: 1100px) and (min-width: 3000px) {
-    .container {
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        display: inline-block;
-        overflow: hidden;
-        margin: 0;
-    }
-
+ 
     #detector {
         display: block;
         position: fixed;

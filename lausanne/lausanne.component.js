@@ -16,6 +16,9 @@ angular.module('lausanne', []).component('lausanne', {
                     console.log(res);
                                 
                     self.NP04_MHT0100AI = res["47878785489690"]?res["47878785489690"][0]:"N/A";
+                    console.log(self.NP04_MHT0100AI);
+                    console.log(typeof self.NP04_MHT0100AI);
+
                     self.NP04_TT0100AI = res["47878802266906"]?res["47878802266906"][0]:"N/A";
                     self.NP04_PT0106AI = res["47878819044122"]?res["47878819044122"][0]:"N/A";
                     self.DS_LS_01 = res["47884355525402"]?res["47884355525402"][0]:"N/A";
@@ -33,7 +36,7 @@ angular.module('lausanne', []).component('lausanne', {
         this.reload();
         $scope.start = function () {
             $scope.stop();
-            self.promise = $interval(self.reload, 30000);
+            self.promise = $interval(self.reload, 15000);
         };
         $scope.stop = function () {
             $interval.cancel(self.promise);
