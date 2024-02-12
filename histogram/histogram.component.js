@@ -151,7 +151,7 @@ angular.module("histogram", []).component("histogram", {
                 .get("php-db-conn/np04sensorname.php?elemid=" + self.elemId)
                 .then(function onSuccess(response) {
                   console.log(response.data);
-                  self.sensorName = response.data;
+                  self.sensorName = response.data.replace("NP04_DCS_01:", "");
                   self.drawChart("container", self.chartData, self.sensorName);
                 });
             }
