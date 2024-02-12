@@ -35,7 +35,7 @@ angular.module("histogram", []).component("histogram", {
         )[0];
         highchartsDataTable.classList.toggle("hidden");
       };
-      this.drawChart = function (containerId, chartData, chartTitle) {
+      this.drawChart = function (containerId, chartData, charttitle) {
         Highcharts.chart(containerId, {
           chart: {
             zoomType: "xy",
