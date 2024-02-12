@@ -14,11 +14,10 @@ angular.module('lausanne', []).component('lausanne', {
                 .then(function (result) {
                     const res = result.data;
                     console.log(res);
-                    //self.NP04_2PT0100AIR = res["47883114011418"]?res["47883114011418"][0]:"N/A";
-                    
+                                
                     self.NP04_MHT0100AI = res["47878785489690"]?res["47878785489690"][0]:"N/A";
                     self.NP04_TT0100AI = res["47878802266906"]?res["47878802266906"][0]:"N/A";
-                    self.NP04_PT0106AI = res["47878819044122"]?res["47878819044122"][0]:"N?A";
+                    self.NP04_PT0106AI = res["47878819044122"]?res["47878819044122"][0]:"N/A";
                     self.DS_LS_01 = res["47884355525402"]?res["47884355525402"][0]:"N/A";
                     self.TC_LS_02 = res["47884238084890"]?res["47884238084890"][0]:"N/A";
                     self.B3_LS_01 = res["47884305193754"]?res["47884305193754"][0]:"N/A";
