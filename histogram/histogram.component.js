@@ -101,7 +101,7 @@ angular.module("histogram", []).component("histogram", {
         const startDateStr = startDate.toISOString().slice(0, 19);
         const endDateStr = endDate.toISOString().slice(0, 19);
         $interval.cancel;
-        $http.get("php-db-conn/np02histogram.php?elemid=" + self.elemId + "&startdate=" + startDateStr + "&enddate=" + endDateStr)
+        $http.get("php-db-conn/np04histogram.php?elemid=" + self.elemId + "&startdate=" + startDateStr + "&enddate=" + endDateStr)
             .then(function onSuccess(response) {
               const chartData = Object.entries(response.data).map(([key, value]) => {
                 return [parseInt(key), value];
@@ -113,7 +113,7 @@ angular.module("histogram", []).component("histogram", {
       this.reload = function () {
         $interval.cancel;
         const [startDateStr, endDateStr] = self.daysAndHoursToUTCDateRange(self.daysAndHours);
-        $http.get("php-db-conn/np02histogram.php?elemid=" + self.elemId + "&startdate=" + startDateStr + "&enddate=" + endDateStr)
+        $http.get("php-db-conn/np04histogram.php?elemid=" + self.elemId + "&startdate=" + startDateStr + "&enddate=" + endDateStr)
             .then(function onSuccess(response) {
               const chartData = Object.entries(response.data).map(([key, value]) => {
                 return [parseInt(key), value];
