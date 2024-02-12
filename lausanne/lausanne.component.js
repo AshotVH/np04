@@ -16,9 +16,6 @@ angular.module('lausanne', []).component('lausanne', {
                     console.log(res);
                                 
                     self.NP04_MHT0100AI = res["47878785489690"]?res["47878785489690"][0]:"N/A";
-                    console.log(self.NP04_MHT0100AI);
-                    console.log(typeof self.NP04_MHT0100AI);
-
                     self.NP04_TT0100AI = res["47878802266906"]?res["47878802266906"][0]:"N/A";
                     self.NP04_PT0106AI = res["47878819044122"]?res["47878819044122"][0]:"N/A";
                     self.DS_LS_01 = res["47884355525402"]?res["47884355525402"][0]:"N/A";
@@ -29,6 +26,8 @@ angular.module('lausanne', []).component('lausanne', {
                     self.MEM_LS_02 = res["47884338748186"]?res["47884338748186"][0]:"N/A";
                     self.MC_LJS_03 = res["47884187753242"]?res["47884187753242"][0]:"N/A";
                     self.MC_LJS_02 = res["47884221307674"]?res["47884221307674"][0]:"N/A";
+                    console.log(self.MC_LJS_02);
+                    console.log(typeof self.MC_LJS_02);
                 });
         };
 
