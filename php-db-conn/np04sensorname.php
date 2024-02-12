@@ -8,7 +8,7 @@ $elemId = $_GET["elemid"];
 
 
 $url = "http://188.185.64.236:8000/sensor-name/" . $elemId;
-// $json = json_decode(file_get_contents($url));
+$json = json_decode(file_get_contents($url));
 // $responseArr = [];
 // foreach ($json as $key => $value) {
 //     $key = intval($key);
@@ -16,5 +16,5 @@ $url = "http://188.185.64.236:8000/sensor-name/" . $elemId;
 //     $responseArr[$key] = $value;
 // }
 // echo(json_encode($responseArr));
-echo file_get_contents($url);
+echo(json_encode($json));
 ?>
