@@ -18,6 +18,7 @@ angular.module("histogram", []).component("histogram", {
       this.natalie = 1;
       this.pageTitle = "Histogram";
       this.elemId = $routeParams.elemId;
+      let elemName;
       this.daysAndHours = '0-6';
       this.daysAndHoursToUTCDateRange = function (daysAndHours) {
         const [days, hours] = [parseInt(daysAndHours.split('-')[0]), parseInt(daysAndHours.split('-')[1])];
@@ -34,7 +35,7 @@ angular.module("histogram", []).component("histogram", {
         )[0];
         highchartsDataTable.classList.toggle("hidden");
       };
-      this.drawChart = function (containerId, chartData) {
+      this.drawChart = function (containerId, chartData, chartTitle) {
         Highcharts.chart(containerId, {
           chart: {
             zoomType: "xy",
@@ -101,15 +102,15 @@ angular.module("histogram", []).component("histogram", {
         const startDateStr = startDate.toISOString().slice(0, 19);
         const endDateStr = endDate.toISOString().slice(0, 19);
         $interval.cancel;
-        $http.get("php-db-conn/np04histogram.php?elemid=" + self.elemId + "&startdate=" + startDateStr + "&enddate=" + endDateStr)
-            .then(function onSuccess(response) {
-              const chartData = Object.entries(response.data).map(([key, value]) => {
-                return [parseInt(key), value];
-              });
-              self.drawChart("container", chartData);
-            });
-        return false;
-      };
+      //   $http.get("php-db-conn/np04histogram.php?elemid=" + self.elemId + "&startdate=" + startDateStr + "&enddate=" + endDateStr)
+      //       .then(function onSuccess(response) {
+      //         const chartData = Object.entries(response.data).map(([key, value]) => {
+      //           return [parseInt(key), value];
+      //         });
+      //         self.drawChart("container", chartData);
+      //       });
+      //   return false;
+      // };
       this.reload = function () {
         $interval.cancel;
         const [startDateStr, endDateStr] = self.daysAndHoursToUTCDateRange(self.daysAndHours);
