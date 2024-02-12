@@ -148,7 +148,7 @@ angular.module("histogram", []).component("histogram", {
             );
             if (!self.sensorName) {
               $http
-                .get("php-db-conn/np04sensroname.php?elemid=" + self.elemId)
+                .get("php-db-conn/np04sensorname.php?elemid=" + self.elemId)
                 .then(function onSuccess(response) {
                   console.log(response.data);
                   self.sensorName = "sensorName";
