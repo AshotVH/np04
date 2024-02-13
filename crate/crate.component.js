@@ -16,11 +16,12 @@ angular.module('crate', []).component('crate', {
 
         this.reload = function () {
 
-            $http.get("php-db-conn/cachedVals.conn.php?elemId=crate" + self.crateId).then(function (resultArr) {
+            $http.get("php-db-conn/np04cachedvals.php?elemName=crate" + self.crateId).then(function (resultArr) {
 
                 let rArr = [];
-                let resjson = angular.toJson(resultArr.data);
-                let res = JSON.parse(resjson);
+                // let resjson = angular.toJson(resultArr.data);
+                // let res = JSON.parse(resjson);
+                console.log(resultArr.data);
                 for (let i = 0; i < res.length; i++) {
                     rArr.push(JSON.parse(res[i]));
                 }

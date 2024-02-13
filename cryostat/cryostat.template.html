@@ -1,422 +1,435 @@
-<link rel="stylesheet" href="css/cryostat.css"/>
-<div class="page_title_and_timestamps">
-    <div id="pageTitle" class="page-title">{{$ctrl.pageTitle}}</div>
-    <div id="timestamp_label" class="timestamp_label">
-        Timestamp:<br/>
-        <span id="timestamp" class="timestamp"
-        >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
-        >
-    </div>
-</div>
-
-<div class="cryostat_main">
-    <div class="cryostat_container">
-        <div class="cryostat_img_container">
-            <img class="cryostat_img" src="img/cryostat_main.png" alt="Cryostat"/>
+<link rel="stylesheet" href="css/cryostat.css" />
+<header class="container page_header">
+  <div class="row">
+    <div class="col page-title">{{$ctrl.pageTitle}}</div>
+    <div class="col timestamp_label">
+      <div class="row">
+        <div class="col">Timestamp</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span id="timestamp" class="timestamp"
+            >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
+          >
         </div>
-
-        <table class="data_table cryostat_inner_pressure">
-            <thead>
-            <tr>
-                <th class="data_table__circle_wrapper">
-                    <span class="data_table__circle">4</span>
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th>
-                    Inner pressure ABS (PT0100):<br/>
-                    <a target="_blank" href="#!/histogram/47878684826394"
-                    ><span class="value"
-                    >{{ $ctrl.NP04_PT0100AI | number: 1 }} mbar</span
-                    ></a
-                    >
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    Inner pressure Diff (PT0101):<br/>
-                    <a target="_blank" href="#!/histogram/47878701603610"
-                    ><span class="value"
-                    >{{ $ctrl.NP04_PT0101AI | number: 1 }} mbar</span
-                    ></a
-                    >
-                </th>
-            </tr>
-            </tbody>
-        </table>
-
-        <table class="data_table cryostat_outer_pressure">
-            <thead>
-            <tr>
-                <th class="data_table__circle_wrapper">
-                    <span class="data_table__circle">2</span>
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th>
-                    Outer pressure ABS (PT0104):<br/>
-                    <a target="_blank" href="#!/histogram/47878751935258"
-                    ><span class="value"
-                    >{{ $ctrl.NP04_PT0104AI | number: 1 }} mbar</span
-                    ></a
-                    >
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    Outer pressure Diff (PT0105):<br/>
-                    <a target="_blank" href="#!/histogram/47878768712474"
-                    ><span class="value"
-                    >{{ $ctrl.NP04_PT0105AI | number: 1 }} mbar</span
-                    ></a
-                    >
-                </th>
-            </tr>
-            </tbody>
-        </table>
-
-        <table class="data_table cryostat_beam_plug_lesker_vacuum_gauge">
-            <thead>
-            <tr>
-                <th class="data_table__circle_wrapper">
-                    <span class="data_table__circle">6</span>
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th>
-                    Beam plug:<br/>
-                    <a target="_blank" href="#!/histogram/47883114011418">
-
-            <span ng-show="isNumber($ctrl.NP04_2PT0100AIR)" class="value"
-            >{{ $ctrl.NP04_2PT0100AIR  | number: 2 }} mbar</span
-            >
-           <span ng-show="!isNumber($ctrl.NP04_2PT0100AIR)" class="value"
-                        >N/A</span
-                        >
-
-                    </a>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    Lesker vacuum gauge:<br/>
-                    <a target="_blank" href="#!/histogram/47878902930202"
-                    ><span class="value"
-                    >{{ $ctrl.NP04_2PT0100AI | number: 2 }} V</span
-                    ></a
-                    >
-                </th>
-            </tr>
-            </tbody>
-        </table>
-
-        <table class="data_table cryostat_inner_pressure_2">
-            <thead>
-            <tr>
-                <th class="data_table__circle_wrapper">
-                    <span class="data_table__circle">5</span>
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th>
-                    Inner Pressure ABS 2 (PT0102):<br/><a
-                        target="_blank"
-                        href="#!/histogram/47882929462042"
-                ><span class="value"
-                >{{ $ctrl.NP04_PT0102AI | number: 1 }} mbar</span
-                ></a
-                >
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    Inner Pressure Diff 2 (PT0103):<br/><a
-                        target="_blank"
-                        href="#!/histogram/47878735158042"
-                ><span class="value"
-                >{{ $ctrl.NP04_PT0103AI | number: 1 }} mbar</span
-                ></a
-                >
-                </th>
-            </tr>
-            </tbody>
-        </table>
-        <table class="data_table cryostat_penetration_pipe1">
-            <thead>
-            <tr>
-                <th class="data_table__circle_wrapper">
-                    <span class="data_table__circle">1</span>
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th>Pen. pipe 33.1</th>
-            </tr>
-            <tr>
-                <th>
-                    TE0121 <span>(Type 1)</span>:
-                    <a target="_blank" href="#!/histogram/47892274348314"
-                    ><span class="value"
-                    >{{ $ctrl.NP04_DCS_01_TE0121 | number: 1 }} &#8490;</span
-                    ></a
-                    >
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    TE0122 <span>(Type 1)</span>:
-                    <a target="_blank" href="#!/histogram/47892291125530"
-                    ><span class="value"
-                    >{{ $ctrl.NP04_DCS_01_TE0122 | number: 1 }} &#8490;</span
-                    ></a
-                    >
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    TE0123 <span>(Type 2)</span>:
-                    <a target="_blank" href="#!/histogram/47892307902746"
-                    ><span class="value"
-                    >{{ $ctrl.NP04_DCS_01_TE0123 | number: 1 }} &#8490;</span
-                    ></a
-                    >
-                </th>
-            </tr>
-            </tbody>
-        </table>
-
-        <table class="data_table cryostat_penetration_pipe2">
-            <thead>
-            <tr>
-                <th class="data_table__circle_wrapper">
-                    <span class="data_table__circle">3</span>
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th>Pen. pipe 33.2</th>
-            </tr>
-            <tr>
-                <th>
-                    TE0127<span>(Type 1)</span>:
-                    <a target="_blank" href="#!/histogram/47892375011610"
-                    ><span class="value"
-                    >{{ $ctrl.NP04_DCS_01_TE0127 | number: 1 }} &#8490;</span
-                    ></a
-                    >
-                </th>
-            </tr>
-            </tbody>
-        </table>
-        <table class="data_table cryostat_penetration_pipe3">
-            <thead>
-            <tr>
-                <th class="data_table__circle_wrapper">
-                    <span class="data_table__circle">8</span>
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th>Pen. pipe 33.3</th>
-            </tr>
-            <tr>
-                <th>
-                    TE0133 (Type 1):<br/>
-                    <a target="_blank" href="#!/histogram/47892475674906"
-                    ><span class="value"
-                    >{{ $ctrl.NP04_DCS_01_TE0133 | number: 1 }} &#8490;</span
-                    ></a
-                    >
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    TE0135 (Type 2):<br/>
-                    <a target="_blank" href="#!/histogram/47892509229338"
-                    ><span class="value"
-                    >{{ $ctrl.NP04_DCS_01_TE0135 | number: 1 }} &#8490;</span
-                    ></a
-                    >
-                </th>
-            </tr>
-            </tbody>
-        </table>
-
-        <table class="data_table cryostat_penetration_pipe4">
-            <thead>
-            <tr>
-                <th class="data_table__circle_wrapper">
-                    <span class="data_table__circle">7</span>
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th>Pen. pipe 33.4</th>
-            </tr>
-            <tr>
-                <th>
-                    TE0139 (Type 1): <br/>
-                    <a target="_blank" href="#!/histogram/47892576338202"
-                    ><span class="value"
-                    >{{ $ctrl.NP04_DCS_01_TE0139 | number: 1 }} &#8490;</span
-                    ></a
-                    ><br/>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    TE0140 (Type 2): <br/>
-                    <a target="_blank" href="#!/histogram/47892593115418"
-                    ><span class="value"
-                    >{{ $ctrl.NP04_DCS_01_TE0140 | number: 1 }} &#8490;</span
-                    ></a
-                    >
-                </th>
-            </tr>
-            </tbody>
-        </table>
-
-        <table class="data_table cryostat_pressure">
-            <tbody>
-            <tr>
-                <th>
-                    Cryostat:
-                    <a target="_blank" ng-href="#!/histogram/47931851800858"
-                    ><span class="value"
-                    >{{ $ctrl.NP04_DCS_01_NP04_4PT4920 | number: 2 }} bar</span
-                    ></a
-                    ><br/>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    PT0110:&nbsp;<a target="_blank" ng-href="#!/histogram/47879272028954"
-                ><span class="value"
-                >{{ $ctrl.NP04_PT0110AI | number: 1 }} mbar</span
-                ></a
-                ><br/>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    xPT0111:&nbsp;<a target="_blank" ng-href="#!/histogram/47879288806170"
-                ><span class="value"
-                >{{ $ctrl.NP04_PT0111AI | number: 1 }} mbar</span
-                ></a
-                >
-                </th>
-            </tr>
-            </tbody>
-        </table>
-
-        <table class="data_table cryostat_cv">
-            <tbody>
-            <tr>
-                <th>
-                    CV4100:
-                    <a target="_blank" ng-href="#!/histogram/47888667251994"
-                    ><span class="value">{{ $ctrl.CV4100 | number: 2 }} %</span></a
-                    >
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    CV4101:
-                    <a target="_blank" ng-href="#!/histogram/47888684029210"
-                    ><span class="value">{{ $ctrl.CV4101 | number: 2 }} %</span></a
-                    >
-                </th>
-            </tr>
-            </tbody>
-        </table>
-
-        <table class="data_table cryostat_gas">
-            <tbody>
-            <tr>
-                <th>
-                    O<sub>2</sub>:
-                    <a target="_blank" ng-href="#!/histogram/47897609503002"
-                    ><span class="value"
-                    >{{ $ctrl.NP04_DCS_01_NP04_4QT4710 | number: 2}} ppm</span
-                    ></a
-                    >
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    O<sub>2</sub>:
-                    <a target="_blank" ng-href="#!/histogram/47897626280218"
-                    ><span class="value"
-                    >{{ $ctrl.NP04_DCS_01_NP04_4QT4711 | number: 2}} ppm</span
-                    ></a
-                    >
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    N<sub>2</sub>:
-                    <a target="_blank" ng-href="#!/histogram/47897643057434"
-                    ><span class="value"
-                    >{{ $ctrl.NP04_DCS_01_NP04_4QT4720 | number: 2}} ppm</span
-                    ></a
-                    >
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    H<sub>2</sub>O:
-                    <a target="_blank" ng-href="#!/histogram/47897676611866"
-                    ><span class="value"
-                    >{{ $ctrl.NP04_DCS_01_NP04_4QT4730 | number: 2}} ppm</span
-                    ></a
-                    >
-                </th>
-            </tr>
-            </tbody>
-        </table>
-
-
-        <table class="data_table cryostat_ambient">
-            <tbody>
-            <tr>
-                <th>
-                    Humidity:<br>
-                    <a target="_blank" href="#!/histogram/47878785489690">
-                        <span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span>
-                    </a>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    Ambient temperature:<br>
-                    <a target="_blank" href="#!/histogram/47878802266906">
-                        <span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span>
-                    </a>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    Ambient pressure:<br>
-                    <a target="_blank" href="#!/histogram/47878819044122">
-                        <span class=" value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span>
-                    </a>
-                </th>
-
-            </tr>
-            </tbody>
-        </table>
+      </div>
     </div>
-</div>
+  </div>
+</header>
+<main class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-3 pt-2">
+      <img class="cryostat_img" src="img/cryostat_main.png" alt="cryostat" />
+    </div>
+    <div class="col-12 col-md-12 col-lg-9">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 pt-2">
+          <table class="table table-sm table-bordered caption-top">
+            <caption>
+              <div class="data_table__circle">2</div>
+            </caption>
+          
+            <tbody>
+              <tr>
+                <td>Outer pressure ABS (PT0104)</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47878751935258"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_PT0104AI | number: 1 }} mbar</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Outer pressure Diff (PT0105):<br /></td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47878768712474"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_PT0105AI | number: 1 }} mbar</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 pt-2">
+          <table class="table table-sm table-bordered caption-top">
+            <caption>
+              <div class="data_table__circle">4</div>
+            </caption>
+         
+            <tbody>
+              <tr>
+                <td>Inner pressure ABS (PT0100)</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47878684826394"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_PT0100AI | number: 1 }} mbar</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Inner pressure Diff (PT0101)</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47878701603610"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_PT0101AI | number: 1 }} mbar</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 pt-2">
+          <table class="table table-sm table-bordered caption-top">
+            <caption>
+              <div class="data_table__circle">5</div>
+            </caption>
+       
+            <tbody>
+              <tr>
+                <td>Inner Pressure ABS 2 (PT0102)</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47882929462042"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_PT0102AI | number: 1 }} mbar</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Inner Pressure Diff 2 (PT0103)</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47878735158042"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_PT0103AI | number: 1 }} mbar</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 pt-2">
+          <table class="table table-sm table-bordered caption-top">
+            <caption>
+              <div class="data_table__circle">6</div>
+            </caption>
+         
+            <tbody>
+              <tr>
+                <td>Beam plug</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47883114011418">
+                    <span
+                      ng-show="isNumber($ctrl.NP04_2PT0100AIR)"
+                      class="value"
+                      >{{ $ctrl.NP04_2PT0100AIR | number: 2 }} mbar</span
+                    >
+                    <span
+                      ng-show="!isNumber($ctrl.NP04_2PT0100AIR)"
+                      class="value"
+                      >N/A</span
+                    >
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Lesker vacuum gauge</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47878902930202"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_2PT0100AI | number: 2 }} V</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 pt-2">
+          <table class="table table-sm table-bordered caption-top">
+            <caption>
+              <div class="data_table__circle">7</div>
+              <span>Pen. pipe 33.4</span>
+            </caption>
+        
+            <tbody>
+              <tr>
+                <td>TE0139 (Type 1)</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47892576338202"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0139 | number: 1 }} &#8490;</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>TE0140 (Type 2)</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47892593115418"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0140 | number: 1 }} &#8490;</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 pt-2">
+          <table class="table table-sm table-bordered caption-top">
+            <caption>
+              <div class="data_table__circle">8</div>
+              <span>Pen. pipe 33.3</span>
+            </caption>
+          
+            <tbody>
+              <tr>
+                <td>TE0133 (Type 1)</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47892475674906"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0133 | number: 1 }} &#8490;</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>TE0135 (Type 2)</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47892509229338"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0135 | number: 1 }} &#8490;</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <table class="table table-sm table-bordered caption-top">
+              <caption>
+                <div class="data_table__circle">3</div>
+                <span>Pen. pipe 33.2</span>
+              </caption>
+             
+              <tbody>
+                <tr>
+                  <td>TE0127 (Type 1)</td>
+                  <td>
+                    <a target="_blank" href="#!/histogram/47892375011610"
+                      ><span class="value"
+                        >{{ $ctrl.NP04_DCS_01_TE0127 | number: 1 }} &#8490;</span
+                      ></a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <table class="table table-sm table-bordered caption-top">
+            
+              <tbody>
+                <tr>
+                  <td>CV4100</td>
+                  <td>
+                    <a target="_blank" ng-href="#!/histogram/47888667251994"
+                      ><span class="value">{{ $ctrl.CV4100 | number: 2 }} %</span></a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>CV4101</td>
+                  <td>
+                    <a target="_blank" ng-href="#!/histogram/47888684029210"
+                      ><span class="value">{{ $ctrl.CV4101 | number: 2 }} %</span></a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-3">
+      <table class="table table-sm table-bordered caption-top">
+        <caption>
+          <div class="data_table__circle">1</div>
+          <span>Pen. pipe 33.1</span>
+        </caption>
+      
+        <tbody>
+          <tr>
+            <td>TE0121 (Type 1)</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47892274348314"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0121 | number: 1 }} &#8490;</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>TE0122 (Type 1)</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47892291125530"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0122 | number: 1 }} &#8490;</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>TE0123 (Type 2)</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47892307902746"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0123 | number: 1 }} &#8490;</span
+                ></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3">
+        <table class="table table-sm table-bordered caption-top">
+       
+          <tbody>
+            <tr>
+              <td>O<sub>2</sub></td>
+              <td>
+                <a target="_blank" ng-href="#!/histogram/47897609503002"
+                  ><span class="value"
+                    >{{ $ctrl.NP04_DCS_01_NP04_4QT4710 | number: 2}} ppm</span
+                  ></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>O<sub>2</sub></td>
+              <td>
+                <a target="_blank" ng-href="#!/histogram/47897626280218"
+                  ><span class="value"
+                    >{{ $ctrl.NP04_DCS_01_NP04_4QT4711 | number: 2}} ppm</span
+                  ></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>N<sub>2</sub></td>
+              <td>
+                <a target="_blank" ng-href="#!/histogram/47897643057434"
+                  ><span class="value"
+                    >{{ $ctrl.NP04_DCS_01_NP04_4QT4720 | number: 2}} ppm</span
+                  ></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>H<sub>2</sub>O</td>
+              <td>
+                <a target="_blank" ng-href="#!/histogram/47897676611866"
+                  ><span class="value"
+                    >{{ $ctrl.NP04_DCS_01_NP04_4QT4730 | number: 2}} ppm</span
+                  ></a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <div class="col-12 col-md-6 col-lg-3">
+      <table class="table table-sm table-bordered caption-top">
+     
+        <tbody>
+          <tr>
+            <td>Cryostat</td>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47931851800858"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_NP04_4PT4920 | number: 2 }} bar</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>PT0110</td>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47879272028954"
+                ><span class="value"
+                  >{{ $ctrl.NP04_PT0110AI | number: 1 }} mbar</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>xPT0111</td>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47879288806170"
+                ><span class="value"
+                  >{{ $ctrl.NP04_PT0111AI | number: 1 }} mbar</span
+                ></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+   
+   
+  
+  </div>
+</main>
 
+
+
+<footer class="container page_footer">
+  <div class="row justify-content-end">
+    <div class="col-8 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td>Humidity</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878785489690">
+                <span class="value"
+                  >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient temperature</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878802266906">
+                <span class="value"
+                  >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient pressure</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878819044122">
+                <span class="value"
+                  >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
+                >
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</footer>

@@ -1,6 +1,46 @@
 /* app css stylesheet */
+html {
+  font-size: 10px;
+}
 body {
   background-color: #004c93;
+}
+.page_header {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.76);
+}
+.page_footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.76);
+  padding-top: 30px;
+}
+caption {
+  text-align: center;
+  color: #212529;
+  border: 1px solid #f8f9fa;
+}
+.data_table__circle {
+  display: inline-block;
+  border: 1px solid;
+  font-size: 1.5rem;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 150%;
+  background-color: #f8f9fa;
+}
+
+th,
+td,
+tbody {
+  background: transparent !important;
+}
+td,
+th {
+  color: white !important;
+  font-size: 1.4rem;
+  text-align: center;
 }
 a {
   text-decoration: none;
@@ -13,22 +53,22 @@ a {
   width: 50px;
   height: 50px;
 }
-/* The side navigation menu */
+
 .sidenav {
-  height: calc(100vh - 40px); /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
+  height: calc(100vh - 40px); 
+  width: 0; 
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
   background-color: rgb(15, 15, 15); /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: hidden; 
   padding-top: 40px; /* Place content 60px from the top */
   transition: 0.3s; /* 0.5 second transition effect to slide in the sidenav */
   padding-bottom: 100px;
 }
 
-/* The navigation menu links */
+
 .sidenav a,
 .sidenav div {
   padding: 8px 8px 8px 32px;
@@ -42,12 +82,12 @@ a {
 .sidenav div {
   cursor: pointer;
 }
-/* When you mouse over the navigation links, change their color */
+
 .sidenav a:hover {
   color: #fffafa;
 }
 
-/* Position and style the close button (top right corner) */
+
 .sidenav .closebtn {
   position: absolute;
   top: 20px;
@@ -56,49 +96,23 @@ a {
   margin-left: 50px;
 }
 
-.page_title_and_timestamps {
-  position: relative;
-  width: 100%;
-  height: 50px;
-  padding-top: 20px;
-  padding-bottom: 50px;
-}
 .page-title {
-  position: absolute;
-  left: 4vw;
   color: white;
   font-family: "Arial Black", Gadget, sans-serif;
-  font-size: 18px;
-}
-.data_table {
-  position: absolute;
-  border-collapse: collapse;
-}
-.data_table tr,
-.data_table th, .data_table td {
-  border-color: white;
-  border: 1px solid white;
-}
-.data_table th {
-  font-family: "Arial Black", Gadget, sans-serif;
-  padding: 3px 2px;
-  font-size: 10px;
-  color: white;
+  font-size: 1.8rem;
 }
 
 .timestamp_label {
-  position: absolute;
-  right: 4vw;
   text-align: right;
   color: white;
   font-family: "Arial Black", Gadget, sans-serif;
-  font-size: 11px;
+  font-size: 1.1rem;
 }
 .timestamp {
   text-align: right;
   color: white;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 11px;
+  font-size: 1.1rem;
 }
 .value,
 a .value {
