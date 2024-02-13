@@ -32,7 +32,10 @@
                             DS_JS_01
                         </td>
                         <td>
-                            <a ng-href="#!/histogram/47884120644378"><span class="value">{{ $ctrl.DS_JS_01 | number: 2 }} &#956;m/m</span></a>
+                            <a ng-href="#!/histogram/47884120644378">
+                                <span ng-if="$ctrl.DS_JS_01!=='N/A'" class="value">{{ $ctrl.DS_JS_01 | number: 2 }} &#956;m/m</span>
+                                <span ng-if="$ctrl.DS_JS_01==='N/A'" class="value">N/A</span>
+                            </a>
                         </td>
                     </tr>    
                     <tr>
@@ -40,7 +43,10 @@
                             TC_JS_02
                         </td>
                         <td>
-                            <a ng-href="#!/histogram/47884036758298"><span class="value">{{ $ctrl.TC_JS_02 | number: 2 }} &#956;m/m</span></a>
+                            <a ng-href="#!/histogram/47884036758298">
+                                <span ng-if="$ctrl.TC_JS_02!=='N/A'" class="value">{{ $ctrl.TC_JS_02 | number: 2 }} &#956;m/m</span>
+                                <span ng-if="$ctrl.TC_JS_02==='N/A'" class="value">N/A</span>
+                            </a>
                         </td>
                     </tr>
                     <tr>
@@ -48,7 +54,10 @@
                             B3_JS_01
                         </td>
                         <td>
-                            <a ng-href="#!/histogram/47884103867162"><span class="value">{{ $ctrl.B3_JS_01 | number: 2 }} &#956;m/m</span></a>
+                            <a ng-href="#!/histogram/47884103867162">
+                                <span ng-if="$ctrl.B3_JS_01!=='N/A'" class="value">{{ $ctrl.B3_JS_01 | number: 2 }} &#956;m/m</span>
+                                <span ng-if="$ctrl.B3_JS_01==='N/A'" class="value">N/A</span>
+                            </a>
                         </td>
                     </tr>
                     <tr>
@@ -56,7 +65,10 @@
                             BC_JS_03
                         </td>
                         <td>
-                            <a ng-href="#!/histogram/47884070312730"><span class="value">{{ $ctrl.BC_JS_03 | number: 2 }} &#956;m/m</span></a>
+                            <a ng-href="#!/histogram/47884070312730">
+                                <span ng-if="$ctrl.BC_JS_03!=='N/A'" class="value">{{ $ctrl.BC_JS_03 | number: 2 }} &#956;m/m</span>
+                                <span ng-if="$ctrl.BC_JS_03==='N/A'" class="value">N/A</span>
+                            </a>
                         </td>
                     </tr>
                     <tr>
@@ -64,7 +76,10 @@
                             MC_BJS_03
                         </td>
                         <td>
-                            <a ng-href="#!/histogram/47884137421594"><span class="value">{{ $ctrl.MC_BJS_03 | number: 2 }} &#956;m/m</span></a>
+                            <a ng-href="#!/histogram/47884137421594">
+                                <span ng-if="$ctrl.MC_BJS_03!=='N/A'" class="value">{{ $ctrl.MC_BJS_03 | number: 2 }} &#956;m/m</span>
+                                <span ng-if="$ctrl.MC_BJS_03==='N/A'" class="value">N/A</span>
+                            </a>
                         </td>
                     </tr>
                     <tr>
@@ -72,8 +87,10 @@
                             MC_BJS_02
                         </td>
                         <td>
-                            <a ng-href="#!/histogram/47884154198810"><span class="value">{{ $ctrl.MC_BJS_02 | number: 2 }} &#956;m/m</span></a>
-
+                            <a ng-href="#!/histogram/47884154198810">
+                                <span ng-if="$ctrl.MC_BJS_02!=='N/A'" class="value">{{ $ctrl.MC_BJS_02 | number: 2 }} &#956;m/m</span>
+                                <span ng-if="$ctrl.MC_BJS_02==='N/A'" class="value">N/A</span>
+                            </a>
                         </td>
                     </tr>
                 </tbody>
