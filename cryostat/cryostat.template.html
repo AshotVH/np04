@@ -18,17 +18,17 @@
 </header>
 <main class="container">
   <div class="row justify-content-center">
-    <div class="col-12 col-md-8 col-lg-3 pt-2">
+    <div class="col-12 col-md-8 col-lg-4 pt-2">
       <img class="cryostat_img" src="img/cryostat_main.png" alt="cryostat" />
     </div>
-    <div class="col-12 col-md-12 col-lg-9">
-      <div class="row">
-        <div class="col-12 col-md-6 col-lg-4 pt-2">
+    <div class="col-12 col-md-12 col-lg-8">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-6 pt-2">
           <table class="table table-sm table-bordered caption-top">
             <caption>
               <div class="data_table__circle">2</div>
             </caption>
-          
+
             <tbody>
               <tr>
                 <td>Outer pressure ABS (PT0104)</td>
@@ -53,12 +53,12 @@
             </tbody>
           </table>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 pt-2">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-6 pt-2">
           <table class="table table-sm table-bordered caption-top">
             <caption>
               <div class="data_table__circle">4</div>
             </caption>
-         
+
             <tbody>
               <tr>
                 <td>Inner pressure ABS (PT0100)</td>
@@ -83,12 +83,12 @@
             </tbody>
           </table>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 pt-2">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-6 pt-2">
           <table class="table table-sm table-bordered caption-top">
             <caption>
               <div class="data_table__circle">5</div>
             </caption>
-       
+
             <tbody>
               <tr>
                 <td>Inner Pressure ABS 2 (PT0102)</td>
@@ -113,12 +113,12 @@
             </tbody>
           </table>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 pt-2">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-6 pt-2">
           <table class="table table-sm table-bordered caption-top">
             <caption>
               <div class="data_table__circle">6</div>
             </caption>
-         
+
             <tbody>
               <tr>
                 <td>Beam plug</td>
@@ -150,13 +150,13 @@
             </tbody>
           </table>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 pt-2">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-6 pt-2">
           <table class="table table-sm table-bordered caption-top">
             <caption>
               <div class="data_table__circle">7</div>
               <span>Pen. pipe 33.4</span>
             </caption>
-        
+
             <tbody>
               <tr>
                 <td>TE0139 (Type 1)</td>
@@ -181,13 +181,13 @@
             </tbody>
           </table>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 pt-2">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-6 pt-2">
           <table class="table table-sm table-bordered caption-top">
             <caption>
               <div class="data_table__circle">8</div>
               <span>Pen. pipe 33.3</span>
             </caption>
-          
+
             <tbody>
               <tr>
                 <td>TE0133 (Type 1)</td>
@@ -212,61 +212,64 @@
             </tbody>
           </table>
         </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            <table class="table table-sm table-bordered caption-top">
-              <caption>
-                <div class="data_table__circle">3</div>
-                <span>Pen. pipe 33.2</span>
-              </caption>
-             
-              <tbody>
-                <tr>
-                  <td>TE0127 (Type 1)</td>
-                  <td>
-                    <a target="_blank" href="#!/histogram/47892375011610"
-                      ><span class="value"
-                        >{{ $ctrl.NP04_DCS_01_TE0127 | number: 1 }} &#8490;</span
-                      ></a
-                    >
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <table class="table table-sm table-bordered caption-top">
-            
-              <tbody>
-                <tr>
-                  <td>CV4100</td>
-                  <td>
-                    <a target="_blank" ng-href="#!/histogram/47888667251994"
-                      ><span class="value">{{ $ctrl.CV4100 | number: 2 }} %</span></a
-                    >
-                  </td>
-                </tr>
-                <tr>
-                  <td>CV4101</td>
-                  <td>
-                    <a target="_blank" ng-href="#!/histogram/47888684029210"
-                      ><span class="value">{{ $ctrl.CV4101 | number: 2 }} %</span></a
-                    >
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="col-12 col-sm-8 col-md-6 col-lg-5">
+          <table class="table table-sm table-bordered caption-top">
+            <caption>
+              <div class="data_table__circle">3</div>
+              <span>Pen. pipe 33.2</span>
+            </caption>
+
+            <tbody>
+              <tr>
+                <td>TE0127 (Type 1)</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47892375011610"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0127 | number: 1 }} &#8490;</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-12 col-sm-8 col-md-6 col-lg-5">
+          <table class="table table-sm table-bordered caption-top">
+            <tbody>
+              <tr>
+                <td>CV4100</td>
+                <td>
+                  <a target="_blank" ng-href="#!/histogram/47888667251994"
+                    ><span class="value"
+                      >{{ $ctrl.CV4100 | number: 2 }} %</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>CV4101</td>
+                <td>
+                  <a target="_blank" ng-href="#!/histogram/47888684029210"
+                    ><span class="value"
+                      >{{ $ctrl.CV4101 | number: 2 }} %</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-12 col-md-6 col-lg-3">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-8 col-md-6 col-lg-4">
       <table class="table table-sm table-bordered caption-top">
         <caption>
           <div class="data_table__circle">1</div>
           <span>Pen. pipe 33.1</span>
         </caption>
-      
+
         <tbody>
           <tr>
             <td>TE0121 (Type 1)</td>
@@ -301,56 +304,54 @@
         </tbody>
       </table>
     </div>
-    <div class="col-12 col-md-6 col-lg-3">
-        <table class="table table-sm table-bordered caption-top">
-       
-          <tbody>
-            <tr>
-              <td>O<sub>2</sub></td>
-              <td>
-                <a target="_blank" ng-href="#!/histogram/47897609503002"
-                  ><span class="value"
-                    >{{ $ctrl.NP04_DCS_01_NP04_4QT4710 | number: 2}} ppm</span
-                  ></a
-                >
-              </td>
-            </tr>
-            <tr>
-              <td>O<sub>2</sub></td>
-              <td>
-                <a target="_blank" ng-href="#!/histogram/47897626280218"
-                  ><span class="value"
-                    >{{ $ctrl.NP04_DCS_01_NP04_4QT4711 | number: 2}} ppm</span
-                  ></a
-                >
-              </td>
-            </tr>
-            <tr>
-              <td>N<sub>2</sub></td>
-              <td>
-                <a target="_blank" ng-href="#!/histogram/47897643057434"
-                  ><span class="value"
-                    >{{ $ctrl.NP04_DCS_01_NP04_4QT4720 | number: 2}} ppm</span
-                  ></a
-                >
-              </td>
-            </tr>
-            <tr>
-              <td>H<sub>2</sub>O</td>
-              <td>
-                <a target="_blank" ng-href="#!/histogram/47897676611866"
-                  ><span class="value"
-                    >{{ $ctrl.NP04_DCS_01_NP04_4QT4730 | number: 2}} ppm</span
-                  ></a
-                >
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    <div class="col-12 col-md-6 col-lg-3">
+    <div class="col-12 col-sm-8 col-md-6 col-lg-4">
       <table class="table table-sm table-bordered caption-top">
-     
+        <tbody>
+          <tr>
+            <td>O<sub>2</sub></td>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47897609503002"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_NP04_4QT4710 | number: 2}} ppm</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>O<sub>2</sub></td>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47897626280218"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_NP04_4QT4711 | number: 2}} ppm</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>N<sub>2</sub></td>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47897643057434"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_NP04_4QT4720 | number: 2}} ppm</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>H<sub>2</sub>O</td>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47897676611866"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_NP04_4QT4730 | number: 2}} ppm</span
+                ></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+      <table class="table table-sm table-bordered caption-top">
         <tbody>
           <tr>
             <td>Cryostat</td>
@@ -385,13 +386,8 @@
         </tbody>
       </table>
     </div>
-   
-   
-  
   </div>
 </main>
-
-
 
 <footer class="container page_footer">
   <div class="row justify-content-end">
