@@ -1,222 +1,252 @@
-<link rel="stylesheet" href="css/saleve.css">
+<link rel="stylesheet" href="css/saleve.css" />
 <header class="container page_header">
-    <div class="row">
-      <div class="col page-title">{{$ctrl.pageTitle}}</div>
-      <div class="col timestamp_label">
-        <div class="row">
-          <div class="col">Timestamp</div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <span id="timestamp" class="timestamp"
-              >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
-            >
-          </div>
+  <div class="row">
+    <div class="col page-title">{{$ctrl.pageTitle}}</div>
+    <div class="col timestamp_label">
+      <div class="row">
+        <div class="col">Timestamp</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span id="timestamp" class="timestamp"
+            >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
+          >
         </div>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 <main class="container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-10 col-xl-6 pt-4">
-            <img class="saleve_img" src="img/saleve.png" alt="saleve"/>
-        </div>
-        <div class="col-12 col-md-10 col-xl-6 pt-4">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <table class="table table-sm table-bordered caption-top">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    B4_SS_01
-                                </td>
-                                <td>
-                                    <a ng-href="#!/histogram/47884573629210"><span class="value">{{ $ctrl.B4_SS_01 | number: 2 }} &#956;m/m</span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    DS_SS_01
-                                </td>
-                                <td>
-                                    <a ng-href="#!/histogram/47884707846938"><span class="value">{{ $ctrl.DS_SS_01 | number: 2 }} &#956;m/m</span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    TC_SS_01
-                                </td>
-                                <td>
-                                    <a ng-href="#!/histogram/47884540074778"><span class="value">{{ $ctrl.TC_SS_01 | number: 2 }} &#956;m/m</span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    TC_SS_02
-                                </td>
-                                <td>
-                                    <a ng-href="#!/histogram/47884506520346"><span class="value">{{ $ctrl.TC_SS_02 | number: 2 }} &#956;m/m</span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    TC_SS_03
-                                </td>
-                                <td>
-                                    <a ng-href="#!/histogram/47884623960858"><span class="value">{{ $ctrl.TC_SS_03 | number: 2 }} &#956;m/m</span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    B3_SS_01
-                                </td>
-                                <td>
-                                    <a ng-href="#!/histogram/47884590406426"><span class="value">{{ $ctrl.B3_SS_01 | number: 2 }} &#956;m/m</span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    B2_SS_01
-                                </td>
-                                <td>
-                                    <a ng-href="#!/histogram/47884607183642"><span class="value">{{ $ctrl.B2_SS_01 | number: 2 }} &#956;m/m</span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    BC_SS_01
-                                </td>
-                                <td>
-                                    <a ng-href="#!/histogram/47884808510234"><span class="value">{{ $ctrl.BC_SS_01 | number: 2 }} &#956;m/m</span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    BC_SS_03
-                                </td>
-                                <td>
-                                    <a ng-href="#!/histogram/47884791733018"><span class="value">{{ $ctrl.BC_SS_03 | number: 2 }} &#956;m/m</span></a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-lg-6">
-                    <table class="table table-sm table-bordered caption-top">
-                    <tbody>
-                        <tr>
-                            <td>
-                                BC_SS_04
-                            </td>
-                            <td>
-                                <a ng-href="#!/histogram/47884741401370"><span class="value">{{ $ctrl.BC_SS_04 | number: 2 }} &#956;m/m</span></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                MEM_SS_03
-                            </td>
-                            <td>
-                                <a ng-href="#!/histogram/47884875619098"><span class="value">{{ $ctrl.MEM_SS_03 | number: 2 }} &#956;m/m</span></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                MEM_SS_02
-                            </td>
-                            <td>
-                                <a ng-href="#!/histogram/47884657515290"><span class="value">{{ $ctrl.MEM_SS_02 | number: 2 }} &#956;m/m</span></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                MEM_SS_01
-                            </td>
-                            <td>
-                                <a ng-href="#!/histogram/47884892396314"><span class="value">{{ $ctrl.MEM_SS_01 | number: 2 }} &#956;m/m</span></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                MC_LSS_04
-                            </td>
-                            <td>
-                                <a ng-href="#!/histogram/47884389079834"><span class="value">{{ $ctrl.MC_LSS_04 | number: 2 }} &#956;m/m</span></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                MC_LSS_03
-                            </td>
-                            <td>
-                                <a ng-href="#!/histogram/47884405857050"><span class="value">{{ $ctrl.MC_LSS_03 | number: 2 }} &#956;m/m</span></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                MC_LSS_02
-                            </td>
-                            <td>
-                                <a ng-href="#!/histogram/47884489743130"><span class="value">{{ $ctrl.MC_LSS_02 | number: 2 }} &#956;m/m</span></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                MC_LSS_01
-                            </td>
-                            <td>
-                                <a ng-href="#!/histogram/47884439411482"><span class="value">{{ $ctrl.MC_LSS_01 | number: 2 }} &#956;m/m</span></a>
-                            </td>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
-            </div>
-              
-        </div>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-xl-6 pt-4">
+      <img class="saleve_img" src="img/saleve.png" alt="saleve" />
     </div>
-
+    <div class="col-12 col-md-10 col-xl-6 pt-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <table class="table table-sm table-bordered caption-top">
+            <tbody>
+              <tr>
+                <td>B4_SS_01</td>
+                <td>
+                  <a ng-href="#!/histogram/47884573629210"
+                    ><span class="value"
+                      >{{ $ctrl.B4_SS_01 | number: 2 }} &#956;m/m</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>DS_SS_01</td>
+                <td>
+                  <a ng-href="#!/histogram/47884707846938"
+                    ><span class="value"
+                      >{{ $ctrl.DS_SS_01 | number: 2 }} &#956;m/m</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>TC_SS_01</td>
+                <td>
+                  <a ng-href="#!/histogram/47884540074778"
+                    ><span class="value"
+                      >{{ $ctrl.TC_SS_01 | number: 2 }} &#956;m/m</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>TC_SS_02</td>
+                <td>
+                  <a ng-href="#!/histogram/47884506520346"
+                    ><span class="value"
+                      >{{ $ctrl.TC_SS_02 | number: 2 }} &#956;m/m</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>TC_SS_03</td>
+                <td>
+                  <a ng-href="#!/histogram/47884623960858"
+                    ><span class="value"
+                      >{{ $ctrl.TC_SS_03 | number: 2 }} &#956;m/m</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>B3_SS_01</td>
+                <td>
+                  <a ng-href="#!/histogram/47884590406426"
+                    ><span class="value"
+                      >{{ $ctrl.B3_SS_01 | number: 2 }} &#956;m/m</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>B2_SS_01</td>
+                <td>
+                  <a ng-href="#!/histogram/47884607183642"
+                    ><span class="value"
+                      >{{ $ctrl.B2_SS_01 | number: 2 }} &#956;m/m</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>BC_SS_01</td>
+                <td>
+                  <a ng-href="#!/histogram/47884808510234"
+                    ><span class="value"
+                      >{{ $ctrl.BC_SS_01 | number: 2 }} &#956;m/m</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>BC_SS_03</td>
+                <td>
+                  <a ng-href="#!/histogram/47884791733018"
+                    ><span class="value"
+                      >{{ $ctrl.BC_SS_03 | number: 2 }} &#956;m/m</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>BC_SS_04</td>
+                <td>
+                  <a ng-href="#!/histogram/47884741401370"
+                    ><span class="value"
+                      >{{ $ctrl.BC_SS_04 | number: 2 }} &#956;m/m</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-lg-6">
+          <table class="table table-sm table-bordered caption-top">
+            <tbody>
+              <tr>
+                <td>MEM_SS_03</td>
+                <td>
+                  <a ng-href="#!/histogram/47884875619098"
+                    ><span class="value"
+                      >{{ $ctrl.MEM_SS_03 | number: 2 }} &#956;m/m</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>MEM_SS_02</td>
+                <td>
+                  <a ng-href="#!/histogram/47884657515290"
+                    ><span class="value"
+                      >{{ $ctrl.MEM_SS_02 | number: 2 }} &#956;m/m</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>MEM_SS_01</td>
+                <td>
+                  <a ng-href="#!/histogram/47884892396314"
+                    ><span class="value"
+                      >{{ $ctrl.MEM_SS_01 | number: 2 }} &#956;m/m</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>MC_LSS_04</td>
+                <td>
+                  <a ng-href="#!/histogram/47884389079834"
+                    ><span class="value"
+                      >{{ $ctrl.MC_LSS_04 | number: 2 }} &#956;m/m</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>MC_LSS_03</td>
+                <td>
+                  <a ng-href="#!/histogram/47884405857050"
+                    ><span class="value"
+                      >{{ $ctrl.MC_LSS_03 | number: 2 }} &#956;m/m</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>MC_LSS_02</td>
+                <td>
+                  <a ng-href="#!/histogram/47884489743130"
+                    ><span class="value"
+                      >{{ $ctrl.MC_LSS_02 | number: 2 }} &#956;m/m</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>MC_LSS_01</td>
+                <td>
+                  <a ng-href="#!/histogram/47884439411482"
+                    ><span class="value"
+                      >{{ $ctrl.MC_LSS_01 | number: 2 }} &#956;m/m</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 
-
 <footer class="container page_footer">
-    <div class="row justify-content-end">
-      <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3">
-        <table class="table table-sm table-bordered">
-          <tbody>
-            <tr>
-              <td>Humidity</td>
-              <td>
-                <a target="_blank" href="#!/histogram/47878785489690">
-                  <span class="value"
-                    >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
-                  >
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>Ambient temperature</td>
-              <td>
-                <a target="_blank" href="#!/histogram/47878802266906">
-                  <span class="value"
-                    >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
-                  >
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>Ambient pressure</td>
-              <td>
-                <a target="_blank" href="#!/histogram/47878819044122">
-                  <span class="value"
-                    >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
-                  >
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="row justify-content-end">
+    <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td>Humidity</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878785489690">
+                <span class="value"
+                  >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient temperature</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878802266906">
+                <span class="value"
+                  >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient pressure</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878819044122">
+                <span class="value"
+                  >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
+                >
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </footer>
-  
+  </div>
+</footer>
