@@ -1,39 +1,202 @@
-<link rel="stylesheet" href="css/inside.css">
-<div class="container">
-    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
-    <img id="detector" src="img/cryostat.png" alt="gttprobes"/>
-
-    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
-    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
-    <div id="bellegarde"><a href="#!/south">Bellegarde side</a></div>
-    <div id="jura"><a href="#!/west">Jura side</a></div>
-    <div id="lausanne"><a href="#!/north">Lausanne side</a></div>
-    <div id="saleve"><a href="#!/east">Saleve side</a></div>
-    <div id="bottomSide"><a href="#!/bottom">Bottom side</a></div>
-    <div id="penetration_pipe">
-        <table id="penetration1">
-            <tr>
-                <th>Pen. pipe 33.1</th>
-                <th>Pen. pipe 33.2</th>
-            </tr>
-            <tr>
-                <td>TE0121 <span style="font-size: 1.5vmin;">(Type 1)</span>: <a target="_blank" href="#!/histogram/47892274348314"><span class="value">{{ $ctrl.NP04_DCS_01_TE0121 | number: 1 }} &#8490;</span></a><br/>
-                    TE0122 <span style="font-size: 1.5vmin;">(Type 1)</span>: <a target="_blank" href="#!/histogram/47892291125530"><span class="value">{{ $ctrl.NP04_DCS_01_TE0122 | number: 1 }} &#8490;</span></a><br/>
-                    TE0123 <span style="font-size: 1.5vmin;">(Type 2)</span>: <a target="_blank" href="#!/histogram/47892307902746"><span class="value">{{ $ctrl.NP04_DCS_01_TE0123 | number: 1 }} &#8490;</span></a></td>
-                <td>TE0127 <span style="font-size: 1.5vmin;">(Type 1)</span>: <a target="_blank" href="#!/histogram/47892375011610"><span class="value">{{ $ctrl.NP04_DCS_01_TE0127 | number: 1 }} &#8490;</span></a></td>
-            </tr>
-        </table>
-        <table id="penetration3">
-            <tr>
-                <th>Pen. pipe 33.3</th>
-                <th>Pen. pipe 33.4</th>
-            </tr>
-            <tr>
-                <td>TE0133 <span style="font-size: 1.5vmin;">(Type 1)</span>: <a target="_blank" href="#!/histogram/47892475674906"><span class="value">{{ $ctrl.NP04_DCS_01_TE0133 | number: 1 }} &#8490;</span></a><br/>
-                    TE0135 <span style="font-size: 1.5vmin;">(Type 2)</span>: <a target="_blank" href="#!/histogram/47892509229338"><span class="value">{{ $ctrl.NP04_DCS_01_TE0135 | number: 1 }} &#8490;</span></a></td>
-                <td>TE0139 <span style="font-size: 1.5vmin;">(Type 1)</span>: <a target="_blank" href="#!/histogram/47892576338202"><span class="value">{{ $ctrl.NP04_DCS_01_TE0139 | number: 1 }} &#8490;</span></a><br/>
-                    TE0140 <span style="font-size: 1.5vmin;">(Type 2)</span>: <a target="_blank" href="#!/histogram/47892593115418"><span class="value">{{ $ctrl.NP04_DCS_01_TE0140 | number: 1 }} &#8490;</span></a></td>
-            </tr>
-        </table>
+<link rel="stylesheet" href="css/inside.css" />
+<header class="container page_header">
+  <div class="row">
+    <div class="col page-title">{{$ctrl.pageTitle}}</div>
+    <div class="col timestamp_label">
+      <div class="row">
+        <div class="col">Timestamp</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span id="timestamp" class="timestamp"
+            >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
+          >
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="row">
+    <div class="col-12 col-lg-6 pt-4 inside__img_wrapper">
+      <img class="inside__img" src="img/cryostat.png" alt="gttprobes" />
+      <div class="inside__bellegarde inside__link">
+        <a href="#!/south">Bellegarde side</a>
+      </div>
+      <div class="inside__jura inside__link">
+        <a href="#!/west">Jura side</a>
+      </div>
+      <div class="inside__lausanne inside__link">
+        <a href="#!/north">Lausanne side</a>
+      </div>
+      <div class="inside__saleve inside__link">
+        <a href="#!/east">Saleve side</a>
+      </div>
+      <div class="inside__bottomSide inside__link">
+        <a href="#!/bottom">Bottom side</a>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6 pt-4">
+      <div class="row">
+        <div class="col-12 col-xl-6">
+          <table class="table table-sm table-bordered caption-top">
+            <caption>
+              <span>Pen. pipe 33.1</span>
+            </caption>
+            <tbody>
+              <tr>
+                <td>TE0121 (Type 1)</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47892274348314"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0121 | number: 1 }} &#8490;</span
+                    >
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>TE0122 (Type 1)</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47892291125530"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0122 | number: 1 }} &#8490;</span
+                    >
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>TE0123 (Type 2)</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47892307902746"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0123 | number: 1 }} &#8490;</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-12 col-xl-6">
+          <table class="table table-sm table-bordered caption-top">
+            <caption>
+              <span>Pen. pipe 33.2</span>
+            </caption>
+            <tbody>
+              <tr>
+                <td>TE0127 (Type 1)</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47892375011610"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0127 | number: 1 }} &#8490;</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-12 col-xl-6">
+          <table class="table table-sm table-bordered caption-top">
+            <caption>
+              <span>Pen. pipe 33.3</span>
+            </caption>
+            <tbody>
+              <tr>
+                <td>TE0133 (Type 1)</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47892475674906"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0133 | number: 1 }} &#8490;</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>TE0135 (Type 2)</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47892509229338"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0135 | number: 1 }} &#8490;</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col col-xl-6">
+          <table class="table table-sm table-bordered caption-top">
+            <caption>
+              <span>Pen. pipe 33.4</span>
+            </caption>
+            <tbody>
+              <tr>
+                <td>TE0139 (Type 1)</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47892576338202"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0139 | number: 1 }} &#8490;</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>TE0140 (Type 2)</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47892593115418"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0140 | number: 1 }} &#8490;</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="container page_footer">
+  <div class="row justify-content-end">
+    <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td>Humidity</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878785489690">
+                <span class="value"
+                  >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient temperature</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878802266906">
+                <span class="value"
+                  >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient pressure</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878819044122">
+                <span class="value"
+                  >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
+                >
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</footer>
