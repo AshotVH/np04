@@ -7,26 +7,22 @@ angular.module('jura', []).component('jura', {
         let self = this;
 
         this.reload = function () {
-
-            $http.get("php-db-conn/cachedVals.conn.php?elemId=jura").then(function (resultArr) {
-                let rArr = [];
-                let resjson = angular.toJson(resultArr.data);
-                let res = JSON.parse(resjson);
-                for (let i = 0; i < res.length; i++) {
-                    rArr.push(JSON.parse(res[i]));
-                }
-
-                self.NP04_MHT0100AI = rArr[0];
-                self.NP04_TT0100AI = rArr[1];
-                self.NP04_PT0106AI = rArr[2];
-                self.TC_JS_02 = rArr[3];
-                self.BC_JS_03 = rArr[4];
-                self.B3_JS_01 = rArr[5];
-                self.DS_JS_01 = rArr[6];
-                self.MC_BJS_03 = rArr[7];
-                self.MC_BJS_02 = rArr[8];
-            self.timestamp = rArr[rArr.length-1] * 1000;
-            });
+            self.timestamp = new Date();
+            $http
+                .get("php-db-conn/np04cachedvals.php?elemName=jura")
+                .then(function (result) {
+                    const res = result.data;
+                    console.log(res);
+                    self.DS_JS_01 = res["47884120644378"]?res["47884120644378"][0]:"N/A";
+                    self.TC_JS_02 = res["47884036758298"]?res["47884036758298"][0]:"N/A";
+                    self.B3_JS_01 = res["47884103867162"]?res["47884103867162"][0]:"N/A";
+                    self.BC_JS_03 = res["47884070312730"]?res["47884070312730"][0]:"N/A";
+                    self.MC_BJS_03 = res["47884137421594"]?res["47884137421594"][0]:"N/A";
+                    self.MC_BJS_02 = res["47884154198810"]?res["47884154198810"][0]:"N/A";
+                    self.NP04_MHT0100AI = res["47878785489690"]?res["47878785489690"][0]:"N/A";
+                    self.NP04_TT0100AI = res["47878802266906"]?res["47878802266906"][0]:"N/A";
+                    self.NP04_PT0106AI = res["47878819044122"]?res["47878819044122"][0]:"N/A";
+                });
         };
 
         this.promise;

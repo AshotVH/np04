@@ -1,16 +1,128 @@
 <link rel="stylesheet" href="css/jura.css">
-<div class="container">
-    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
-    <img id="detector" src="img/jura.png" alt="jura"/>
-    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
-    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
+<header class="container page_header">
+    <div class="row">
+      <div class="col page-title">{{$ctrl.pageTitle}}</div>
+      <div class="col timestamp_label">
+        <div class="row">
+          <div class="col">Timestamp</div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <span id="timestamp" class="timestamp"
+              >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<main class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-12 col-xl-6 pt-4">
+        <img class="jura_img" src="img/jura.png" alt="jura"/>
+        </div>
+        <div class="col-12 col-md-12 col-xl-6 pt-4">
+        <div class="row justify-content-center">
+            <div class="col">
+             <table class="table table-sm table-bordered caption-top">
+                <tbody>
+                    <tr>
+                        <td>
+                            DS_JS_01
+                        </td>
+                        <td>
+                            <a ng-href="#!/histogram/47884120644378"><span class="value">{{ $ctrl.DS_JS_01 | number: 2 }} &#956;m/m</span></a>
+                        </td>
+                    </tr>    
+                    <tr>
+                        <td>
+                            TC_JS_02
+                        </td>
+                        <td>
+                            <a ng-href="#!/histogram/47884036758298"><span class="value">{{ $ctrl.TC_JS_02 | number: 2 }} &#956;m/m</span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            B3_JS_01
+                        </td>
+                        <td>
+                            <a ng-href="#!/histogram/47884103867162"><span class="value">{{ $ctrl.B3_JS_01 | number: 2 }} &#956;m/m</span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            BC_JS_03
+                        </td>
+                        <td>
+                            <a ng-href="#!/histogram/47884070312730"><span class="value">{{ $ctrl.BC_JS_03 | number: 2 }} &#956;m/m</span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            MC_BJS_03
+                        </td>
+                        <td>
+                            <a ng-href="#!/histogram/47884137421594"><span class="value">{{ $ctrl.MC_BJS_03 | number: 2 }} &#956;m/m</span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            MC_BJS_02
+                        </td>
+                        <td>
+                            <a ng-href="#!/histogram/47884154198810"><span class="value">{{ $ctrl.MC_BJS_02 | number: 2 }} &#956;m/m</span></a>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>    
+            </div>
+        </div>
+        </div>
+    </div>
+</main>
 
 
-    <div id="DS_JS_01"><a ng-href="#!/histogram/47884120644378"><span class="value">{{ $ctrl.DS_JS_01 | number: 2 }} &#956;m/m</span></a></div>
-    <div id="TC_JS_02"><a ng-href="#!/histogram/47884036758298"><span class="value">{{ $ctrl.TC_JS_02 | number: 2 }} &#956;m/m</span></a></div>
-    <div id="B3_JS_01"><a ng-href="#!/histogram/47884103867162"><span class="value">{{ $ctrl.B3_JS_01 | number: 2 }} &#956;m/m</span></a></div>
-    <div id="BC_JS_03"><a ng-href="#!/histogram/47884070312730"><span class="value">{{ $ctrl.BC_JS_03 | number: 2 }} &#956;m/m</span></a></div>
-    <div id="MC_BJS_03"><a ng-href="#!/histogram/47884137421594"><span class="value">{{ $ctrl.MC_BJS_03 | number: 2 }} &#956;m/m</span></a></div>
-    <div id="MC_BJS_02"><a ng-href="#!/histogram/47884154198810"><span class="value">{{ $ctrl.MC_BJS_02 | number: 2 }} &#956;m/m</span></a></div>
-
-</div>
+<footer class="container page_footer">
+    <div class="row justify-content-end">
+      <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+        <table class="table table-sm table-bordered">
+          <tbody>
+            <tr>
+              <td>Humidity</td>
+              <td>
+                <a target="_blank" href="#!/histogram/47878785489690">
+                  <span class="value"
+                    >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
+                  >
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Ambient temperature</td>
+              <td>
+                <a target="_blank" href="#!/histogram/47878802266906">
+                  <span class="value"
+                    >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
+                  >
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Ambient pressure</td>
+              <td>
+                <a target="_blank" href="#!/histogram/47878819044122">
+                  <span class="value"
+                    >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
+                  >
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </footer>
+  
