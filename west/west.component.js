@@ -15,14 +15,11 @@ angular.module('west', []).component('west', {
                 .then(function (result) {
                     const res = result.data;
                     console.log(res);
-                    self.NP04_MHT0100AI = res["47878785489690"][0];
-                    self.NP04_TT0100AI = res["47878802266906"][0];
-                    self.NP04_PT0106AI = res["47878819044122"][0];
-                    self.NP04_DCS_01_TE0139 = res["47892576338202"][0];
-
+                    self.NP04_MHT0100AI = res["47878785489690"]?res["47878785489690"][0]:"N/A";
+                    self.NP04_TT0100AI = res["47878802266906"]?res["47878802266906"][0]:"N/A";
+                    self.NP04_PT0106AI = res["47878819044122"]?res["47878819044122"][0]:"N/A";
+                    self.NP04_DCS_01_TE0139 = res["47892576338202"]?res["47892576338202"][0]:"N/A";
                 });
-
-
         };
 
         this.promise;
