@@ -7,8 +7,8 @@ ini_set('display_errors', true);
 $elemId = $_GET["elemid"];
 $startDate = $_GET["startdate"];
 $endDate = $_GET["enddate"];
-
-$url = "http://188.185.64.236:8000/range/" . $startDate . "/" . $endDate . "/" . $elemId;
+$hostName = "http://188.185.64.236:8000";
+$url = $hostName."/range/" . $startDate . "/" . $endDate . "/" . $elemId;
 $json = json_decode(file_get_contents($url));
 $responseArr = [];
 foreach ($json as $key => $value) {
