@@ -1,106 +1,180 @@
 <link rel="stylesheet" href="css/lausanne.css" />
-<div class="container">
-  <div id="pageTitle">{{$ctrl.pageTitle}}</div>
-  <img id="detector" src="img/lausanne.png" alt="lausanne" />
-  <div id="timestamp_label">
-    Timestamp:<br /><span id="timestamp"
-      >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
-    >
+<header class="container page_header">
+  <div class="row">
+    <div class="col page-title">{{$ctrl.pageTitle}}</div>
+    <div class="col timestamp_label">
+      <div class="row">
+        <div class="col">Timestamp</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span id="timestamp" class="timestamp"
+            >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
+          >
+        </div>
+      </div>
+    </div>
   </div>
-  <div id="ambient">
-    Humidity:<br /><a target="_blank" href="#!/histogram/47878785489690"
-      >
-      <span ng-if="$ctrl.NP04_MHT0100AI!=='N/A'" class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span>
-      <span ng-if="$ctrl.NP04_MHT0100AI==='N/A'" class="value">N/A</span>
-      
-      </a
-    ><br />Ambient temperature:<br /><a
-      target="_blank"
-      href="#!/histogram/47878802266906"
-      >
-      <span ng-if="$ctrl.NP04_TT0100AI!=='N/A'" class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span>
-      <span ng-if="$ctrl.NP04_TT0100AI==='N/A'" class="value">N/A</span>
+</header>
+<main class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-12 col-xl-6 pt-4">
+      <img class="lausanne_img" src="img/lausanne.png" alt="lausanne" />
+    </div>
+    <div class="col-12 col-md-12 col-xl-6 pt-4">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <table class="table table-sm table-bordered caption-top">
+            <tbody>
+              <tr>
+                <td>DS_LS_01</td>
+                <td>
+                  <a ng-href="#!/histogram/47884355525402">
+                    <span ng-if="$ctrl.DS_LS_01!=='N/A'" class="value"
+                      >{{ $ctrl.DS_LS_01 | number: 2 }} &#956;m/m</span
+                    >
+                    <span ng-if="$ctrl.DS_LS_01==='N/A'" class="value"
+                      >N/A</span
+                    >
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>TC_LS_02</td>
+                <td>
+                  <a ng-href="#!/histogram/47884238084890">
+                    <span ng-if="$ctrl.TC_LS_02!=='N/A'" class="value"
+                      >{{ $ctrl.TC_LS_02 | number: 2 }} &#956;m/m</span
+                    >
+                    <span ng-if="$ctrl.TC_LS_02==='N/A'" class="value"
+                      >N/A</span
+                    >
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>B3_LS_01</td>
+                <td>
+                  <a ng-href="#!/histogram/47884305193754">
+                    <span ng-if="$ctrl.B3_LS_01!=='N/A'" class="value"
+                      >{{ $ctrl.B3_LS_01 | number: 2 }} &#956;m/m</span
+                    >
+                    <span ng-if="$ctrl.B3_LS_01==='N/A'" class="value"
+                      >N/A</span
+                    >
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>BC_LS_03</td>
+                <td>
+                  <a ng-href="#!/histogram/47884271639322">
+                    <span ng-if="$ctrl.BC_LS_03!=='N/A'" class="value"
+                      >{{ $ctrl.BC_LS_03 | number: 2 }} &#956;m/m</span
+                    >
+                    <span ng-if="$ctrl.BC_LS_03==='N/A'" class="value"
+                      >N/A</span
+                    >
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>MEM_LS_03</td>
+                <td>
+                  <a ng-href="#!/histogram/47884321970970">
+                    <span ng-if="$ctrl.MEM_LS_03!=='N/A'" class="value"
+                      >{{ $ctrl.MEM_LS_03 | number: 2 }} &#956;m/m</span
+                    >
+                    <span ng-if="$ctrl.MEM_LS_03==='N/A'" class="value"
+                      >N/A</span
+                    >
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>MEM_LS_02</td>
+                <td>
+                  <a ng-href="#!/histogram/47884338748186">
+                    <span ng-if="$ctrl.MEM_LS_02!=='N/A'" class="value"
+                      >{{ $ctrl.MEM_LS_02 | number: 2 }} &#956;m/m</span
+                    >
+                    <span ng-if="$ctrl.MEM_LS_02==='N/A'" class="value"
+                      >N/A</span
+                    >
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>MC_LJS_03</td>
+                <td>
+                  <a ng-href="#!/histogram/47884187753242">
+                    <span ng-if="$ctrl.MC_LJS_03!=='N/A'" class="value"
+                      >{{ $ctrl.MC_LJS_03 | number: 2 }} &#956;m/m</span
+                    >
+                    <span ng-if="$ctrl.MC_LJS_03==='N/A'" class="value"
+                      >N/A</span
+                    >
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>MC_LJS_02</td>
+                <td>
+                  <a ng-href="#!/histogram/47884221307674"
+                    ><span ng-if="$ctrl.MC_LJS_02!=='N/A'" class="value"
+                      >{{ $ctrl.MC_LJS_02 | number: 2 }} &#956;m/m</span
+                    >
+                    <span ng-if="$ctrl.MC_LJS_02==='N/A'" class="value"
+                      >N/A</span
+                    >
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
 
-      </a
-    ><br />Ambient pressure:<br /><a
-      target="_blank"
-      href="#!/histogram/47878819044122"
-      >
-      <span ng-if="$ctrl.NP04_PT0106AI!=='N/A'" class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span>
-      <span ng-if="$ctrl.NP04_PT0106AI==='N/A'" class="value">N/A</span>
-     
-      </a
-    >
+<footer class="container page_footer">
+  <div class="row justify-content-end">
+    <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td>Humidity</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878785489690">
+                <span class="value"
+                  >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient temperature</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878802266906">
+                <span class="value"
+                  >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient pressure</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878819044122">
+                <span class="value"
+                  >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
+                >
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-
-  <div id="DS_LS_01">
-    <a ng-href="#!/histogram/47884355525402"
-      >
-      <span ng-if="$ctrl.DS_LS_01!=='N/A'" class="value">{{ $ctrl.DS_LS_01 | number: 2 }} &#956;m/m</span>
-      <span ng-if="$ctrl.DS_LS_01==='N/A'" class="value">N/A</span>
-   
-      </a
-    >
-  </div>
-  <div id="TC_LS_02">
-    <a ng-href="#!/histogram/47884238084890"
-      >
-      <span ng-if="$ctrl.TC_LS_02!=='N/A'" class="value">{{ $ctrl.TC_LS_02 | number: 2 }} &#956;m/m</span>
-      <span ng-if="$ctrl.TC_LS_02==='N/A'" class="value">N/A</span>
-      
-      </a
-    >
-  </div>
-  <div id="B3_LS_01">
-    <a ng-href="#!/histogram/47884305193754"
-      >
-      <span ng-if="$ctrl.B3_LS_01!=='N/A'" class="value">{{ $ctrl.B3_LS_01 | number: 2 }} &#956;m/m</span>
-      <span ng-if="$ctrl.B3_LS_01==='N/A'" class="value">N/A</span>
-      
-      </a
-    >
-  </div>
-  <div id="BC_LS_03">
-    <a ng-href="#!/histogram/47884271639322"
-      >
-      <span ng-if="$ctrl.BC_LS_03!=='N/A'" class="value">{{ $ctrl.BC_LS_03 | number: 2 }} &#956;m/m</span>
-      <span ng-if="$ctrl.BC_LS_03==='N/A'" class="value">N/A</span>
-      
-      </a
-    >
-  </div>
-  <div id="MEM_LS_03">
-    <a ng-href="#!/histogram/47884321970970"
-      >
-      <span ng-if="$ctrl.MEM_LS_03!=='N/A'" class="value">{{ $ctrl.MEM_LS_03 | number: 2 }} &#956;m/m</span>
-      <span ng-if="$ctrl.MEM_LS_03==='N/A'" class="value">N/A</span>
-      
-      </a
-    >
-  </div>
-  <div id="MEM_LS_02">
-    <a ng-href="#!/histogram/47884338748186"
-      >
-      <span ng-if="$ctrl.MEM_LS_02!=='N/A'" class="value">{{ $ctrl.MEM_LS_02 | number: 2 }} &#956;m/m</span>
-      <span ng-if="$ctrl.MEM_LS_02==='N/A'" class="value">N/A</span>
-      
-      </a
-    >
-  </div>
-  <div id="MC_LJS_03">
-    <a ng-href="#!/histogram/47884187753242"
-      >
-      <span ng-if="$ctrl.MC_LJS_03!=='N/A'" class="value">{{ $ctrl.MC_LJS_03 | number: 2 }} &#956;m/m</span>
-      <span ng-if="$ctrl.MC_LJS_03==='N/A'" class="value">N/A</span>
-      
-      </a
-    >
-  </div>
-  <div id="MC_LJS_02">
-    <a ng-href="#!/histogram/47884221307674"
-      ><span ng-if="$ctrl.MC_LJS_02!=='N/A'" class="value">{{ $ctrl.MC_LJS_02 | number: 2 }} &#956;m/m</span>
-      <span ng-if="$ctrl.MC_LJS_02==='N/A'" class="value">N/A</span>
-      </a
-    >
-  </div>
-</div>
+</footer>
