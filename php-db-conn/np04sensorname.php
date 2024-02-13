@@ -8,4 +8,5 @@ $elemId = $_GET["elemid"];
 $hostName = $_ENV["hostname"];
 $url = $hostName."/sensor-name/" . $elemId;
 $json = json_decode(file_get_contents($url));
+echo(json_encode($json));
 ?>
