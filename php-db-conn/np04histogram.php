@@ -7,7 +7,7 @@ ini_set('display_errors', true);
 $elemId = $_GET["elemid"];
 $startDate = $_GET["startdate"];
 $endDate = $_GET["enddate"];
-$hostName = "http://188.185.64.236:8000";
+$hostName = $_ENV["hostname"];
 $url = $hostName."/range/" . $startDate . "/" . $endDate . "/" . $elemId;
 $json = json_decode(file_get_contents($url));
 $responseArr = [];

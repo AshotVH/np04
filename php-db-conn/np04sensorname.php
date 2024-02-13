@@ -5,9 +5,7 @@ ini_set('error_reporting', E_ALL);
 ini_set('display_errors', true);
 
 $elemId = $_GET["elemid"];
-$hostName = "http://188.185.64.236:8000";
+$hostName = $_ENV["hostname"];
 $url = $hostName."/sensor-name/" . $elemId;
 $json = json_decode(file_get_contents($url));
-// echo(json_encode($json));
-echo $_ENV["hostname"];
 ?>
