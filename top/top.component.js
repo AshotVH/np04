@@ -4,45 +4,28 @@ angular.module('top', []).component('top', {
     controller: function topController($scope, $http, $q, $interval) {
         this.pageTitle = "NP04 top side";
         this.natalie = 1;
-        let self = this;
-
-        let element = [];
-
-
-        element.push("NP04_DCS_V21-CPC_AnalogInput-00007.ProcessInput.PosSt");
-        element.push("NP04_DCS_V21-CPC_AnalogInput-00008.ProcessInput.PosSt");
-        element.push("NP04_DCS_V21-CPC_AnalogInput-00009.ProcessInput.PosSt");
+        const self = this;
 
         this.reload = function () {
-            $http.get("php-db-conn/straingauges.conn.php").then(function (resultArr) {
-                let rArr = [];
-                let resjson = angular.toJson(resultArr.data);
-                let res = JSON.parse(resjson);
-                console.log(res);
-
-                let len = res.length;
-
-                self.DS_MDL_01;
-
-            });
-
-            let elementsend = JSON.stringify(element);
-
-
-            $http.get("php-db-conn/cachedVals.conn.php?elemId=" + elementsend).then(function (resultArr) {
-                let rArr = [];
-                let resjson = angular.toJson(resultArr.data);
-                let res = JSON.parse(resjson);
-                for (let i = 0; i < res.length; i++) {
-                    rArr.push(JSON.parse(res[i]));
-                }
-
-
-                self.NP04_MHT0100AI = rArr[0];
-                self.NP04_TT0100AI = rArr[1];
-                self.NP04_PT0106AI = rArr[2];
-            self.timestamp = rArr[rArr.length-1] * 1000;
-            });
+            self.timestamp = new Date();
+            $http
+                .get("php-db-conn/np04cachedvals.php?elemName=top")
+                .then(function (result) {
+                    const res = result.data;
+                    console.log(res);
+                                
+                    self.NP04_MHT0100AI = res["47878785489690"]?res["47878785489690"][0]:"N/A";
+                    self.NP04_TT0100AI = res["47878802266906"]?res["47878802266906"][0]:"N/A";
+                    self.NP04_PT0106AI = res["47878819044122"]?res["47878819044122"][0]:"N/A";
+                    self.DS_LS_01 = res["47884355525402"]?res["47884355525402"][0]:"N/A";
+                    self.TC_LS_02 = res["47884238084890"]?res["47884238084890"][0]:"N/A";
+                    self.B3_LS_01 = res["47884305193754"]?res["47884305193754"][0]:"N/A";
+                    self.BC_LS_03 = res["47884271639322"]?res["47884271639322"][0]:"N/A";
+                    self.MEM_LS_03 = res["47884321970970"]?res["47884321970970"][0]:"N/A";
+                    self.MEM_LS_02 = res["47884338748186"]?res["47884338748186"][0]:"N/A";
+                    self.MC_LJS_03 = res["47884187753242"]?res["47884187753242"][0]:"N/A";
+                    self.MC_LJS_02 = res["47884221307674"]?res["47884221307674"][0]:"N/A";
+                });
         };
 
         this.promise;
