@@ -1,235 +1,55 @@
 .gauge_container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+.detector_img {
+  width: 100%;
+}
+.gauges_img_wrapper {
+  position: relative;
+}
+.gagues_link {
+  position: absolute;
+  font-size: 1rem;
+  background-color: black;
+  border-radius: 10%;
+  padding: 0.5rem;
+}
+.bellegarde {
+  left: 67%;
+  top: 40%;
+}
+.saleve {
+  left: 76%;
+  top: 0;
+}
+.topSide {
+  left: 46%;
+  top: 25%;
+}
+.lausanne {
+  top: 5%;
+  left: 10%;
+}
+.jura {
+  top: 50%;
+  left: 15%;
 }
 
-@media screen and (max-height: 1080px) {
-  
-
-    #detector {
-        display: block;
-        position: fixed;
-        top: 35vh;
-        left: 20%;
-        width: 65vmin;
+@media screen and (min-width: 768px) {
+    .gagues_link {
+        font-size: 1.2rem;
     }
-
-    #ambient {
-        position: fixed;
-        right: 10vw;
-        top: 20vh;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
+}
+@media screen and (min-width: 992px) {
+    .gagues_link {
+        font-size: 1.4rem;
     }
-
-    #bellegarde {
-        position: fixed;
-        left: 45%;
-        top: 68%;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-        background-color: #333333;
-    }
-
-    #jura {
-        position: fixed;
-        left: 20%;
-        top: 68%;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-        background-color: #333333;
-    }
-
-    #lausanne {
-        position: fixed;
-        left: 23%;
-        top: 37%;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-        background-color: #333333;
-    }
-
-    #saleve {
-        position: fixed;
-        left: 46%;
-        top: 37%;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-        background-color: #333333;
-    }
-
-    #topSide {
-        position: fixed;
-        left: 34%;
-        top: 53%;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-        background-color: #333333;
+}
+@media screen and (min-width: 1200px) {
+    .gagues_link {
+        font-size: 1.6rem;
     }
 }
 
-@media screen and (min-height: 1100px) {
- 
-
-    #detector {
-        display: block;
-        position: fixed;
-        top: 35vh;
-        left: 20%;
-        width: 65vmin;
-    }
-
-    #ambient {
-        position: fixed;
-        right: 10vw;
-        top: 20vh;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #bellegarde {
-        position: fixed;
-        left: 68%;
-        top: 68%;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-        background-color: #333333;
-    }
-
-    #jura {
-        position: fixed;
-        left: 20%;
-        top: 68%;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-        background-color: #333333;
-    }
-
-    #lausanne {
-        position: fixed;
-        left: 20%;
-        top: 37%;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-        background-color: #333333;
-    }
-
-    #saleve {
-        position: fixed;
-        left: 75%;
-        top: 37%;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-        background-color: #333333;
-    }
-
-    #topSide {
-        position: fixed;
-        left: 47%;
-        top: 49%;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-        background-color: #333333;
-    }
-}
-
-@media screen and (min-height: 1100px) and (min-width: 3000px) {
- 
-    #detector {
-        display: block;
-        position: fixed;
-        top: 30vh;
-        left: 20%;
-        width: 65vmin;
-    }
-
-    #ambient {
-        position: fixed;
-        right: 10vw;
-        top: 20vh;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #bellegarde {
-        position: fixed;
-        left: 46%;
-        top: 65%;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-        background-color: #333333;
-    }
-
-    #jura {
-        position: fixed;
-        left: 20%;
-        top: 65%;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-        background-color: #333333;
-    }
-
-    #lausanne {
-        position: fixed;
-        left: 20%;
-        top: 30%;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-        background-color: #333333;
-    }
-
-    #saleve {
-        position: fixed;
-        left: 47%;
-        top: 30%;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-        background-color: #333333;
-    }
-
-    #topSide {
-        position: fixed;
-        left: 35%;
-        top: 43%;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-        background-color: #333333;
-    }
-}

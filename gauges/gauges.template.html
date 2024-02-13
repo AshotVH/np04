@@ -1,58 +1,70 @@
 <link rel="stylesheet" href="css/gauges.css" />
-<header>
-  <div class="page_title_and_timestamps">
-    <div id="pageTitle" class="page-title">{{$ctrl.pageTitle}}</div>
-    <div id="timestamp_label" class="timestamp_label">
-      Timestamp:<br />
-      <span id="timestamp" class="timestamp"
-        >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
-      >
+<header class="container page_header">
+  <div class="row">
+    <div class="col page-title">{{$ctrl.pageTitle}}</div>
+    <div class="col timestamp_label">
+      <div class="row">
+        <div class="col">Timestamp</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span id="timestamp" class="timestamp"
+            >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
+          >
+        </div>
+      </div>
     </div>
   </div>
 </header>
-<main class="gauge_container">
-    <img id="detector" src="img/cryostat.png" alt="gauges" />
-
-    <div id="bellegarde"><a href="#!/bellegarde">Bellegarde side</a></div>
-    <div id="jura"><a href="#!/jura">Jura side</a></div>
-    <div id="lausanne"><a href="#!/lausanne">Lausanne side</a></div>
-    <div id="saleve"><a href="#!/saleve">Saleve side</a></div>
-    <div id="topSide"><a href="#!/top">Top side</a></div>
+<main class="container">
+  <div class="row justify-content-center pt-4">
+    <div class="col-10 col-sm-8 col-md-6 col-lg-6 gauges_img_wrapper">
+      <img class="detector_img" src="img/cryostat.png" alt="gauges" />
+      <div class="bellegarde gagues_link"><a href="#!/bellegarde">Bellegarde side</a></div>
+      <div class="jura gagues_link"><a href="#!/jura">Jura side</a></div>
+      <div class="lausanne gagues_link"><a href="#!/lausanne">Lausanne side</a></div>
+      <div class="saleve gagues_link"><a href="#!/saleve">Saleve side</a></div>
+      <div class="topSide gagues_link"><a href="#!/top">Top side</a></div>
+    </div>
+  </div>
 </main>
-
-<footer>
-    <table class="data_table cryostat_ambient">
-      <tbody>
-        <tr>
-          <th>
-            Humidity:<br />
-            <a target="_blank" href="#!/histogram/47878785489690">
-              <span class="value"
-                >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
-              >
-            </a>
-          </th>
-        </tr>
-        <tr>
-          <th>
-            Ambient temperature:<br />
-            <a target="_blank" href="#!/histogram/47878802266906">
-              <span class="value"
-                >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
-              >
-            </a>
-          </th>
-        </tr>
-        <tr>
-          <th>
-            Ambient pressure:<br />
-            <a target="_blank" href="#!/histogram/47878819044122">
-              <span class="value"
-                >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
-              >
-            </a>
-          </th>
-        </tr>
-      </tbody>
-    </table>
-  </footer>
+<footer class="container page_footer">
+  <div class="row justify-content-end">
+    <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td>Humidity</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878785489690">
+                <span class="value"
+                  >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient temperature</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878802266906">
+                <span class="value"
+                  >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient pressure</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878819044122">
+                <span class="value"
+                  >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
+                >
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</footer>

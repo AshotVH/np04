@@ -1,11 +1,8 @@
+.cryostat_img {
+  width: 100%;
+}
 
-  .cryostat_img {
-    width: 100%;
-  }
-
- caption span {
-    color: #f8f9fa;
-    font-size: 1.6rem;
-  }
-
-  
+caption span {
+  color: #f8f9fa;
+  font-size: 1.6rem;
+}
