@@ -36,7 +36,7 @@ angular.module("bellegarde", []).component("bellegarde", {
     $scope.start = function () {
       $scope.stop();
 
-      self.promise = $interval(self.reload, 30000);
+      self.promise = $interval(self.reload, 15000);
     };
 
     $scope.stop = function () {
