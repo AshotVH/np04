@@ -151,9 +151,13 @@ angular.module("histogram", []).component("histogram", {
                 .get("php-db-conn/np04sensorname.php?elemid=" + self.elemId)
                 .then(function onSuccess(response) {
                   console.log(response.data);
-                  self.sensorName = response.data.replace("NP04_DCS_01:", "");
-                  self.sensorName = self.sensorName.replace(/"/g, '');
+                  let sensorNameStr = response.data.replace("NP04_DCS_01:", "");
+                  sensorNameStr = sensorNameStr.replace(/"/g, '');
                   console.log(self.sensorName);
+                  if (sensorNameStr.charAt(sensorNameStr.length - 1) === '.'){
+                    sensorNameStr = sensorNameStr.substring(0,sensorNameStr.length - 1);
+                  }
+                  self.sensorName = sensorNameStr;                  
                   self.drawChart("container", self.chartData, self.sensorName);
                 });
             } else {
@@ -184,6 +188,7 @@ angular.module("histogram", []).component("histogram", {
       $scope.start();
       $scope.$on("$destroy", function () {
         $scope.stop();
+        this.sensorName = "";
       });
     },
   ],
