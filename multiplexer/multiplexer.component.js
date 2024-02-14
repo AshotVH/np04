@@ -29,7 +29,7 @@ angular.module("multiplexer", []).component("multiplexer", {
           .then(function (result) {
             const res = result.data;
             console.log(res);
-            console.log(res.length);
+            console.log(res.length); 
 
             let rArr = [];
             // for (const key in res) {
