@@ -13,18 +13,16 @@ angular.module('splevel2', []).component('splevel2', {
                 .then(function (result) {
                     const res = result.data;
                     console.log(res);
-                    self.NP04_MHT0100AI = res["47878785489690"][0];
-                    self.NP04_TT0100AI = res["47878802266906"][0];
-                    self.NP04_PT0106AI = res["47878819044122"][0];
-                    self.NP04_DCS_01_TE0097_ = res["47891871695130"][0];
-                    self.NP04_DCS_01_TE0098_ = res["47891888472346"][0];
-                    self.NP04_DCS_01_TE0099_ = res["47891905249562"][0];
-                    self.NP04_DCS_01_TE0100_ = res["47891922026778"][0];
-                    self.NP04_DCS_01_TE0101_ = res["47891938803994"][0];
-                    self.NP04_DCS_01_TE0102_ = res["47891955581210"][0];
-
+                    self.NP04_MHT0100AI = res["47878785489690"]?res["47878785489690"][0]:"N/A";
+                    self.NP04_TT0100AI = res["47878802266906"]?res["47878802266906"][0]:"N/A";
+                    self.NP04_PT0106AI = res["47878819044122"]?res["47878819044122"][0]:"N/A";
+                    self.NP04_DCS_01_TE0097_ = res["47891871695130"]?res["47891871695130"][0]:"N/A";
+                    self.NP04_DCS_01_TE0098_ = res["47891888472346"]?res["47891888472346"][0]:"N/A";
+                    self.NP04_DCS_01_TE0099_ = res["47891905249562"]?res["47891905249562"][0]:"N/A";
+                    self.NP04_DCS_01_TE0100_ = res["47891922026778"]?res["47891922026778"][0]:"N/A";
+                    self.NP04_DCS_01_TE0101_ = res["47891938803994"]?res["47891938803994"][0]:"N/A";
+                    self.NP04_DCS_01_TE0102_ = res["47891955581210"]?res["47891955581210"][0]:"N/A";
                 });
-
         };
 
         this.promise;
