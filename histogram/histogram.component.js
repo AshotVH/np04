@@ -20,7 +20,7 @@ angular.module("histogram", []).component("histogram", {
       this.elemId = $routeParams.elemId;
       this.sensorName = "";
       this.chartData;
-      this.daysAndHours = "0-6";
+      this.daysAndHours = "0-1";
       this.daysAndHoursToUTCDateRange = function (daysAndHours) {
         const [days, hours] = [
           parseInt(daysAndHours.split("-")[0]),
@@ -122,7 +122,7 @@ angular.module("histogram", []).component("histogram", {
                 return [parseInt(key), value];
               }
             );
-            self.drawChart("container", chartData);
+            self.drawChart("container", chartData, self.sensorName);
           });
         return false;
       };
