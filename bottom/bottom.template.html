@@ -1,18 +1,126 @@
-<link rel="stylesheet" href="css/bottom.css">
-<div class="container">
-    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
-    <img id="tss001AABA" src="img/tss-001-aaba.PNG" alt="Bottom1"/>
-    <img id="tss002ABBB" src="img/tss-002-abbb.PNG" alt=""/>
-    <img id="tss002ACBC" src="img/tss-002-acbc.PNG" alt=""/>
-    <img id="tss002AEBE" src="img/tss-002-aebe.PNG" alt=""/>
+<link rel="stylesheet" href="css/bottom.css" />
+<header class="container page_header">
+  <div class="row">
+    <div class="col page-title">{{$ctrl.pageTitle}}</div>
+    <div class="col timestamp_label">
+      <div class="row">
+        <div class="col">Timestamp</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span id="timestamp" class="timestamp"
+            >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="container">
+  <div class="row">
+    <div class="col-12 col-sm-6 pt-4">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td>TE0121</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47892274348314"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0121 | number: 2 }} &#8490;</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>TE0123</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47892307902746"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0123 | number: 2 }} &#8490;</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>TE0135</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47892509229338"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0135 | number: 2 }} &#8490;</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>TE0140</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47892593115418"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0140 | number: 2 }} &#8490;</span
+                ></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-12 col-sm-6 justify-content-center d-flex">
+      <img class="bottom__img_sm" src="img/bottom.png" alt="Bottom old" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-sm-6 justify-content-center d-flex bottom__img_wrapper">
+      <img class="bottom__img" src="img/tss-001-aaba.PNG" alt="Bottom Side" />
+    </div>
+    <div class="col-12 col-sm-6 justify-content-center d-flex bottom__img_wrapper">
+      <img class="bottom__img" src="img/tss-002-abbb.PNG" alt="Bottom Side" />
+    </div>
+    <div class="col-12 col-sm-6 justify-content-center d-flex bottom__img_wrapper">
+      <img class="bottom__img" src="img/tss-002-acbc.PNG" alt="Bottom Side" />
+    </div>
+    <div class="col-12 col-sm-6 justify-content-center d-flex bottom__img_wrapper">
+      <img class="bottom__img" src="img/tss-002-aebe.PNG" alt="Bottom Side" />
+    </div>
+  </div>
+</main>
 
-    <img id="old" src="img/bottom.png" alt="Bottom old"/>
-
-    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
-    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
-
-    <div id="NP04_7TT0200AIR"><a target="_blank" href="#!/histogram/47892274348314"><span class="value">{{ $ctrl.NP04_DCS_01_TE0121 | number: 2 }} &#8490;</span></a></div>
-    <div id="NP04_7TT0202AIR"><a target="_blank" href="#!/histogram/47892307902746"><span class="value">{{ $ctrl.NP04_DCS_01_TE0123 | number: 2 }} &#8490;</span></a></div>
-    <div id="NP04_7TT0214AIR"><a target="_blank" href="#!/histogram/47892509229338"><span class="value">{{ $ctrl.NP04_DCS_01_TE0135 | number: 2 }} &#8490;</span></a></div>
-    <div id="NP04_7TT0219AIR"><a target="_blank" href="#!/histogram/47892593115418"><span class="value">{{ $ctrl.NP04_DCS_01_TE0140 | number: 2 }} &#8490;</span></a></div>
-</div>
+<footer class="container page_footer">
+  <div class="row justify-content-end">
+    <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td>Humidity</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878785489690">
+                <span class="value"
+                  >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient temperature</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878802266906">
+                <span class="value"
+                  >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient pressure</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878819044122">
+                <span class="value"
+                  >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
+                >
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</footer>

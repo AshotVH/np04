@@ -32,12 +32,12 @@ angular.module("multiplexer", []).component("multiplexer", {
             console.log(res.length);
 
             let rArr = [];
-            for (const key in res) {
-              rArr.push(res[key][0]);
-            }
-            // for (let i = 0; i < res.length; i++) {
-            //     rArr.push(JSON.parse(res[i]));
+            // for (const key in res) {
+            //   rArr.push(res[key][0]);
             // }
+            for (let i = 0; i < res.length; i++) {
+                rArr.push(JSON.parse(res[i]));
+            }
 
             self.NP04_DCS_01_TE_card1 = [];
 
