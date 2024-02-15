@@ -1,593 +1,80 @@
-@media screen and (max-height: 1080px) {
-    .container {
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        display: inline-block;
-        overflow: hidden;
-        margin: 0;
-    }
-
-    #detector {
-        display: block;
-        position: fixed;
-        top: 15vh;
-        left: 17vw;
-        width: 45vw;
-    }
-
-    #ambient {
-        position: fixed;
-        right: 10vw;
-        top: 20vh;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0145 {
-        position: fixed;
-        top: 75vh;
-        left: 28vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0146 {
-        position: fixed;
-        top: 75vh;
-        left: 40vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0147 {
-        position: fixed;
-        top: 75vh;
-        left: 50vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0148 {
-        position: fixed;
-        top: 36vh;
-        left: 28vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0149 {
-        position: fixed;
-        top: 36vh;
-        left: 40vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0150 {
-        position: fixed;
-        top: 36vh;
-        left: 50vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0151 {
-        position: fixed;
-        top: 49vh;
-        left: 28vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0152 {
-        position: fixed;
-        top: 54vh;
-        left: 40vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0153 {
-        position: fixed;
-        top: 54vh;
-        left: 50vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0154 {
-        position: fixed;
-        top: 67vh;
-        left: 15vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0155 {
-        position: fixed;
-        top: 69vh;
-        left: 15vw;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0156 {
-        position: fixed;
-        top: 71vh;
-        left: 15vw;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
+.spbottom__img_wrapper {
+  position: relative;
 }
-
-@media screen and (min-height: 1100px) and (max-height: 2000px) {
-    .container {
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        display: inline-block;
-        overflow: hidden;
-        margin: 0;
-    }
-
-    #detector {
-        display: block;
-        position: fixed;
-        top: 15vh;
-        left: 17vw;
-        width: 45vw;
-    }
-
-    #ambient {
-        position: fixed;
-        right: 10vw;
-        top: 20vh;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0145 {
-        position: fixed;
-        top: 75vh;
-        left: 28vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0146 {
-        position: fixed;
-        top: 73vh;
-        left: 40vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0147 {
-        position: fixed;
-        top: 73vh;
-        left: 50vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0148 {
-        position: fixed;
-        top: 36vh;
-        left: 28vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0149 {
-        position: fixed;
-        top: 36vh;
-        left: 40vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0150 {
-        position: fixed;
-        top: 36vh;
-        left: 50vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0151 {
-        position: fixed;
-        top: 50vh;
-        left: 28vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0152 {
-        position: fixed;
-        top: 54vh;
-        left: 40vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0153 {
-        position: fixed;
-        top: 54vh;
-        left: 50vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0154 {
-        position: fixed;
-        top: 67vh;
-        left: 15vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0155 {
-        position: fixed;
-        top: 69vh;
-        left: 15vw;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0156 {
-        position: fixed;
-        top: 71vh;
-        left: 15vw;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
+.spbottom__img {
+  width: 100%;
 }
-
-@media screen and (min-height: 1100px) {
-    .container {
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        display: inline-block;
-        overflow: hidden;
-        margin: 0;
-    }
-
-    #detector {
-        display: block;
-        position: fixed;
-        top: 15vh;
-        left: 3vw;
-        width: 75vw;
-    }
-
-    #ambient {
-        position: fixed;
-        right: 10vw;
-        bottom: 10vh;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0145 {
-        position: fixed;
-        top: 60vh;
-        left: 20vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0146 {
-        position: fixed;
-        top: 60vh;
-        left: 41vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0147 {
-        position: fixed;
-        top: 60vh;
-        left: 60vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0148 {
-        position: fixed;
-        top: 23vh;
-        left: 20vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0149 {
-        position: fixed;
-        top: 23vh;
-        left: 41vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0150 {
-        position: fixed;
-        top: 23vh;
-        left: 60vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0151 {
-        position: fixed;
-        top: 38vh;
-        left: 20vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0152 {
-        position: fixed;
-        top: 38vh;
-        left: 41vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0153 {
-        position: fixed;
-        top: 38vh;
-        left: 60vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0154 {
-        position: fixed;
-        top: 57vh;
-        left: 1vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0155 {
-        position: fixed;
-        top: 59vh;
-        left: 1vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0156 {
-        position: fixed;
-        top: 61vh;
-        left: 1vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
+.spbottom__img_caption {
+  position: absolute;
+  width: 10%;
+  height: 5%;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 10%;
 }
-
-@media screen and (min-height: 1100px) and (min-width: 3000px) {
-    .container {
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        display: inline-block;
-        overflow: hidden;
-        margin: 0;
-    }
-
-    #detector {
-        display: block;
-        position: fixed;
-        top: 15vh;
-        left: 17vw;
-        width: 50vw;
-    }
-
-    #ambient {
-        position: fixed;
-        right: 10vw;
-        top: 20vh;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0145 {
-        position: fixed;
-        top: 73vh;
-        left: 30vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0146 {
-        position: fixed;
-        top: 73vh;
-        left: 42vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0147 {
-        position: fixed;
-        top: 73vh;
-        left: 55vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0148 {
-        position: fixed;
-        top: 36vh;
-        left: 30vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0149 {
-        position: fixed;
-        top: 36vh;
-        left: 42vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0150 {
-        position: fixed;
-        top: 36vh;
-        left: 55vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0151 {
-        position: fixed;
-        top: 54vh;
-        left: 30vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0152 {
-        position: fixed;
-        top: 54vh;
-        left: 42vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0153 {
-        position: fixed;
-        top: 54vh;
-        left: 55vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0154 {
-        position: fixed;
-        top: 63vh;
-        left: 13vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0155 {
-        position: fixed;
-        top: 66vh;
-        left: 13vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
-
-    #TE0156 {
-        position: fixed;
-        top: 69vh;
-        left: 13vw;
-        color: gray;
-        background-color: #333333;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
+.spbottom__TE0145 {
+  left: 23%;
+  top: 74%;
+}
+.spbottom__TE0146 {
+  left: 43%;
+  top: 74%;
+}
+.spbottom__TE0147 {
+  left: 63%;
+  top: 74%;
+}
+.spbottom__TE0148 {
+  left: 23%;
+  top: 20%;
+}
+.spbottom__TE0149 {
+  left: 43%;
+  top: 20%;
+}
+.spbottom__TE0150 {
+  left: 63%;
+  top: 20%;
+}
+.spbottom__TE0151 {
+  left: 23%;
+  top: 47%;
+}
+.spbottom__TE0152 {
+  left: 43%;
+  top: 47%;
+}
+.spbottom__TE0153 {
+  left: 63%;
+  top: 47%;
+}
+@media screen and (min-width: 576px) {
+  .spbottom__img_caption {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .spbottom__img_caption {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .spbottom__img_caption {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .spbottom__img_caption {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .spbottom__img_caption {
+    font-size: 1.6rem;
+  }
 }

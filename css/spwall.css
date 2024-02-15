@@ -6,63 +6,61 @@
 }
 
 .spwall__img_caption {
-    position: absolute;
-    width: 10%;
-    height: 5%;
-    background-color: black;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    font-weight: bold;
-    border-radius: 10%;
-  }
-  .spwall__TE0115 {
-    left: 28%;
-    top: 33%;
-  }
-  .spwall__TE0116 {
-    left: 28%;
-    top: 46%;
-  }
-  .spwall__TE0117 {
-    left: 28%;
-    top: 60%;
-  }
-  .spwall__TE0118 {
-    left: 28%;
-    top: 74%;
-  }
-  .spwall__TE0119 {
-    left: 28%;
-    top: 87%;
-  }
-
-  
-  @media screen and (min-width: 576px) {
-    .spwall__img_caption {
-      font-size: 1rem;
-    }
-  }
-  @media screen and (min-width: 768px) {
-      .spwall__img_caption {
-        font-size: 0.9rem;
-      }
-  }
-  @media screen and (min-width: 992px) {
-    .spwall__img_caption {
-      font-size: 1.2rem;
-    }
+  position: absolute;
+  width: 10%;
+  height: 5%;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 10%;
 }
-  @media screen and (min-width: 1200px) {
-    .spwall__img_caption {
-      font-size: 1.4rem;
-    }
+.spwall__TE0115 {
+  left: 28%;
+  top: 33%;
+}
+.spwall__TE0116 {
+  left: 28%;
+  top: 46%;
+}
+.spwall__TE0117 {
+  left: 28%;
+  top: 60%;
+}
+.spwall__TE0118 {
+  left: 28%;
+  top: 74%;
+}
+.spwall__TE0119 {
+  left: 28%;
+  top: 87%;
+}
+
+@media screen and (min-width: 576px) {
+  .spwall__img_caption {
+    font-size: 1rem;
   }
-  @media screen and (min-width: 1400px) {
-    .spwall__img_caption {
-      font-size: 1.6rem;
-    }
+}
+@media screen and (min-width: 768px) {
+  .spwall__img_caption {
+    font-size: 0.9rem;
   }
-  
+}
+@media screen and (min-width: 992px) {
+  .spwall__img_caption {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .spwall__img_caption {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .spwall__img_caption {
+    font-size: 1.6rem;
+  }
+}
