@@ -18,6 +18,10 @@
   font-weight: bold;
   border-radius: 10%;
 }
+.floor__img_caption span {
+    color: green;
+    padding-left: 5px;
+  }
 .floor__TE0103 {
   top: 83%;
   left: 1%;

@@ -1,0 +1,98 @@
+.pipes__img {
+  width: 100%;
+}
+.pipes__img_wrapper {
+  position: relative;
+}
+.pipes__img_caption {
+  position: absolute;
+  width: 12%;
+  height: 3%;
+  min-width: 44px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 10%;
+}
+.pipes__img_caption span {
+  color: red;
+  padding-left: 5px;
+}
+.pipes__TE0085{
+    top: 84%;
+    left: 1%;
+}
+.pipes__TE0086{
+    top: 48%;
+    left: 1%;
+}
+.pipes__TE0087{
+    top: 13%;
+    left: 1%;
+}
+.pipes__TE0088{
+    top: 84%;
+    left: 26%;
+}
+.pipes__TE0089{
+    top: 48%;
+    left: 26%;
+}
+.pipes__TE0090{
+    top: 13%;
+    left: 26%;
+}
+.pipes__TE0091{
+    top: 84%;
+    left: 52%;
+}
+.pipes__TE0092{
+    top: 48%;
+    left: 52%;
+}
+.pipes__TE0093{
+    top: 13%;
+    left: 52%;
+}
+.pipes__TE0094{
+    top: 84%;
+    left: 77%;
+}
+.pipes__TE0095{
+    top: 48%;
+    left: 77%;
+}
+.pipes__TE0096{
+    top: 13%;
+    left: 77%;
+}
+@media screen and (min-width: 576px) {
+    .pipes__img_caption {
+      font-size: 1rem;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .pipes__img_caption {
+      font-size: 0.9rem;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    .pipes__img_caption {
+      font-size: 1.2rem;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    .pipes__img_caption {
+      font-size: 1.4rem;
+    }
+  }
+  @media screen and (min-width: 1400px) {
+    .pipes__img_caption {
+      font-size: 1.6rem;
+    }
+  }
+  
