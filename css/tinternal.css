@@ -89,7 +89,8 @@
 }
 .data_row {
   display: flex;
-  min-width: 160px;
+  min-width: 220px;
+  justify-content: center;
 }
 .data_header {
   color: white;
