@@ -1,359 +1,1009 @@
-<link rel="stylesheet" href="css/tinternal.css">
-<div class="container">
-    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
-    <img id="detector" src="img/tinternal.png" alt="tinternal"/>
-    <div id="timestamp_label">Timestamp:<br/><span
-            id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
-    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient
-        temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient
-        pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a>
+<link rel="stylesheet" href="css/tinternal.css" />
+<header class="container page_header">
+  <div class="row">
+    <div class="col page-title">{{$ctrl.pageTitle}}</div>
+    <div class="col timestamp_label">
+      <div class="row">
+        <div class="col">Timestamp</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span id="timestamp" class="timestamp"
+            >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
+          >
+        </div>
+      </div>
     </div>
-
-    <button id="spwall" ng-click='$ctrl.pageChooser("spwall")'>T-wall</button>
-    <button id="floor" ng-click='$ctrl.pageChooser("floor")'>T-floor</button>
-    <button id="spgradient" ng-click='$ctrl.pageChooser("spgradient")'>T-ground plates</button>
-    <button id="spbottom" ng-click='$ctrl.pageChooser("spbottom")'>T-bottom cryostat</button>
-    <button id="splevel2" ng-click='$ctrl.pageChooser("splevel2")'>T-liq-level</button>
-    <button id="pipes" ng-click='$ctrl.pageChooser("pipes")'>T-pipes</button>
-    <button id="hawaii" onclick="if (document.getElementById('hawaiival').style.display=='none') {
-                                                              document.getElementById('hawaiival').style.display='block';
-                                                          } else {
-                                                              document.getElementById('hawaiival').style.display='none';
-                                                          }">T-HAWAII
-    </button>
-
-    <button id="ific1btn" onclick="if (document.getElementById('ific1val').style.display=='none') {
-                                                              document.getElementById('ific1val').style.display='block';
-                                                              document.getElementById('ific2val').style.display='none';
-                                                              document.getElementById('ific3val').style.display='none';
-                                                          } else {
-                                                              document.getElementById('ific1val').style.display='none';
-                                                          }">IFIC top
-    </button>
-    <button id="ific2btn" onclick="if (document.getElementById('ific2val').style.display=='none') {
-                                                              document.getElementById('ific1val').style.display='none';
-                                                              document.getElementById('ific2val').style.display='block';
-                                                              document.getElementById('ific3val').style.display='none';
-                                                          } else {
-                                                              document.getElementById('ific2val').style.display='none';
-                                                          }">IFIC middle
-    </button>
-
-    <button id="ific3btn" onclick="if (document.getElementById('ific3val').style.display=='none') {
-                                                              document.getElementById('ific1val').style.display='none';
-                                                              document.getElementById('ific2val').style.display='none';
-                                                              document.getElementById('ific3val').style.display='block';
-                                                          } else {
-                                                              document.getElementById('ific3val').style.display='none';
-                                                          }">IFIC bottom
-    </button>
-
-    <div id="hawaiival">
-        <table>
-            <tr>
-                <td>0067 (m): <a target="_blank" ng-href="#!/histogram/47891368378650"><span
-                        class="value">{{ $ctrl.NP04_DCS_01_TE0067 | number: 1}} &#8490;</span></a></td>
-            </tr>
-            <tr>
-                <td>0068 (7.582 m): <a target="_blank" ng-href="#!/histogram/47891385155866"><span class="value">{{ $ctrl.NP04_DCS_01_TE0068 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0069 (7.480 m): <a target="_blank" ng-href="#!/histogram/47891401933082"><span class="value">{{ $ctrl.NP04_DCS_01_TE0069 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0070 (7.379 m): <a target="_blank" ng-href="#!/histogram/47891418710298"><span class="value">{{ $ctrl.NP04_DCS_01_TE0070 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0071 (7.277 m): <a target="_blank" ng-href="#!/histogram/47891435487514"><span class="value">{{ $ctrl.NP04_DCS_01_TE0071 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0072 (7.175 m): <a target="_blank" ng-href="#!/histogram/47891452264730"><span class="value">{{ $ctrl.NP04_DCS_01_TE0072 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0061 (6.667 m): <a target="_blank" ng-href="#!/histogram/47891267715354"><span class="value">{{ $ctrl.NP04_DCS_01_TE0061 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0062 (6.159 m): <a target="_blank" ng-href="#!/histogram/47891284492570"><span class="value">{{ $ctrl.NP04_DCS_01_TE0062 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0063 (5.651 m): <a target="_blank" ng-href="#!/histogram/47891301269786"><span class="value">{{ $ctrl.NP04_DCS_01_TE0063 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0064 (5.143 m): <a target="_blank" ng-href="#!/histogram/47891318047002"><span class="value">{{ $ctrl.NP04_DCS_01_TE0064 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0065 (4.635 m): <a target="_blank" ng-href="#!/histogram/47891334824218"><span class="value">{{ $ctrl.NP04_DCS_01_TE0065 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0066 (4.127 m): <a target="_blank" ng-href="#!/histogram/47891351601434"><span class="value">{{ $ctrl.NP04_DCS_01_TE0066 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0055 (3.619 m): <a target="_blank" ng-href="#!/histogram/47891167052058"><span class="value">{{ $ctrl.NP04_DCS_01_TE0055 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0056 (3.111 m): <a target="_blank" ng-href="#!/histogram/47891183829274"><span class="value">{{ $ctrl.NP04_DCS_01_TE0056 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0057 (2.603 m): <a target="_blank" ng-href="#!/histogram/47891200606490"><span class="value">{{ $ctrl.NP04_DCS_01_TE0057 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0058 (2.095 m): <a target="_blank" ng-href="#!/histogram/47891217383706"><span class="value">{{ $ctrl.NP04_DCS_01_TE0058 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0059 (1.587 m): <a target="_blank" ng-href="#!/histogram/47891234160922"><span class="value">{{ $ctrl.NP04_DCS_01_TE0059 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0060 (1.079 m): <a target="_blank" ng-href="#!/histogram/47891250938138"><span class="value">{{ $ctrl.NP04_DCS_01_TE0060 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0049 (0.673 m): <a target="_blank" ng-href="#!/histogram/47891066388762"><span class="value">{{ $ctrl.NP04_DCS_01_TE0049 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0050 (0.571 m): <a target="_blank" ng-href="#!/histogram/47891083165978"><span class="value">{{ $ctrl.NP04_DCS_01_TE0050 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0051 (0.470 m): <a target="_blank" ng-href="#!/histogram/47891099943194"><span class="value">{{ $ctrl.NP04_DCS_01_TE0051 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0052 (0.368 m): <a target="_blank" ng-href="#!/histogram/47891116720410"><span class="value">{{ $ctrl.NP04_DCS_01_TE0052 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0053 (0.267 m): <a target="_blank" ng-href="#!/histogram/47891133497626"><span class="value">{{ $ctrl.NP04_DCS_01_TE0053 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0054 (0.165 m): <a target="_blank" ng-href="#!/histogram/47891150274842"><span class="value">{{ $ctrl.NP04_DCS_01_TE0054 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-
-        </table>
+  </div>
+</header>
+<main class="container">
+  <div class="row">
+    <div class="col-12 pt-2 pb-2 tinternal__links text-center">
+      <a class="btn btn-lg btn-outline-dark" href="#!/spwall" role="button"
+        >T-wall</a
+      >
+      <a class="btn btn-lg btn-outline-dark" href="#!/floor" role="button"
+        >T-floor</a
+      >
+      <a class="btn btn-lg btn-outline-dark" href="#!/spgradient" role="button"
+        >T-ground plates</a
+      >
+      <a class="btn btn-lg btn-outline-dark" href="#!/spbottom" role="button"
+        >T-bottom cryostat</a
+      >
+      <a class="btn btn-lg btn-outline-dark" href="#!/splevel2" role="button"
+        >T-liq-level</a
+      >
+      <a class="btn btn-lg btn-outline-dark" href="#!/pipes" role="button"
+        >T-pipes</a
+      >
     </div>
+    <div class="col-12 col-lg-6 pt-4 tinternal__img_wrapper">
+      <img class="tinternal__img" src="img/tinternal.png" alt="tinternal" />
+      <div class="tinternal__img_caption tinternal__img__twall">
+        <a href="#!/spwall">T-wall</a>
+      </div>
+      <div class="tinternal__img_caption tinternal__img__tliqlevel">
+        <a href="#!/splevel2">T-liq-level</a>
+      </div>
+      <div class="tinternal__img_caption tinternal__img__spgradient">
+        <a href="#!/spgradient">T-ground plates</a>
+      </div>
+      <div class="tinternal__img_caption tinternal__img__spbottom">
+        <a href="#!/spbottom">T-bottom cryostat</a>
+      </div>
+      <div class="tinternal__img_caption tinternal__img__floor">
+        <a href="#!/floor">T-floor</a>
+      </div>
+      <div class="tinternal__img_caption tinternal__img__pipes">
+        <a href="#!/pipes">T-pipes</a>
+      </div>
 
-    <div id="ific1val">
-        <table>
-            <tr>
-                <td>0001 (7.385 m): <a target="_blank" ng-href="#!/histogram/47890261082394"><span class="value">{{ $ctrl.NP04_DCS_01_TE0001 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0002 (7.267 m): <a target="_blank" ng-href="#!/histogram/47890277859610"><span class="value">{{ $ctrl.NP04_DCS_01_TE0002 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0003 (7.149 m): <a target="_blank" ng-href="#!/histogram/47890294636826"><span class="value">{{ $ctrl.NP04_DCS_01_TE0003 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0004 (7.031 m): <a target="_blank" ng-href="#!/histogram/47890311414042"><span class="value">{{ $ctrl.NP04_DCS_01_TE0004 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0005 (6.913 m): <a target="_blank" ng-href="#!/histogram/47890328191258"><span class="value">{{ $ctrl.NP04_DCS_01_TE0005 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0006 (6.795 m): <a target="_blank" ng-href="#!/histogram/47890344968474"><span class="value">{{ $ctrl.NP04_DCS_01_TE0006 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0007 (6.677 m): <a target="_blank" ng-href="#!/histogram/47890361745690"><span class="value">{{ $ctrl.NP04_DCS_01_TE0007 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0008 (6.559 m): <a target="_blank" ng-href="#!/histogram/47890378522906"><span class="value">{{ $ctrl.NP04_DCS_01_TE0008 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0009 (6.441 m): <a target="_blank" ng-href="#!/histogram/47890395300122"><span class="value">{{ $ctrl.NP04_DCS_01_TE0009 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0010 (6.323 m): <a target="_blank" ng-href="#!/histogram/47890412077338"><span class="value">{{ $ctrl.NP04_DCS_01_TE0010 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0011 (6.205 m): <a target="_blank" ng-href="#!/histogram/47890428854554"><span class="value">{{ $ctrl.NP04_DCS_01_TE0011 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0012 (6.087 m): <a target="_blank" ng-href="#!/histogram/47890445631770"><span class="value">{{ $ctrl.NP04_DCS_01_TE0012 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0013 (5.969 m): <a target="_blank" ng-href="#!/histogram/47890462408986"><span class="value">{{ $ctrl.NP04_DCS_01_TE0013 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0014 (5.851 m): <a target="_blank" ng-href="#!/histogram/47890479186202"><span class="value">{{ $ctrl.NP04_DCS_01_TE0014 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0015 (5.733 m): <a target="_blank" ng-href="#!/histogram/47890495963418"><span class="value">{{ $ctrl.NP04_DCS_01_TE0015 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0016 (5.615 m): <a target="_blank" ng-href="#!/histogram/47890512740634"><span class="value">{{ $ctrl.NP04_DCS_01_TE0016 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-        </table>
+      <div class="tinternal__img_caption tinternal__img__hawaii">
+        <span>T-HAWAII</span>
+      </div>
+      <div class="tinternal__img_caption tinternal__img__ifictop">
+        <span>IFIC top</span>
+      </div>
+      <div class="tinternal__img_caption tinternal__img__ificmiddle">
+        <span>IFIC middle</span>
+      </div>
+      <div class="tinternal__img_caption tinternal__img__ificbottom">
+        <span>IFIC bottom</span>
+      </div>
     </div>
+    <div class="col-12 col-lg-6 pt-4">
+        <div class="row justify-content-center">
+            <div class="col-12 data_header">T-HAWAII</div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0067</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891368378650"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0067 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0068 (7.582 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891385155866"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0068 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
 
-    <div id="ific2val">
-        <table>
-            <tr>
-                <td>0017 (5.497 m): <a target="_blank" ng-href="#!/histogram/47890529517850"><span class="value">{{ $ctrl.NP04_DCS_01_TE0017 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0018 (5.379 m): <a target="_blank" ng-href="#!/histogram/47890546295066"><span class="value">{{ $ctrl.NP04_DCS_01_TE0018 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0019 (5.143 m): <a target="_blank" ng-href="#!/histogram/47890563072282"><span class="value">{{ $ctrl.NP04_DCS_01_TE0019 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0020 (4.907 m): <a target="_blank" ng-href="#!/histogram/47890579849498"><span class="value">{{ $ctrl.NP04_DCS_01_TE0020 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0021 (4.671 m): <a target="_blank" ng-href="#!/histogram/47890596626714"><span class="value">{{ $ctrl.NP04_DCS_01_TE0021 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0022 (4.435 m): <a target="_blank" ng-href="#!/histogram/47890613403930"><span class="value">{{ $ctrl.NP04_DCS_01_TE0022 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0023 (4.199 m): <a target="_blank" ng-href="#!/histogram/47890630181146"><span class="value">{{ $ctrl.NP04_DCS_01_TE0023 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0024 (3.963 m): <a target="_blank" ng-href="#!/histogram/47890646958362"><span class="value">{{ $ctrl.NP04_DCS_01_TE0024 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0025 (3.727 m): <a target="_blank" ng-href="#!/histogram/47890663735578"><span class="value">{{ $ctrl.NP04_DCS_01_TE0025 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0026 (3.491 m): <a target="_blank" ng-href="#!/histogram/47890680512794"><span class="value">{{ $ctrl.NP04_DCS_01_TE0026 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0027 (3.255 m): <a target="_blank" ng-href="#!/histogram/47890697290010"><span class="value">{{ $ctrl.NP04_DCS_01_TE0027 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0028 (3.019 m): <a target="_blank" ng-href="#!/histogram/47890714067226"><span class="value">{{ $ctrl.NP04_DCS_01_TE0028 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0029 (2.783 m): <a target="_blank" ng-href="#!/histogram/47890730844442"><span class="value">{{ $ctrl.NP04_DCS_01_TE0029 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0030 (2.547 m): <a target="_blank" ng-href="#!/histogram/47890747621658"><span class="value">{{ $ctrl.NP04_DCS_01_TE0030 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0031 (2.311 m): <a target="_blank" ng-href="#!/histogram/47890764398874"><span class="value">{{ $ctrl.NP04_DCS_01_TE0031 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0032 (2.193 m): <a target="_blank" ng-href="#!/histogram/47890781176090"><span class="value">{{ $ctrl.NP04_DCS_01_TE0032 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-        </table>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0069 (7.480 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891401933082"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0069 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0070 (7.379 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891418710298"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0070 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0071 (7.277 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891435487514"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0071 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0072 (7.175 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891452264730"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0072 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0061 (6.667 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891267715354"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0061 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0062 (6.159 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891284492570"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0062 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0063 (5.651 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891301269786"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0063 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0064 (5.143 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891318047002"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0064 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0065 (4.635 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891334824218"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0065 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0066 (4.127 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891351601434"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0066 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0055 (3.619 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891167052058"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0055 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0056 (3.111 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891183829274"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0056 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0057 (2.603 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891200606490"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0057 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0058 (2.095 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891217383706"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0058 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0059 (1.587 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891234160922"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0059 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0060 (1.079 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891250938138"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0060 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0049 (0.673 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891066388762"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0049 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0050 (0.571 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891083165978"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0050 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0051 (0.470 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891099943194"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0051 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0052 (0.368 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891116720410"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0052 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0053 (0.267 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891133497626"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0053 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col pt-2">
+              <div class="data_row">
+                <div class="data_item">0054 (0.165 m)</div>
+                <div class="data_item">
+                  <a target="_blank" ng-href="#!/histogram/47891150274842"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_DCS_01_TE0054 | number: 1}} &#8490;</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+         
+      </div>
     </div>
+    <div class="col-12 col-lg-6 pt-4">
+      <div class="row justify-content-center">
+        <div class="col-12 data_header">IFIC top</div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0001 (7.385 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890261082394"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0001 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0002 (7.267 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890277859610"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0002 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0003 (7.149 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890294636826"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0003 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0004 (7.031 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890311414042"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0004 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0005 (6.913 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890328191258"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0005 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0006 (6.795 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890344968474"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0006 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0007 (6.677 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890361745690"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0007 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0008 (6.559 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890378522906"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0008 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0009 (6.441 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890395300122"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0009 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0010 (6.323 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890412077338"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0010 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0011 (6.205 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890428854554"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0011 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0012 (6.087 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890445631770"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0012 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0013 (5.969 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890462408986"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0013 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0014 (5.851 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890479186202"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0014 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0015 (5.733 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890495963418"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0015 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0016 (5.615 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890512740634"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0016 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6 pt-4">
+      <div class="row justify-content-center">
+        <div class="col-12 data_header">IFIC middle</div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0017 (5.497 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890529517850"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0017 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0018 (5.379 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890546295066"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0018 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0019 (5.143 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890563072282"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0019 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0020 (4.907 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890579849498"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0020 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0021 (4.671 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890596626714"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0021 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0022 (4.435 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890613403930"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0022 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0023 (4.199 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890630181146"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0023 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0024 (3.963 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890646958362"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0024 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0025 (3.727 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890663735578"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0025 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0026 (3.491 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890680512794"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0026 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0027 (3.255 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890697290010"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0027 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0028 (3.019 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890714067226"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0028 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0029 (2.783 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890730844442"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0029 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0030 (2.547 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890747621658"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0030 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0031 (2.311 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890764398874"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0031 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0032 (2.193 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890781176090"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0032 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6 pt-4">
+      <div class="row justify-content-center">
+        <div class="col-12 data_header">IFIC bottom</div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0033 (2.075 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890797953306"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0033 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
 
-    <div id="ific3val">
-        <table>
-            <tr>
-                <td>0033 (2.075 m): <a target="_blank" ng-href="#!/histogram/47890797953306"><span class="value">{{ $ctrl.NP04_DCS_01_TE0033 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0034 (1.957 m): <a target="_blank" ng-href="#!/histogram/47890814730522"><span class="value">{{ $ctrl.NP04_DCS_01_TE0034 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0035 (1.839 m): <a target="_blank" ng-href="#!/histogram/47890831507738"><span class="value">{{ $ctrl.NP04_DCS_01_TE0035 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0036 (1.721 m): <a target="_blank" ng-href="#!/histogram/47890848284954"><span class="value">{{ $ctrl.NP04_DCS_01_TE0036 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0037 (1.603 m): <a target="_blank" ng-href="#!/histogram/47890865062170"><span class="value">{{ $ctrl.NP04_DCS_01_TE0037 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0038 (1.485 m): <a target="_blank" ng-href="#!/histogram/47890881839386"><span class="value">{{ $ctrl.NP04_DCS_01_TE0038 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0039 (1.367 m): <a target="_blank" ng-href="#!/histogram/47890898616602"><span class="value">{{ $ctrl.NP04_DCS_01_TE0039 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0040 (1.249 m): <a target="_blank" ng-href="#!/histogram/47890915393818"><span class="value">{{ $ctrl.NP04_DCS_01_TE0040 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0041 (1.131 m): <a target="_blank" ng-href="#!/histogram/47890932171034"><span class="value"> {{ $ctrl.NP04_DCS_01_TE0041 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0042 (1.013 m): <a target="_blank" ng-href="#!/histogram/47890948948250"><span class="value">{{ $ctrl.NP04_DCS_01_TE0042 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0043 (0.895 m): <a target="_blank" ng-href="#!/histogram/47890965725466"><span class="value">{{ $ctrl.NP04_DCS_01_TE0043 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0044 (0.777 m): <a target="_blank" ng-href="#!/histogram/47890982502682"><span class="value">{{ $ctrl.NP04_DCS_01_TE0044 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0045 (0.659 m): <a target="_blank" ng-href="#!/histogram/47890999279898"><span class="value">{{ $ctrl.NP04_DCS_01_TE0045 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0046 (0.541 m): <a target="_blank" ng-href="#!/histogram/47891016057114"><span class="value">{{ $ctrl.NP04_DCS_01_TE0046 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0047 (0.423 m): <a target="_blank" ng-href="#!/histogram/47891032834330"><span class="value">{{ $ctrl.NP04_DCS_01_TE0047 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>0048 (0.305 m): <a target="_blank" ng-href="#!/histogram/47891049611546"><span class="value">{{ $ctrl.NP04_DCS_01_TE0048 | number: 1}} &#8490;</span></a>
-                </td>
-            </tr>
-        </table>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0034 (1.957 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890814730522"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0034 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0035 (1.839 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890831507738"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0035 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0036 (1.721 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890848284954"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0036 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0037 (1.603 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890865062170"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0037 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0038 (1.485 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890881839386"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0038 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0039 (1.367 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890898616602"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0039 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0040 (1.249 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890915393818"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0040 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0041 (1.131 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890932171034"
+                ><span class="value">
+                  {{ $ctrl.NP04_DCS_01_TE0041 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0042 (1.013 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890948948250"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0042 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0043 (0.895 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890965725466"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0043 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0044 (0.777 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890982502682"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0044 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0045 (0.659 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47890999279898"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0045 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0046 (0.541 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47891016057114"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0046 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0047 (0.423 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47891032834330"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0047 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col pt-2">
+          <div class="data_row">
+            <div class="data_item">0048 (0.305 m)</div>
+            <div class="data_item">
+              <a target="_blank" ng-href="#!/histogram/47891049611546"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_TE0048 | number: 1}} &#8490;</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+</main>
+<footer class="container page_footer">
+  <div class="row justify-content-end">
+    <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td>Humidity</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878785489690">
+                <span class="value"
+                  >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient temperature</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878802266906">
+                <span class="value"
+                  >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient pressure</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878819044122">
+                <span class="value"
+                  >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
+                >
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</footer>

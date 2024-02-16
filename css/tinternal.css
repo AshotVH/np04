@@ -1,521 +1,149 @@
-@media screen and (max-height: 1080px) {
-    .container {
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        display: inline-block;
-        overflow: hidden;
-        margin: 0;
-    }
-
-    #pageTitle {
-        top: 7vh;
-        left: 35vw;
-    }
-
-    #detector {
-        display: block;
-        position: fixed;
-        top: 15vh;
-        left: 17vw;
-        height: 75%;
-    }
-
-    #spwall {
-        position: fixed;
-        top: 33vh;
-        left: 32vw;
-    }
-
-    #floor {
-        position: fixed;
-        top: 72vh;
-        left: 40vw;
-    }
-
-    #spgradient {
-        position: fixed;
-        top: 20vh;
-        left: 40vw;
-    }
-
-    #spbottom {
-        position: fixed;
-        top: 83vh;
-        left: 20vw;
-    }
-
-    #splevel2 {
-        position: fixed;
-        top: 30vh;
-        left: 32vw;
-    }
-
-    #pipes {
-        position: fixed;
-        top: 72vh;
-        left: 45vw;
-    }
-
-    #hawaii {
-        position: fixed;
-        top: 45vh;
-        left: 27vw;
-    }
-
-    #hawaiival {
-        display: none;
-        position: fixed;
-        top: 8vh;
-        left: 7vw;
-        background-color: #333333;
-    }
-
-    #ific1btn {
-        position: fixed;
-        top: 32vh;
-        left: 57vw;
-    }
-
-    #ific2btn {
-        position: fixed;
-        top: 42vh;
-        left: 57vw;
-    }
-
-    #ific3btn {
-        position: fixed;
-        top: 62vh;
-        left: 57vw;
-    }
-
-    #ific1val {
-        display: none;
-        position: fixed;
-        top: 15vh;
-        left: 65vw;
-        background-color: #333333;
-    }
-
-    #ific2val {
-        display: none;
-        position: fixed;
-        top: 15vh;
-        left: 65vw;
-        background-color: #333333;
-    }
-
-    #ific3val {
-        display: none;
-        position: fixed;
-        top: 15vh;
-        left: 65vw;
-        background-color: #333333;
-    }
-
-    td {
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 1.8vmin;
-        padding: 0.3vmin;
-    }
-
-
-    #ambient {
-        position: fixed;
-        right: 10vw;
-        top: 20vh;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
+.tinternal__img_wrapper {
+  position: relative;
 }
-
-@media screen and (min-height: 1081px) and (min-width: 2000px) {
-    .container {
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        display: inline-block;
-        overflow: hidden;
-        margin: 0;
-    }
-
-    #pageTitle {
-        top: 2vh;
-        left: 35vw;
-    }
-
-    #detector {
-        display: block;
-        position: fixed;
-        top: 15vh;
-        left: 10vw;
-        height: 75vw;
-    }
-
-    #spwall {
-        position: fixed;
-        top: 33vh;
-        left: 32vw;
-    }
-
-    #floor {
-        position: fixed;
-        top: 72vh;
-        left: 40vw;
-    }
-
-    #spgradient {
-        position: fixed;
-        top: 20vh;
-        left: 40vw;
-    }
-
-    #spbottom {
-        position: fixed;
-        top: 83vh;
-        left: 20vw;
-    }
-
-    #splevel2 {
-        position: fixed;
-        top: 30vh;
-        left: 32vw;
-    }
-
-    #pipes {
-        position: fixed;
-        top: 72vh;
-        left: 45vw;
-    }
-
-    #hawaii {
-        position: fixed;
-        top: 45vh;
-        left: 27vw;
-    }
-
-    #hawaiival {
-        display: none;
-        position: fixed;
-        top: 5vh;
-        left: 7vw;
-        background-color: #333333;
-    }
-
-    #ific1btn {
-        position: fixed;
-        top: 32vh;
-        left: 57vw;
-    }
-
-    #ific2btn {
-        position: fixed;
-        top: 42vh;
-        left: 57vw;
-    }
-
-    #ific3btn {
-        position: fixed;
-        top: 62vh;
-        left: 57vw;
-    }
-
-    #ific1val {
-        display: none;
-        position: fixed;
-        top: 15vh;
-        left: 65vw;
-        background-color: #333333;
-    }
-
-    #ific2val {
-        display: none;
-        position: fixed;
-        top: 15vh;
-        left: 65vw;
-        background-color: #333333;
-    }
-
-    #ific3val {
-        display: none;
-        position: fixed;
-        top: 15vh;
-        left: 65vw;
-        background-color: #333333;
-    }
-
-    td {
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 1.8vmin;
-        padding: 0.3vmin;
-    }
-
-
-    #ambient {
-        position: fixed;
-        right: 10vw;
-        top: 20vh;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
+.tinternal__img {
+  width: 100%;
 }
-
-@media screen and (min-height: 1100px) {
-    .container {
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        display: inline-block;
-        overflow: hidden;
-        margin: 0;
-    }
-
-    #detector {
-        display: block;
-        position: fixed;
-        top: 15vh;
-        left: 17vw;
-        height: 75%;
-    }
-
-    #spwall {
-        position: fixed;
-        top: 33vh;
-        left: 32vw;
-    }
-
-    #floor {
-        position: fixed;
-        top: 72vh;
-        left: 40vw;
-    }
-
-    #spgradient {
-        position: fixed;
-        top: 20vh;
-        left: 40vw;
-    }
-
-    #spbottom {
-        position: fixed;
-        top: 83vh;
-        left: 20vw;
-    }
-
-    #splevel2 {
-        position: fixed;
-        top: 30vh;
-        left: 32vw;
-    }
-
-    #pipes {
-        position: fixed;
-        top: 72vh;
-        left: 45vw;
-    }
-
-    #hawaii {
-        position: fixed;
-        top: 45vh;
-        left: 27vw;
-    }
-
-    #hawaiival {
-        display: none;
-        position: fixed;
-        top: 15vh;
-        left: 7vw;
-        background-color: #333333;
-    }
-
-    #ific1btn {
-        position: fixed;
-        top: 32vh;
-        left: 57vw;
-    }
-
-    #ific2btn {
-        position: fixed;
-        top: 42vh;
-        left: 57vw;
-    }
-
-    #ific3btn {
-        position: fixed;
-        top: 62vh;
-        left: 57vw;
-    }
-
-    #ific1val {
-        display: none;
-        position: fixed;
-        top: 15vh;
-        left: 70vw;
-        background-color: #333333;
-    }
-
-    #ific2val {
-        display: none;
-        position: fixed;
-        top: 15vh;
-        left: 70vw;
-        background-color: #333333;
-    }
-
-    #ific3val {
-        display: none;
-        position: fixed;
-        top: 15vh;
-        left: 70vw;
-        background-color: #333333;
-    }
-
-    td {
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 1.8vmin;
-        padding: 0.3vmin;
-    }
-
-
-    #ambient {
-        position: fixed;
-        right: 10vw;
-        bottom: 5vh;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
+.btn-outline-dark {
+  color: white;
 }
-
-@media screen and (min-height: 1100px) and (min-width: 3000px) {
-    .container {
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        display: inline-block;
-        overflow: hidden;
-        margin: 0;
-    }
-
-    #detector {
-        display: block;
-        position: fixed;
-        top: 15vh;
-        left: 17vw;
-        height: 75%;
-    }
-
-    #spwall {
-        position: fixed;
-        top: 33vh;
-        left: 32vw;
-    }
-
-    #floor {
-        position: fixed;
-        top: 72vh;
-        left: 40vw;
-    }
-
-    #spgradient {
-        position: fixed;
-        top: 20vh;
-        left: 40vw;
-    }
-
-    #spbottom {
-        position: fixed;
-        top: 83vh;
-        left: 20vw;
-    }
-
-    #splevel2 {
-        position: fixed;
-        top: 30vh;
-        left: 32vw;
-    }
-
-    #pipes {
-        position: fixed;
-        top: 72vh;
-        left: 45vw;
-    }
-
-    #hawaii {
-        position: fixed;
-        top: 45vh;
-        left: 27vw;
-    }
-
-    #hawaiival {
-        display: none;
-        position: fixed;
-        top: 15vh;
-        left: 7vw;
-        background-color: #333333;
-    }
-
-    #ific1btn {
-        position: fixed;
-        top: 32vh;
-        left: 57vw;
-    }
-
-    #ific2btn {
-        position: fixed;
-        top: 42vh;
-        left: 57vw;
-    }
-
-    #ific3btn {
-        position: fixed;
-        top: 62vh;
-        left: 57vw;
-    }
-
-    #ific1val {
-        display: none;
-        position: fixed;
-        top: 15vh;
-        left: 70vw;
-        background-color: #333333;
-    }
-
-    #ific2val {
-        display: none;
-        position: fixed;
-        top: 15vh;
-        left: 70vw;
-        background-color: #333333;
-    }
-
-    #ific3val {
-        display: none;
-        position: fixed;
-        top: 15vh;
-        left: 70vw;
-        background-color: #333333;
-    }
-
-    td {
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 1.8vmin;
-        padding: 0.3vmin;
-    }
-
-
-    #ambient {
-        position: fixed;
-        right: 2vw;
-        bottom: 10vh;
-        text-align: right;
-        color: gray;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 2.0vmin;
-    }
+.tinternal__links {
+  border-bottom: 1px solid white;
+}
+.tinternal__links .btn {
+  margin: 1px;
+  min-width: 105px;
+  font-size: 1rem;
+}
+.tinternal__img_caption {
+  position: absolute;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.5rem;
+  font-weight: bold;
+  border-radius: 8%;
+}
+.tinternal__img_caption a,
+.tinternal__img_caption span {
+  color: black;
+  padding: 1px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 1px 3px;
+}
+.tinternal__img_caption a {
+    background-color: black;
+    color: white;
+}
+.tinternal__img_caption a:hover {
+  color: wheat;
+}
+.tinternal__img__twall {
+  left: 28%;
+  top: 30%;
+}
+.tinternal__img__tliqlevel {
+  left: 28%;
+  top: 23%;
+}
+.tinternal__img__spgradient {
+  left: 41%;
+  top: 10%;
+}
+.tinternal__img__spbottom {
+  left: 6%;
+  top: 91%;
+}
+.tinternal__img__floor {
+  left: 44%;
+  top: 78%;
+}
+.tinternal__img__pipes {
+  left: 54%;
+  top: 78%;
+}
+.tinternal__img__hawaii {
+  left: 18%;
+  top: 42%;
+}
+.tinternal__img__ifictop {
+  top: 25%;
+  left: 71%;
+}
+.tinternal__img__ificmiddle {
+  top: 35%;
+  left: 71%;
+}
+.tinternal__img__ificbottom {
+  top: 65%;
+  left: 71%;
+}
+.data_body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.data_row {
+  display: flex;
+  min-width: 160px;
+}
+.data_header {
+  color: white;
+  padding: 5px 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 1px solid white;
+  text-align: center;
+}
+.data_item {
+  display: flex;
+  color: white;
+  padding: 5px 10px;
+  border: 1px solid white;
+  text-align: center;
+  min-height: 4rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 576px) {
+  .tinternal__links .btn {
+    font-size: 1.2rem;
+  }
+  .tinternal__img_caption {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .tinternal__links .btn {
+    font-size: 1.3rem;
+  }
+  .tinternal__img_caption {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .tinternal__links .btn {
+    font-size: 1.4rem;
+  }
+  .tinternal__img_caption {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .tinternal__links .btn {
+    font-size: 1.5rem;
+  }
+  .tinternal__img_caption {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .tinternal__links .btn {
+    font-size: 1.6rem;
+  }
 }
