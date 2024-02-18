@@ -7,13 +7,12 @@ angular.module('pl506', []).component('pl506', {
             this.natalie = 1;
             this.TT0101 = "";
             const self = this;
-
+            
             this.pl506Changer = function (crId) {
                 $window.location.href = "#!/pl506/";
                 console.log($window.location.href);
             };
-
-
+          
             this.reload = function () {
                 self.timestamp = new Date();
                 $http

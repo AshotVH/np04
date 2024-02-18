@@ -18,7 +18,19 @@
 </header>
 <main class="container">
   <div class="row justify-content-start pt-4">
-    <div class="col-12 col-lg-5 col-xl-4">
+   
+    <div class="col-12 d-lg-none d-flex justify-content-center pb-4 purity__buttons">
+        <input type="checkbox" class="btn-check" id="btncheck0" autocomplete="off" checked>
+        <label class="btn btn-lg btn-outline-dark" for="btncheck0">Bottom (PrM 0)</label>
+      
+        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+        <label class="btn btn-lg btn-outline-dark" for="btncheck1">Middle (PrM 1)</label>
+      
+        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+        <label class="btn btn-lg btn-outline-dark" for="btncheck2">Top (PrM 2)</label>
+      
+    </div>
+    <div class="col-12 col-lg-4" id="data_table_0">
       <table class="table table-sm table-bordered caption-top">
         <caption>
           <span>Bottom (PrM 0)</span>
@@ -203,7 +215,7 @@
         </tbody>
       </table>
     </div>
-    <div class="col-12 col-lg-5 col-xl-4">
+    <div class="col-12 col-lg-4" id="data_table_1">
       <table class="table table-sm table-bordered caption-top">
         <caption>
           <span>Middle (PrM 1)</span>
@@ -388,7 +400,7 @@
         </tbody>
       </table>
     </div>
-    <div class="col-12 col-lg-5 col-xl-4">
+    <div class="col-12 col-lg-4" id="data_table_2">
         <table class="table table-sm table-bordered caption-top">
           <caption>
             <span> Top (PrM 2) </span>

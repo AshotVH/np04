@@ -3,3 +3,35 @@ caption span {
   font-size: 1.6rem;
   font-weight: bold;
 }
+td {
+  text-align: left;
+  padding-left: 10px !important;
+}
+.btn-outline-dark {
+  color: white;
+  margin: 0 5px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+#data_table_1 {
+  display: none;
+}
+#data_table_2 {
+  display: none;
+}
+@media screen and (min-width: 576px) {
+  .btn-outline-dark {
+    color: white;
+    margin: 0 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+@media screen and (min-width: 992px) {
+  #data_table_1 {
+    display: block;
+  }
+  #data_table_2 {
+    display: block;
+  }
+}

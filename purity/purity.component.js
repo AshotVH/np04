@@ -4,7 +4,17 @@ angular.module('purity', []).component('purity', {
     controller: function purityController($scope, $http, $q, $interval) {
         this.pageTitle = "NP04 Purity monitors";
         this.natalie = 1;
-        let self = this;
+        const self = this;
+        $("#btncheck0").change(function(){
+            $("#data_table_0").toggle();
+        });
+        $("#btncheck1").change(function(){
+            $("#data_table_1").toggle();
+        });
+        $("#btncheck2").change(function(){
+            $("#data_table_2").toggle();
+        });
+   
 
         this.reload = function () {
 
