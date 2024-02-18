@@ -1,8 +1,22 @@
 <link rel="stylesheet" href="css/purity.css">
-<div class="container">
-    <div id="pageTitle" style="position: fixed; top: 1vh; left: 37vw;">{{$ctrl.pageTitle}}</div>
-    <div id="timestamp_label" style="position: fixed; top: 1vh; right: 20vw;">Timestamp:<br/><span id="timestamp" style="position: fixed; top: 1.5vh; right: 5vw;">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
-
+<header class="container page_header">
+    <div class="row">
+      <div class="col page-title">{{$ctrl.pageTitle}}</div>
+      <div class="col timestamp_label">
+        <div class="row">
+          <div class="col">Timestamp</div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <span id="timestamp" class="timestamp"
+              >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+<main class="container">
 
     <table id="prm0">
         <tr>
@@ -226,4 +240,44 @@
         </tr>
     </table>
 
-</div>
+</main>
+<footer class="container page_footer">
+    <div class="row justify-content-end">
+      <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+        <table class="table table-sm table-bordered">
+          <tbody>
+            <tr>
+              <td>Humidity</td>
+              <td>
+                <a target="_blank" href="#!/histogram/47878785489690">
+                  <span class="value"
+                    >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
+                  >
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Ambient temperature</td>
+              <td>
+                <a target="_blank" href="#!/histogram/47878802266906">
+                  <span class="value"
+                    >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
+                  >
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Ambient pressure</td>
+              <td>
+                <a target="_blank" href="#!/histogram/47878819044122">
+                  <span class="value"
+                    >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
+                  >
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </footer>
