@@ -28,7 +28,10 @@ angular.module('mpodpd', []).component('mpodpd', {
             }
             
             this.reload = function () {
-                $http.get("php-db-conn/np04cachedvals.php?elemName=mpodpd").then(function (resultArr) {
+                self.timestamp = new Date();
+                $http.get("php-db-conn/np04cachedvals.php?elemName=mpodpd").then(function (result) {
+                    const res = result.data;
+                    console.log(res);
                     self.NP04_DCS_01_Wiener_MPODPD_Rack6[1][0][0] = res["47875698459674"]?res["47875698459674"][0]:"N/A";
                     self.NP04_DCS_01_Wiener_MPODPD_Rack6[1][0][1] = res["47875698480154"]?res["47875698480154"][0]:"N/A";
                     self.NP04_DCS_01_Wiener_MPODPD_Rack6[1][0][2] = res["47875698480410"]?res["47875698480410"][0]:"N/A";
