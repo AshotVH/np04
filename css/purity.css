@@ -1,44 +1,5 @@
-.container {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    display: inline-block;
-    overflow: hidden;
-    margin: 0;
-}
-
-#detector {
-    display: block;
-    position: fixed;
-    top: 15vh;
-    left: 17vw;
-    height: 75%;
-}
-
-#ambient {
-    position: fixed;
-    right: 5vw;
-    bottom: 10vh;
-    text-align: right;
-    color: gray;
-    font-family: "Arial Black", Gadget, sans-serif;
-    font-size: 2.0vmin;
-}
-
-#prm0 {
-    position: absolute;
-    left: 5vw;
-    top: 0vh;
-}
-
-#prm1 {
-    position: absolute;
-    left: 35vw;
-    top: 0vh;
-}
-
-#prm2 {
-    position: absolute;
-    left: 65vw;
-    top: 0vh;
+caption span {
+  color: #f8f9fa;
+  font-size: 1.6rem;
+  font-weight: bold;
 }

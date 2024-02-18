@@ -1,283 +1,616 @@
-<link rel="stylesheet" href="css/purity.css">
+<link rel="stylesheet" href="css/purity.css" />
 <header class="container page_header">
-    <div class="row">
-      <div class="col page-title">{{$ctrl.pageTitle}}</div>
-      <div class="col timestamp_label">
-        <div class="row">
-          <div class="col">Timestamp</div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <span id="timestamp" class="timestamp"
-              >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
-            >
-          </div>
+  <div class="row">
+    <div class="col page-title">{{$ctrl.pageTitle}}</div>
+    <div class="col timestamp_label">
+      <div class="row">
+        <div class="col">Timestamp</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span id="timestamp" class="timestamp"
+            >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
+          >
         </div>
       </div>
     </div>
+  </div>
 </header>
 <main class="container">
-
-    <table id="prm0">
-        <tr>
-            <th colspan="2">Bottom (PrM 0)</th>
-        </tr>
-        <tr>
-            <td>Anode setting:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928748018458"><span class="value">{{ $ctrl.NP04_DCS_01_PrM0_PrM_V_A_Set | number: 5 }} V</span></a></td>
-        </tr>
-        <tr>
-            <td>Anode applied voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928748018970"><span class="value">{{ $ctrl.NP04_DCS_01_PrM0_PrM_V_A | number: 5 }} V</span></a></td>
-        </tr>
-        <tr>
+  <div class="row justify-content-start pt-4">
+    <div class="col-12 col-lg-5 col-xl-4">
+      <table class="table table-sm table-bordered caption-top">
+        <caption>
+          <span>Bottom (PrM 0)</span>
+        </caption>
+        <tbody>
+          <tr>
+            <td>Anode setting</td>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928748018458"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_PrM0_PrM_V_A_Set | number: 5 }} V</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Anode applied voltage</td>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928748018970"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_PrM0_PrM_V_A | number: 5 }} V</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Anode current flow:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928748019738"><span class="value">{{ $ctrl.NP04_DCS_01_PrM0_PrM_I_A | number: 5 }} &#xb5;A</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928748019738"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_PrM0_PrM_I_A | number: 5 }}
+                  &#xb5;A</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Cathode set voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928748018714"><span class="value">{{ $ctrl.NP04_DCS_01_PrM0_PrM_V_C_Set | number: 5 }} V</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928748018714"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_PrM0_PrM_V_C_Set | number: 5 }} V</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Cathode applied voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928748019226"><span class="value">{{ $ctrl.NP04_DCS_01_PrM0_PrM_V_C | number: 5 }} V</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928748019226"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_PrM0_PrM_V_C | number: 5 }} V</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Cathode current flow:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928748023578"><span class="value">{{ $ctrl.NP04_DCS_01_PrM0_PrM_I_C | number: 5 }} &#xb5;A</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928748023578"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_PrM0_PrM_I_C | number: 5 }}
+                  &#xb5;A</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Corrected charge ratio:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928748016154"><span class="value">{{ $ctrl.NP04_DCS_01_PrM0_PrM_corrected_charge_ratio | number: 5 }}</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928748016154"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_PrM0_PrM_corrected_charge_ratio |
+                  number: 5 }}</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Corrected electron lifetime:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928748016410"><span class="value">{{ $ctrl.NP04_DCS_01_PrM0_PrM_corrected_e_lifetime | number: 5 }} ms</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928748016410"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_PrM0_PrM_corrected_e_lifetime | number:
+                  5 }} ms</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Cathode peak voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928748016922"><span class="value">{{ $ctrl.NP04_DCS_01_PrM0_PrM_Q_C | number: 5 }} mV</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928748016922"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_PrM0_PrM_Q_C | number: 5 }} mV</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Cathode peak time:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928748017178"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM0_PrM_T_C | number: 5 }} &#xb5;s</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928748017178"
+                ><span class="value">
+                  {{ $ctrl.NP04_DCS_01_PrM0_PrM_T_C | number: 5 }} &#xb5;s</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Cathode baseline voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928748017434"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM0_PrM_BL_C | number: 5 }} mV</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928748017434"
+                ><span class="value">
+                  {{ $ctrl.NP04_DCS_01_PrM0_PrM_BL_C | number: 5 }} mV</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Anode peak voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928748017690"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM0_PrM_Q_A | number: 5 }} mV</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928748017690"
+                ><span class="value">
+                  {{ $ctrl.NP04_DCS_01_PrM0_PrM_Q_A | number: 5 }} mV</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Anode peak time:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928748017946"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM0_PrM_T_A | number: 5 }} &#xb5;s</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928748017946"
+                ><span class="value">
+                  {{ $ctrl.NP04_DCS_01_PrM0_PrM_T_A | number: 5 }} &#xb5;s</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Anode baseline voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928748018202"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM0_PrM_BL_A | number: 5 }} mV</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928748018202"
+                ><span class="value">
+                  {{ $ctrl.NP04_DCS_01_PrM0_PrM_BL_A | number: 5 }} mV</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Corrected cathode peak voltage</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928748024346"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM0_PrM_corrected_Q_C | number: 5 }} mV</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928748024346"
+                ><span class="value">
+                  {{ $ctrl.NP04_DCS_01_PrM0_PrM_corrected_Q_C | number: 5 }}
+                  mV</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Corrected anode peak voltage</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928748024602"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM0_PrM_corrected_Q_A | number: 5 }} mV</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928748024602"
+                ><span class="value">
+                  {{ $ctrl.NP04_DCS_01_PrM0_PrM_corrected_Q_A | number: 5 }}
+                  mV</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Transparency correction</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928748026394"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM0_PrM_Trans_Corr | number: 5 }}</span></a></td>
-        </tr>
-    </table>
-
-    <table id="prm1">
-        <tr>
-            <th colspan="2">Middle (PrM 1)</th>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928748026394"
+                ><span class="value">
+                  {{ $ctrl.NP04_DCS_01_PrM0_PrM_Trans_Corr | number: 5 }}</span
+                ></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-12 col-lg-5 col-xl-4">
+      <table class="table table-sm table-bordered caption-top">
+        <caption>
+          <span>Middle (PrM 1)</span>
+        </caption>
+        <tbody>
+          <tr>
             <td>Anode setting:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928764795674"><span class="value">{{ $ctrl.NP04_DCS_01_PrM1_PrM_V_A_Set | number: 5 }} V</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928764795674"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_PrM1_PrM_V_A_Set | number: 5 }} V</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Anode applied voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928764796186"><span class="value">{{ $ctrl.NP04_DCS_01_PrM1_PrM_V_A | number: 5 }} V</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928764796186"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_PrM1_PrM_V_A | number: 5 }} V</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Anode current flow:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928764796954"><span class="value">{{ $ctrl.NP04_DCS_01_PrM1_PrM_I_A | number: 5 }} &#xb5;A</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928764796954"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_PrM1_PrM_I_A | number: 5 }}
+                  &#xb5;A</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Cathode set voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928764795930"><span class="value">{{ $ctrl.NP04_DCS_01_PrM1_PrM_V_C_Set | number: 5 }} V</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928764795930"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_PrM1_PrM_V_C_Set | number: 5 }} V</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Cathode applied voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928764796442"><span class="value">{{ $ctrl.NP04_DCS_01_PrM1_PrM_V_C | number: 5 }} V</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928764796442"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_PrM1_PrM_V_C | number: 5 }} V</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Cathode current flow:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928764800794"><span class="value">{{ $ctrl.NP04_DCS_01_PrM1_PrM_I_C | number: 5 }} &#xb5;A</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928764800794"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_PrM1_PrM_I_C | number: 5 }}
+                  &#xb5;A</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Corrected charge ratio:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928764793370"><span class="value">{{ $ctrl.NP04_DCS_01_PrM1_PrM_corrected_charge_ratio | number: 5 }}</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928764793370"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_PrM1_PrM_corrected_charge_ratio |
+                  number: 5 }}</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Corrected electron lifetime:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928764793626"><span class="value">{{ $ctrl.NP04_DCS_01_PrM1_PrM_corrected_e_lifetime | number: 5 }} ms</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928764793626"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_PrM1_PrM_corrected_e_lifetime | number:
+                  5 }} ms</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Cathode peak voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928764794138"><span class="value">{{ $ctrl.NP04_DCS_01_PrM1_PrM_Q_C | number: 5 }} mV</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928764794138"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_PrM1_PrM_Q_C | number: 5 }} mV</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Cathode peak time:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928764794394"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM1_PrM_T_C | number: 5 }} &#xb5;s</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928764794394"
+                ><span class="value">
+                  {{ $ctrl.NP04_DCS_01_PrM1_PrM_T_C | number: 5 }} &#xb5;s</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Cathode baseline voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928764794650"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM1_PrM_BL_C | number: 5 }} mV</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928764794650"
+                ><span class="value">
+                  {{ $ctrl.NP04_DCS_01_PrM1_PrM_BL_C | number: 5 }} mV</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Anode peak voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928764794906"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM1_PrM_Q_A | number: 5 }} mV</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928764794906"
+                ><span class="value">
+                  {{ $ctrl.NP04_DCS_01_PrM1_PrM_Q_A | number: 5 }} mV</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Anode peak time:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928764795162"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM1_PrM_T_A | number: 5 }} &#xb5;s</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928764795162"
+                ><span class="value">
+                  {{ $ctrl.NP04_DCS_01_PrM1_PrM_T_A | number: 5 }} &#xb5;s</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Anode baseline voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928764795418"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM1_PrM_BL_A | number: 5 }} mV</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928764795418"
+                ><span class="value">
+                  {{ $ctrl.NP04_DCS_01_PrM1_PrM_BL_A | number: 5 }} mV</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Corrected cathode peak voltage</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928764801562"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM1_PrM_corrected_Q_C | number: 5 }} mV</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928764801562"
+                ><span class="value">
+                  {{ $ctrl.NP04_DCS_01_PrM1_PrM_corrected_Q_C | number: 5 }}
+                  mV</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Corrected anode peak voltage</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928764801818"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM1_PrM_corrected_Q_A | number: 5 }} mV</span></a></td>
-        </tr>
-        <tr>
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928764801818"
+                ><span class="value">
+                  {{ $ctrl.NP04_DCS_01_PrM1_PrM_corrected_Q_A | number: 5 }}
+                  mV</span
+                ></a
+              >
+            </td>
+          </tr>
+          <tr>
             <td>Transparency correction</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928764803610"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM1_PrM_Trans_Corr | number: 5 }}</span></a></td>
-        </tr>
-    </table>
-
-    <table id="prm2">
-        <tr>
-            <th colspan="2">Top (PrM 2)</th>
-        </tr>
-        <tr>
-            <td>Anode setting:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928781572890"><span class="value">{{ $ctrl.NP04_DCS_01_PrM2_PrM_V_A_Set | number: 5 }} V</span></a></td>
-        </tr>
-        <tr>
-            <td>Anode applied voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928781573402"><span class="value">{{ $ctrl.NP04_DCS_01_PrM2_PrM_V_A | number: 5 }} V</span></a></td>
-        </tr>
-        <tr>
-            <td>Anode current flow:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928781574170"><span class="value">{{ $ctrl.NP04_DCS_01_PrM2_PrM_I_A | number: 5 }} &#xb5;A</span></a></td>
-        </tr>
-        <tr>
-            <td>Cathode set voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928781573146"><span class="value">{{ $ctrl.NP04_DCS_01_PrM2_PrM_V_C_Set | number: 5 }} V</span></a></td>
-        </tr>
-        <tr>
-            <td>Cathode applied voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928781573658"><span class="value">{{ $ctrl.NP04_DCS_01_PrM2_PrM_V_C | number: 5 }} V</span></a></td>
-        </tr>
-        <tr>
-            <td>Cathode current flow:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928781578010"><span class="value">{{ $ctrl.NP04_DCS_01_PrM2_PrM_I_C | number: 5 }} &#xb5;A</span></a></td>
-        </tr>
-        <tr>
-            <td>Corrected charge ratio:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928781570586"><span class="value">{{ $ctrl.NP04_DCS_01_PrM2_PrM_corrected_charge_ratio | number: 5 }}</span></a></td>
-        </tr>
-        <tr>
-            <td>Corrected electron lifetime:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928781570842"><span class="value">{{ $ctrl.NP04_DCS_01_PrM2_PrM_corrected_e_lifetime | number: 5 }} ms</span></a></td>
-        </tr>
-        <tr>
-            <td>Cathode peak voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928781571354"><span class="value">{{ $ctrl.NP04_DCS_01_PrM2_PrM_Q_C | number: 5 }} mV</span></a></td>
-        </tr>
-        <tr>
-            <td>Cathode peak time:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928781571610"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM2_PrM_T_C | number: 5 }} &#xb5;s</span></a></td>
-        </tr>
-        <tr>
-            <td>Cathode baseline voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928781571866"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM2_PrM_BL_C | number: 5 }} mV</span></a></td>
-        </tr>
-        <tr>
-            <td>Anode peak voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928781572122"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM2_PrM_Q_A | number: 5 }} mV</span></a></td>
-        </tr>
-        <tr>
-            <td>Anode peak time:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928781572378"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM2_PrM_T_A | number: 5 }} &#xb5;s</span></a></td>
-        </tr>
-        <tr>
-            <td>Anode baseline voltage:</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928781572634"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM2_PrM_BL_A | number: 5 }} mV</span></a></td>
-        </tr>
-        <tr>
-            <td>Corrected cathode peak voltage</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928781578778"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM2_PrM_corrected_Q_C | number: 5 }} mV</span></a></td>
-        </tr>
-        <tr>
-            <td>Corrected anode peak voltage</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928781579034"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM2_PrM_corrected_Q_A | number: 5 }} mV</span></a></td>
-        </tr>
-        <tr>
-            <td>Transparency correction</td>
-            <td><a target="_blank" ng-href="#!/histogram/47928781580826"><span class="value"> {{ $ctrl.NP04_DCS_01_PrM2_PrM_Trans_Corr | number: 5 }}</span></a></td>
-        </tr>
-    </table>
-
-</main>
-<footer class="container page_footer">
-    <div class="row justify-content-end">
-      <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3">
-        <table class="table table-sm table-bordered">
+            <td>
+              <a target="_blank" ng-href="#!/histogram/47928764803610"
+                ><span class="value">
+                  {{ $ctrl.NP04_DCS_01_PrM1_PrM_Trans_Corr | number: 5 }}</span
+                ></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-12 col-lg-5 col-xl-4">
+        <table class="table table-sm table-bordered caption-top">
+          <caption>
+            <span> Top (PrM 2) </span>
+          </caption>
           <tbody>
             <tr>
-              <td>Humidity</td>
+              <td>Anode setting:</td>
               <td>
-                <a target="_blank" href="#!/histogram/47878785489690">
-                  <span class="value"
-                    >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
-                  >
-                </a>
+                <a target="_blank" ng-href="#!/histogram/47928781572890"
+                  ><span class="value"
+                    >{{ $ctrl.NP04_DCS_01_PrM2_PrM_V_A_Set | number: 5 }} V</span
+                  ></a
+                >
               </td>
             </tr>
             <tr>
-              <td>Ambient temperature</td>
+              <td>Anode applied voltage:</td>
               <td>
-                <a target="_blank" href="#!/histogram/47878802266906">
-                  <span class="value"
-                    >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
-                  >
-                </a>
+                <a target="_blank" ng-href="#!/histogram/47928781573402"
+                  ><span class="value"
+                    >{{ $ctrl.NP04_DCS_01_PrM2_PrM_V_A | number: 5 }} V</span
+                  ></a
+                >
               </td>
             </tr>
             <tr>
-              <td>Ambient pressure</td>
+              <td>Anode current flow:</td>
               <td>
-                <a target="_blank" href="#!/histogram/47878819044122">
-                  <span class="value"
-                    >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
-                  >
-                </a>
+                <a target="_blank" ng-href="#!/histogram/47928781574170"
+                  ><span class="value"
+                    >{{ $ctrl.NP04_DCS_01_PrM2_PrM_I_A | number: 5 }} &#xb5;A</span
+                  ></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>Cathode set voltage:</td>
+              <td>
+                <a target="_blank" ng-href="#!/histogram/47928781573146"
+                  ><span class="value"
+                    >{{ $ctrl.NP04_DCS_01_PrM2_PrM_V_C_Set | number: 5 }} V</span
+                  ></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>Cathode applied voltage:</td>
+              <td>
+                <a target="_blank" ng-href="#!/histogram/47928781573658"
+                  ><span class="value"
+                    >{{ $ctrl.NP04_DCS_01_PrM2_PrM_V_C | number: 5 }} V</span
+                  ></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>Cathode current flow:</td>
+              <td>
+                <a target="_blank" ng-href="#!/histogram/47928781578010"
+                  ><span class="value"
+                    >{{ $ctrl.NP04_DCS_01_PrM2_PrM_I_C | number: 5 }} &#xb5;A</span
+                  ></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>Corrected charge ratio:</td>
+              <td>
+                <a target="_blank" ng-href="#!/histogram/47928781570586"
+                  ><span class="value"
+                    >{{ $ctrl.NP04_DCS_01_PrM2_PrM_corrected_charge_ratio | number:
+                    5 }}</span
+                  ></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>Corrected electron lifetime:</td>
+              <td>
+                <a target="_blank" ng-href="#!/histogram/47928781570842"
+                  ><span class="value"
+                    >{{ $ctrl.NP04_DCS_01_PrM2_PrM_corrected_e_lifetime | number: 5
+                    }} ms</span
+                  ></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>Cathode peak voltage:</td>
+              <td>
+                <a target="_blank" ng-href="#!/histogram/47928781571354"
+                  ><span class="value"
+                    >{{ $ctrl.NP04_DCS_01_PrM2_PrM_Q_C | number: 5 }} mV</span
+                  ></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>Cathode peak time:</td>
+              <td>
+                <a target="_blank" ng-href="#!/histogram/47928781571610"
+                  ><span class="value">
+                    {{ $ctrl.NP04_DCS_01_PrM2_PrM_T_C | number: 5 }} &#xb5;s</span
+                  ></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>Cathode baseline voltage:</td>
+              <td>
+                <a target="_blank" ng-href="#!/histogram/47928781571866"
+                  ><span class="value">
+                    {{ $ctrl.NP04_DCS_01_PrM2_PrM_BL_C | number: 5 }} mV</span
+                  ></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>Anode peak voltage:</td>
+              <td>
+                <a target="_blank" ng-href="#!/histogram/47928781572122"
+                  ><span class="value">
+                    {{ $ctrl.NP04_DCS_01_PrM2_PrM_Q_A | number: 5 }} mV</span
+                  ></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>Anode peak time:</td>
+              <td>
+                <a target="_blank" ng-href="#!/histogram/47928781572378"
+                  ><span class="value">
+                    {{ $ctrl.NP04_DCS_01_PrM2_PrM_T_A | number: 5 }} &#xb5;s</span
+                  ></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>Anode baseline voltage:</td>
+              <td>
+                <a target="_blank" ng-href="#!/histogram/47928781572634"
+                  ><span class="value">
+                    {{ $ctrl.NP04_DCS_01_PrM2_PrM_BL_A | number: 5 }} mV</span
+                  ></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>Corrected cathode peak voltage</td>
+              <td>
+                <a target="_blank" ng-href="#!/histogram/47928781578778"
+                  ><span class="value">
+                    {{ $ctrl.NP04_DCS_01_PrM2_PrM_corrected_Q_C | number: 5 }}
+                    mV</span
+                  ></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>Corrected anode peak voltage</td>
+              <td>
+                <a target="_blank" ng-href="#!/histogram/47928781579034"
+                  ><span class="value">
+                    {{ $ctrl.NP04_DCS_01_PrM2_PrM_corrected_Q_A | number: 5 }}
+                    mV</span
+                  ></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>Transparency correction</td>
+              <td>
+                <a target="_blank" ng-href="#!/histogram/47928781580826"
+                  ><span class="value">
+                    {{ $ctrl.NP04_DCS_01_PrM2_PrM_Trans_Corr | number: 5 }}</span
+                  ></a
+                >
               </td>
             </tr>
           </tbody>
         </table>
       </div>
+  </div>
+ 
+</main>
+<footer class="container page_footer">
+  <div class="row justify-content-end">
+    <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td>Humidity</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878785489690">
+                <span class="value"
+                  >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient temperature</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878802266906">
+                <span class="value"
+                  >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient pressure</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878819044122">
+                <span class="value"
+                  >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
+                >
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </footer>
+  </div>
+</footer>
