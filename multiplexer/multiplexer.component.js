@@ -72,12 +72,13 @@ angular.module("multiplexer", []).component("multiplexer", {
           .get("php-db-conn/cachedVals.conn.php?elemId=multiplexer1")
           .then(function (result) {
             const res = result.data;
+            console.log(res);
             for (let i = 1; i < 10; i++) {
               self.NP04_DCS_01_TE_card1["Name"].push("TE000" + i);
               self.NP04_DCS_01_TE_card1["Value"].push(res[i]);
             }
           });
-          
+
         $http
           .get("php-db-conn/cachedVals.conn.php?elemId=multiplexer")
           .then(function (resultArr) {
