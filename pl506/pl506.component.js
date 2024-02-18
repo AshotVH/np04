@@ -21,30 +21,28 @@ angular.module('pl506', []).component('pl506', {
                     .then(function (result) {
                         const res = result.data;
                         console.log(res);
-                        self.NP04_MHT0100AI = res["47878785489690"][0];
-                        self.NP04_TT0100AI = res["47878802266906"][0];
-                        self.NP04_PT0106AI = res["47878819044122"][0];
-                        self.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel0_Status_On = res["47873534198810"][0];
-                        self.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel0_MeasurementSenseVoltage = res["47873534219290"][0];
-                        self.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel0_MeasurementCurrent = res["47873534219546"][0];
-                        self.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel1_Status_On = res["47873601307674"][0];
-                        self.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel1_MeasurementSenseVoltage = res["47873601328154"][0];
-                        self.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel1_MeasurementCurrent = res["47873601328410"][0];
-                        self.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel2_Status_On = res["47873685193754"][0];
-                        self.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel2_MeasurementSenseVoltage = res["47873685214234"][0];
-                        self.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel2_MeasurementCurrent = res["47873685214490"][0];
-                        self.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel0_Status_On = res["47875547464730"][0];
-                        self.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel0_MeasurementSenseVoltage = res["47875547485210"][0];
-                        self.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel0_MeasurementCurrent = res["47875547485466"][0];
-                        self.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel1_Status_On = res["47875614573594"][0];
-                        self.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel1_MeasurementSenseVoltage = res["47875614594074"][0];
-                        self.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel1_MeasurementCurrent = res["47875614594330"][0];
-                        self.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel2_Status_On = res["47875698459674"][0];
-                        self.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel2_MeasurementSenseVoltage = res["47875698480154"][0];
-                        self.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel2_MeasurementCurrent = res["47875698480410"][0];
-
+                        self.NP04_MHT0100AI = res["47878785489690"]?res["47878785489690"][0]:"N/A";
+                        self.NP04_TT0100AI = res["47878802266906"]?res["47878802266906"][0]:"N/A";
+                        self.NP04_PT0106AI = res["47878819044122"]?res["47878819044122"][0]:"N/A";
+                        self.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel0_Status_On = res["47873534198810"]?res["47873534198810"][0]:"N/A";
+                        self.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel0_MeasurementSenseVoltage = res["47873534219290"]?res["47873534219290"][0]:"N/A";
+                        self.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel0_MeasurementCurrent = res["47873534219546"]?res["47873534219546"][0]:"N/A";
+                        self.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel1_Status_On = res["47873601307674"]?res["47873601307674"][0]:"N/A";
+                        self.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel1_MeasurementSenseVoltage = res["47873601328154"]?res["47873601328154"][0]:"N/A";
+                        self.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel1_MeasurementCurrent = res["47873601328410"]?res["47873601328410"][0]:"N/A";
+                        self.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel2_Status_On = res["47873685193754"]?res["47873685193754"][0]:"N/A";
+                        self.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel2_MeasurementSenseVoltage = res["47873685214234"]?res["47873685214234"][0]:"N/A";
+                        self.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel2_MeasurementCurrent = res["47873685214490"]?res["47873685214490"][0]:"N/A";
+                        self.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel0_Status_On = res["47875547464730"]?res["47875547464730"][0]:"N/A";
+                        self.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel0_MeasurementSenseVoltage = res["47875547485210"]?res["47875547485210"][0]:"N/A";
+                        self.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel0_MeasurementCurrent = res["47875547485466"]?res["47875547485466"][0]:"N/A";
+                        self.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel1_Status_On = res["47875614573594"]?res["47875614573594"][0]:"N/A";
+                        self.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel1_MeasurementSenseVoltage = res["47875614594074"]?res["47875614594074"][0]:"N/A";
+                        self.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel1_MeasurementCurrent = res["47875614594330"]?res["47875614594330"][0]:"N/A";
+                        self.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel2_Status_On = res["47875698459674"]?res["47875698459674"][0]:"N/A";
+                        self.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel2_MeasurementSenseVoltage = res["47875698480154"]?res["47875698480154"][0]:"N/A";
+                        self.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel2_MeasurementCurrent = res["47875698480410"]?res["47875698480410"][0]:"N/A";
                     });
-
             };
 
             this.promise;
