@@ -15,7 +15,6 @@ angular.module('purity', []).component('purity', {
             $("#data_table_2").toggle();
         });
    
-
         this.reload = function () {
 
             self.timestamp = new Date();
