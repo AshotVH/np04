@@ -1,142 +1,363 @@
-<link rel="stylesheet" href="css/pl506.css">
-<div class="pl506_container">
-    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
-
-
-    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
-    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
-
-    <div class="detector">
-        <img src="img/mpodpd_detector.png" alt="" usemap="#Map" style="display: block; position: fixed;
-                                                                    top: 40vh;
-                                                                    left: 30vw;
-                                                                    width: 35vw;"/>
-        <table id="ras">
-            <th>RaS (RackSide)</th>
-            <tr>
-                <td><a href="javascript:void(0)" onclick="if (document.getElementById('dsras').style.display=='none') {
-                                                              document.getElementById('dsras').style.display='block'
-                                                          } else {
-                                                              document.getElementById('dsras').style.display='none'
-                                                          }">DS (DownStream)</a></td>
-            </tr>
-            <tr>
-                <td><a href="javascript:void(0)" onclick="if (document.getElementById('msras').style.display=='none') {
-                                                              document.getElementById('msras').style.display='block'
-                                                          } else {
-                                                              document.getElementById('msras').style.display='none'
-                                                          }">MS (MidStream)</a></td>
-            </tr>
-            <tr>
-                <td><a href="javascript:void(0)" onclick="if (document.getElementById('usras').style.display=='none') {
-                                                              document.getElementById('usras').style.display='block'
-                                                          } else {
-                                                              document.getElementById('usras').style.display='none'
-                                                          }">US (UpStream)</a></td>
-            </tr>
-        </table>
-
-        <table id="das">
-            <th>DaS (DAQSide)</th>
-            <tr>
-                <td><a href="javascript:void(0)" onclick="if (document.getElementById('dsdas').style.display=='none') {
-                                                              document.getElementById('dsdas').style.display='block'
-                                                          } else {
-                                                              document.getElementById('dsdas').style.display='none'
-                                                          }">DS (DownStream)</a></td>
-            </tr>
-            <tr>
-                <td><a href="javascript:void(0)" onclick="if (document.getElementById('msdas').style.display=='none') {
-                                                              document.getElementById('msdas').style.display='block'
-                                                          } else {
-                                                              document.getElementById('msdas').style.display='none'
-                                                          }">MS (MidStream)</a></td>
-            </tr>
-            <tr>
-                <td><a href="javascript:void(0)" onclick="if (document.getElementById('usdas').style.display=='none') {
-                                                              document.getElementById('usdas').style.display='block'
-                                                          } else {
-                                                              document.getElementById('usdas').style.display='none'
-                                                          }">US (UpStream)</a></td>
-            </tr>
-        </table>
-
-        <div id="contain">
-
-            <table class="params" id="usras">
-                <th colspan="2">US RaS (Upstream RackSide)</th>
-                <tr>
-                    <td colspan="2">Low voltage</td>
-                </tr>
-                <tr>
-                    <td>Power: <a target="_blank" ng-href="#!/histogram/47873534198810"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel0_Status_On == "1" ? "On" : "Off" }}</span></a></td>
-                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/47873534219290"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel0_MeasurementSenseVoltage | number: 2 }} V</span></a></td>
-                    <td>Current: <a target="_blank" ng-href="#!/histogram/47873534219546"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel0_MeasurementCurrent | number: 2 }} V</span></a></td>
-                </tr>
-            </table>
-
-            <table class="params" id="msras">
-                <th colspan="2">MS RaS (Midstream RackSide)</th>
-                <tr>
-                    <td colspan="2">Low voltage</td>
-                </tr>
-                <tr>
-                    <td>Power: <a target="_blank" ng-href="#!/histogram/47873601307674"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel1_Status_On == "1" ? "On" : "Off" }}</span></a></td>
-                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/47873601328154"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel1_MeasurementSenseVoltage | number: 2 }} V</span></a></td>
-                    <td>Current: <a target="_blank" ng-href="#!/histogram/47873601328410"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel1_MeasurementCurrent | number: 2 }} V</span></a></td>
-                </tr>
-            </table>
-
-            <table class="params" id="dsras">
-                <th colspan="2">DS RaS (Downstream RackSide)</th>
-                <tr>
-                    <td colspan="2">Low voltage</td>
-                </tr>
-                <tr>
-                    <td>Power: <a target="_blank" ng-href="#!/histogram/47873685193754"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel2_Status_On == "1" ? "On" : "Off" }}</span></a></td>
-                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/47873685214234"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel2_MeasurementSenseVoltage | number: 2 }} V</span></a></td>
-                    <td>Current: <a target="_blank" ng-href="#!/histogram/47873685214490"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel2_MeasurementCurrent | number: 2 }} V</span></a></td>
-                </tr>
-            </table>
-
-            <table class="params" id="usdas">
-                <th colspan="2">US RaS (Upstream RackSide)</th>
-                <tr>
-                    <td colspan="2">Low voltage</td>
-                </tr>
-                <tr>
-                    <td>Power: <a target="_blank" ng-href="#!/histogram/47875547464730"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel0_Status_On == "1" ? "On" : "Off" }}</span></a></td>
-                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/47875547485210"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel0_MeasurementSenseVoltage | number: 2 }} V</span></a></td>
-                    <td>Current: <a target="_blank" ng-href="#!/histogram/47875547485466"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel0_MeasurementCurrent | number: 2 }} V</span></a></td>
-                </tr>
-            </table>
-
-            <table class="params" id="msdas">
-                <th colspan="2">MS RaS (Midstream RackSide)</th>
-                <tr>
-                    <td colspan="2">Low voltage</td>
-                </tr>
-                <tr>
-                    <td>Power: <a target="_blank" ng-href="#!/histogram/47875614573594"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel1_Status_On == "1" ? "On" : "Off" }}</span></a></td>
-                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/47875614594074"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel1_MeasurementSenseVoltage | number: 2 }} V</span></a></td>
-                    <td>Current: <a target="_blank" ng-href="#!/histogram/47875614594330"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel1_MeasurementCurrent | number: 2 }} V</span></a></td>
-                </tr>
-            </table>
-
-            <table class="params" id="dsdas">
-                <th colspan="2">DS RaS (Downstream RackSide)</th>
-                <tr>
-                    <td colspan="2">Low voltage</td>
-                </tr>
-                <tr>
-                    <td>Power: <a target="_blank" ng-href="#!/histogram/47875698459674"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel2_Status_On == "1" ? "On" : "Off" }}</span></a></td>
-                    <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/47875698480154"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel2_MeasurementSenseVoltage | number: 2 }} V</span></a></td>
-                    <td>Current: <a target="_blank" ng-href="#!/histogram/47875698480410"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel2_MeasurementCurrent | number: 2 }} V</span></a></td>
-                </tr>
-            </table>
+<link rel="stylesheet" href="css/pl506.css" />
+<header class="container page_header">
+  <div class="row">
+    <div class="col page-title">{{$ctrl.pageTitle}}</div>
+    <div class="col timestamp_label">
+      <div class="row">
+        <div class="col">Timestamp</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span id="timestamp" class="timestamp"
+            >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
+          >
         </div>
-
+      </div>
     </div>
-
-
-</div>
+  </div>
+</header>
+<main class="container">
+  <div class="row pt-4">
+    <div class="col-12 col-lg-12 d-flex justify-content-center pl506__img_wrapper">
+      <img class="pl506_img" src="img/mpodpd_detector.png" alt="" />
+    </div>
+    <div class="col-12 col-lg-6">
+      <div class="row pt-4 justify-content-center">
+        <div class="col-12">
+          <table class="table table-sm table-bordered">
+            <thead>
+              <th>DaS (DAQSide)</th>
+            </thead>
+          </table>
+        </div>
+        <div class="col-12">
+          <table class="table table-sm table-bordered">
+            <thead>
+              <tr>
+                <th colspan="3">DS DaS (Downstream RackSide)</th>
+              </tr>
+              <tr>
+                <th colspan="3">Low voltage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Power:
+                  <a target="_blank" ng-href="#!/histogram/47875698459674"
+                    ><span class="value"
+                      >{{
+                      $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel2_Status_On
+                      == "1" ? "On" : "Off" }}</span
+                    ></a
+                  >
+                </td>
+                <td>
+                  Sense voltage:
+                  <a target="_blank" ng-href="#!/histogram/47875698480154"
+                    ><span class="value"
+                      >{{
+                      $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel2_MeasurementSenseVoltage
+                      | number: 2 }} V</span
+                    ></a
+                  >
+                </td>
+                <td>
+                  Current:
+                  <a target="_blank" ng-href="#!/histogram/47875698480410"
+                    ><span class="value"
+                      >{{
+                      $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel2_MeasurementCurrent
+                      | number: 2 }} V</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-12">
+          <table class="table table-sm table-bordered">
+            <thead>
+              <tr>
+                <th colspan="3">MS DaS (Midstream RackSide)</th>
+              </tr>
+              <tr>
+                <th colspan="3">Low voltage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Power:
+                  <a target="_blank" ng-href="#!/histogram/47875614573594"
+                    ><span class="value"
+                      >{{
+                      $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel1_Status_On
+                      == "1" ? "On" : "Off" }}</span
+                    ></a
+                  >
+                </td>
+                <td>
+                  Sense voltage:
+                  <a target="_blank" ng-href="#!/histogram/47875614594074"
+                    ><span class="value"
+                      >{{
+                      $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel1_MeasurementSenseVoltage
+                      | number: 2 }} V</span
+                    ></a
+                  >
+                </td>
+                <td>
+                  Current:
+                  <a target="_blank" ng-href="#!/histogram/47875614594330"
+                    ><span class="value"
+                      >{{
+                      $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel1_MeasurementCurrent
+                      | number: 2 }} V</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-12">
+          <table class="table table-sm table-bordered">
+            <thead>
+              <tr>
+                <th colspan="3">US DaS (Upstream RackSide)</th>
+              </tr>
+              <tr>
+                <th colspan="3">Low voltage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Power:
+                  <a target="_blank" ng-href="#!/histogram/47875547464730"
+                    ><span class="value"
+                      >{{
+                      $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel0_Status_On
+                      == "1" ? "On" : "Off" }}</span
+                    ></a
+                  >
+                </td>
+                <td>
+                  Sense voltage:
+                  <a target="_blank" ng-href="#!/histogram/47875547485210"
+                    ><span class="value"
+                      >{{
+                      $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel0_MeasurementSenseVoltage
+                      | number: 2 }} V</span
+                    ></a
+                  >
+                </td>
+                <td>
+                  Current:
+                  <a target="_blank" ng-href="#!/histogram/47875547485466"
+                    ><span class="value"
+                      >{{
+                      $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK6_Channel0_MeasurementCurrent
+                      | number: 2 }} V</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6">
+      <div class="row pt-4">
+        <div class="col-12">
+          <table class="table table-sm table-bordered">
+            <thead>
+              <th>RaS (RackSide)</th>
+            </thead>
+          </table>
+        </div>
+        <div class="col-12">
+          <table class="table table-sm table-bordered">
+            <thead>
+              <tr>
+                <th colspan="3">DS RaS (Downstream RackSide)</th>
+              </tr>
+              <tr>
+                <th colspan="3">Low voltage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Power:
+                  <a target="_blank" ng-href="#!/histogram/47873685193754"
+                    ><span class="value"
+                      >{{
+                      $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel2_Status_On
+                      == "1" ? "On" : "Off" }}</span
+                    ></a
+                  >
+                </td>
+                <td>
+                  Sense voltage:
+                  <a target="_blank" ng-href="#!/histogram/47873685214234"
+                    ><span class="value"
+                      >{{
+                      $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel2_MeasurementSenseVoltage
+                      | number: 2 }} V</span
+                    ></a
+                  >
+                </td>
+                <td>
+                  Current:
+                  <a target="_blank" ng-href="#!/histogram/47873685214490"
+                    ><span class="value"
+                      >{{
+                      $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel2_MeasurementCurrent
+                      | number: 2 }} V</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-12">
+          <table class="table table-sm table-bordered">
+            <thead>
+              <tr>
+                <th colspan="3">MS RaS (Midstream RackSide)</th>
+              </tr>
+              <tr>
+                <td colspan="3">Low voltage</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Power:
+                  <a target="_blank" ng-href="#!/histogram/47873601307674"
+                    ><span class="value"
+                      >{{
+                      $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel1_Status_On
+                      == "1" ? "On" : "Off" }}</span
+                    ></a
+                  >
+                </td>
+                <td>
+                  Sense voltage:
+                  <a target="_blank" ng-href="#!/histogram/47873601328154"
+                    ><span class="value"
+                      >{{
+                      $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel1_MeasurementSenseVoltage
+                      | number: 2 }} V</span
+                    ></a
+                  >
+                </td>
+                <td>
+                  Current:
+                  <a target="_blank" ng-href="#!/histogram/47873601328410"
+                    ><span class="value"
+                      >{{
+                      $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel1_MeasurementCurrent
+                      | number: 2 }} V</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-12">
+          <table class="table table-sm table-bordered">
+            <thead>
+              <tr>
+                <th colspan="3">US RaS (Upstream RackSide)</th>
+              </tr>
+              <tr>
+                <td colspan="3">Low voltage</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Power:
+                  <a target="_blank" ng-href="#!/histogram/47873534198810"
+                    ><span class="value"
+                      >{{
+                      $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel0_Status_On
+                      == "1" ? "On" : "Off" }}</span
+                    ></a
+                  >
+                </td>
+                <td>
+                  Sense voltage:
+                  <a target="_blank" ng-href="#!/histogram/47873534219290"
+                    ><span class="value"
+                      >{{
+                      $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel0_MeasurementSenseVoltage
+                      | number: 2 }} V</span
+                    ></a
+                  >
+                </td>
+                <td>
+                  Current:
+                  <a target="_blank" ng-href="#!/histogram/47873534219546"
+                    ><span class="value"
+                      >{{
+                      $ctrl.NP04_DCS_01_Wiener_CE_PL506_RACK4_Channel0_MeasurementCurrent
+                      | number: 2 }} V</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="container page_footer">
+  <div class="row justify-content-end">
+    <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td>Humidity</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878785489690">
+                <span class="value"
+                  >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient temperature</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878802266906">
+                <span class="value"
+                  >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient pressure</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878819044122">
+                <span class="value"
+                  >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
+                >
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</footer>

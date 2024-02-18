@@ -6,7 +6,7 @@ angular.module('pl506', []).component('pl506', {
             this.pageTitle = "NP04 CE PL506";
             this.natalie = 1;
             this.TT0101 = "";
-            let self = this;
+            const self = this;
 
             this.pl506Changer = function (crId) {
                 $window.location.href = "#!/pl506/";

@@ -203,4 +203,10 @@ a .value {
   .timestamp {
     font-size: 18px;
   }
+  td {
+    font-size: 1.6rem;
+  }
+  th {
+    font-size: 1.8rem;
+  }
 }
