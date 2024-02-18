@@ -69,7 +69,7 @@ angular.module("multiplexer", []).component("multiplexer", {
 
       this.reload = function () {
         $http
-          .get("php-db-conn/np04cachedvals.php?elemId=multiplexer1")
+          .get("php-db-conn/np04cachedvals.php?elemName=multiplexer1")
           .then(function (result) {
             const res = result.data;
             console.log(res);
