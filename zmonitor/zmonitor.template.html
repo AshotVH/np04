@@ -1,14 +1,142 @@
-<link rel="stylesheet" href="css/zmonitor.css">s
-<div class="zmonitor_container">
-    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
-
-    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
-    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
-
-    <div id="RES">RES: <a target="_blank" href="#!/histogram/47861572043290"><span class="value">{{ $ctrl.NP04_DCS_01_gizmo_RES | number: 2 }} &#8486;</span></a></div>
-    <div id="TH">TH: <a target="_blank" href="#!/histogram/47861572043546"><span class="value">{{ $ctrl.NP04_DCS_01_gizmo_TH | number: 2 }} &#8486;</span></a></div>
-    <div id="mag">Mag: <a target="_blank" href="#!/histogram/47861572043802"><span class="value">{{ $ctrl.NP04_DCS_01_gizmo_mag | number: 2 }}</span></a></div>
-    <div id="I">I: <a target="_blank" href="#!/histogram/47861572044058"><span class="value">{{ $ctrl.NP04_DCS_01_gizmo_I | number: 2 }}</span></a></div>
-    <div id="Q">Q: <a target="_blank" href="#!/histogram/47861572044314"><span class="value">{{ $ctrl.NP04_DCS_01_gizmo_Q | number: 2 }}</span></a></div>
-
-</div>
+<link rel="stylesheet" href="css/zmonitor.css" />
+<header class="container page_header">
+  <div class="row">
+    <div class="col page-title">{{$ctrl.pageTitle}}</div>
+    <div class="col timestamp_label">
+      <div class="row">
+        <div class="col">Timestamp</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span id="timestamp" class="timestamp"
+            >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="container">
+  <div class="row justify-content-center pt-4">
+    <div class="col-11 col-sm-6 col-lg-2">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td class="text-left">RES</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47861572043290"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_gizmo_RES | number: 2 }} &#8486;</span
+                ></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-11 col-sm-6 col-lg-2">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td>TH</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47861572043546"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_gizmo_TH | number: 2 }} &#8486;</span
+                ></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-11 col-sm-6 col-lg-2">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td>Mag</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47861572043802"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_gizmo_mag | number: 2 }}</span
+                ></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-11 col-sm-6 col-lg-2">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td>I</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47861572044058"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_gizmo_I | number: 2 }}</span
+                ></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-11 col-sm-6 col-lg-2">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td>Q</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47861572044314"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_gizmo_Q | number: 2 }}</span
+                ></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+<footer class="container page_footer">
+  <div class="row justify-content-end">
+    <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td>Humidity</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878785489690">
+                <span class="value"
+                  >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient temperature</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878802266906">
+                <span class="value"
+                  >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient pressure</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878819044122">
+                <span class="value"
+                  >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
+                >
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</footer>

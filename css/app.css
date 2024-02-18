@@ -30,7 +30,21 @@ caption {
   line-height: 150%;
   background-color: #f8f9fa;
 }
-
+.data_row {
+  display: flex;
+  justify-content: center;
+}
+.data_item {
+  display: flex;
+  color: white;
+  padding: 5px 10px;
+  border: 1px solid white;
+  text-align: center;
+  min-height: 4rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
 th,
 td,
 tbody {
