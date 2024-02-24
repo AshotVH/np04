@@ -6,9 +6,11 @@ body {
   background-color: #004c93;
 }
 .page_header {
-  padding-top: 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.76);
+}
+.container{
+  padding-top: 0 !important;
 }
 .page_footer {
   border-top: 1px solid rgba(255, 255, 255, 0.76);

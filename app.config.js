@@ -137,9 +137,6 @@ config(['$locationProvider', '$routeProvider',
         when('/xenon', {
             template: '<xenon></xenon>'
         }).
-        when('/cameras', {
-            template: '<cameras></cameras>'
-        }).
         otherwise('/');
     }
 ]);

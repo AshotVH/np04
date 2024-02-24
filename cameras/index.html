@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,height=device-height, initial-scale=1"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/app.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="../image/png"
+      sizes="32x32"
+      href="../favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="../image/png"
+      sizes="16x16"
+      href="../favicon-16x16.png"
+    />
+    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>NP04 Cameras</title>
+    <script>
+      function closeNav(event) {
+        event.stopPropagation();
+        document.getElementById("menu").classList.remove("sidenav--opened");
+      }
+
+      function toggleNav() {
+        document.getElementById("menu").classList.toggle("sidenav--opened");
+      }
+    </script>
+    <script src="../dependencies/moment.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <img class="openbtn" onclick="toggleNav()" src="../img/menu_icon.png" />
+
+    <div id="menu" class="sidenav" onclick="toggleNav()">
+      <div class="closebtn" onclick="closeNav()">
+        <img class="closebtn_img" src="../img/menu_exit.png" alt="close menu" />
+      </div>
+      <a href="../">Home</a>
+      <a href="..#!/cryostat">NP04 Cryostat</a>
+      <a href="..#!/gauges">NP04 Gauges</a>
+      <a href="..#!/inside">NP04 T-Insulation</a>
+      <a href="..#!/tinternal">NP04 T-Internal</a>
+      <a href="..#!/multiplexer">NP04 Temperature map</a>
+      <a href="..#!/purity">NP04 Purity Monitors</a>
+      <a href="/cameras/index.html">NP04 Cameras</a>
+      <a href="..#!/zmonitor">NP04 Z-monitor</a>
+      <a href="..#!/crate/1">NP04 WIB crates</a>
+      <a href="..#!/pl506">NP04 CE PL506</a>
+      <a href="..#!/mpodpd">NP04 Photon Detectors</a>
+      <a href="..#!/comissioning">NP04 Comissioning</a>
+      <a href="..#!/beamplug">NP04 Beam plug</a>
+      <a href="..#!/groundplanes">NP04 Ground Planes and High Voltage</a>
+      <a href="..#!/coldbox">NP04 Coldbox</a>
+      <a href="..#!/xenon">NP04 Xenon Doping</a>
+      <a href="mailto:George.Salukvadze@cern.ch">Contact</a>
+    </div>
+    <header class="container page_header">
+      <div class="row">
+        <div class="col page-title">NP04 Cameras</div>
+      </div>
+      <div class="row">
+        <div class="col">
+            <nav class="nav nav-pills flex-column flex-md-row">
+                <a class="flex-sm-fill text-sm-center nav-link" aria-current="page" href="https://cameras-np04-slow-control.app.cern.ch/cam401" target="_blank">CAM-401</a>
+                <a class="flex-sm-fill text-sm-center nav-link" aria-current="page" href="https://cameras-np04-slow-control.app.cern.ch/cam404" target="_blank">CAM-404</a>
+                <a class="flex-sm-fill text-sm-center nav-link" aria-current="page" href="https://cameras-np04-slow-control.app.cern.ch/cam406" target="_blank">CAM-406</a>
+                <a class="flex-sm-fill text-sm-center nav-link" aria-current="page" href="https://cameras-np04-slow-control.app.cern.ch/cam407" target="_blank">CAM-407</a>
+                <a class="flex-sm-fill text-sm-center nav-link" aria-current="page" href="https://cameras-np04-slow-control.app.cern.ch/cam408" target="_blank">CAM-408</a>
+                <a class="flex-sm-fill text-sm-center nav-link" aria-current="page" href="https://cameras-np04-slow-control.app.cern.ch/cam409" target="_blank">CAM-409</a>
+                <a class="flex-sm-fill text-sm-center nav-link" aria-current="page" href="https://cameras-np04-slow-control.app.cern.ch/cam410" target="_blank">CAM-410</a>
+                <a class="flex-sm-fill text-sm-center nav-link" aria-current="page" href="https://cameras-np04-slow-control.app.cern.ch/cam411" target="_blank">CAM-411</a>
+            </nav>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10 col-xl-8">
+          <div class="cameras__img_wrapper">
+            <img class="cameras__detector" src="../img/cameraimg.png" />
+            <a href="https://cameras-np04-slow-control.app.cern.ch/cam401" class="cameras__img_link cameras__img_link_401" target="_blank">CAM-401</a>
+            <a href="https://cameras-np04-slow-control.app.cern.ch/cam404" class="cameras__img_link cameras__img_link_404" target="_blank">CAM-404</a>
+            <a href="https://cameras-np04-slow-control.app.cern.ch/cam406" class="cameras__img_link cameras__img_link_406" target="_blank">CAM-406</a>
+            <a href="https://cameras-np04-slow-control.app.cern.ch/cam407" class="cameras__img_link cameras__img_link_407" target="_blank">CAM-407</a>
+            <a href="https://cameras-np04-slow-control.app.cern.ch/cam408" class="cameras__img_link cameras__img_link_408" target="_blank">CAM-408</a>
+            <a href="https://cameras-np04-slow-control.app.cern.ch/cam409" class="cameras__img_link cameras__img_link_409" target="_blank">CAM-409</a>
+            <a href="https://cameras-np04-slow-control.app.cern.ch/cam410" class="cameras__img_link cameras__img_link_410" target="_blank">CAM-410</a>
+            <a href="https://cameras-np04-slow-control.app.cern.ch/cam411" class="cameras__img_link cameras__img_link_411" target="_blank">CAM-411</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
