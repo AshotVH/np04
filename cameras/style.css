@@ -91,14 +91,7 @@
     font-size: 1rem;
   }
 }
-@media screen and (min-width: 576px) {
-  .nav-link {
-    font-size: 1.4rem;
-  }
-  .cameras__img_link {
-    font-size: 1rem;
-  }
-}
+
 @media screen and (min-width: 768px) {
   .cameras__img_link {
     width: 15%;
