@@ -14,28 +14,25 @@ angular.module('comissioning', []).component('comissioning', {
                 .then(function (result) {
                     const res = result.data;
                     console.log(res);
-
-                    self.NP04_MHT0100AI = res["47878785489690"][0];
-                    self.NP04_TT0100AI = res["47878802266906"][0];
-                    self.NP04_PT0106AI = res["47878819044122"][0];
-                    self.NP04_DCS_01_NP04_4PT4920 = res["47931851800858"][0];
-                    self.NP04_PT0110AI = res["47879272028954"][0];
-                    self.NP04_PT0111AI = res["47879288806170"][0];
-                    self.NP04_DCS_01_NP04_4QT4710 = res["47897609503002"][0];
-                    self.NP04_DCS_01_NP04_4QT4711 = res["47897626280218"][0];
-                    self.NP04_DCS_01_NP04_4QT4720 = res["47897643057434"][0];
-                    self.NP04_DCS_01_NP04_4QT4730 = res["47897676611866"][0];
-                    // self.NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel07_MeasurementSenseVoltage = res["47890059777050"][0];
-                    // self.NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel07_MeasurementCurrent = res["47890059777306"][0];
-                    self.NP04_DCS_01_LT0100 = res["47897777275162"][0];
-                    self.NP04_4CV4202 = res["47917859602714"][0];
-                    self.NP04_DCS_01_NP04_4PDT4500 = res["47931801469210"][0];
-                    self.NP04_DCS_01_NP04_4FT4592 = res["48019361759514"][0];
-
+                    self.NP04_DCS_01_NP04_4PT4920 = res["47931851800858"]?res["47931851800858"][0]:"N/A";
+                    self.NP04_PT0110AI = res["47879272028954"]?res["47879272028954"][0]:"N/A";
+                    self.NP04_PT0111AI = res["47879288806170"]?res["47879288806170"][0]:"N/A";
+                    self.NP04_DCS_01_NP04_4QT4710 = res["47897609503002"]?res["47897609503002"][0]:"N/A";
+                    self.NP04_DCS_01_NP04_4QT4711 = res["47897626280218"]?res["47897626280218"][0]:"N/A";
+                    self.NP04_DCS_01_NP04_4QT4720 = res["47897643057434"]?res["47897643057434"][0]:"N/A";
+                    self.NP04_DCS_01_NP04_4QT4730 = res["47897676611866"]?res["47897676611866"][0]:"N/A";
+                    self.NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel07_MeasurementSenseVoltage = res["47890059777050"]?res["47890059777050"][0]:"N/A";
+                    self.NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel07_MeasurementCurrent = res["47890059777306"]?res["47890059777306"][0]:"N/A";
+                    self.NP04_DCS_01_LT0100 = res["47897777275162"]?res["47897777275162"][0]:"N/A";
+                    self.NP04_4CV4202 = res["47917859602714"]?res["47917859602714"][0]:"N/A";
+                    self.NP04_DCS_01_NP04_4PDT4500 = res["47931801469210"]?res["47931801469210"][0]:"N/A";
+                    self.NP04_DCS_01_NP04_4FT4592 = res["48019361759514"]?res["48019361759514"][0]:"N/A";
+                    self.NP04_MHT0100AI = res["47878785489690"]?res["47878785489690"][0]:"N/A";
+                    self.NP04_TT0100AI = res["47878802266906"]?res["47878802266906"][0]:"N/A";
+                    self.NP04_PT0106AI = res["47878819044122"]?res["47878819044122"][0]:"N/A";
                 });
 
             console.log("interval occured");
-
         };
 
         this.promise;
