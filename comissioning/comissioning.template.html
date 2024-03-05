@@ -1,34 +1,252 @@
-<link rel="stylesheet" href="css/comissioning.css">
-<div class="container">
-    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
-
-    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
-    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
-    <div id="dqm" style="font-family: 'Arial Black', Gadget, sans-serif; font-size: 2.3vmin; color: white; position: fixed; top: 25vh; left: 5vw;"><a style='color: white;' target="_blank" href="http://p3s-content.cern.ch/monitor/puritychart">Link to NP04 DQM</a></div>
-    <div id="cryostat_pressure">
-        <table>
-            <tr>
-                <td>Cryostat: <a target="_blank" ng-href="#!/histogram/47931851800858"><span class="value">{{ $ctrl.NP04_DCS_01_NP04_4PT4920 | number: 2 }} bar</span></a></td>
-                <td>PT0110:&nbsp;<a target="_blank" ng-href="#!/histogram/47879272028954"><span class="value">{{ $ctrl.NP04_PT0110AI | number: 1 }} mbar</span></a></td>
-                <td>PT0111:&nbsp;<a target="_blank" ng-href="#!/histogram/47879288806170"><span class="value">{{ $ctrl.NP04_PT0111AI | number: 1 }} mbar</span></a></td>
-                <td>O<sub>2</sub>: <a target="_blank" ng-href="#!/histogram/47897609503002"><span class="value">{{ $ctrl.NP04_DCS_01_NP04_4QT4710 | number: 2}} ppm</span></a></td>
-                <td>O<sub>2</sub>: <a target="_blank" ng-href="#!/histogram/47897626280218"><span class="value">{{ $ctrl.NP04_DCS_01_NP04_4QT4711 | number: 2}} ppm</span></a></td>
-                <td>N<sub>2</sub>: <a target="_blank" ng-href="#!/histogram/47897643057434"><span class="value">{{ $ctrl.NP04_DCS_01_NP04_4QT4720 | number: 2}} ppm</span></a></td>
-                <td>H<sub>2</sub>O: <a target="_blank" ng-href="#!/histogram/47897676611866"><span class="value">{{ $ctrl.NP04_DCS_01_NP04_4QT4730 | number: 2}} ppm</span></a></td>
-            </tr>
-            <tr>
-                <td>Sense voltage: <a target="_blank" ng-href="#!/histogram/47890059777050"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel07_MeasurementSenseVoltage | number: 2 }} V</span></a></td>
-                <td>Current: <a target="_blank" ng-href="#!/histogram/47890059777306"><span class="value">{{ $ctrl.NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel07_MeasurementCurrent * 1000000000 | number: 2 }} nA</span></a></td>
-                <td>LAr level: <a target="blank" ng-href="#!/histogram/47897777275162"><span class="value">{{ $ctrl.NP04_DCS_01_LT0100 | number: 2}} mm</span></a></td>
-                <td>LAr inlet position: <a target="blank" ng-href="#!/histogram/47917859602714"><span class="value">{{ $ctrl.NP04_4CV4202 | number: 2}} %</span></a></td>
-                <td colspan="2">LAr recirculation pump differential pressure: <a target="_blank" ng-href="#!/histogram/47931801469210"><span class="value">{{ $ctrl.NP04_DCS_01_NP04_4PDT4500 | number: 2}} mbar</span></a></td>
-                <td>LAr recirculation flow: <a target="_blank" ng-href="#!/histogram/48019361759514"><span class="value">{{ $ctrl.NP04_DCS_01_NP04_4FT4592 | number: 2 }}</span></a></td>
-            </tr>
-        </table><br/>
-        <br/>
-
-
-
-
+<link rel="stylesheet" href="css/comissioning.css" />
+<header class="container page_header">
+  <div class="row">
+    <div class="col page-title">{{$ctrl.pageTitle}}</div>
+    <div class="col timestamp_label">
+      <div class="row">
+        <div class="col">Timestamp</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span id="timestamp" class="timestamp"
+            >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
+          >
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <a target="_blank" href="http://p3s-content.cern.ch/monitor/puritychart">
+        Link to NP04 DQM
+      </a>
+    </div>
+  </div>
+</header>
+<main class="container pb-2">
+   <div class="row pt-2">
+    <div class="col-12 col-xl-6">
+        <div class="data_row">
+            <div class="data_item">Cryostat</div>
+            <div class="data_item">
+                <a target="_blank" ng-href="#!/histogram/47931851800858"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_NP04_4PT4920 | number: 2 }} bar</span
+                ></a
+              >
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-xl-6">
+        <div class="data_row">
+            <div class="data_item">
+                PT0110
+            </div>
+            <div class="data_item">
+                <a target="_blank" ng-href="#!/histogram/47879272028954"
+                ><span class="value"
+                  >{{ $ctrl.NP04_PT0110AI | number: 1 }} mbar</span
+                ></a
+              >
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-xl-6">
+        <div class="data_row">
+            <div class="data_item">
+                PT0111
+            </div>
+            <div class="data_item">
+                <a target="_blank" ng-href="#!/histogram/47879288806170"
+                ><span class="value"
+                  >{{ $ctrl.NP04_PT0111AI | number: 1 }} mbar</span
+                ></a
+              >
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-xl-6">
+        <div class="data_row">
+            <div class="data_item">
+                O<sub>2</sub>
+            </div>
+            <div class="data_item">
+                <a target="_blank" ng-href="#!/histogram/47897609503002"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_NP04_4QT4710 | number: 2}} ppm</span
+                ></a
+              >
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-xl-6">
+        <div class="data_row">
+            <div class="data_item">
+                O<sub>2</sub>
+            </div>
+            <div class="data_item">
+                <a target="_blank" ng-href="#!/histogram/47897626280218"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_NP04_4QT4711 | number: 2}} ppm</span
+                ></a
+              >
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-xl-6">
+        <div class="data_row">
+            <div class="data_item">
+                N<sub>2</sub>
+            </div>
+            <div class="data_item">
+                <a target="_blank" ng-href="#!/histogram/47897643057434"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_NP04_4QT4720 | number: 2}} ppm</span
+                ></a
+              >
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-xl-6">
+        <div class="data_row">
+            <div class="data_item">
+                H<sub>2</sub>O
+            </div>
+            <div class="data_item">
+                <a target="_blank" ng-href="#!/histogram/47897676611866"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_NP04_4QT4730 | number: 2}} ppm</span
+                ></a
+              >
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-xl-6">
+        <div class="data_row">
+            <div class="data_item">
+                Sense voltage
+            </div>
+            <div class="data_item">
+                <a target="_blank" ng-href="#!/histogram/47890059777050"
+                ><span class="value"
+                  >{{
+                  $ctrl.NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel07_MeasurementSenseVoltage
+                  | number: 2 }} V</span
+                ></a
+              >
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-xl-6">
+        <div class="data_row">
+            <div class="data_item">
+                Current
+            </div>
+            <div class="data_item">
+                <a target="_blank" ng-href="#!/histogram/47890059777306"
+                ><span class="value"
+                  >{{
+                  $ctrl.NP04_DCS_01_Wiener_MPOD_CE_RACK6_Board2_Channel07_MeasurementCurrent
+                  * 1000000000 | number: 2 }} nA</span
+                ></a
+              >
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-xl-6">
+        <div class="data_row">
+            <div class="data_item">
+                LAr level
+            </div>
+            <div class="data_item">
+                <a target="blank" ng-href="#!/histogram/47897777275162"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_LT0100 | number: 2}} mm</span
+                ></a
+              >
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-xl-6">
+        <div class="data_row">
+            <div class="data_item">
+                LAr inlet position
+            </div>
+            <div class="data_item">
+                <a target="blank" ng-href="#!/histogram/47917859602714"
+                ><span class="value">{{ $ctrl.NP04_4CV4202 | number: 2}} %</span></a
+              >
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-xl-6">
+        <div class="data_row">
+            <div class="data_item">
+                LAr recirculation pump differential pressure
+            </div>
+            <div class="data_item">
+                <a target="_blank" ng-href="#!/histogram/47931801469210"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_NP04_4PDT4500 | number: 2}} mbar</span
+                ></a
+              >
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-xl-6">
+        <div class="data_row">
+            <div class="data_item">
+                LAr recirculation flow
+            </div>
+            <div class="data_item">
+                <a target="_blank" ng-href="#!/histogram/48019361759514"
+                ><span class="value"
+                  >{{ $ctrl.NP04_DCS_01_NP04_4FT4592 | number: 2 }}</span
+                ></a
+              >
+            </div>
+        </div>
+    </div>
+   </div>
+
+</main>
+<footer class="container page_footer">
+  <div class="row justify-content-end">
+    <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td>Humidity</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878785489690">
+                <span class="value"
+                  >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient temperature</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878802266906">
+                <span class="value"
+                  >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient pressure</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878819044122">
+                <span class="value"
+                  >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
+                >
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</footer>

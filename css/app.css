@@ -10,11 +10,11 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.76);
 }
 .container{
-  padding-top: 0 !important;
+  padding-top: 0;
 }
 .page_footer {
   border-top: 1px solid rgba(255, 255, 255, 0.76);
-  padding-top: 30px;
+  padding-top: 10px;
 }
 caption {
   text-align: center;
