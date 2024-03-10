@@ -4,6 +4,12 @@
 .accordion-button {
   font-size: 1.4rem;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+.mpodpd__accordion_header{
+  margin-left: auto;
+  display: inline-block;
 }
 .accordion-body {
   text-align: center;
