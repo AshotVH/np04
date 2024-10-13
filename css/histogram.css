@@ -1,18 +1,12 @@
+html{
+  font-size: 16px;
+}
 body {
   height: 100%;
-  background-color: #004c93;
-
-}
-.histogram__buttons_caption{
-  color: #fff;
-  font-size: 22px;
-}
-.histogram__button.btn {
-  padding: 4px 15px;
-  margin-left: 5px;
-}
-.hidden {
-  display: none;
+  background-image: linear-gradient(to bottom right, #033463, rgb(28 44 56));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .navbar {
   position: relative;
@@ -73,12 +67,9 @@ body {
 }
 .navbar__time_input_form {
   display: flex;
- 
 }
-.histogram__range_input {
-  padding: 1px;
-  margin: 3px;
-  min-width: 150px;
+.navbar__time_input {
+  padding-right: 10px;
 }
 .navbar__range_input_form{
   display: flex;
@@ -167,11 +158,6 @@ body {
 @media screen and (min-width: 501px) {
   .navbar__buttons ul li {
     flex-basis: 16%;
-  }
-  .histogram__button.btn {
-    padding: 4px 15px;
-    min-width: 113px;
-    margin-left: 5px;
   }
 }
 @media screen and (min-width: 501px) {

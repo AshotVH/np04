@@ -1,124 +1,46 @@
 <link rel="stylesheet" href="css/histogram.css" />
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 histogram__buttons_caption d-flex justify-content-center">
-      History For
-    </div>
-    <div class="col-auto pt-2">
-      
-      <button type="button" class="btn btn-dark histogram__button" ng-class="{'btn-outline-light':requestsList[0]}" ng-click="$ctrl.dayChanger('0-1', 0)">
-        <span class="spinner-border spinner-border-sm " ng-class="{'hidden':!buttonIsLodaing[0]}" aria-hidden="true"></span>
-        <span ng-if="!buttonIsLodaing[0]">1 hour</span>
-      </button>
-    </div>
-    <div class="col-auto pt-2"> 
-      <button type="button" class="btn btn-dark histogram__button" ng-class="{'btn-outline-light':requestsList[1]}" ng-click="$ctrl.dayChanger('0-6', 1)">
-        <span class="spinner-border spinner-border-sm" ng-class="{'hidden':!buttonIsLodaing[1]}" aria-hidden="true"></span>
-        <span ng-if="!buttonIsLodaing[1]">6 hours</span>
-      </button>
-    </div>
-    <div class="col-auto pt-2">
-      <button type="button" class="btn btn-dark histogram__button" ng-class="{'btn-outline-light':requestsList[2]}" ng-click="$ctrl.dayChanger('0-12', 2)">
-        <span class="spinner-border spinner-border-sm" ng-class="{'hidden':!buttonIsLodaing[2]}" aria-hidden="true"></span>
-        <span ng-if="!buttonIsLodaing[2]">12 hours</span>
-      </button>
-    </div>
-    <div class="col-auto pt-2">
-      <button type="button" class="btn btn-dark histogram__button" ng-class="{'btn-outline-light':requestsList[3]}" ng-click="$ctrl.dayChanger('1-0', 3)">
-        <span class="spinner-border spinner-border-sm" ng-class="{'hidden':!buttonIsLodaing[3]}" aria-hidden="true"></span>
-        <span ng-if="!buttonIsLodaing[3]">1 day</span>      
-      </button>
-    </div>
-    <div class="col-auto pt-2">
-      <button type="button" class="btn btn-dark histogram__button" ng-class="{'btn-outline-light':requestsList[4]}" ng-click="$ctrl.dayChanger('3-0', 4)">
-        <span class="spinner-border spinner-border-sm" ng-class="{'hidden':!buttonIsLodaing[4]}" aria-hidden="true"></span>
-        <span ng-if="!buttonIsLodaing[4]">3 days</span>
-      </button>
-    </div>
-    <div class="col-auto pt-2">
-      <button type="button" class="btn btn-dark histogram__button" ng-class="{'btn-outline-light':requestsList[5]}" ng-click="$ctrl.dayChanger('7-0', 5)">
-        <span class="spinner-border spinner-border-sm" ng-class="{'hidden':!buttonIsLodaing[5]}" aria-hidden="true"></span>
-        <span ng-if="!buttonIsLodaing[5]">7 days</span>
-      </button>
-    </div>
-    <div class="col-auto pt-2">
-      <button type="button" class="btn btn-dark histogram__button" ng-class="{'btn-outline-light':requestsList[6]}" ng-click="$ctrl.dayChanger('10-0', 6)">
-        <span class="spinner-border spinner-border-sm" ng-class="{'hidden':!buttonIsLodaing[6]}" aria-hidden="true"></span>
-        <span ng-if="!buttonIsLodaing[6]">10 days</span>
-      </button>
-    </div>
+<nav class="navbar">
+  <div class="navbar__text">History For</div>
+  <div class="navbar__buttons">
+    <ul>
+      <li><span ng-click="$ctrl.dayChanger('0-1')">1 hour</span></li>
+      <li><span ng-click="$ctrl.dayChanger('0-6')">6 hours</span></li>
+      <li><span ng-click="$ctrl.dayChanger('0-12')">12 hours</span></li>
+      <li><span ng-click="$ctrl.dayChanger('1-0')">1 day</span></li>
+      <li><span ng-click="$ctrl.dayChanger('3-0')">3 days</span></li>
+      <li><span ng-click="$ctrl.dayChanger('7-0')">7 days</span></li>
+      <li><span ng-click="$ctrl.dayChanger('10-0')">10 days</span></li>
+    </ul>
   </div>
-  <div class="row justify-content-center">
-    <div class="col-auto pt-2">
+  <div class="navbar__ranges">
+    <div class="navbar__time_input">
       <form action="" class="navbar__time_input_form">
-        <input class="navbar__time_input" type="number" min="1" ng-model="$ctrl.dd" placeholder="Days" />
+        <input type="number" min="1" ng-model="$ctrl.dd" placeholder="Days" />
         <button
         type="submit"
-          class="btn btn-dark histogram__button"  
-          ng-click="$ctrl.setDays($event)"
-          ng-class="{'btn-outline-light':requestsList[7]}"
+          class="button-12 button-12--small"
+          ng-click="$ctrl.setDays()"
         >
-        <span class="spinner-border spinner-border-sm" ng-class="{'hidden':!setDaysBtnLoading}" aria-hidden="true"></span>
-        <span ng-if="!setDaysBtnLoading">Go</span>
-          
+          Go
         </button>
       </form>
     </div>
-    <div class="col-auto pt-2 d-flex justify-content-center">
+    <div class="navbar__range_input">
       <form action="" class="navbar__range_input_form">
         <input
           type="date"
           ng-model="$ctrl.start"
           placeholder="dd-mm-yyyy"
-          class="histogram__range_input"
         />
         <div class="navbar__range_input_end">
           <input
             type="date"
             ng-model="$ctrl.end"
             placeholder="dd-mm-yyyy"
-            class="histogram__range_input"
           />
-          <button type="submit" class="btn btn-dark histogram__button" ng-class="{'btn-outline-light':requestsList[8]}" ng-click="$ctrl.range($event, $ctrl.start, $ctrl.end)" >
-            <span class="spinner-border spinner-border-sm" ng-class="{'hidden':!rangeBtnLoading}" aria-hidden="true"></span>
-            <span ng-if="!rangeBtnLoading">Go</span>
-           </button>
+          <button type="submit" class="button-12 button-12--small" ng-click="$ctrl.range($ctrl.start, $ctrl.end)" >Go</button>
         </div>
       </form>
-    </div>
-  </div>
-</div>
-<nav class="navbar">
-  <div class="navbar__ranges">
-    <div class="navbar__time_input">
-      <!-- <form action="" class="navbar__time_input_form">
-        <input type="number" min="1" ng-model="$ctrl.dd" placeholder="Days" />
-        <button
-        type="submit"
-          class="button-12 button-12--small"
-          ng-click="$ctrl.setDays($event)"
-        >
-          Go
-        </button>
-      </form> -->
-    </div>
-    <div class="navbar__range_input">
-      <!-- <form action="" class="navbar__range_input_form">
-        <input
-          type="date"
-          ng-model="$ctrl.start"
-          placeholder="dd-mm-yyyy"
-        />
-        <div class="navbar__range_input_end">
-          <input
-            type="date"
-            ng-model="$ctrl.end"
-            placeholder="dd-mm-yyyy"
-          />
-          <button type="submit" class="button-12 button-12--small" ng-click="$ctrl.range($event, $ctrl.start, $ctrl.end)" >Go</button>
-        </div>
-      </form> -->
-     
 
      
     </div>
@@ -126,7 +48,7 @@
 </nav>
 
 <div id="container" class="histogram_container">Placeholder for chart</div>
-<!-- <div class="histogram_bottom_buttons">
+<div class="histogram_bottom_buttons">
   <button
     class="button-12"
     title="Click to show/hide data"
@@ -135,4 +57,4 @@
   >
     Show/Hide Data
   </button>
-</div> -->
+</div>

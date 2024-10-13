@@ -13,67 +13,35 @@ angular.module("histogram", []).component("histogram", {
       $window,
       $http,
       $interval
-    )  {
+    ) {
       const self = this;
       this.natalie = 1;
       this.pageTitle = "Histogram";
       this.elemId = $routeParams.elemId;
       this.sensorName = "";
-      this.daysAndHours = '0-6';
-      self.activeDayBtn = 1;
-      
-      $scope.buttonIsActive = [false, false, false, false, false, false, false];
-      $scope.buttonIsActive[self.activeDayBtn] = true;
-      $scope.buttonIsLodaing = [false, false, false, false, false, false, false];
-      $scope.setDaysBtnLoading = false;
-      $scope.rangeBtnLoading = false;
-      $scope.requestsList = new Array(9).fill(false);
-      $scope.requestsList[1] = true;
-    // -------------------------------------------------------
-      // $http.get('config/lems.conf') 
-    
-      //   .then(function(response) {
-      //     console.log(response.data);
-      //     return response.data; 
-      //   }, function(error) {
-      //     console.error('Error loading config file', error);
-      //   });
-    // -------------------------------------------------------
-      
-      this.daysAndHoursToBtnNum = function (daysAndHours){
-        switch(daysAndHours){
-          case '0-1': 
-            return 0;
-          case '0-6':
-            return 1;
-          case '0-12':
-           return 2;
-          case '1-0':
-            return 3;
-          case '3-0':
-            return 4;
-          case '7-0':
-            return 5;
-          case '10-0':
-            return 6;
-        }
-      }
+      this.chartData;
+      this.daysAndHours = "0-1";
       this.daysAndHoursToUTCDateRange = function (daysAndHours) {
-        const [days, hours] = [parseInt(daysAndHours.split('-')[0]), parseInt(daysAndHours.split('-')[1])];
+        const [days, hours] = [
+          parseInt(daysAndHours.split("-")[0]),
+          parseInt(daysAndHours.split("-")[1]),
+        ];
         const endDate = new Date();
         const startDate = new Date();
-        startDate.setTime(endDate.getTime() - days * 86400000 - hours * 3600000);
+        startDate.setTime(
+          endDate.getTime() - days * 86400000 - hours * 3600000
+        );
         const endDateStr = endDate.toISOString().slice(0, 19);
         const startDateStr = startDate.toISOString().slice(0, 19);
         return [startDateStr, endDateStr];
       };
       this.toggleDataTable = function () {
         const highchartsDataTable = document.getElementsByClassName(
-            "highcharts-data-table"
+          "highcharts-data-table"
         )[0];
         highchartsDataTable.classList.toggle("hidden");
       };
-      this.drawChart = function (containerId, chartData,charttitle) {
+      this.drawChart = function (containerId, chartData, charttitle) {
         Highcharts.chart(containerId, {
           chart: {
             zoomType: "xy",
@@ -85,7 +53,7 @@ angular.module("histogram", []).component("histogram", {
             useUTC: false,
           },
           credits: {
-            enabled: false
+            enabled: false,
           },
           boost: {
             useGPUTranslations: true,
@@ -93,15 +61,14 @@ angular.module("histogram", []).component("histogram", {
           xAxis: {
             type: "datetime",
             ordinal: false,
-
           },
           yAxis: {
             title: {
-              text: " "
-            }
+              text: " ",
+            },
           },
           legend: {
-            enabled: false
+            enabled: false,
           },
           exporting: {
             // showTable: true,
@@ -122,22 +89,17 @@ angular.module("histogram", []).component("histogram", {
               lineWidth: 1.0,
               tooltip: {
                 valueDecimals: 5,
-                xDateFormat: '%Y-%b-%e, %H:%M:%S'
+                xDateFormat: "%Y-%b-%e, %H:%M:%S",
               },
               name: "Values",
               color: "#ff0000",
             },
           ],
         });
-      }
-      this.range = function (event, start, end) {
-        event.preventDefault();
+      };
+      this.range = function (start, end) {
         if (!start || !end) {
           console.log("no start or end");
-          return false;
-        }
-        if(start>=end){
-          console.log("incorrect range");
           return false;
         }
         const startDate = new Date(start);
@@ -145,110 +107,74 @@ angular.module("histogram", []).component("histogram", {
         const startDateStr = startDate.toISOString().slice(0, 19);
         const endDateStr = endDate.toISOString().slice(0, 19);
         $interval.cancel;
-        $scope.rangeBtnLoading = true;
-  
         $http
-        .get(
-          "php-db-conn/np04histogram.php?elemid=" +
-            self.elemId +
-            "&startdate=" +
-            startDateStr +
-            "&enddate=" +
-            endDateStr
-        )
-        .then(function onSuccess(response) {
-              const chartData = Object.entries(response.data).map(([key, value]) => {
+          .get(
+            "php-db-conn/np04histogram.php?elemid=" +
+              self.elemId +
+              "&startdate=" +
+              startDateStr +
+              "&enddate=" +
+              endDateStr
+          )
+          .then(function onSuccess(response) {
+            const chartData = Object.entries(response.data).map(
+              ([key, value]) => {
                 return [parseInt(key), value];
-              });
-              self.drawChart("container", chartData);
-              $scope.rangeBtnLoading = false;
-              $scope.requestsList.fill(false);
-              $scope.requestsList[8] = true;
-
-            });
+              }
+            );
+            self.drawChart("container", chartData, self.sensorName);
+          });
         return false;
       };
-      this.reload = function (setDaysBtnPressed = false) {
+      this.reload = function () {
         $interval.cancel;
-        console.log($scope.setDaysBtnLoading);
-       
-        const [startDateStr, endDateStr] = self.daysAndHoursToUTCDateRange(self.daysAndHours);
+        const [startDateStr, endDateStr] = self.daysAndHoursToUTCDateRange(
+          self.daysAndHours
+        );
         $http
-        .get(
-          "php-db-conn/np04histogram.php?elemid=" +
-            self.elemId +
-            "&startdate=" +
-            startDateStr +
-            "&enddate=" +
-            endDateStr
-        )
-        .then(function onSuccess(response) {
-              const chartData = Object.entries(response.data).map(([key, value]) => {
+          .get(
+            "php-db-conn/np04histogram.php?elemid=" +
+              self.elemId +
+              "&startdate=" +
+              startDateStr +
+              "&enddate=" +
+              endDateStr
+          )
+          .then(function onSuccess(response) {
+            self.chartData = Object.entries(response.data).map(
+              ([key, value]) => {
                 return [parseInt(key), value];
-              });
-              if (!self.sensorName) {
-                $http
-                  .get("php-db-conn/np04sensorname.php?elemid=" + self.elemId)
-                  .then(function onSuccess(response) {
-                    console.log(response.data);
-                    let sensorNameStr = response.data.replace("NP04_DCS_01:", "");
-                    sensorNameStr = sensorNameStr.replace(/"/g, '');
-                    console.log(self.sensorName);
-                    if (sensorNameStr.charAt(sensorNameStr.length - 1) === '.'){
-                      sensorNameStr = sensorNameStr.substring(0,sensorNameStr.length - 1);
-                    }
-                    self.sensorName = sensorNameStr;                  
-                    self.drawChart("container", self.chartData, self.sensorName);
-                  });
-              } else {
-                self.drawChart("container", self.chartData, self.sensorName);
-  
               }
-              const loadingBtnNum = self.daysAndHoursToBtnNum(self.daysAndHours);
-              $scope.buttonIsLodaing[loadingBtnNum] = false;
-             
-              if(setDaysBtnPressed){
-                $scope.requestsList.fill(false);
-                $scope.requestsList[7] = true;
-                $scope.setDaysBtnLoading = false;
-              } else {
-                $scope.requestsList.fill(false);
-                $scope.requestsList[self.daysAndHoursToBtnNum(self.daysAndHours)] = true;
-                console.log($scope.requestsList); 
-              }
-      
-            });
-      };
-      this.dayChanger = function (daysAndHours, btnNum) {
-        
-        self.loadingDayBtn = btnNum;
-        $scope.buttonIsLodaing[self.loadingDayBtn] = true;
-        self.activeDayBtn = btnNum;
-        for (let i = 0; i < $scope.buttonIsActive.length; i++){
-          if (i == self.activeDayBtn){
-            $scope.buttonIsActive[i] = true;
-            
-          } else {
-            $scope.buttonIsActive[i] = false;
-           
-          }
-        }
+            );
+            if (!self.sensorName) {
+              $http
+                .get("php-db-conn/np04sensorname.php?elemid=" + self.elemId)
+                .then(function onSuccess(response) {
+                  console.log(response.data);
+                  let sensorNameStr = response.data.replace("NP04_DCS_01:", "");
+                  sensorNameStr = sensorNameStr.replace(/"/g, '');
+                  console.log(self.sensorName);
+                  if (sensorNameStr.charAt(sensorNameStr.length - 1) === '.'){
+                    sensorNameStr = sensorNameStr.substring(0,sensorNameStr.length - 1);
+                  }
+                  self.sensorName = sensorNameStr;                  
+                  self.drawChart("container", self.chartData, self.sensorName);
+                });
+            } else {
+              self.drawChart("container", self.chartData, self.sensorName);
 
-        console.log(self.loadingDayBtn);
-   
-        
+            }
+          });
+      };
+      this.dayChanger = function (daysAndHours) {
         self.daysAndHours = daysAndHours;
         self.reload();
       };
-      this.setDays = function (event) {
-        event.preventDefault();
-        if (!self.dd || self.dd < 1) return false;
-        self.dd = Math.round(self.dd);
-        self.daysAndHours = self.dd + '-' + '0';
-        $scope.setDaysBtnLoading = true;
-        
-        self.reload(true);
-        
+      this.setDays = function () {
+        if (!this.dd || this.dd < 1) return false;
+        this.dd = Math.round(this.dd);
+        self.daysAndHours = self.dd + "-" + "0";
+        self.reload();
       };
       this.promise;
       this.reload();
@@ -262,6 +188,7 @@ angular.module("histogram", []).component("histogram", {
       $scope.start();
       $scope.$on("$destroy", function () {
         $scope.stop();
+        this.sensorName = "";
       });
     },
   ],
