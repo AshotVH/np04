@@ -19,7 +19,7 @@
         <button
         type="submit"
           class="button-12 button-12--small"
-          ng-click="$ctrl.setDays()"
+          ng-click="$ctrl.setDays($event)"
         >
           Go
         </button>
@@ -38,7 +38,7 @@
             ng-model="$ctrl.end"
             placeholder="dd-mm-yyyy"
           />
-          <button type="submit" class="button-12 button-12--small" ng-click="$ctrl.range($ctrl.start, $ctrl.end)" >Go</button>
+          <button type="submit" class="button-12 button-12--small" ng-click="$ctrl.range($event, $ctrl.start, $ctrl.end)" >Go</button>
         </div>
       </form>
 
