@@ -7,7 +7,8 @@ ini_set('display_errors', true);
 $hostName = getenv('hostname');
 $elemName = $_GET["elemName"];
 $url = $hostName."/latest/".$elemName;
+echo ($hostName);
+
 $json = json_decode(file_get_contents($url));
 // echo(json_encode($json));
-echo ($hostName);
 ?>
