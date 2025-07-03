@@ -8,5 +8,6 @@ $hostName = getenv('hostname');
 $elemName = $_GET["elemName"];
 $url = $hostName."/latest/".$elemName;
 $json = json_decode(file_get_contents($url));
-echo(json_encode($json));
+// echo(json_encode($json));
+echo ($hostName);
 ?>
