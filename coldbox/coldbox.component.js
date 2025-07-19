@@ -14,9 +14,9 @@ angular.module('coldbox', []).component('coldbox', {
                     .then(function (result) {
                         const res = result.data;
                         console.log(res);
-                        self.NP04_MHT0100AI = res["47878785489690"][0];
-                        self.NP04_TT0100AI = res["47878802266906"][0];
-                        self.NP04_PT0106AI = res["47878819044122"][0];
+                        self.NP04_MHT0100AI = res["47878785489690"][0] ? res["47878785489690"][0] : "N/A";
+                        self.NP04_TT0100AI = res["47878802266906"][0] ? res["47878802266906"][0] : "N/A";
+                        self.NP04_PT0106AI = res["47878819044122"][0] ? res["47878819044122"][0] : "N/A";
                         self.NP04_DCS_01_TE0205 = res["47893683634458"][0];
                         self.NP04_DCS_01_TE0206 = res["47893700411674"][0];
                         self.NP04_DCS_01_TE0207 = res["47893717188890"][0];
