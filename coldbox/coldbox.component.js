@@ -16,9 +16,15 @@ angular.module('coldbox', []).component('coldbox', {
                     .replace(/\bNaN\b/g, 'null')
                     .replace(/\bInfinity\b/g, 'null')
                     .replace(/\b-Infinity\b/g, 'null');
+               
+                    console.log(cleanedText);
+                    console.log(typeof cleanedText);
+
               
                     const res = JSON.parse(cleanedText);
                     console.log(res);
+                    console.log(typeof res);
+
                     self.NP04_MHT0100AI = res["47878785489690"][0] ? res["47878785489690"][0] : "N/A";
                     self.NP04_TT0100AI = res["47878802266906"][0] ? res["47878802266906"][0] : "N/A";
                     self.NP04_PT0106AI = res["47878819044122"][0] ? res["47878819044122"][0] : "N/A";
