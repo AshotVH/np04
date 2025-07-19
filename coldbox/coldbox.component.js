@@ -10,7 +10,7 @@ angular.module('coldbox', []).component('coldbox', {
             this.reload = function () {
                 self.timestamp = new Date();
                 $http
-                    .get("php-db-conn/np04cachedvals.php?elemName=coldbox")
+                    .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=coldbox")
                     .then(function (result) {
                         const res = result.data;
                         console.log(res);
