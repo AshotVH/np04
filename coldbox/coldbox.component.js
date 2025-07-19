@@ -9,6 +9,23 @@ angular.module('coldbox', []).component('coldbox', {
 
             this.reload = function () {
                 self.timestamp = new Date();
+                fetch("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=coldbox")
+                .then(res => res.text())  
+                .then(rawText => {
+                    const cleanedText = rawText
+                    .replace(/\bNaN\b/g, 'null')
+                    .replace(/\bInfinity\b/g, 'null')
+                    .replace(/\b-Infinity\b/g, 'null');
+
+                    
+                    const data = JSON.parse(cleanedText);
+
+                    console.log(data);
+                })
+                .catch(err => {
+                    console.error("Error parsing data:", err);
+                });
+
                 $http
                     .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=coldbox")
                     .then(function (result) {
