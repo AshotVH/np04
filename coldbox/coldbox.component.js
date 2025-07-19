@@ -12,16 +12,16 @@ angular.module('coldbox', []).component('coldbox', {
                 fetch("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=coldbox")
                 .then(res => res.text())  
                 .then(rawText => {
-                    const cleanedText = rawText
-                    .replace(/\bNaN\b/g, 'null')
-                    .replace(/\bInfinity\b/g, 'null')
-                    .replace(/\b-Infinity\b/g, 'null');
+                    // const cleanedText = rawText
+                    // .replace(/\bNaN\b/g, 'null')
+                    // .replace(/\bInfinity\b/g, 'null')
+                    // .replace(/\b-Infinity\b/g, 'null');
                
-                    console.log(cleanedText);
-                    console.log(typeof cleanedText);
+                    // console.log(cleanedText);
+                    // console.log(typeof cleanedText);
 
               
-                    const res = JSON.parse(cleanedText);
+                    const res = JSON.parse(rawText);
                     console.log(res);
                     console.log(typeof res);
 
