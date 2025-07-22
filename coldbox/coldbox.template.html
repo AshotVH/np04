@@ -8,23 +8,23 @@
     <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
     <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
 
-    <div id="tt205">TE205: <a target="_blank" href="#!/histogram/47893683634458"><span class="value">{{ $ctrl.NP04_DCS_01_TE0205 | number: 1 }} &#8490;</span></a></div>
-    <div id="tt206">TE206: <a target="_blank" href="#!/histogram/47893700411674"><span class="value">{{ $ctrl.NP04_DCS_01_TE0206 | number: 1 }} &#8490;</span></a></div>
-    <div id="tt207">TE207: <a target="_blank" href="#!/histogram/47893717188890"><span class="value">{{ $ctrl.NP04_DCS_01_TE0207 | number: 1 }} &#8490;</span></a></div>
-    <div id="tt208">TE208: <a target="_blank" href="#!/histogram/47893733966106"><span class="value">{{ $ctrl.NP04_DCS_01_TE0208 | number: 1 }} &#8490;</span></a></div>
-    <div id="tt209">TE209: <a target="_blank" href="#!/histogram/47893750743322"><span class="value">{{ $ctrl.NP04_DCS_01_TE0209 | number: 1 }} &#8490;</span></a></div>
-    <div id="tt210">TE210: <a target="_blank" href="#!/histogram/47893767520538"><span class="value">{{ $ctrl.NP04_DCS_01_TE0210 | number: 1 }} &#8490;</span></a></div>
-    <div id="tt211">TE211: <a target="_blank" href="#!/histogram/47893784297754"><span class="value">{{ $ctrl.NP04_DCS_01_TE0211 | number: 1 }} &#8490;</span></a></div>
+    <div id="tt205">TE205: <a target="_blank" href="#!/histogram/47893683634458"><span class="value">{{ $ctrl.NP04_DCS_01_TE0205 }}</span></a></div>
+    <div id="tt206">TE206: <a target="_blank" href="#!/histogram/47893700411674"><span class="value">{{ $ctrl.NP04_DCS_01_TE0206 }}</span></a></div>
+    <div id="tt207">TE207: <a target="_blank" href="#!/histogram/47893717188890"><span class="value">{{ $ctrl.NP04_DCS_01_TE0207 }}</span></a></div>
+    <div id="tt208">TE208: <a target="_blank" href="#!/histogram/47893733966106"><span class="value">{{ $ctrl.NP04_DCS_01_TE0208 }}</span></a></div>
+    <div id="tt209">TE209: <a target="_blank" href="#!/histogram/47893750743322"><span class="value">{{ $ctrl.NP04_DCS_01_TE0209 }}</span></a></div>
+    <div id="tt210">TE210: <a target="_blank" href="#!/histogram/47893767520538"><span class="value">{{ $ctrl.NP04_DCS_01_TE0210 }}</span></a></div>
+    <div id="tt211">TE211: <a target="_blank" href="#!/histogram/47893784297754"><span class="value">{{ $ctrl.NP04_DCS_01_TE0211 }}</span></a></div>
 
-    <div id="CV3160">4CV3160: <br/><a target="_blank" href="#!/histogram/48020200620570"><span class="value">{{ $ctrl.NP04_DCS_01_4CV3160 | number: 2 }} %</span></a></div>
-    <div id="CV3170">4CV3170: <br/><a target="_blank" href="#!/histogram/48020217397786"><span class="value">{{ $ctrl.NP04_DCS_01_4CV3170 | number: 2 }} %</span></a></div>
-    <div id="CV3500">4CV3500: <br/><a target="_blank" href="#!/histogram/48020234175002"><span class="value">{{ $ctrl.NP04_DCS_01_4CV3500 | number: 2 }} %</span></a></div>
-    <div id="CV3510">4CV3510: <br/><a target="_blank" href="#!/histogram/48020250952218"><span class="value">{{ $ctrl.NP04_DCS_01_4CV3510 | number: 2 }} %</span></a></div>
-    <div id="PT3170">4PT3170: <br/><a target="_blank" href="#!/histogram/48020267729434"><span class="value">{{ $ctrl.NP04_DCS_01_4PT3170 | number: 3 }} bar</span></a></div>
-    <div id="PT3500">4PT3500: <br/><a target="_blank" href="#!/histogram/48020284506650"><span class="value">{{ $ctrl.NP04_DCS_01_4PT3500 | number: 3 }} bar</span></a></div>
-    <div id="PT3510">4PT3510: <br/><a target="_blank" href="#!/histogram/48020301283866"><span class="value">{{ $ctrl.NP04_DCS_01_4PT3510 | number: 3 }} bar</span></a></div>
-    <div id="TT3500">4TT3500: <br/><a target="_blank" href="#!/histogram/48020334838298"><span class="value">{{ $ctrl.NP04_DCS_01_4TT3500 | number: 1 }} &#8490;</span></a></div>
-    <div id="TT3510">4TT3510: <br/><a target="_blank" href="#!/histogram/48020351615514"><span class="value">{{ $ctrl.NP04_DCS_01_4TT3510 | number: 1 }} &#8490;</span></a></div>
+    <div id="CV3160">4CV3160: <br/><a target="_blank" href="#!/histogram/48020200620570"><span class="value">{{ $ctrl.NP04_DCS_01_4CV3160 }} %</span></a></div>
+    <div id="CV3170">4CV3170: <br/><a target="_blank" href="#!/histogram/48020217397786"><span class="value">{{ $ctrl.NP04_DCS_01_4CV3170 }} %</span></a></div>
+    <div id="CV3500">4CV3500: <br/><a target="_blank" href="#!/histogram/48020234175002"><span class="value">{{ $ctrl.NP04_DCS_01_4CV3500 }} %</span></a></div>
+    <div id="CV3510">4CV3510: <br/><a target="_blank" href="#!/histogram/48020250952218"><span class="value">{{ $ctrl.NP04_DCS_01_4CV3510 }} %</span></a></div>
+    <div id="PT3170">4PT3170: <br/><a target="_blank" href="#!/histogram/48020267729434"><span class="value">{{ $ctrl.NP04_DCS_01_4PT3170 }} bar</span></a></div>
+    <div id="PT3500">4PT3500: <br/><a target="_blank" href="#!/histogram/48020284506650"><span class="value">{{ $ctrl.NP04_DCS_01_4PT3500 }} bar</span></a></div>
+    <div id="PT3510">4PT3510: <br/><a target="_blank" href="#!/histogram/48020301283866"><span class="value">{{ $ctrl.NP04_DCS_01_4PT3510 }} bar</span></a></div>
+    <div id="TT3500">4TT3500: <br/><a target="_blank" href="#!/histogram/48020334838298"><span class="value">{{ $ctrl.NP04_DCS_01_4TT3500 }} &#8490;</span></a></div>
+    <div id="TT3510">4TT3510: <br/><a target="_blank" href="#!/histogram/48020351615514"><span class="value">{{ $ctrl.NP04_DCS_01_4TT3510 }} &#8490;</span></a></div>
 
     </div>
 </div>

@@ -110,12 +110,7 @@ angular.module("histogram", []).component("histogram", {
         $interval.cancel;
         $http
           .get(
-            "php-db-conn/np04histogram.php?elemid=" +
-              self.elemId +
-              "&startdate=" +
-              startDateStr +
-              "&enddate=" +
-              endDateStr
+            "https://np04-data-api-slow-control.app.cern.ch/np04histogram/" + self.elemId + "/" + startDateStr + "/" + endDateStr
           )
           .then(function onSuccess(response) {
             const chartData = Object.entries(response.data).map(
@@ -134,12 +129,7 @@ angular.module("histogram", []).component("histogram", {
         );
         $http
           .get(
-            "php-db-conn/np04histogram.php?elemid=" +
-              self.elemId +
-              "&startdate=" +
-              startDateStr +
-              "&enddate=" +
-              endDateStr
+            "https://np04-data-api-slow-control.app.cern.ch/np04histogram/" + self.elemId + "/" + startDateStr + "/" + endDateStr
           )
           .then(function onSuccess(response) {
             self.chartData = Object.entries(response.data).map(
@@ -149,7 +139,7 @@ angular.module("histogram", []).component("histogram", {
             );
             if (!self.sensorName) {
               $http
-                .get("php-db-conn/np04sensorname.php?elemid=" + self.elemId)
+                .get("https://np04-data-api-slow-control.app.cern.ch/sensorname/" + self.elemId)
                 .then(function onSuccess(response) {
                   console.log(response.data);
                   let sensorNameStr = response.data.replace("NP04_DCS_01:", "");
