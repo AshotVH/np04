@@ -9,10 +9,10 @@ angular.module('spbottom', []).component('spbottom', {
         this.reload = function () {
             self.timestamp = new Date();
             $http
-                .get("php-db-conn/np04cachedvals.php?elemName=spbottom")
+                .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=spbottom")
                 .then(function (result) {
                     const res = result.data;
-                    console.log(res);
+                    // console.log(res);
                     self.NP04_DCS_01_TE0145_ = res["47892677001498"]?res["47892677001498"][0]:"N/A";
                     self.NP04_DCS_01_TE0146_ = res["47892693778714"]?res["47892693778714"][0]:"N/A";
                     self.NP04_DCS_01_TE0147_ = res["47892710555930"]?res["47892710555930"][0]:"N/A";

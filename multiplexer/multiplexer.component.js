@@ -69,7 +69,7 @@ angular.module("multiplexer", []).component("multiplexer", {
 
       this.reload = function () {
         $http
-          .get("php-db-conn/np04cachedvals.php?elemName=multiplexer1")
+          .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=multiplexer1")
           .then(function (result) {
             const res = result.data;
             console.log(res);
@@ -80,8 +80,9 @@ angular.module("multiplexer", []).component("multiplexer", {
           });
 
         $http
-          .get("php-db-conn/cachedVals.conn.php?elemId=multiplexer")
+          .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=multiplexer")
           .then(function (resultArr) {
+            console.log(resultArr.data);
             let rArr = [];
             let resjson = angular.toJson(resultArr.data);
             let res = JSON.parse(resjson);

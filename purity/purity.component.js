@@ -19,10 +19,10 @@ angular.module('purity', []).component('purity', {
 
             self.timestamp = new Date();
             $http
-                .get("php-db-conn/np04cachedvals.php?elemName=purity")
+                .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=purity")
                 .then(function (result) {
                     const res = result.data;
-                    console.log(res);
+                    // console.log(res);
                     self.NP04_DCS_01_PrM0_PrM_V_A_Set = res["47928748018458"]?res["47928748018458"][0]:"N/A";
                     self.NP04_DCS_01_PrM0_PrM_V_A = res["47928748018970"]?res["47928748018970"][0]:"N/A";
                     self.NP04_DCS_01_PrM0_PrM_I_A = res["47928748019738"]?res["47928748019738"][0]:"N/A";
@@ -74,6 +74,10 @@ angular.module('purity', []).component('purity', {
                     self.NP04_DCS_01_PrM2_PrM_corrected_Q_C = res["47928781578778"]?res["47928781578778"][0]:"N/A";
                     self.NP04_DCS_01_PrM2_PrM_corrected_Q_A = res["47928781579034"]?res["47928781579034"][0]:"N/A";
                     self.NP04_DCS_01_PrM2_PrM_Trans_Corr = res["47928781580826"]?res["47928781580826"][0]:"N/A";
+
+                    self.NP04_MHT0100AI = res["47878785489690"]?res["47878785489690"][0]:"N/A";
+                    self.NP04_TT0100AI = res["47878802266906"]?res["47878802266906"][0]:"N/A";
+                    self.NP04_PT0106AI = res["47878819044122"]?res["47878819044122"][0]:"N/A";
                 });
         };
 

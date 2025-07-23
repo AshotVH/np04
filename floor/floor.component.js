@@ -9,10 +9,10 @@ angular.module('floor', []).component('floor', {
         this.reload = function () {
             self.timestamp = new Date();
             $http
-                .get("php-db-conn/np04cachedvals.php?elemName=floor")
+                .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=floor")
                 .then(function (result) {
                     const res = result.data;
-                    console.log(res);
+                    // console.log(res);
                     self.NP04_DCS_01_TE0103_ = res["47891972358426"]?res["47891972358426"][0]:"N/A";
                     self.NP04_DCS_01_TE0104_ = res["47891989135642"]?res["47891989135642"][0]:"N/A";
                     self.NP04_DCS_01_TE0105_ = res["47892005912858"]?res["47892005912858"][0]:"N/A";

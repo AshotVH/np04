@@ -1,30 +1,92 @@
 <link rel="stylesheet" href="css/coldbox.css">
-<div class="container">
-    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
-
-    <img id="coldbox_temp" src="img/coldbox_temp.png"/>
-    <img id="coldbox_circuit" src="img/coldbox_circuit.png"/>
-
-    <div id="timestamp_label">Timestamp:<br/><span id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
-    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a></div>
-
-    <div id="tt205">TE205: <a target="_blank" href="#!/histogram/47893683634458"><span class="value">{{ $ctrl.NP04_DCS_01_TE0205 }}</span></a></div>
-    <div id="tt206">TE206: <a target="_blank" href="#!/histogram/47893700411674"><span class="value">{{ $ctrl.NP04_DCS_01_TE0206 }}</span></a></div>
-    <div id="tt207">TE207: <a target="_blank" href="#!/histogram/47893717188890"><span class="value">{{ $ctrl.NP04_DCS_01_TE0207 }}</span></a></div>
-    <div id="tt208">TE208: <a target="_blank" href="#!/histogram/47893733966106"><span class="value">{{ $ctrl.NP04_DCS_01_TE0208 }}</span></a></div>
-    <div id="tt209">TE209: <a target="_blank" href="#!/histogram/47893750743322"><span class="value">{{ $ctrl.NP04_DCS_01_TE0209 }}</span></a></div>
-    <div id="tt210">TE210: <a target="_blank" href="#!/histogram/47893767520538"><span class="value">{{ $ctrl.NP04_DCS_01_TE0210 }}</span></a></div>
-    <div id="tt211">TE211: <a target="_blank" href="#!/histogram/47893784297754"><span class="value">{{ $ctrl.NP04_DCS_01_TE0211 }}</span></a></div>
-
-    <div id="CV3160">4CV3160: <br/><a target="_blank" href="#!/histogram/48020200620570"><span class="value">{{ $ctrl.NP04_DCS_01_4CV3160 }} %</span></a></div>
-    <div id="CV3170">4CV3170: <br/><a target="_blank" href="#!/histogram/48020217397786"><span class="value">{{ $ctrl.NP04_DCS_01_4CV3170 }} %</span></a></div>
-    <div id="CV3500">4CV3500: <br/><a target="_blank" href="#!/histogram/48020234175002"><span class="value">{{ $ctrl.NP04_DCS_01_4CV3500 }} %</span></a></div>
-    <div id="CV3510">4CV3510: <br/><a target="_blank" href="#!/histogram/48020250952218"><span class="value">{{ $ctrl.NP04_DCS_01_4CV3510 }} %</span></a></div>
-    <div id="PT3170">4PT3170: <br/><a target="_blank" href="#!/histogram/48020267729434"><span class="value">{{ $ctrl.NP04_DCS_01_4PT3170 }} bar</span></a></div>
-    <div id="PT3500">4PT3500: <br/><a target="_blank" href="#!/histogram/48020284506650"><span class="value">{{ $ctrl.NP04_DCS_01_4PT3500 }} bar</span></a></div>
-    <div id="PT3510">4PT3510: <br/><a target="_blank" href="#!/histogram/48020301283866"><span class="value">{{ $ctrl.NP04_DCS_01_4PT3510 }} bar</span></a></div>
-    <div id="TT3500">4TT3500: <br/><a target="_blank" href="#!/histogram/48020334838298"><span class="value">{{ $ctrl.NP04_DCS_01_4TT3500 }} &#8490;</span></a></div>
-    <div id="TT3510">4TT3510: <br/><a target="_blank" href="#!/histogram/48020351615514"><span class="value">{{ $ctrl.NP04_DCS_01_4TT3510 }} &#8490;</span></a></div>
+<header class="container page_header">
+  <div class="row">
+    <div class="col page-title">{{$ctrl.pageTitle}}</div>
+    <div class="col timestamp_label">
+      <div class="row">
+        <div class="col">Timestamp</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span id="timestamp" class="timestamp"
+            >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="container-fluid">
+    <div class="row pt-2 pb-2 justify-content-center">
+        <div class="col-auto coldbox_col_1">    
+            <img class="coldbox_temp" src="img/coldbox_temp.png"/>
+            <div class="coldbox_temp_value tt205">TE205: <a target="_blank" href="#!/histogram/47893683634458"><span class="value">{{ $ctrl.NP04_DCS_01_TE0205 }}</span></a></div>
+            <div class="coldbox_temp_value tt206">TE206: <a target="_blank" href="#!/histogram/47893700411674"><span class="value">{{ $ctrl.NP04_DCS_01_TE0206 }}</span></a></div>
+            <div class="coldbox_temp_value tt207">TE207: <a target="_blank" href="#!/histogram/47893717188890"><span class="value">{{ $ctrl.NP04_DCS_01_TE0207 }}</span></a></div>
+            <div class="coldbox_temp_value tt208">TE208: <a target="_blank" href="#!/histogram/47893733966106"><span class="value">{{ $ctrl.NP04_DCS_01_TE0208 }}</span></a></div>
+            <div class="coldbox_temp_value tt209">TE209: <a target="_blank" href="#!/histogram/47893750743322"><span class="value">{{ $ctrl.NP04_DCS_01_TE0209 }}</span></a></div>
+            <div class="coldbox_temp_value tt210">TE210: <a target="_blank" href="#!/histogram/47893767520538"><span class="value">{{ $ctrl.NP04_DCS_01_TE0210 }}</span></a></div>
+            <div class ="coldbox_temp_value tt211">TE211: <a target="_blank" href="#!/histogram/47893784297754"><span class="value">{{ $ctrl.NP04_DCS_01_TE0211 }}</span></a></div>
+        </div>
+        <div class="col-auto coldbox_col_2">    
+            <img class="coldbox_circuit" src="img/coldbox_circuit.png"/>
+            <div class="coldbox_temp_value CV3160">4CV3160: <br/><a target="_blank" href="#!/histogram/48020200620570"><span class="value">{{ $ctrl.NP04_DCS_01_4CV3160 }} %</span></a></div>
+            <div class="coldbox_temp_value CV3170">4CV3170: <br/><a target="_blank" href="#!/histogram/48020217397786"><span class="value">{{ $ctrl.NP04_DCS_01_4CV3170 }} %</span></a></div>
+            <div class="coldbox_temp_value CV3500">4CV3500: <br/><a target="_blank" href="#!/histogram/48020234175002"><span class="value">{{ $ctrl.NP04_DCS_01_4CV3500 }} %</span></a></div>
+            <div class="coldbox_temp_value CV3510">4CV3510: <br/><a target="_blank" href="#!/histogram/48020250952218"><span class="value">{{ $ctrl.NP04_DCS_01_4CV3510 }} %</span></a></div>
+            <div class="coldbox_temp_value PT3170">4PT3170: <br/><a target="_blank" href="#!/histogram/48020267729434"><span class="value">{{ $ctrl.NP04_DCS_01_4PT3170 }} bar</span></a></div>
+            <div class="coldbox_temp_value PT3500">4PT3500: <br/><a target="_blank" href="#!/histogram/48020284506650"><span class="value">{{ $ctrl.NP04_DCS_01_4PT3500 }} bar</span></a></div>
+            <div class="coldbox_temp_value PT3510">4PT3510: <br/><a target="_blank" href="#!/histogram/48020301283866"><span class="value">{{ $ctrl.NP04_DCS_01_4PT3510 }} bar</span></a></div>
+            <div class="coldbox_temp_value TT3500">4TT3500: <br/><a target="_blank" href="#!/histogram/48020334838298"><span class="value">{{ $ctrl.NP04_DCS_01_4TT3500 }} &#8490;</span></a></div>
+            <div class="coldbox_temp_value TT3510">4TT3510: <br/><a target="_blank" href="#!/histogram/48020351615514"><span class="value">{{ $ctrl.NP04_DCS_01_4TT3510 }} &#8490;</span></a></div>
+        </div>
 
     </div>
-</div>
+    
+   
+
+    
+     
+
+
+</main>
+<footer class="container page_footer">
+  <div class="row justify-content-end">
+    <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td>Humidity</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878785489690">
+                <span class="value"
+                  >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient temperature</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878802266906">
+                <span class="value"
+                  >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient pressure</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878819044122">
+                <span class="value"
+                  >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
+                >
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</footer>

@@ -10,10 +10,10 @@ angular.module('spgradient', []).component('spgradient', {
 
             self.timestamp = new Date();
             $http
-                .get("php-db-conn/np04cachedvals.php?elemName=spgradient")
+                .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=spgradient")
                 .then(function (result) {
                     const res = result.data;
-                    console.log(res);
+                    // console.log(res);
                     self.NP04_DCS_01_TE0073_ = res["47891469041946"]?res["47891469041946"][0]:"N/A";
                     self.NP04_DCS_01_TE0074_ = res["47891485819162"]?res["47891485819162"][0]:"N/A";
                     self.NP04_DCS_01_TE0075_ = res["47891502596378"]?res["47891502596378"][0]:"N/A";

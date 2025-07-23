@@ -9,10 +9,10 @@ angular.module('top', []).component('top', {
         this.reload = function () {
             self.timestamp = new Date();
             $http
-                .get("php-db-conn/np04cachedvals.php?elemName=top")
+                .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=top")
                 .then(function (result) {
                     const res = result.data;
-                    console.log(res);
+                    // console.log(res);
                                 
                     self.NP04_MHT0100AI = res["47878785489690"]?res["47878785489690"][0]:"N/A";
                     self.NP04_TT0100AI = res["47878802266906"]?res["47878802266906"][0]:"N/A";

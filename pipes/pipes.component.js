@@ -9,10 +9,10 @@ angular.module('pipes', []).component('pipes', {
         this.reload = function () {
             self.timestamp = new Date();
             $http
-                .get("php-db-conn/np04cachedvals.php?elemName=pipes")
+                .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=pipes")
                 .then(function (result) {
                     const res = result.data;
-                    console.log(res);
+                    // console.log(res);
                     self.NP04_DCS_01_TE0085_ = res["47891670368538"]?res["47891670368538"][0]:"N/A";
                     self.NP04_DCS_01_TE0086_ = res["47891687145754"]?res["47891687145754"][0]:"N/A";
                     self.NP04_DCS_01_TE0087_ = res["47891703922970"]?res["47891703922970"][0]:"N/A";

@@ -10,7 +10,7 @@ angular.module('inside', []).component('inside', {
         this.reload = function () {
             self.timestamp = new Date();
             $http
-                .get("php-db-conn/np04cachedvals.php?elemName=inside")
+                .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=inside")
                 .then(function (result) {
                     const res = result.data;
                     console.log(res);

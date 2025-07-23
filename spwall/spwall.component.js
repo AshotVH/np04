@@ -9,10 +9,10 @@ angular.module('spwall', []).component('spwall', {
         this.reload = function () {
             self.timestamp = new Date();
             $http
-                .get("php-db-conn/np04cachedvals.php?elemName=spwall")
+                .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=spwall")
                 .then(function (result) {
                     const res = result.data;
-                    console.log(res);
+                    // console.log(res);
                     self.NP04_DCS_01_TE0115_ = res["47892173685018"]?res["47892173685018"][0]:"N/A";
                     self.NP04_DCS_01_TE0116_ = res["47892190462234"]?res["47892190462234"][0]:"N/A";
                     self.NP04_DCS_01_TE0117_ = res["47892207239450"]?res["47892207239450"][0]:"N/A";

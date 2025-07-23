@@ -8,11 +8,11 @@ angular.module("bellegarde", []).component("bellegarde", {
 
     this.reload = function () {
       $http
-        .get("php-db-conn/np04cachedvals.php?elemName=bellegarde")
+        .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=bellegarde")
         .then(function (result) {
           self.timestamp = new Date();
           const res = result.data;
-          console.log(res);
+          // console.log(res);
           self.B4_BS_01 = res["47883902540570"]?res["47883902540570"][0]:"N/A";
           self.DS_BS_01 = res["47883969649434"]?res["47883969649434"][0]:"N/A";
           self.TCO_BS_01 = res["47883952872218"]?res["47883952872218"][0]:"N/A";
