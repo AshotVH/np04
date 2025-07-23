@@ -16,7 +16,7 @@ angular.module('pl506', []).component('pl506', {
             this.reload = function () {
                 self.timestamp = new Date();
                 $http
-                    .get("php-db-conn/np04cachedvals.php?elemName=pl506")
+                    .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=pl506")
                     .then(function (result) {
                         const res = result.data;
                         console.log(res);

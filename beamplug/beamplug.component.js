@@ -10,10 +10,10 @@ angular.module('beamplug', []).component('beamplug', {
 
             self.timestamp = new Date();
             $http
-                .get("php-db-conn/np04cachedvals.php?elemName=beamplug")
+                .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=beamplug")
                 .then(function (result) {
                     const res = result.data;
-                    console.log(res);
+                    // console.log(res);
                     self.NP04_2PT0100AI = res["47878902930202"]?res["47878902930202"][0]:"N/A";
                     self.NP04_2PT0100AIR = res["47883114011418"]?res["47883114011418"][0]:"N/A";
                     self.NP04_2PT0101AI = res["47878919707418"]?res["47878919707418"][0]:"N/A";

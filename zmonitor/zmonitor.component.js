@@ -11,10 +11,10 @@ angular.module('zmonitor', []).component('zmonitor', {
 
             self.timestamp = new Date();
             $http
-                .get("php-db-conn/np04cachedvals.php?elemName=zmonitor")
+                .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=zmonitor")
                 .then(function (result) {
                     const res = result.data;
-                    console.log(res);
+                    // console.log(res);
                     self.NP04_DCS_01_gizmo_RES = res["47861572043290"]?res["47861572043290"][0]:"N/A";
                     self.NP04_DCS_01_gizmo_TH = res["47861572043546"]?res["47861572043546"][0]:"N/A";
                     self.NP04_DCS_01_gizmo_mag = res["47861572043802"]?res["47861572043802"][0]:"N/A";

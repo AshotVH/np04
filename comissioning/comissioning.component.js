@@ -10,10 +10,10 @@ angular.module('comissioning', []).component('comissioning', {
 
             self.timestamp = new Date();
             $http
-                .get("php-db-conn/np04cachedvals.php?elemName=comissioning")
+                .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=comissioning")
                 .then(function (result) {
                     const res = result.data;
-                    console.log(res);
+                    // console.log(res);
                     self.NP04_DCS_01_NP04_4PT4920 = res["47931851800858"]?res["47931851800858"][0]:"N/A";
                     self.NP04_PT0110AI = res["47879272028954"]?res["47879272028954"][0]:"N/A";
                     self.NP04_PT0111AI = res["47879288806170"]?res["47879288806170"][0]:"N/A";

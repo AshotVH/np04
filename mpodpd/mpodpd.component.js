@@ -29,7 +29,7 @@ angular.module('mpodpd', []).component('mpodpd', {
             
             this.reload = function () {
                 self.timestamp = new Date();
-                $http.get("php-db-conn/np04cachedvals.php?elemName=mpodpd").then(function (result) {
+                $http.get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=mpodpd").then(function (result) {
                     const res = result.data;
                     console.log(res);
                     self.NP04_DCS_01_Wiener_MPODPD_Rack6[1][0][0] = res["47875698459674"]?res["47875698459674"][0]:"N/A";

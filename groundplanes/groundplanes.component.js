@@ -27,7 +27,7 @@ angular.module('groundplanes', []).component('groundplanes', {
         this.reload = function () {
             self.timestamp = new Date();
             $http
-                .get("php-db-conn/np04cachedvals.php?elemName=groundplanes")
+                .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=groundplanes")
                 .then(function (result) {
                     const res = result.data;
                     console.log(res);
