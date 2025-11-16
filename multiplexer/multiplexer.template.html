@@ -1,14 +1,135 @@
 <link rel="stylesheet" href="css/multiplexer.css">
-<div class="container">
-    <div id="pageTitle">{{$ctrl.pageTitle}}</div>
-    <div id="timestamp_label">Timestamp:<br/><span
-            id="timestamp">{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span></div>
-    <div id="ambient">Humidity:<br/><a target="_blank" href="#!/histogram/47878785489690"><span class="value">{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span></a><br/>Ambient
-        temperature:<br/><a target="_blank" href="#!/histogram/47878802266906"><span class="value">{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span></a><br/>Ambient
-        pressure:<br/><a target="_blank" href="#!/histogram/47878819044122"><span class="value">{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span></a>
+<header class="container page_header">
+  <div class="row">
+    <div class="col page-title">{{$ctrl.pageTitle}}</div>
+    <div class="col timestamp_label">
+      <div class="row">
+        <div class="col">Timestamp</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span id="timestamp" class="timestamp"
+            >{{ $ctrl.timestamp | date: 'dd-MM-yyyy HH:mm:ss' }}</span
+          >
+        </div>
+      </div>
     </div>
+  </div>
+</header>
 
-    <table id="main">
+
+<main class="container">
+    <div class="row justify-content-center pt-5">
+        <div class="col-12 col-lg-3">
+            <table class="table table-sm table-bordered">
+            <tbody>
+              <tr>
+                <td>TE0001</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47890261082394"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_TE0001 | number: 1 }} K</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>TE0002<br /></td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47890277859610"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_TE0002 | number: 1 }} K</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>TE0003<br /></td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47890294636826"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_TE0003 | number: 1 }} K</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+         <div class="col-12 col-lg-3">
+          <table class="table table-sm table-bordered">
+            <tbody>
+              <tr>
+                <td>TE0004</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47890311414042"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_TE0004 | number: 1 }} K</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>TE0005<br /></td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47890328191258"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_TE0005 | number: 1 }} K</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>TE0006<br /></td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47890344968474"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_TE0006 | number: 1 }} K</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+         <div class="col-12 col-lg-3">
+            <table class="table table-sm table-bordered">
+            <tbody>
+              <tr>
+                <td>TE0007</td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47890361745690"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_TE0007 | number: 1 }} K</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>TE0008<br /></td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47890378522906"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_TE0008 | number: 1 }} K</span
+                    ></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>TE0009<br /></td>
+                <td>
+                  <a target="_blank" href="#!/histogram/47890395300122"
+                    ><span class="value"
+                      >{{ $ctrl.NP04_TE0009 | number: 1 }} K</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+    <!-- <table id="main">
         <tr>
             <td class="tdleft"><span ng-repeat="i in $ctrl.NP04_DCS_01_TE_card1.Name"><a target="_blank"
                                                                                          ng-href='#!/histogram/NP04_DCS_01_{{ i }}'>{{ i }}</a><br/></span>
@@ -56,6 +177,47 @@
             <td class="tdright"><span class="value" ng-repeat="i in $ctrl.NP04_DCS_01_TE_card9.Value track by $index">{{ i | number: 1 }} &#8490;<br/></span>
             </td>
         </tr>
-    </table>
+    </table> -->
 
-</div>
+</main>
+
+<footer class="container page_footer">
+  <div class="row justify-content-end">
+    <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr>
+            <td>Humidity</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878785489690">
+                <span class="value"
+                  >{{ $ctrl.NP04_MHT0100AI | number: 1 }} %</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient temperature</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878802266906">
+                <span class="value"
+                  >{{ $ctrl.NP04_TT0100AI | number: 1 }} &#8451;</span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Ambient pressure</td>
+            <td>
+              <a target="_blank" href="#!/histogram/47878819044122">
+                <span class="value"
+                  >{{ $ctrl.NP04_PT0106AI | number: 1 }} mbar</span
+                >
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</footer>

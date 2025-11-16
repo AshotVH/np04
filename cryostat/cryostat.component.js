@@ -9,7 +9,7 @@ angular.module('cryostat', []).component('cryostat', {
             return !isNaN(parseFloat(value)) && isFinite(value);
         };
         this.reload = function () {
-            console.log("check");
+            
             self.timestamp = new Date();
             $http
                 .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=cryostat")
