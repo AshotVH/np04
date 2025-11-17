@@ -107,11 +107,11 @@ angular.module('groundplanes', []).component('groundplanes', {
             this.range = function (event, start, end) {
                 event.preventDefault();
                 if (!start || !end) {
-                  console.log("no start or end");
+                //   console.log("no start or end");
                   return false;
                 }
                 if(start>=end){
-                  console.log("incorrect range");
+                //   console.log("incorrect range");
                   return false;
                 }
                 const startDate = new Date(start);
@@ -153,7 +153,7 @@ angular.module('groundplanes', []).component('groundplanes', {
                     .get("https://np04-data-api-slow-control.app.cern.ch/np04cachedvals?elemname=groundplanes")
                     .then(function (result) {
                         const res = result.data;
-                        console.log(res);
+                        // console.log(res);
                         self.NP04_MHT0100AI = res["47878785489690"][0];
                         self.NP04_TT0100AI = res["47878802266906"][0];
                         self.NP04_PT0106AI = res["47878819044122"][0];
@@ -183,7 +183,7 @@ angular.module('groundplanes', []).component('groundplanes', {
                     });
                
                 $interval.cancel;
-                console.log($scope.setDaysBtnLoading);
+                // console.log($scope.setDaysBtnLoading);
                
                 const [startDateStr, endDateStr] = self.daysAndHoursToUTCDateRange(self.daysAndHours);
                
@@ -193,7 +193,7 @@ angular.module('groundplanes', []).component('groundplanes', {
                       const chartData = Object.entries(response.data).map(([key, value]) => {
                         return [parseInt(key), value];
                       });
-                      console.log(chartData);
+                    //   console.log(chartData);
                       self.drawChart("container0", chartData, self.elements[0][1]);
                     });
                 $http.get("https://np04-data-api-slow-control.app.cern.ch/np04histogram/" + self.elements[1][0] + "/" + startDateStr + "/" + endDateStr)
@@ -213,7 +213,7 @@ angular.module('groundplanes', []).component('groundplanes', {
                       } else {
                       $scope.requestsList.fill(false);
                       $scope.requestsList[self.daysAndHoursToBtnNum(self.daysAndHours)] = true;
-                      console.log($scope.requestsList); 
+                    //   console.log($scope.requestsList); 
                       }
                     });
             
@@ -235,7 +235,7 @@ angular.module('groundplanes', []).component('groundplanes', {
                   }
                 }
         
-                console.log(self.loadingDayBtn);
+                // console.log(self.loadingDayBtn);
            
                 
                 self.daysAndHours = daysAndHours;
@@ -247,7 +247,7 @@ angular.module('groundplanes', []).component('groundplanes', {
                 self.dd = Math.round(self.dd);
                 self.daysAndHours = self.dd + '-' + '0';
                 $scope.setDaysBtnLoading = true;
-                console.log($scope.setDaysBtnLoading);
+                // console.log($scope.setDaysBtnLoading);
                 self.reload(true);
                 
               };
